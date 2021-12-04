@@ -27,7 +27,7 @@
 <link data-href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" href="https://www.kicksecure.com/w/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate.html" title="Kicksecure Atom feed" type="application/atom+xml"/>
 <meta content="Safely Use Root Commands" property="og:title"/>
 <meta content="Kicksecure" property="og:site_name"/>
-<meta content="http://www.kicksecure.com/wiki/Root" property="og:url"/>
+<meta content="./Root" property="og:url"/>
 <meta content="Tips on using sudo / root (privileged) commands safely" property="og:description"/>
 <meta content="https://www.kicksecure.com/w/images/e/e2/Root123123.jpg" property="og:image"/>
 <meta content="2021-12-01T23:43:32Z" property="article:modified_time"/>
@@ -171,7 +171,7 @@
 </p>
 </div>
 <p>The default root account is locked (or should be locked). <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup> This is a purposeful security feature -- see below for further details.
-</p><p>It is <a class="new" data-href="/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;redlink=1.html" title="Post Install Advice (page does not exist)">recommended to change passwords</a>.
+</p><p>It is <a data-href="/wiki/Post_Install_Advice#Change_Passwords" href="./Post_Install_Advice.html" title="Post Install Advice">recommended to change passwords</a>.
 </p>
 <h1><span class="mw-headline" id="General_Security_Advice">General Security Advice</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Root&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Root&amp;action=edit&amp;section=3.html" title="Edit section: General Security Advice">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Commands that require root permissions should be run individually using <code>sudo</code>. In all cases:
@@ -328,7 +328,7 @@
 <!-- but do not close p tag since something unidentified (widgets extension maybe) adds an extraneous closing p tag -->
 <!-- Widget:CodeSelect end -->
 </p><p><b>2.</b> Set a root password.
-</p><p>According to the <a class="new" data-href="/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;redlink=1.html" title="Post Install Advice (page does not exist)">Change Password</a> instructions. Note: These instructions are for the the user <code>user</code> account. Replace user <code>user</code> with <code>root</code>.
+</p><p>According to the <a data-href="/wiki/Post_Install_Advice#Change_Password" href="./Post_Install_Advice.html" title="Post Install Advice">Change Password</a> instructions. Note: These instructions are for the the user <code>user</code> account. Replace user <code>user</code> with <code>root</code>.
 </p>
 <h2><span class="mw-headline" id="Disable_Root_Account">Disable Root Account</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Root&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Root&amp;action=edit&amp;section=9.html" title="Edit section: Disable Root Account">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><a data-href="/wiki/Old_Stable_and_Earlier_Releases" href="./Old_Stable_and_Earlier_Releases.html" title="Old Stable and Earlier Releases">Earlier versions</a> of Kicksecure ™ (version numbers lower than <code>15.0.0.3.6</code>) come with the root account enabled by default. Most users should disable it by running the following commands.
@@ -760,7 +760,7 @@ tty10</textarea>
 </p>
 <h2><span class="mw-headline" id="dsudo_-_default_password_sudo">dsudo - default password sudo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Root&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=Root&amp;action=edit&amp;section=21.html" title="Edit section: dsudo - default password sudo">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><code>dsudo</code> is a Kicksecure ™ specific feature. <sup class="reference" id="cite_ref-26"><a href="#cite_note-26">[26]</a></sup>
-</p><p>As long as still using the <a href="#Default_Password">default password</a> (not having <a class="new" data-href="/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;redlink=1.html" title="Post Install Advice (page does not exist)">changed sudo password</a>), commands can be run as root without entering a password. This is useful for users having issues with <a data-href="/wiki/Keyboard_Layout" href="./Keyboard_Layout.html" title="Keyboard Layout">changing the keyboard layout</a> and for testing VMs.
+</p><p>As long as still using the <a href="#Default_Password">default password</a> (not having <a data-href="/wiki/Post_Install_Advice#Change_Passwords" href="./Post_Install_Advice.html" title="Post Install Advice">changed sudo password</a>), commands can be run as root without entering a password. This is useful for users having issues with <a data-href="/wiki/Keyboard_Layout" href="./Keyboard_Layout.html" title="Keyboard Layout">changing the keyboard layout</a> and for testing VMs.
 </p><p>Instead of using
 </p><p><!-- Widget:CodeSelect start -->
 </p><div class="codeContainerNew">
@@ -1044,6 +1044,9 @@ Search engines: <a data-href="https://search.yacy.net" href="https://search.yacy
 <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"><div class="mw-hidden-catlinks mw-hidden-cats-hidden" id="mw-hidden-catlinks">Hidden category: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>
 </div>
+<div id="mw-data-after-content">
+<div class="mw-cookiewarning-container"><div class="mw-cookiewarning-text"><span>By using our website, you acknowledge that you have read, understood and agreed to our Privacy Policy, Cookie Policy, Terms of Service, and E-Sign Consent.</span></div><form method="POST"><div class="oo-ui-layout oo-ui-horizontalLayout"><span aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-progressive oo-ui-buttonWidget"><a aria-disabled="false" class="oo-ui-buttonElement-button" data-href="/wiki/Terms_of_Service" href="./Terms_of_Service" rel="nofollow" role="button" tabindex="0"><span class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-progressive"></span><span class="oo-ui-labelElement-label">More information</span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-progressive"></span></a></span><span aria-disabled="false" class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive oo-ui-buttonInputWidget"><button aria-disabled="false" class="oo-ui-inputWidget-input oo-ui-buttonElement-button" name="disablecookiewarning" tabindex="0" type="submit" value="OK"><span class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert"></span><span class="oo-ui-labelElement-label">OK</span><span class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert"></span></button></span></div></form></div>
+</div>
 <div id="mw-navigation">
 <h2>Navigation menu</h2>
 <div id="mw-head">
@@ -1088,14 +1091,20 @@ Search engines: <a data-href="https://search.yacy.net" href="https://search.yacy
 <footer class="mw-footer" id="footer" role="contentinfo">
 <ul id="footer-info">
 <li id="footer-info-lastmod"> </li>
-<li id="footer-info-copyright">This is from wiki page MediaWiki:Copyright. End.</li>
+<li id="footer-info-copyright">By using this website, you acknowledge you have read, understood, and agree to be bound by these these agreements:</li>
 </ul>
 <ul id="footer-places">
+<li id="footer-places-Terms of Service"><a data-href="/wiki/Terms_of_Service" href="./Terms_of_Service.html" title="Terms of Service">Terms of Service</a></li>
+<li id="footer-places-Privacy Policy"><a data-href="/wiki/Privacy_Policy" href="./Privacy_Policy.html" title="Privacy Policy">Privacy Policy</a></li>
+<li id="footer-places-Cookie Policy"><a data-href="/wiki/Cookie_Policy" href="./Cookie_Policy.html" title="Cookie Policy">Cookie Policy</a></li>
+<li id="footer-places-E-Sign_Consent"><a data-href="/wiki/E-Sign_Consent" href="./E-Sign_Consent.html" title="E-Sign Consent">E-Sign Consent</a></li>
+<li id="footer-places-DMCA"><a class="mw-redirect" data-href="/wiki/DMCA" href="./DMCA.html" title="DMCA">DMCA</a></li>
+<li id="footer-places-Imprint"><a data-href="/wiki/Imprint" href="./Imprint.html" title="Imprint">Imprint</a></li>
 </ul>
 <ul class="noprint" id="footer-icons">
 <li id="footer-copyrightico"><a data-href="wgRightsUrl" href="./wgRightsUrl" target="_blank"><img alt="This is the wgRightsText" height="31" loading="lazy" src="" width="88"/></a></li>
 </ul>
 </footer>
 
-</body><!-- Cached 20211203001107 -->
+</body><!-- Cached 20211203171552 -->
 </html>
