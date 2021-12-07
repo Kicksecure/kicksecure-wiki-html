@@ -30,8 +30,8 @@
 <meta content="./DNS_Security" property="og:url"/>
 <meta content="Authenticated/Encrypted DNS, DNSSEC over Tor" property="og:description"/>
 <meta content="https://www.kicksecure.com/w/images/b/ba/Connect-20333640.jpg" property="og:image"/>
-<meta content="2021-12-04T23:21:32Z" property="article:modified_time"/>
-<meta content="2021-12-04T23:21:32Z" property="article:published_time"/>
+<meta content="2021-12-06T21:46:12Z" property="article:modified_time"/>
+<meta content="2021-12-06T21:46:12Z" property="article:published_time"/>
 
 </head>
 <body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-DNS_Security rootpage-DNS_Security skin-vector action-view skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
@@ -125,16 +125,20 @@
 <li class="toclevel-1 tocsection-5"><a href="#DNS_Authentication"><span class="tocnumber">3</span> <span class="toctext">DNS Authentication</span></a></li>
 <li class="toclevel-1 tocsection-6"><a href="#DNS_Resolving_Security_Feature_Wishlist"><span class="tocnumber">4</span> <span class="toctext">DNS Resolving Security Feature Wishlist</span></a></li>
 <li class="toclevel-1 tocsection-7"><a href="#DNS_Security_Optimization_Problem"><span class="tocnumber">5</span> <span class="toctext">DNS Security Optimization Problem</span></a></li>
-<li class="toclevel-1 tocsection-8"><a href="#Unbound"><span class="tocnumber">6</span> <span class="toctext">Unbound</span></a></li>
-<li class="toclevel-1 tocsection-9"><a href="#Obstacles"><span class="tocnumber">7</span> <span class="toctext">Obstacles</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Potential_Obstacles"><span class="tocnumber">6</span> <span class="toctext">Potential Obstacles</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Unbound"><span class="tocnumber">7</span> <span class="toctext">Unbound</span></a></li>
 <li class="toclevel-1 tocsection-10"><a href="#Testing_DNSSEC"><span class="tocnumber">8</span> <span class="toctext">Testing DNSSEC</span></a>
 <ul>
-<li class="toclevel-2 tocsection-11"><a href="#DNSSEC_Test_Command"><span class="tocnumber">8.1</span> <span class="toctext">DNSSEC Test Command</span></a></li>
-<li class="toclevel-2 tocsection-12"><a href="#Expected_output_using_DNSSEC_unaware_resolver"><span class="tocnumber">8.2</span> <span class="toctext">Expected output using DNSSEC unaware resolver</span></a></li>
-<li class="toclevel-2 tocsection-13"><a href="#Expected_output_using_DNSSEC_aware_resolver"><span class="tocnumber">8.3</span> <span class="toctext">Expected output using DNSSEC aware resolver</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Browser_Tests"><span class="tocnumber">8.1</span> <span class="toctext">Browser Tests</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#DNSKEY_Test"><span class="tocnumber">8.2</span> <span class="toctext">DNSKEY Test</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#dig_.2Bdnssec_Test"><span class="tocnumber">8.2.1</span> <span class="toctext">dig +dnssec Test</span></a></li>
 </ul>
 </li>
-<li class="toclevel-1 tocsection-14"><a href="#Footnotes"><span class="tocnumber">9</span> <span class="toctext">Footnotes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Footnotes"><span class="tocnumber">10</span> <span class="toctext">Footnotes</span></a></li>
 </ul>
 </div>
 <h1><span class="mw-headline" id="DNS_Resolver_Features">DNS Resolver Features</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=1" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=1.html" title="Edit section: DNS Resolver Features">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -181,8 +185,34 @@ At NLnet Labs we are in favour of encrypting DNS traffic to limit the exposure o
 <ul><li><a class="external text" data-href="https://github.com/DNSCrypt/dnscrypt-proxy" href="https://github.com/DNSCrypt/dnscrypt-proxy" rel="noreferrer noopener" target="_blank"><code>dnscrypt-proxy</code></a> <sup><a data-href="https://web.archive.org/web/https://github.com/DNSCrypt/dnscrypt-proxy" href="https://web.archive.org/web/https://github.com/DNSCrypt/dnscrypt-proxy" rel="noreferrer noopener" target="_blank">[archive]</a></sup> is DNSEC aware but <a class="external text" data-href="https://github.com/DNSCrypt/dnscrypt-proxy/discussions/1954" href="https://github.com/DNSCrypt/dnscrypt-proxy/discussions/1954" rel="noreferrer noopener" target="_blank">dnscrypt-proxy at time of writing is DNSSEC non-validating</a> <sup><a data-href="https://web.archive.org/web/https://github.com/DNSCrypt/dnscrypt-proxy/discussions/1954" href="https://web.archive.org/web/https://github.com/DNSCrypt/dnscrypt-proxy/discussions/1954" rel="noreferrer noopener" target="_blank">[archive]</a></sup>. <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup></li>
 <li><a class="external text" data-href="https://github.com/cloudflare/cloudflared" href="https://github.com/cloudflare/cloudflared" rel="noreferrer noopener" target="_blank"><code>cloudflared</code></a> <sup><a data-href="https://web.archive.org/web/https://github.com/cloudflare/cloudflared" href="https://web.archive.org/web/https://github.com/cloudflare/cloudflared" rel="noreferrer noopener" target="_blank">[archive]</a></sup> is <a class="external text" data-href="https://github.com/cloudflare/cloudflared/issues/520" href="https://github.com/cloudflare/cloudflared/issues/520" rel="noreferrer noopener" target="_blank">DNSSEC non-validating</a> <sup><a data-href="https://web.archive.org/web/https://github.com/cloudflare/cloudflared/issues/520" href="https://web.archive.org/web/https://github.com/cloudflare/cloudflared/issues/520" rel="noreferrer noopener" target="_blank">[archive]</a></sup>?</li></ul>
 <p>When a user is using dnscrypt-proxy or cloudflared, the user must choose one or multiple specific DNS servers used for DNS resolution (iterative DNS resolver). I.e. the user can not these programs as recursive DNS resolver.
+</p><p>It is a difficult choice to make. Depends on the user's threat model. There are various options.
 </p>
-<h1><span class="mw-headline" id="Unbound">Unbound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=8.html" title="Edit section: Unbound">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<ul><li><b>A)</b> The start situation in which most users are in. Without any configuration, most users use their internet service provider's DNS server which often is DNSSEC unaware. Even if DNSSEC aware, the ISP would do validation for the user since as mentioned above, no (mainstream) operating systems at the time of writing perform local DNSSEC validation. Therefore the user is vulnerable to malicious DNS through a man-in-the-middle attack on DNS for both, DNSSEC secured and DNSSEC unsecured domains.</li>
+<li><b>B)</b> Using encrypted DNS without local DNSSEC validation with a trusted DNS server should by definition prevent a man-in-the-middle attack on DNS for both, DNSSEC secured and DNSSEC unsecured domain names. But then which DNS servers are really considered trusted by user? Most users do not wish to trust any third-parties if not unavoidable.</li>
+<li><b>C)</b> Using authenticated DNS (performing local DNSSEC validation) without encryption in iterative mode using any supported DNS servers. Which DNS servers support that? In iterative mode, can DNS servers just lie and pretend "no DNSSEC available that domain name?"</li>
+<li><b>D)</b> Using authenticated DNS (performing local DNSSEC validation) without encryption in recursive mode without needing to trust any DNS server. In that case, the user has much higher certainty <sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup> that any DNSSEC secured domains will be properly resolved. Any malicious modifications by a man-in-the-middle attack on DNSSEC secured DNS replies would be detected. However, DNSSEC unsecured domains would still be vulnerable to man-in-the-middle attacks. Perhaps even more vulnerable since a recursive DNS resolver makes much more requests to much more targets on the internet. It depends on where the user would consider man-in-the-middle attack to be most likely. From their computer to their ISP or anyone in between or rather anyone outside their ISP network.</li></ul>
+<p>For all options equally applies that a man-in-the-middle attacker could attempt a denial of service of all of the user's DNS requests. This would likely lead to the user believing that their DNS configuration is broken and perhaps to downgrade to insecure options such as going back to their ISP's DNS server. It might be possible to reduce this risk by tunneling all DNS traffic over Tor.
+</p>
+<h1><span class="mw-headline" id="Potential_Obstacles">Potential Obstacles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=8.html" title="Edit section: Potential Obstacles">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p>This is a list of things the user should know before and after considering to modify the system default DNS resolution. Sorted in order of likelihood. Most likely obstacles are on top of the list.
+</p>
+<ul><li>Websites based tests might be dysfunctional, show false-positives.</li>
+<li>A browser extension such as noscript breaking website based tests.</li>
+<li>Issues introduced though use of a tunnel-link such as a VPN.</li>
+<li>Some domains can be resolved while others fail.</li>
+<li>VirtualBox users: <code>VBoxManage modifyvm "$VMNAME" --natdnsproxy1 on</code> breaks DNS.</li>
+<li>The user's computer has a local IPv6 but no actual IPv6 connectivity which might confuse DNS resolvers such as <code>unbound</code>.</li>
+<li>The web browser might have a bug that disables DNSSEC.</li></ul>
+<p>Many applications do actually not use system DNS but their own internal DNS implementation.
+</p>
+<ul><li>The web browser might not use system DNS but use its own DNS.
+<ul><li>Firefox in USA comes with its own DoH enabled by default. <sup class="reference" id="cite_ref-9"><a href="#cite_note-9">[9]</a></sup></li>
+<li>Tor Browser does not use system DNS but uses Tor to resolve DNS.</li>
+<li>Other web browsers not listed here might use similar implementations.</li></ul></li>
+<li>Other applications (non-browser) might use similar implementations.</li></ul>
+<p>In other words, changing system DNS settings according to this wiki page might not result in changes how the web browser resolves DNS. For example, Firefox in USA would still use its internal DoT default setting, unless modified by the user to use system DNS.
+</p>
+<h1><span class="mw-headline" id="Unbound">Unbound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=9.html" title="Edit section: Unbound">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p><code>Unbound</code> (<a class="external text" data-href="https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" href="https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" rel="noreferrer noopener" target="_blank">unbound security audit</a> <sup><a data-href="https://web.archive.org/web/https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" href="https://web.archive.org/web/https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" rel="noreferrer noopener" target="_blank">[archive]</a></sup>) (<a class="external text" data-href="https://packages.debian.org/unbound" href="https://packages.debian.org/unbound" rel="noreferrer noopener" target="_blank">in Debian</a> <sup><a data-href="https://web.archive.org/web/https://packages.debian.org/unbound" href="https://web.archive.org/web/https://packages.debian.org/unbound" rel="noreferrer noopener" target="_blank">[archive]</a></sup>) is a is a validating, recursive, and caching DNS resolver with DoT and DoH support. However, at time of writing <a class="external text" data-href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973793" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973793" rel="noreferrer noopener" target="_blank">the Debian <code>Unbound</code> package does not enable DoH</a> <sup><a data-href="https://web.archive.org/web/https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973793" href="https://web.archive.org/web/https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973793" rel="noreferrer noopener" target="_blank">[archive]</a></sup>. In context of censorship circumvention, routing DoT over Tor is possible and fast enough according to the <a class="external text" data-href="https://github.com/alecmuffett/dohot" href="https://github.com/alecmuffett/dohot" rel="noreferrer noopener" target="_blank">DoHoT: making practical use of DNS over HTTPS over Tor</a> <sup><a data-href="https://web.archive.org/web/https://github.com/alecmuffett/dohot" href="https://web.archive.org/web/https://github.com/alecmuffett/dohot" rel="noreferrer noopener" target="_blank">[archive]</a></sup>.
 </p><p><b>1.</b> Create folder <code>/etc/unbound/unbound.conf.d</code>.
 </p><p><!-- Widget:CodeSelect start -->
@@ -210,7 +240,7 @@ At NLnet Labs we are in favour of encrypting DNS traffic to limit the exposure o
 <div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
 <p>The following steps should only be applied when choosing Option <b>A)</b> (recursive, unencrypted, validating, caching).
 </p><p>Users who which to use Option <b>B)</b> (iterative, encrypted (DoT), validating, caching) must skip these steps.
-</p><p><sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup>
+</p><p><sup class="reference" id="cite_ref-10"><a href="#cite_note-10">[10]</a></sup>
 </p><p><b>1.</b> Open file <code>/etc/unbound/unbound.conf.d/50_user.conf</code> in an editor with root rights.
 </p><p>(<a class="mw-redirect" data-href="/wiki/Kicksecure_in_Qubes" href="./Kicksecure_in_Qubes.html" title="Kicksecure in Qubes">Kicksecure ™ inside Qubes</a>: In TemplateVM)
 </p>
@@ -302,7 +332,7 @@ forward-zone:
 </p><p><b>3.</b> Save.
 </p>
 </div>
-<p><b>3.</b> Install <code>dnssec-trigger</code>. <sup class="reference" id="cite_ref-9"><a href="#cite_note-9">[9]</a></sup>
+<p><b>3.</b> Install <code>dnssec-trigger</code>. <sup class="reference" id="cite_ref-11"><a href="#cite_note-11">[11]</a></sup>
 </p>
 <div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
 <p>Install <code>dnssec-trigger</code>.
@@ -355,27 +385,15 @@ forward-zone:
 <p><b>4.</b> Done.
 </p><p>The process is complete.
 </p>
-<h1><span class="mw-headline" id="Obstacles">Obstacles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=9.html" title="Edit section: Obstacles">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<ul><li>The user's computer has a local IPv6 but no actual IPv6 connectivity which might confuse unbound.</li>
-<li>Issues introduced though combination of a VPN or Tor.</li>
-<li>Some domains can be resolved while others fail.</li></ul>
 <h1><span class="mw-headline" id="Testing_DNSSEC">Testing DNSSEC</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=10.html" title="Edit section: Testing DNSSEC">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<h2><span class="mw-headline" id="DNSSEC_Test_Command">DNSSEC Test Command</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=11.html" title="Edit section: DNSSEC Test Command">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p><!-- Widget:CodeSelect start -->
-</p><div class="codeContainerNew">
-<div class="preDiv">
-<pre>dig +multiline . DNSKEY</pre>
-</div>
-<div class="textareaDiv">
-<textarea class="codeBoxAreaNew" onfocus="this.select()" readonly="readonly" rows="1">dig +multiline . DNSKEY</textarea>
-</div>
-</div>
-<!-- open p tag -->
-<p>
-<!-- but do not close p tag since something unidentified (widgets extension maybe) adds an extraneous closing p tag -->
-<!-- Widget:CodeSelect end -->
+<h2><span class="mw-headline" id="Browser_Tests">Browser Tests</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=11.html" title="Edit section: Browser Tests">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a class="external free" data-href="https://dnssec.vs.uni-due.de" href="https://dnssec.vs.uni-due.de" rel="noreferrer noopener" target="_blank">https://dnssec.vs.uni-due.de</a> <sup><a data-href="https://web.archive.org/web/https://dnssec.vs.uni-due.de" href="https://web.archive.org/web/https://dnssec.vs.uni-due.de" rel="noreferrer noopener" target="_blank">[archive]</a></sup></li>
+<li><a class="external free" data-href="https://www.cloudflare.com/ssl/encrypted-sni/" href="https://www.cloudflare.com/ssl/encrypted-sni/" rel="noreferrer noopener" target="_blank">https://www.cloudflare.com/ssl/encrypted-sni/</a> <sup><a data-href="https://web.archive.org/web/https://www.cloudflare.com/ssl/encrypted-sni/" href="https://web.archive.org/web/https://www.cloudflare.com/ssl/encrypted-sni/" rel="noreferrer noopener" target="_blank">[archive]</a></sup></li></ul>
+<h2><span class="mw-headline" id="DNSKEY_Test">DNSKEY Test</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=12.html" title="Edit section: DNSKEY Test">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>1.</b> Learn how to interpret the results.
+</p><p>See the following <b>A)</b> vs <b>B)</b>.
+</p><p><b>A)</b> Something similar to the following would be showed if the system resolver does <u>not</u> have DNSSEC support.
 </p>
-<h2><span class="mw-headline" id="Expected_output_using_DNSSEC_unaware_resolver">Expected output using DNSSEC unaware resolver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=12.html" title="Edit section: Expected output using DNSSEC unaware resolver">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <pre>; &lt;&lt;&gt;&gt; DiG 9.11.5-P4-5.1-Debian &lt;&lt;&gt;&gt; +multiline . DNSKEY
 ;; global options: +cmd
 ;; Got answer:
@@ -392,7 +410,8 @@ forward-zone:
 ;; WHEN: Wed Jul 17 17:41:33 UTC 2019
 ;; MSG SIZE  rcvd: 17
 </pre>
-<h2><span class="mw-headline" id="Expected_output_using_DNSSEC_aware_resolver">Expected output using DNSSEC aware resolver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=13.html" title="Edit section: Expected output using DNSSEC aware resolver">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>B)</b> Something similar to the following would be showed if the system resolver <u>has</u> DNSSEC support.
+</p>
 <pre>; &lt;&lt;&gt;&gt; DiG 9.11.5-P4-5.1-Debian &lt;&lt;&gt;&gt; +multiline . DNSKEY
 ;; global options: +cmd
 ;; Got answer:
@@ -431,9 +450,46 @@ forward-zone:
 ;; WHEN: Wed Jul 17 17:43:09 UTC 2019
 ;; MSG SIZE  rcvd: 578
 </pre>
-<h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=14.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p><b>2.</b> Run the following command.
+</p><p><!-- Widget:CodeSelect start -->
+</p><div class="codeContainerNew">
+<div class="preDiv">
+<pre>dig +multiline . DNSKEY</pre>
+</div>
+<div class="textareaDiv">
+<textarea class="codeBoxAreaNew" onfocus="this.select()" readonly="readonly" rows="1">dig +multiline . DNSKEY</textarea>
+</div>
+</div>
+<!-- open p tag -->
+<p>
+<!-- but do not close p tag since something unidentified (widgets extension maybe) adds an extraneous closing p tag -->
+<!-- Widget:CodeSelect end -->
+</p><p><b>3.</b> Internet the result.
+</p><p><b>4.</b> Done.
+</p><p>DNSSEC DNSKEY test has been completed.
+</p>
+<h3><span id="dig_+dnssec_Test"></span><span class="mw-headline" id="dig_.2Bdnssec_Test">dig +dnssec Test</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=13.html" title="Edit section: dig +dnssec Test">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Test with dig.
+</p><p><!-- Widget:CodeSelect start -->
+</p><div class="codeContainerNew">
+<div class="preDiv">
+<pre>dig +dnssec nic.cz @localhost</pre>
+</div>
+<div class="textareaDiv">
+<textarea class="codeBoxAreaNew" onfocus="this.select()" readonly="readonly" rows="1">dig +dnssec nic.cz @localhost</textarea>
+</div>
+</div>
+<!-- open p tag -->
+<p>
+<!-- but do not close p tag since something unidentified (widgets extension maybe) adds an extraneous closing p tag -->
+<!-- Widget:CodeSelect end -->
+</p><p>Please refer to upstream documentation on how to interpret the DNSSEC test results.
+</p>
+<h1><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=14.html" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<ul><li>TCP - <a class="external free" data-href="https://ns1.com/blog/dns-over-tcp-as-seen-from-the-authoritative-server" href="https://ns1.com/blog/dns-over-tcp-as-seen-from-the-authoritative-server" rel="noreferrer noopener" target="_blank">https://ns1.com/blog/dns-over-tcp-as-seen-from-the-authoritative-server</a> <sup><a data-href="https://web.archive.org/web/https://ns1.com/blog/dns-over-tcp-as-seen-from-the-authoritative-server" href="https://web.archive.org/web/https://ns1.com/blog/dns-over-tcp-as-seen-from-the-authoritative-server" rel="noreferrer noopener" target="_blank">[archive]</a></sup></li></ul>
+<h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=15.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="reflist" style="list-style-type: decimal;">
-<div class="mw-references-wrap"><ol class="references">
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
 <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">
 <a class="external free" data-href="https://wiki.archlinux.org/title/unbound" href="https://wiki.archlinux.org/title/unbound" rel="noreferrer noopener" target="_blank">https://wiki.archlinux.org/title/unbound</a> <sup><a data-href="https://web.archive.org/web/https://wiki.archlinux.org/title/unbound" href="https://web.archive.org/web/https://wiki.archlinux.org/title/unbound" rel="noreferrer noopener" target="_blank">[archive]</a></sup></span>
 </li>
@@ -458,9 +514,15 @@ forward-zone:
 <a class="external free" data-href="https://github.com/DNSCrypt/dnscrypt-proxy/issues/167#issuecomment-367689381" href="https://github.com/DNSCrypt/dnscrypt-proxy/issues/167" rel="noreferrer noopener" target="_blank">https://github.com/DNSCrypt/dnscrypt-proxy/issues/167#issuecomment-367689381</a> <sup><a data-href="https://web.archive.org/web/https://github.com/DNSCrypt/dnscrypt-proxy/issues/167#issuecomment-367689381" href="https://web.archive.org/web/https://github.com/DNSCrypt/dnscrypt-proxy/issues/167" rel="noreferrer noopener" target="_blank">[archive]</a></sup></span>
 </li>
 <li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text">
-<a class="external free" data-href="https://www.privacy-handbuch.de/handbuch_93c.htm" href="https://www.privacy-handbuch.de/handbuch_93c.htm" rel="noreferrer noopener" target="_blank">https://www.privacy-handbuch.de/handbuch_93c.htm</a> <sup><a data-href="https://web.archive.org/web/https://www.privacy-handbuch.de/handbuch_93c.htm" href="https://web.archive.org/web/https://www.privacy-handbuch.de/handbuch_93c.htm" rel="noreferrer noopener" target="_blank">[archive]</a></sup></span>
+Ignoring potential exploitation of the DNS resolver software.)</span>
 </li>
 <li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">
+<a class="external free" data-href="https://www.zdnet.com/article/mozilla-enables-doh-by-default-for-all-firefox-users-in-the-us/" href="https://www.zdnet.com/article/mozilla-enables-doh-by-default-for-all-firefox-users-in-the-us/" rel="noreferrer noopener" target="_blank">https://www.zdnet.com/article/mozilla-enables-doh-by-default-for-all-firefox-users-in-the-us/</a> <sup><a data-href="https://web.archive.org/web/https://www.zdnet.com/article/mozilla-enables-doh-by-default-for-all-firefox-users-in-the-us/" href="https://web.archive.org/web/https://www.zdnet.com/article/mozilla-enables-doh-by-default-for-all-firefox-users-in-the-us/" rel="noreferrer noopener" target="_blank">[archive]</a></sup></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">
+<a class="external free" data-href="https://www.privacy-handbuch.de/handbuch_93c.htm" href="https://www.privacy-handbuch.de/handbuch_93c.htm" rel="noreferrer noopener" target="_blank">https://www.privacy-handbuch.de/handbuch_93c.htm</a> <sup><a data-href="https://web.archive.org/web/https://www.privacy-handbuch.de/handbuch_93c.htm" href="https://web.archive.org/web/https://www.privacy-handbuch.de/handbuch_93c.htm" rel="noreferrer noopener" target="_blank">[archive]</a></sup></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text">
 <a class="external free" data-href="https://unbound.net/" href="https://unbound.net/" rel="noreferrer noopener" target="_blank">https://unbound.net/</a> <sup><a data-href="https://web.archive.org/web/https://unbound.net/" href="https://web.archive.org/web/https://unbound.net/" rel="noreferrer noopener" target="_blank">[archive]</a></sup></span>
 </li>
 </ol></div></div>
@@ -492,7 +554,7 @@ Search engines: <a data-href="https://search.yacy.net" href="https://search.yacy
 <a data-href="https://t.me/share/url?url=./DNS_Security" href="https://t.me/share/url?url=./DNS_Security" rel="noreferrer noopener" target="_blank"><img alt="Telegram-share.png" data-src="/w/images/thumb/5/5a/Telegram-share.png/55px-Telegram-share.png" data-srcset="/w/images/thumb/5/5a/Telegram-share.png/83px-Telegram-share.png 1.5x, /w/images/thumb/5/5a/Telegram-share.png/110px-Telegram-share.png 2x" decoding="async" height="20" src="data:image/png;base64,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" width="55"/></a>
 </p>
 <div style="padding-bottom:1px; padding-top:6px; border:thin solid black; background:#EEEEEE; text-align:center;">
-<p>Did you know that anyone can edit the <a data-href="/wiki/Documentation" href="./Documentation.html" title="Documentation">Kicksecure ™ wiki</a> to improve it?
+<p><a data-href="/wiki/AppArmor" href="./AppArmor.html" title="AppArmor"><img alt="AppArmor" data-src="/w/images/thumb/3/3f/2000px-AppArmor_logo.svg.png/25px-2000px-AppArmor_logo.svg.png" data-srcset="/w/images/thumb/3/3f/2000px-AppArmor_logo.svg.png/38px-2000px-AppArmor_logo.svg.png 1.5x, /w/images/thumb/3/3f/2000px-AppArmor_logo.svg.png/50px-2000px-AppArmor_logo.svg.png 2x" decoding="async" height="25" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADyklEQVRIid2VS2yUVRTHf/ebRx9DSouAUChIAWloQXlJqG2jkoqmQFCjiTEoMWHjkrgyMS7YmKgY08SNG8QUkCgMPor0QdqOLTSAYC0GranWtjPttGA703am33zfOS4KLGQgncQVJzmbe+/5/+45OfceeFDMZHJ4/Yv7yoC9QF3XycNd/xtk3QtvFAI7gdfm5OZWVW1aT9tPXUxMJtpA6xS+6z71eThjSOme1/cZqATKc7KzSjatXcP2rRup3raFQE42U4kkTRcu03z+IhevdpFQcx3oUAhdCx45/F89b1q08tHe3TvmPbttC2tWFMGNKN6Fi3FdQVXJyc5i11PlPG1NMvLbOf4Ub0nI8ZcEU7l7gLsgVlqGKhUb17F25XIkGmHog/dQxyEej5FyHFQVdRzGTn+JUaHY2GwigdrJtHdOCxFVVEGBseBx7KFB4qFmAoE5RMIRHMchFmrGjkYQkRlXRVyZPURVQZVUeIB4RwuSE+DmN8exUHIDuQyFI4yePj4jfMcFRTODqCo3g0dxA3NwX92PHR0iFmoiLy+PWGeI6EA/jit3MlGZickIMh0eINbegoii9V+hXj83g8ewRMlOTOCKMmancEUQmcmGe0DSdpeqMnalkwWPlmK98ibG58dEI9i1Bxlva6Rw50sMnwkidpK4rSxYvwFffBr9dXj2EAHyq3fhn5eH67pYlsEqXIpbuoHRU0dZUbmd4rfeJjnQhycrm0W7X+byxx8ivwxmVi6Px0vh4kL8Pj/GWBhj4T6yGjsaYby1kYLN5ST6epm7cSuTg/0Mh84hkkl3iTgTU1N4PB4WPrwQn8+HEeFGcz1JRxg5WQcGCp6oIGtJEX+d+ALbdVFwMshEuhvOX5rJyPIwf/5DTF3qwB2NknBdksMR/mk5S0HFM0wN9nMj1MzPjh9R0z1rCK5T+21LO1eu96CAESXVcBqjiohgizD8dR3iOPx94ggDjqFdcgBq08l50i3mL1/9uwqPha5eK9lRvplUZytjrQ34jMG91a7u5ATO9DR/NHzPITufSTxBY/TgeF/PXX18z69+WVVNvnh8oWVLFpe9I2Hmjg7eKiWkRDEGYli8bxfQb/zdlkplf1v9WDqt+86ToqqaRWp5G+caLTtgjbDK2Hf2esXLJ04BI3i7LaS6v61+6F46act122J9PRN5RSuPJTGPt2pgFSIsI0W9m8unqXzian6wkJqB0JnR++nMavwurXzeEswBNdZBr7jZjmjSoO8ai0ODP55N/zgyhdy2wiefK1ZlvxHns/CFpt5MYh8M+xcANQTyXC8IAQAAAABJRU5ErkJggg==" width="25"/></a> Join us in testing our new <a class="new" data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;redlink=1.html" title="AppArmor (page does not exist)">AppArmor profiles</a> for improved security! (<a data-href="https://forums.kicksecure.com/c/apparmor" href="https://forums.kicksecure.com/c/apparmor" rel="noreferrer" target="_blank"> forum discussion</a>)
 </p>
 </div>
 <table class="wikitable" style="background-color:#fff;text-align:center">
@@ -515,7 +577,7 @@ Search engines: <a data-href="https://search.yacy.net" href="https://search.yacy
 </p><p><font size="-1">Kicksecure <a data-href="/wiki/Trademark_Policy" href="./Trademark_Policy.html" title="Trademark Policy">™</a> | <a data-href="/wiki/Kicksecure:Copyrights" href="./Kicksecure:Copyrights.html" title="Kicksecure:Copyrights">©</a> ENCRYPTED SUPPORT LP | <a class="image" data-href="/w/index.php?title=File:Heckert_gnu.big.png&amp;filetimestamp=20201109154138&amp;" href="https://www.kicksecure.com/w/index.php?title=File:Heckert_gnu.big.png&amp;filetimestamp=20201109154138&amp;"><img alt="Heckert gnu.big.png" data-src="/w/images/thumb/a/a3/Heckert_gnu.big.png/25px-Heckert_gnu.big.png" data-srcset="/w/images/thumb/a/a3/Heckert_gnu.big.png/38px-Heckert_gnu.big.png 1.5x, /w/images/thumb/a/a3/Heckert_gnu.big.png/50px-Heckert_gnu.big.png 2x" decoding="async" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCklEQVRIiZXWTYhWdRQG8J8zby8yToNMGKFhZvZBmEhF2WQFEiURJhUtLPqAmFVFi9xUu5ZRu6igTcTkooQWQSEtLERqMrKgD1ArJ8s0k2kc1CbTFueZ3ut8mB643Hv/7/mfj+d5/ue+c3Rsca4erMQCHMAObIvPCdOtC8uxEG0cxWEcxD7ojuNqXIYHMYD9uSZwHHfkfXRKghYew5+4EctwPdZk7Xz8AldgFXbhGazFhY0qe3OfzXoaCHRhBTbgS6zHslYCLsevgWZrI8DJVNfCEowFip9SXC8OBaKj2fN1nj/CbTjUCiQ34ftJDBu2GhfjhSSbyHOX4uyBPD+HudiZfbuDzCMYaqXa+anwt0aCVenwlQZc7SRZkM724kW8jifT6Q/xHQ+ErVYCHGzguV2Rd1UCbsvaAaWu95T6RvAJXg5sG1PkWDpeHGRa3bgURzCo+FiEe3EN7kknc9L6U+hPR1cG+y5swlt4I7+dhyfwWaAzkMr34xS+w+eKbIHl2vgsDU8rEvzxdLUyvoOJcUxJdw1uEOe7cTU+DixrG9x0pfrVeCf4t9GXAvfi/vjOz/uritO70NWdzCO4DlsUcUNZh3m4BF/F7wtF6ih+Dk8j+FEd3N3Yk262KmGdZj3qIDXtISWC2awXzweaixp7/jvA3VM2zFPy3BWnO/GtUsyR+LSVXPvS4Z4k+idJLsAfGmduklwJul6d1EEFST8+bPi2c5/ALXhTnaUtWbsVw1NbbSaZm2sgG95O25PW1/B7TY2jfp1T3pP3s7ZHc9+QzU1b13iexH0pnp5S9DSn2Wyrgq63sbZTyZPOSDqp1NaeKciMmZUU22oyv6/Ozbv5bSS/rVPyPaFgOqgziU+zqeqatH24WSlnXKlsoVIanY/XolxjivDxc0lyXEnx7wT4FPepT8IOJdfL8Xv8Ns2WgDNzMqwU1ORjIx5WHGxXH6zDZ4hx1jY39zZewmbcrubTB85Rtv9nSxQvQ2qOncJfeFbnP8GMNhsnM9moGi3DapgewzeKn806A3Wa/QtVyb6pMl4s4QAAAABJRU5ErkJggg==" width="25"/></a> Freedom Software / <a class="image" data-href="/w/index.php?title=File:Osi_standard_logo_0.png&amp;filetimestamp=20201109154202&amp;" href="https://www.kicksecure.com/w/index.php?title=File:Osi_standard_logo_0.png&amp;filetimestamp=20201109154202&amp;"><img alt="Osi standard logo 0.png" data-src="/w/images/thumb/0/09/Osi_standard_logo_0.png/25px-Osi_standard_logo_0.png" data-srcset="/w/images/thumb/0/09/Osi_standard_logo_0.png/38px-Osi_standard_logo_0.png 1.5x, /w/images/thumb/0/09/Osi_standard_logo_0.png/50px-Osi_standard_logo_0.png 2x" decoding="async" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAeCAYAAADZ7LXbAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEC0lEQVRIid2Wy28bVRSHvxnb40liJ47zJOO2oQT6oEjApqlUUGDBY1PFbBASLGBBVIQQUhH8E2wrVKlIpZVYoEq2WAQJQQUVqkRJQYI0pCht0jA3CXFiJ357PPZlkUlkeyYtQcCCs5mZe8/5feeeM3PvwH9gyl6cY+MxVSL9gC2Sov6PQYy48aSC8rrWHXg20OEfUfyKVrdl2c7ZM9Zm9SuJ/FgkxG9/C2LEjUFfQD3bORJ6KXywA3+b3+VTzVfJzhXqufnChXqtfkYkxMZfhhhx43G9J/hF3/HoYKDdLd5qVrbK6vfpOWvTel4kxJ37QmLx2LDeF/xh4GRPr+pT7wvYtppVY+Xq2oKVqR43k+Zq41yTijFuqL4236X+0eieAAA+zUf/iZ5hVVPOtc61Kp2KHAmf9AV9ewJsW6DDT9eh8LgRN57eFeLXfafDwx2eApVNi9RU2l6+mlpM3cjYVq7q6Rd+KITqV097QmLxmK73B8cU1f0ulFJllq+kPssvFAfmzt0+kJ8v7Fu+sjpZ2bBcvr6Ait4XfMEYN3a0G1cyonUFNK/sMr9kF+p2/TUzYaYBzIS5UqvWX85MZ9e8/LXOQASIuSGSqKq5my2RVNLWdyIpmtIWCZGvpK3rXhBVU0Eh4oYoFGVNesXg09VBz3FNjXiNOzplF0RKeaeas10BCgrtQ21jRtw41jhuxI3RtiF91AtSzdu2IpVFF0QkRbq8VvlZ4l5N9LEuf/uA/q0RN14FiMVjb4f2t3/d/Winq74SSWW9ct1Mmu6VAFSz9iflVMUFUQMqkSOdUUUqg45QqHMk1O71wZaWy1QL9qWm+JYszmduZle8VpObL1jABefxYn6+6KqtlJKNX7OLSC7uChEJkS2nKhMbN7NNwTWrRsEsXTaT5prjt1QQpcm63XykZKY36+V1a0IkRbFx3LV/5GZzt7RevaCoPBfs1VBQyM4VKC6X3srN5naaGX4kXAyE/K8EIxoSycZMls3Z/DsiKT5t1fTcx82E+aHEWCqvWWcjR8OR/N3CtKIo15prw2T+bmEpEPYPZWay6dIf5QmREJe99O55Mhpxoxd4E5gRCZF0zY8bb6DQC5wXCZG+l9a/bo09OQx8BPQAHwAPAO8Dg8B7wDHgR+AMEAZeBA4AXcBTwABwyvE/BdwAbGh+u6JACHgY6AcOASOOzwKw3wkaAI6y1c8YMOZcrwG6c68Bu/7NRB2Bdx3HCNDuwEOOcK8DjrT44CSnOzo7tlvjDzvBUWDVWdGKk932mA4MAZ872ceADSAPzDSK7XbOHgSeAebZKkeArRqfYKtn+4Ap4AkgDjzoQL8Bfm8V2w3iAwrAHFACZtkq0/Z/1ZTzfAtYB74EuoGfwGNP+t/Yn/7Ihet0ifULAAAAAElFTkSuQmCC" width="25"/></a> Open Source (<a data-href="/wiki/Reasons_for_Freedom_Software" href="./Reasons_for_Freedom_Software.html" title="Reasons for Freedom Software">Why?</a>)
 </font></p><p><font size="-1">The personal opinions of <a data-href="https://forums.kicksecure.com/about" href="https://forums.kicksecure.com/about" rel="noreferrer" target="_blank"> moderators</a> or <a data-href="/wiki/Contributors" href="./Contributors.html" title="Contributors">contributors</a> to the <a class="mw-redirect" data-href="/wiki/Kicksecure" href="./Kicksecure.html" title="Kicksecure">Kicksecure ™</a> project do not represent the project as a whole.</font>
 </p></div>
-<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=53465" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=53465">https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=53465</a>"</div></div>
+<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=53535" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=53535">https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=53535</a>"</div></div>
 <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"><div class="mw-hidden-catlinks mw-hidden-cats-hidden" id="mw-hidden-catlinks">Hidden category: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>
 </div>
@@ -581,5 +643,5 @@ Search engines: <a data-href="https://search.yacy.net" href="https://search.yacy
 </ul>
 </footer>
 
-</body><!-- Cached 20211205122821 -->
+</body><!-- Cached 20211206223838 -->
 </html>
