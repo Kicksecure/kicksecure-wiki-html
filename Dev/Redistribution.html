@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="client-nojs" dir="ltr" lang="en"><!-- 
  single html processed by https://github.com/zTrix/webpage2html
- title: Build and Update Kicksecure ™ from Source Code
- url: ../Dev/Build_Documentation
+ title: Dev/Redistribution - Kicksecure
+ url: ../Dev/Redistribution
 -->
 <head>
 <meta charset="utf-8"/>
-<title>Build and Update Kicksecure ™ from Source Code</title>
+<title>Dev/Redistribution - Kicksecure</title>
 <link rel=stylesheet type=text/css href=../style.css>
 
 
@@ -16,11 +16,11 @@
 
 <meta content="MediaWiki 1.37.1" name="generator"/>
 <meta content="telephone=no" name="format-detection"/>
-<meta content="Instructions on How to Build Kicksecure ™ Virtual Machine Images or Kicksecure ™ Packages from Source Code." name="description"/>
+<meta content="Design Documentation about Redistribution of Kicksecure ™" name="description"/>
 <meta content="@Kicksecure" name="twitter:site"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<link data-href="/w/index.php?title=Dev/Build_Documentation&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;action=edit" rel="alternate.html" title="Edit" type="application/x-wiki"/>
-<link data-href="/w/index.php?title=Dev/Build_Documentation&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;action=edit" rel="edit.html" title="Edit"/>
+<link data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit" rel="alternate.html" title="Edit" type="application/x-wiki"/>
+<link data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit" rel="edit.html" title="Edit"/>
 <link data-href="/favicon.ico" href="https://www.kicksecure.com/favicon.ico" rel="shortcut icon"/>
 <link data-href="/w/opensearch_desc.php" href="https://www.kicksecure.com/w/opensearch_desc.php" rel="search.html" title="Kicksecure (en)" type="application/opensearchdescription+xml"/>
 <link data-href="https://www.kicksecure.com/w/api.php?action=rsd" href="https://www.kicksecure.com/w/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
@@ -29,28 +29,28 @@
 <noscript></noscript>
 
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Build and Update Kicksecure ™ from Source Code" property="og:title"/>
+<meta content="Dev/Redistribution" property="og:title"/>
 <meta content="Kicksecure" property="og:site_name"/>
-<meta content="../Dev/Build_Documentation" property="og:url"/>
-<meta content="Instructions on How to Build Kicksecure ™ Virtual Machine Images or Kicksecure ™ Packages from Source Code." property="og:description"/>
-<meta content="https://www.kicksecure.com/w/images/c/c6/Blue-143734640.jpg" property="og:image"/>
-<meta content="2022-01-28T19:05:19Z" property="article:modified_time"/>
-<meta content="2022-01-28T19:05:19Z" property="article:published_time"/>
+<meta content="../Dev/Redistribution" property="og:url"/>
+<meta content="Design Documentation about Redistribution of Kicksecure ™" property="og:description"/>
+<meta content="https://www.kicksecure.com/w/resources/assets/wiki.png" property="og:image"/>
+<meta content="2022-03-01T02:57:41Z" property="article:modified_time"/>
+<meta content="2022-03-01T02:57:41Z" property="article:published_time"/>
 
 </head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Dev_Build_Documentation rootpage-Dev skin-vector action-view skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Dev_Redistribution rootpage-Dev skin-vector action-view skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
 <div class="noprint" id="mw-head-base"></div>
 <div class="mw-body" id="content" role="main">
 <a id="top"></a>
 <div id="siteNotice"><div id="mw-dismissablenotice-anonplace"></div></div>
 <div class="mw-indicators">
 </div>
-<h1 class="firstHeading" id="firstHeading">Dev/Build Documentation</h1>
+<h1 class="firstHeading" id="firstHeading">Dev/Redistribution</h1>
 <div class="vector-body" id="bodyContent">
 <div class="noprint" id="siteSub">From Kicksecure</div>
 <div id="contentSub"><span class="subpages">&lt; <a class="mw-redirect" data-href="/wiki/Dev" href="../Dev.html" title="Dev">Dev</a></span><div class="flaggedrevs_short flaggedrevs_stable_notsynced plainlinks noprint" id="mw-fr-revisiontag"><div class="flaggedrevs_short_basic"><span aria-disabled="false" class="flaggedrevs-icon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement-icon oo-ui-icon-eye oo-ui-iconElement oo-ui-labelElement-invisible oo-ui-iconWidget.html" title="This is a checked version of this page"></span><span aria-disabled="false" class="fr-toggle-arrow oo-ui-widget oo-ui-widget-enabled oo-ui-indicatorElement-indicator oo-ui-indicator-down oo-ui-indicatorElement oo-ui-labelElement-invisible oo-ui-indicatorWidget" id="mw-fr-revisiontoggle.html" title="show/hide details"></span></div>
-<div id="mw-fr-revisiondetails-wrapper" style="position:relative;"><div class="flaggedrevs_short_details" id="mw-fr-revisiondetails" style="display:none">This is the <a data-href="/wiki/Help:Page_validation" href="../Help:Page_validation.html" title="Help:Page validation">stable version</a>, <a class="external text" data-href="https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Build_Documentation" href="https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Build_Documentation" rel="noreferrer noopener" target="_blank">checked</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Build_Documentation" href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Build_Documentation" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup> on <i>28 January 2022</i>.
-<a class="external text" data-href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294&amp;diff=cur" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294&amp;diff=cur" rel="noreferrer noopener" target="_blank">1 pending change</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294&amp;diff=cur" href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294&amp;diff=cur" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup> awaits review.<p></p><table cellpadding="0" class="flaggedrevs-color-1" id="mw-fr-revisionratings-box" style="margin: auto;"><tr><td class="fr-text" style="vertical-align: middle;">Accuracy</td><td class="fr-value40" style="vertical-align: middle;">Spot checked</td></tr>
+<div id="mw-fr-revisiondetails-wrapper" style="position:relative;"><div class="flaggedrevs_short_details" id="mw-fr-revisiondetails" style="display:none">This is the <a data-href="/wiki/Help:Page_validation" href="../Help:Page_validation.html" title="Help:Page validation">stable version</a>, <a class="external text" data-href="https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Redistribution" href="https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Redistribution" rel="noreferrer noopener" target="_blank">checked</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Redistribution" href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Special:Log&amp;type=review&amp;page=Dev/Redistribution" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup> on <i>1 March 2022</i>.
+<a class="external text" data-href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651&amp;diff=cur" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651&amp;diff=cur" rel="noreferrer noopener" target="_blank">1 pending change</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651&amp;diff=cur" href="https://web.archive.org/web/https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651&amp;diff=cur" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup> awaits review.<p></p><table cellpadding="0" class="flaggedrevs-color-1" id="mw-fr-revisionratings-box" style="margin: auto;"><tr><td class="fr-text" style="vertical-align: middle;">Accuracy</td><td class="fr-value40" style="vertical-align: middle;">Spot checked</td></tr>
 </table></div>
 </div>
 </div>
@@ -61,10 +61,10 @@
 <a class="mw-jump-link" href="#searchInput">Jump to search</a>
 <div class="mw-body-content mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>.
 </p>
-<!-- Saved in parser cache with key www.kicksecure.com:stable-pcache:idhash:3115-0!canonicalwww.kicksecure.com and timestamp 20220302002654 and revision id 54296. Serialized with JSON.
+<!-- Saved in parser cache with key www.kicksecure.com:stable-pcache:idhash:3193-0!canonicalwww.kicksecure.com and timestamp 20220302002956 and revision id 54652. Serialized with JSON.
  -->
 </div>
-<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294">https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation&amp;oldid=54294</a>"</div></div>
+<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651">https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=54651</a>"</div></div>
 <div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
 </div>
 </div>
