@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="client-nojs" dir="ltr" lang="en"><!-- 
  single html processed by https://github.com/zTrix/webpage2html
- title: Install Kicksecure ™ inside a folder (chroot)
- url: ./Chroot
+ title: grub bootloader Configuration Changes
+ url: ./Grub
 -->
 <head>
 <meta charset="utf-8"/>
-<title>Install Kicksecure ™ inside a folder (chroot)</title>
+<title>grub bootloader Configuration Changes</title>
 <link rel=stylesheet type=text/css href=style.css>
 
 
@@ -16,12 +16,12 @@
 
 <meta content="MediaWiki 1.37.2" name="generator"/>
 <meta content="telephone=no" name="format-detection"/>
-<meta content="You can install Kicksecure ™ on top of your existing Debian (based) Linux installation inside a chroot (change root)." name="description"/>
+<meta content="Kernel Boot Parameter Changes" name="description"/>
 <meta content="@Kicksecure" name="twitter:site"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0" name="viewport"/>
-<link data-href="/w/index.php?title=Chroot&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit" rel="alternate.html" title="Edit" type="application/x-wiki"/>
-<link data-href="/w/index.php?title=Chroot&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit" rel="edit.html" title="Edit"/>
+<link data-href="/w/index.php?title=Grub&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit" rel="alternate.html" title="Edit" type="application/x-wiki"/>
+<link data-href="/w/index.php?title=Grub&amp;action=edit" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit" rel="edit.html" title="Edit"/>
 <link data-href="/w/images/4/45/Kicksecure-home-favicon.ico" href="data:image/x-icon;base64,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" rel="shortcut icon"/>
 <link data-href="/w/opensearch_desc.php" href="https://www.kicksecure.com/w/opensearch_desc.php" rel="search.html" title="Kicksecure (en)" type="application/opensearchdescription+xml"/>
 <link data-href="https://www.kicksecure.com/w/api.php?action=rsd" href="https://www.kicksecure.com/w/api.php?action=rsd" rel="EditURI" type="application/rsd+xml"/>
@@ -45,24 +45,24 @@ div.wip a {
 <noscript></noscript>
 
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Install Kicksecure ™ inside a folder (chroot)" property="og:title"/>
+<meta content="grub bootloader Configuration Changes" property="og:title"/>
 <meta content="Kicksecure" property="og:site_name"/>
-<meta content="./Chroot" property="og:url"/>
-<meta content="You can install Kicksecure ™ on top of your existing Debian (based) Linux installation inside a chroot (change root)." property="og:description"/>
-<meta content="/w/images/thumb/f/fc/Kicksecure-twitter-post.jpg/470px-Kicksecure-twitter-post.jpg" property="og:image"/>
-<meta content="2021-12-01T21:17:18Z" property="article:modified_time"/>
-<meta content="2021-12-01T21:17:18Z" property="article:published_time"/>
+<meta content="./Grub" property="og:url"/>
+<meta content="Kernel Boot Parameter Changes" property="og:description"/>
+<meta content="https://www.kicksecure.com/images/thumb/6/6a/Grub-persistent_mode_indicator_in_kicksecure.cleaned.png/705px-Grub-persistent_mode_indicator_in_kicksecure.cleaned.png" property="og:image"/>
+<meta content="2022-04-14T17:36:45Z" property="article:modified_time"/>
+<meta content="2022-04-14T17:36:45Z" property="article:published_time"/>
 <meta content="website" property="og:type"/>
 
 </head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Chroot rootpage-Chroot skin-vector action-view skin--responsive skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Grub rootpage-Grub skin-vector action-view skin--responsive skin-vector-legacy"><div class="noprint" id="mw-page-base"></div>
 <div class="noprint" id="mw-head-base"></div>
 <div class="mw-body" id="content" role="main">
 <a id="top"></a>
 <div id="siteNotice"><div id="mw-dismissablenotice-anonplace"></div></div>
 <div class="mw-indicators">
 </div>
-<h1 class="firstHeading" id="firstHeading">Install Kicksecure ™ inside a folder (chroot)</h1>
+<h1 class="firstHeading" id="firstHeading">grub bootloader Configuration Changes</h1>
 <div class="vector-body" id="bodyContent">
 <div class="noprint" id="siteSub">From Kicksecure</div>
 <div id="contentSub"></div>
@@ -94,30 +94,30 @@ div.wip a {
 <a class="recentchanges user-logged-in" data-href="/wiki/Special:RecentChanges" href="./Special:RecentChanges">Recent changes</a>
 <a class="print" data-href="javascript:print();" href="javascript:print();">Print Version</a>
 <span class="headline pagemeta">Page meta</span>
-<a class="whatlinkshere user-logged-in" data-href="/wiki/Special:WhatLinksHere/Chroot" href="./Special:WhatLinksHere/Chroot">What links here</a>
-<a class="relatedchanges" data-href="/wiki/Special:RecentChangesLinked/Chroot" href="./Special:RecentChangesLinked/Chroot">Related changes</a>
-<a class="info" data-href="/w/index.php?title=Chroot&amp;action=info" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=info">Page information</a>
+<a class="whatlinkshere user-logged-in" data-href="/wiki/Special:WhatLinksHere/Grub" href="./Special:WhatLinksHere/Grub">What links here</a>
+<a class="relatedchanges" data-href="/wiki/Special:RecentChangesLinked/Grub" href="./Special:RecentChangesLinked/Grub">Related changes</a>
+<a class="info" data-href="/w/index.php?title=Grub&amp;action=info" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=info">Page information</a>
 </div>
 <div class="col2">
 <span class="headline page">Page</span>
-<a class="view" data-href="/wiki/Chroot" href="./Chroot">Read</a>
-<a class="edit" data-href="/w/index.php?title=Chroot&amp;action=edit&amp;oldid=53296" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;oldid=53296">Edit</a>
-<a class="history user-logged-in" data-href="/w/index.php?title=Chroot&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=history">History</a>
-<a class="move user-logged-in" data-href="/wiki/Special:MovePage/Chroot" href="./Special:MovePage/Chroot">Move</a>
-<a class="protect" data-href="/w/index.php?title=Chroot&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=protect">Protection</a>
-<a class="unwatch user-logged-in" data-href="/w/index.php?title=Chroot&amp;action=unwatch" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=unwatch">Unwatch</a>
-<a class="watch user-logged-in" data-href="/w/index.php?title=Chroot&amp;action=watch" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=watch">Watch</a>
-<a class="delete user-logged-in" data-href="/w/index.php?title=Chroot&amp;action=delete" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=delete">Delete</a>
-<a class="purge" data-href="/w/index.php?title=Chroot&amp;action=purge" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=purge">Purge</a>
+<a class="view" data-href="/wiki/Grub" href="./Grub">Read</a>
+<a class="edit" data-href="/w/index.php?title=Grub&amp;action=edit&amp;oldid=55946" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;oldid=55946">Edit</a>
+<a class="history user-logged-in" data-href="/w/index.php?title=Grub&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=history">History</a>
+<a class="move user-logged-in" data-href="/wiki/Special:MovePage/Grub" href="./Special:MovePage/Grub">Move</a>
+<a class="protect" data-href="/w/index.php?title=Grub&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=protect">Protection</a>
+<a class="unwatch user-logged-in" data-href="/w/index.php?title=Grub&amp;action=unwatch" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=unwatch">Unwatch</a>
+<a class="watch user-logged-in" data-href="/w/index.php?title=Grub&amp;action=watch" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=watch">Watch</a>
+<a class="delete user-logged-in" data-href="/w/index.php?title=Grub&amp;action=delete" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=delete">Delete</a>
+<a class="purge" data-href="/w/index.php?title=Grub&amp;action=purge" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=purge">Purge</a>
 </div>
 <div class="col3">
 <span class="headline user">User</span>
 <a class="preferences user-logged-in" data-href="/wiki/Special:Preferences" href="./Special:Preferences">Preferences</a>
 <a class="watchlist user-logged-in" data-href="/wiki/Special:Watchlist" href="./Special:Watchlist">Watchlist</a>
 <a class="contributions user-logged-in" data-href="/wiki/Special:Contributions" href="./Special:Contributions">Contributions</a>
-<a class="logout user-logged-in" data-href="/w/index.php?title=Special:UserLogout&amp;returnto=Chroot" href="https://www.kicksecure.com/w/index.php?title=Special:UserLogout&amp;returnto=Chroot">Logout</a>
-<a class="createaccount user-logged-out" data-href="/w/index.php?title=Special:CreateAccount&amp;returnto=Chroot" href="https://www.kicksecure.com/w/index.php?title=Special:CreateAccount&amp;returnto=Chroot">Create account</a>
-<a class="login user-logged-out" data-href="/w/index.php?title=Special:UserLogin&amp;returnto=Chroot" href="https://www.kicksecure.com/w/index.php?title=Special:UserLogin&amp;returnto=Chroot">Login</a>
+<a class="logout user-logged-in" data-href="/w/index.php?title=Special:UserLogout&amp;returnto=Grub" href="https://www.kicksecure.com/w/index.php?title=Special:UserLogout&amp;returnto=Grub">Logout</a>
+<a class="createaccount user-logged-out" data-href="/w/index.php?title=Special:CreateAccount&amp;returnto=Grub" href="https://www.kicksecure.com/w/index.php?title=Special:CreateAccount&amp;returnto=Grub">Create account</a>
+<a class="login user-logged-out" data-href="/w/index.php?title=Special:UserLogin&amp;returnto=Grub" href="https://www.kicksecure.com/w/index.php?title=Special:UserLogin&amp;returnto=Grub">Login</a>
 </div>
 </div>
 </div>
@@ -140,238 +140,123 @@ div.wip a {
 <i class="close-panel fas fa-times"></i>
 </div>
 </div>
-<p><br/>
-</p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
-<p><a class="image" data-href="/wiki/File:Ambox_notice.png" href="./File:Ambox_notice.png"><img alt="notice" data-file-height="2000" data-file-width="2000" data-src="/w/images/thumb/c/c8/Ambox_notice.png/40px-Ambox_notice.png" data-srcset="/w/images/thumb/c/c8/Ambox_notice.png/60px-Ambox_notice.png 1.5x, /w/images/thumb/c/c8/Ambox_notice.png/80px-Ambox_notice.png 2x" decoding="async" height="40" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAtFBMVEUAAAAzZswrVdUuXdE5Y8Y2a8kzZswxYc4xYs4vaMYxY84yZM0xZ8gxZ84xZ84xZ84zZswyZc0yZ80xZcsyZ80yZc0yZ80yZs0yZssyZs0yZss0ZsszZcwzZ8w0Zss0ZsszZsozZswyZs00ZssyZc0yZs0zZ8wyZs00ZsszZ8wyZcwyZswzZ8wzZswzZswzZssyZswzZswyZcwyZcwzZcwzZswzZswzZcszZsszZsszZcwzZsx0fp/GAAAAO3RSTlMABQYLEhMUFRobHykqKjQ+S0xSU1xgYWtscHFxfHyFj5aWmJmdnaSsrcLDw8zX4ebn6+/w8PT19/f6+7st35YAAAEKSURBVDjLjdXbUsIwFEDRrUXQVkUBL4hSpYpGQ7Uo9XL+/798UJiGps3Zj5k1zaSdnIJTPMqMfX23NhsnNBZdWKmUX/f8bFLIVmXarbvjhXgqBtvuShq623VcJo2ZSOccOZHWHjbncNcB3JXz//eyCMHywLtxHcocICrCUBLgUhRlgNXAVUSscSKnjHQw9XwU32HkBaODS89ZvFB408IPLVRvrYSf2tdjGevgjEQHh5Br4Pce3GjgI9ArFbAPkIahAaBbBOHR3zUchOB0fbFvpTWzmRQ7ps3lncpsbJF57EzR+8Z9O7idlV43pdb+3PO4Q+8UT7JVVf089Zv/Cyfp81JE5MvOhu6g/wUnGQ6lMn7gQQAAAABJRU5ErkJggg==" width="40"/></a> This is a pre-release. (<a data-href="/wiki/Pre-release" href="./Pre-release.html" title="Pre-release">What does that mean?</a>)
-</p>
-</div>
-<p>You can install <a data-href="/wiki/Main_Page" href="./Main_Page.html" title="Main Page">Kicksecure ™</a> on top of your existing Debian (based) Linux installation inside a <a class="mw-selflink selflink">chroot</a>.
-</p>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a class="image" data-href="/wiki/File:Grub-persistent_mode_indicator_in_kicksecure.cleaned.png" href="./File:Grub-persistent_mode_indicator_in_kicksecure.cleaned.png"><img alt="" class="thumbimage" data-file-height="737" data-file-width="1280" data-src="/w/images/thumb/6/6a/Grub-persistent_mode_indicator_in_kicksecure.cleaned.png/300px-Grub-persistent_mode_indicator_in_kicksecure.cleaned.png" data-srcset="/w/images/thumb/6/6a/Grub-persistent_mode_indicator_in_kicksecure.cleaned.png/450px-Grub-persistent_mode_indicator_in_kicksecure.cleaned.png 1.5x, /w/images/thumb/6/6a/Grub-persistent_mode_indicator_in_kicksecure.cleaned.png/600px-Grub-persistent_mode_indicator_in_kicksecure.cleaned.png 2x" decoding="async" height="173" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACtCAYAAAAK5kK8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAgAElEQVR4nO29eZAcx33v+cm+po+5ZzA3gBkMABInMcBwQAA8RdIgQejxACVSPJailtKzjpW1IVs+1rHvPa2sCIcdL7TPu47948Xzsy1ZNiWCBEUqJJkWCQImCQi8CYK4B+fc990z3bV/ZFVPdXVWdTcOsmtQ34iJ6qrM7+/3y19m/vLo7BoBaHjw4MGDC+D7rA3w4MGDh1zhBSwPHjy4Bl7A8uDBg2vgBSwPHjy4Bl7A8uDBg2vgB/7zZ22EW+D3+1m0aBGaJr9YjUajJJNJiouL8fv9+Hw+QqEQwWCQubk5R251dTWxWIx4PE44HE7jFhcXU1paSjAYZHp6+qqWKRgMEo1GicfjefF8Ph/V1dVEo1GmpqYy0s3lnZ2dpbKykpKSEuLxOMlkMiN/NBolFosxPT2N3++nurqa6enplL+cEI1G8fl8JBKJjDSr3tLSUkpKSpQ2A5SXl+Pz+ZidnbW1T6XXWt58fOUhd3gBK0f4fD4efPBBqqqq2LJlC9PT03znO99hYGCA++67j9raWqLRKCtXrmTJkiWcOnXKlnvixAn+9E//lGQyyfr161m2bFkad9myZWzbto1NmzZx/Pjxq9rIGxsb2bRpEydPnsyLd/3117Nq1Sra2trw+Xx0dXWl0szlvfXWWxkcHGTr1q1UVVWxYcMGDh8+nCGvpaWFxx57jDfeeIMdO3awefNmAoEA58+fd7SjrKyMP/7jP2ZkZIQLFy6kpVVWVnLHHXek9I6MjHD//fdTVVVFfX09nZ2dGfLuvPNOVq5cySeffJL2vLm5maeffpp9+/Zl6O3q6kor78mTJ9MCm5OvPOSHwGdtgFsQCoW44YYb+P73v09paSl1dXUEAgG+/OUvc+LECYQQAKmrE3d0dJR4PJ6a2Vi5/f39rFy5Ep/Pl3WGcdddd9Hd3c2JEyf4yle+wqlTp4jFYpSVlfHzn/+c+++/H5/Px+TkJP/6r//KQw89xPDwMBcuXODAgQMsW7aMcDgMwPbt2wmFQlRVVbF7927uv/9+ent7KS0t5ec//3maLUeOHKG3t5eHHnooLTiby/uzn/2MRYsWUVtby4svvsijjz7KW2+9BcCKFStYu3Yte/bsoba2ljvvvBO/34/f72ft2rW8/fbbfPjhh5SVlbFr166UzSMjI2zcuBEhBG+88QY9PT2cOnUq5btgMIgQAk3TGBwcTNO7efNmzp49m7J779693HnnnfT39/Pee++xceNG1qxZw4kTJygvL2fXrl1MTExw7tw5jhw5QlVVFY888gi7d+9mdnY2pdda3h07djA+Po4Qgvfff9/RVx7yg7eHlSfa2tr49re/jd/v54MPPuCFF17Iadli5SaTSSYnJ5mZmVHm7e3tJZFIpIKJHcLhMJWVlUQiESoqKmhvb2d2dpa+vj5AduDDhw/T19fHxMQEU1NTTExMcOTIEQB6enqorKwEYNOmTezbt4/y8vLUkrS3t5f169fj86U3lfLych5++GGef/55hoeHlbYVFxfj8/kIBoN88Ytf5J133uH48eMUFRVx4403sm7dOhoaGnj88cd57bXXSCQSJJNJhoeHGRgYYGJigvHx8TSb16xZw+nTp2ltbaWrq4vJyUlGRkYAuQy9+eabufXWW7npppsIhUJpegECgQDRaBSAmpoaNmzYQHt7O5WVlezcuZP9+/cDUF9fT0NDA0NDQ6nl/eDgIGNjY9x8881peq3lNeqksrKScDick6885AYvYOWIeDzO8ePHCQaDqSCjaRrHjh1D0zRGR0epq6ujqqqKsbExR24kEiEYDHL8+HFaW1szuGVlZcRiMYQQGXthVrzyyiu0trby5JNP8o//+I8MDQ1x7ty51H5OSUkJoVCI1157jeLiYoaHhyktLaWjowOQS5uSkhKEEIyMjNDS0oLP58u6p3XHHXekgtm6desAaG9vp7W1NVVegEgkAsjgUFRUxPbt25mZmeGll17ixz/+MefPn2dqaoqqqioAioqKCIfDKV5paWmazaOjo9TW1hIKhQAZJCorK6mrq8Pv9/Pqq6/yyiuvsG/fPpYtW5am94MPPqCmpoZIJMKhQ4fo7u7mpz/9Kbt372ZsbIy5uTmi0SjRaJTp6WkGBgbo7e1NlTkSiVBWVsb09HSaXiFEWnk/+uijVFAsKytT+srDpUHg/TQnZ4RCIZqamhgZGWFycpJYLMbo6CgVFRUMDAywZMkSNE3jzJkzGRvLVm59fT0XL16krKwsg1tXV0ckEmFqaoqLFy9mtSsSiVBcXExfXx/FxcXU1tYyNTVFV1cXLS0tTExM0NPTA8CSJUsIBoNcvHiRqamp1N5bZ2cnsVgsxb148SKLFi1iYmKCysrKjL2kyspKKioqALmEHRkZoaKigng8zsTEBKFQiMWLFzM0NMTU1BQNDQ0ATExM0N3dnSaruLiYqqoq4vE4g4ODNDY22tpcW1tLfX099913Hz/4wQ/w+/3U1dUBcO7cubRAGw6HaWxsTNNr+FZVR4sWLSIQCOD3+7lw4QKLFy9O6Y3H4zQ3N5NMJjlz5gyRSCRNL5Aq7+DgIEuWLGFqaiq1gW/1lYdLgxewPLgK5eXlbNu2jb6+Pg4ePPhZm+PhU4YXsDx48OAaeHtYHjx4cA28gOXBgwfXwAtYHjx4cA28gOXBgwfXwAtYHjx4cA0Cmbfln4khHjx48JCJYWD+8LQlYC0H/vxTNceDBw8e7PEDYP6H6JaAJTIfXRPQkGW/VrgePLgF6W1cHZ1KNEh764DROaxXa5pZiR3Hmt+Ja9ZvNv5KcCGzw18LXJXvVHXtcd3BtYOqr5p1OfELgBsXoHgVXGbACmvwJ8AvgaTZkZrpag0U2Q7LazZXM1SH7u0KfaW4dvKuBa5T/Xlcd3LtZFnz5vIDl8+Q2wDENPiHzFTFDEvAtAZvAkmn0Vw121EZaTbU6ZoNTjO+fLkq23LhLwSuXV7rKO9x3cE1wzqZsFsNqfgFxL1egy3qfq0IWE7RUfXcynOSle2aa57L5eZjoxPfjVwneR7X/Vy7/pBLcCxU7jwU57DsIqE53ZonF45dejZZ5quVfzncXGU4wY1cI5+qHj2ue7lC8WdO07CXV8jcdCgClv2MZuPGClpbY6xfX0YsJidnGzZUUFTky+A2N8dob6/MIlOl18meXEYVwfr1Zdx6aw3BoGDjxgrCYR/r15dRVhbixhur8PkEHR1V+mt157nNzTHuvLMmVTaAlpZiamrs3vqZzwhZKFyDb/ZnviO9xy0sriA9v7WvWPuQavlWqNx0qGdYQl6FEEQiAYJBH8Ggj46OKr785Rb+/M/XsGRJDJ8P7r67Vu/gglgsQElJEL/fR3FxkL/8yxtS3EDAR0lJkEhE5i0q8lNSEiQU8lm4glDITyAgiEZl3kgkQFGR34ZrFF7ittsW8dRTzSxeHOG++xr467/ewI9+1MYPfrCOVatK+dGP2giFfPy3/7aRQEBGdZ9PsGFDOcXFQX7wg3UkEvNObW+vYOnSKCDtiUQChEJ+/H4fRUV+ior8aTbLfH7Uo0cuMz5z+tXgWq+qWavHdQ83m8xsegqdmw6bQ1cyY11dmL/9203MzWn89/9+isHBOL//+63s3n2eY8fGKCsLsmNHA//0T2dZtizGf/pPazh8eJTu7in+7d96CYf9/PCH6/nxjzvZsaMBv19QXR3iL//yE370ozaOHRujqSnKD3/4MX/+56tT3NraCMePj/H00y08/vhbfOMbrWzcKGdr3/ve+/zVX92Q4j7zzO/0ACNtvv32Gt5+e4j9+/uZmJjjm99cTnNzjNtvr+GHPzySKqHxGnYh4JlnljE3p/HrX3czMZFgelq+idLng+3b69iz5yLB4DB/8zcb+eijEdasKePv//40990n36L5wgsXCAQE27fXcejQIGvXlvEXfzGvyx6qygO79fuV4aoaTjZdHrdwuYLc2svC4Kp/S6h35kWLiqivj7BqVSkNDXJZ1NU1TWVliKIiH0NDs4yPz+LzweLFUUZH5/irv/qEn/zkLAArVxZTVRXio49G+ed/PktNTRF79/YxMTHH6tWlHDo0xHPPnaOpKZ0bjfopKvJRWhpECOjsnOT48TF+9KNjJBJaGjeZ1NKM1jQoLg7wp3+6ii9+cTHJJHzrW+/wu98NZrpNCJ56qplo1M///J+nU88DAcGiRUUkkxqdnZOEQj5mZ5NMTyc4dmyMNWvKCIf9xGIBYrEAgYBg//5+pqcT/NEfXc9//a/HUE93rVNkp43Uq83NNc3jFjYX5gMAecjCJdx0OP74+ciRUZ588i3uuONVXnqpi+bmGG+80U91dZjm5hhlZUGqqopYujRGT880FRVBvv71Vh59dAktLTHefnuIY8fGePDBRu67r56PPhrh8ceXUlwc5PjxcaJRP5s2VWRwjx0bY+PGCvr7Z1i6NEZzc4yGhggHDw4wMDCTxp0/3yo//PSnZ2hvr+TcuUni8STxeILx8TnOnJH3PT3T7Nq1mM7OcdatK6O6uoi/+ZsTJJPQ0hKjvDzI97+/lgceaEQIwdKlUVpaYoBgdjZJIqERjyfo7pY2JxJJli0rpqOjkqqqIv7H/zjNN76xnOzTYtXoYk2/WlyVrFym8h638LggO7ZT+1Dlx/S5kLmZT01SVkH4P8EfafAXAiz/oLeiIkg8niQQ8DE+Ln+QWF0dYnx8jomJBFVVIQIBweBgnFDIRyjkSy2vkkmN8nLJHxqapaQkQDTqV3ITCY3q6iKmphLMzWmEwz78fkF/fxzQKCkJmrjGDyPnnVJWFkLTNOLxJOGwn9HRWUpKgoyPzxGN+lPceDxJMgmJRBIQxGJ+iovlKnl0dI6pqQTV1UUkEvM2z8wkKS4OMDgYp6oqRDyexOcTzM0lmZuTOsvLgwwNzZoqRTUSCku6qlKvBtem6m3TPG7hcy/neQFyrwe2AH8ngP8CHLHLaQQs4C/ICFi5wdyBcrm/VLlXkmuXnotON3IvJ7/H9bhXmWscHP07sAYsm2MN5vWkJW2RBj7TGvN6DRpV603rM7t1KuprMbBJ0y1UyXHglgBR030jUGnlqtbJqnKbnkU1uFGDojy5Pg3aNSjXYI0GQvfhKhvu9UCTyleXYHPWPxNHaNCmSf1+3Vaffi3ToFn3wXIF93oNNmh6G9XTr9MglIv9dm3D4+bOxSavKp+buOmwOdZgXluasBR4HLgP8An5txTYLMAPFOn5IpqUXCxMz4AiIa/oz4sFhPT0KDJIGRb5gAeYTzevd81cQ29M54SAJ4ElJrsXC/01X1auSOcK3YaYWadJ7wPAEgEd+r3Z5pD+p+ImBdwIrBDwsO67MLDSlM2st07IESas503zlUWvlRsR8/LR/R2xcoWp5k11fL+QaSuBJgHfAT4v4DG93LcD1QJ2mLgRoEm3ea3Q25guf4WAoNnPYt5XAaMt6PYJow1Z256qLVo/Z+MsZK5KljXNms9N3HSof5pjNDrr80eBXwH3CXhXg3XI0fgM8lVa7Rr8BPiWgJ9ocCtQD/w/GtyJbKD1wE812Qne1WAR8neLT2owCPTq96lgZY64AgIa/D7wngZrgJ8CT2twSs/yDlAHtALHNbmsXa/BOwLOWrkaPM089wSwDWnHIQ06TY70a9CiP38DqNPgIeAcshMeRd6PAa9q8JG5EjSYAR7Q4FkgoUE10oZfIINZKxDX5U8DNcCXBPxcgyeAExqUAm9qMiAbvuq2cHcBu4H/IKTfn9L1BYEXDK4GvQL2WEax1Rr8GDgrYEiTZblBgwpFPaDJmeYXgNeRvz+dMZU3DGzUfRXQ4H8FTmmg6eldGtwB/N/AVl12uZB19oFVn0Vvxqhs0pvBuRa45nvr1ZruNm46ssywDBjBAgjr14iAm4RskACTQJmYH/k3CZhFjsh+Af26TJ+QDbNKwOsCnhdQBswJeEPAu8DNQnb4cUW0DejcNwTUC9mpygUcFXK2d05AP/ChgISQHaRfyNHblovkHhfQB8wKKcesNyGgW8AFXW4FMCngfZ3bK2S5/0lAl2oUEdApoFnI217dJpCzmRPAcwLO6HmvF9ADjAn4rYBGAe+afYX0lZVbJKSPQ7rNcQEHBPxayFnmHPN+Vo12RUIGtRoh/f+3AkbN7UH/HBTwiICDQg/supxivY1MCpjS29IIUrdRRwG9TRizqVcFtAs5+/tAUedmvcoRWpV2rXGtHCeu5iJuOnJ8p7tOnhby5X/9yGA0hAwAJcB5Ab8D/ncBP0OO/hFkp6sBEsjOEte5g8BtyBF6RMhZxVKgGbgALEM29BqLKXM6dxvQhQxIAWAtcqaHfr1PlyGQsxnDBjM3KaQ9xnUFMog06HYAqYjvR3Y6w54hIZdhG4TUV4OcVUwDAwpuBXAQOSv1CZk/YvhO1/1F5CyuBnhNn9E1IJegXcgZScpXQtpo5Z5F7h3FkbIr9PKfBAaFrEPDz2YbEbAH2KLJOtOQM6YRYNwor4ANun+3Am9r+ssg9fLU6zPYKmTwKUHOoBEycCaRdp0HWjX59tsaIWffBzU56G3AAlXjNY/Y5vtrnZsr1MGgsLnzEkylXwXh/9PmW0Ih35U1gxy948hlhk8XYbxsy+i0AtloZ3U5GjI8+gTE9SVKkPkAFhFyg3dKgKZBVMCsJoPJnKWCQiauAL4v4P/V5Ownqel7OJoc5dGkHUndrpBFb9goi25XVNc/qfBWFBn0ZvT7iF6mKSGXjCEBU5r629WozgvqdgSQ+zrm8hp6w7oen8nPab4y6bVyjT09IzgYsjJsJrN+DV/N6X8h3VajTs1cH6ZXbev+NmaMhu+iKj/r11TbEHLJOKObENDTc4Kl+eaFhcq1y+MirsOxBof3IZujoS5sWn8+o0/t4kaaabo3rV81DSYshiRM+eL6LMDgTll0TVjuzQWLM8+NaXJGN8X8CweT6J1Gv5+0ck0jlRFoZ6x6rb7QTHLItDmJ7IDZuAk9vxEUMsqL6U2LNjbb+gop31xepc2qkVrhK6O+pxVc68sdrTaDXv/mdKEHTi29fo3Ap+ntIiXHbKODzVa91ywXS7qZo1nyuYWbDpvXy1iF6fdrhdwgNva4Isj9pibk/tVyPe965EbwLcA2AQ1mmearw7MSZJT1C0Ve031AyGXLlIBVQo7kW4DNyFnTWiFtuBkoEfLbt62aXBZl6NY9sk7IWdpa5rlRQ6e10ZivljI0CbkERMH1634y8l4HLHfySR5664Ves/qzNZr+ba21boXcyE/pFflx0/RabI8IWKVZ8pi4q5HfLgeF9HdYyGMeJUIus32aXB4KC7fJWh9CfoNZrfJVnjZn49r5yqe3q3Ib7tW2uYb0b8XN/ApTv6xF9o20NmlCE7BVmP5xlqWdNTNv8wohZS01C7Cz25pHyC+c7Gy25drtYWXmk6hE7pcYvp1BfhM4h9xruVl//h+QG6p3ImcdLQpZFcjlQal+X6bLD+gGBJDfRgaRS5NKZBCzwtBbBdwN3CqkrDIB7TqvFVmpJcgg4RPwZfRgaC6wgN9DVkoSqBTz3DLkMqZSyKAYEHIPq1zM25wGIfPfq99GkY3HCAZhZKMV+n0RMsCD7LQCuYHtN8kzrmVAqX4vhPSl0cjKhdxHMu79yP2ugO7bqKFDF1kh9H0mnWPHhfQ6Mrh2/xVuBjlYtCnS2pBBagoZlB4Avg7cj/yG9yFk3exivoX6kUuFWeBOkf6+7wbdVyDbU4lRR3p5o/rnCDJACubbXQZ0v+bjqySyXbXoeq24mjbXAN9GtnUrioCvArfoZXoSuT98l67fjEVI/18A/hfmj5wY/qgD/gDZH/zI4HccvR9ZZAlkm4zq3BJdntGe/chgZbY5o2+rg1B+/0g1rqUve4xl0CxkTOPimnRwraZ/k2iaIYSB/wv4FvB/aHCHJr+634xsvPWa3EQ2HPGEJoPgH6AfADWgkTFtfF2bz3NQt2MFcqP4om7rJuC8ZlnW6PJWIjeoQd+I1yR3APgGcib0HzUo1qQ9j+g2W+3YBNyuzft9NbIhbNFtrkB2XKFzzfs2X0ce1PwysqFYy7sN+Cay0W3TYDvyjFSL/qxUk8dHQAb7DuQRhOXIc2AA39RkZ1uq+4cs3EZd58PI4xlrgS9q8ouA1IBk8kES+QVAi8LHy4Bufbl6XM87q+kjv7W8uo/u030yizymYey/CWCdJjucD3lOcCuyjlbq9j4MLNPL9ZgGn2N+cFXur1yCr2aR9v9HzdKrrqLNQeAZ5LfEqmA2A7xsun8XOUDUktnzq/UybEQOTA3I4NSq3/cA/67nTQDvIfvrIDIwGnlrkf17O/C/6TZ+C3mm73v6853M+9E4j/h1ZB/JApu3Nagq0YRyTBFYzzuKPotAOiquF+ZN5OwHc35NngUKaHBayAY/ARxGOmor8izOpC67DnnMYbex92EEKkUUrkKeFSvR5PIV4GNkB4no3Hc0WUFGsDAjSbpXPkZ+E+ZDNtBDOnccudH8LPMVacZ24N90eSHg9zR5DqxWT+938HHAdE3ZqOdvBpo1OVqXIuWdQn7D14k8ojHOfNCd0mBCD5xjeqCt0GSjm0V+m+vX5R/V7Lmlmrx/XYMDup5u3bZzOt84yIr+XBidVCOtDEnkYLRFgw5Ntrd/0X0N6Xl9GuzQYFjXayCoQbXOHUDqTiL3Inv1OvJrku/XbTuFbKe3aPCKriP1KwiLXqHJ/dGnNdkhRRZfocGHRruylPdK22xgDrl/O6L7yYDflM/YMwXZHl/U683o4349XdPzvq3b50OflWvzK9bUlzSanB3/BqjR9CNDel6/JgfUOLLNGK+G60G2z2ZNDuYHdDlCt8H49QcmHQqof5qTcQ5LR62QAeWryMAU0/9qkVPJN5CR8l/Qz+MgR8a1VhVCjq5T+jS5Gxns2pEjbicyAg8IeUDzhK5jk5BOAVI9Y8DCrUNG8HIhG3ktctr8mJCNpRwY1pdmqf0Rk3NeRI5kfp1biqycOU06/XYhZw6lQk7VyzV55MDqwxPIEWMKefJ/BLlxXqLrrRMy4JXplHqkbX5t/gBrDSbb9PJO6jb3arKsncil0peAJdr8zOZLyA4XQx5HSKsjAf8iYFyT+zDlyEbjxB1ADkQrhVzKLtPkvlM9cu8D5DGVNbrNMWC1gL1mv+i2v6ZBq5AdcQrZFuLI4zJxi58X6+n7dG6drvcxZLsSyJlKra53BnlObVKXF9X9Xifkz4cCQh7WvU83aSv6DFHRrhqR2wdJIYO1na9K9XZl6LWW90rbbEDTZJtPIGcyAhlcnxayjRUhl6rVyJ/P1SCD/1nkmUKQNpUhA+8McKOQ5/1OIgelo8h+VKPLuB7Z9h9FzurPIgP3UeQ5u4tCHncqRra3Ok2Wa0Yv54SQ9VuN7AvTyAnB/yfgI2vcyQxalt5qPtYgLEsmMR9tYX5pGER++2fkDSAjv4/5JV0CPTqb1BmzCE3nGpF4Ts8SZP44hIasNA3LEQddXkDBNWwMMB+A5/S8c0IGhjmFC8xlMOTO6nn8yAac0OZtMk/1zRA6XxNSr9+wQ9frM9mg6b7y6TbXICv0dgF/r+mzSrPvxPwIaTRWo7wwvxFs+CposTNgSjPKNKtl5xq+nNNMfrZwNZNtfp2b5hTzyC7mR/M5U36rnzUT12fiGnYFLX5Omnxr1AEmWZrelhPIJdIHZjstbTQh5MifyOKrIJZ2dZVstso27BTM17/RfmG+bST07Eaapshr2GlON6sz+uws8+011bctMPdfn408TLrNSB1rAPg+WY41mDuwJeLNWSMg85VnzZPULP8mzCJzTkuXP2fo1a+z1nuVnTlwrWe4Zs0cqzwzR6QfOwBZOQmT7lkF17hqpPsmYbE7SXoQTxidRuibk5r8mVPaMQvDdxa9ab5C9721zKZ6TQVqc5mw2KXgpukls06sDTflK2vQUug0P0vzs4Vrtc9qhyFjzsZmA8bzd1HAwk3k4Ku0dnWVbbbammqn1vaBaX/Z3I/MfceUrrIz1Z4t3JQvLP1YpTc18VHNoBRch7Q8/s2XEzTLZ1WgssubTW+255fLtXuWzc6ryD11tfVmq1uP6x5utjaSiy43cCXyODhqGcXzUqySq1k+m9NV9yp7Pg3u5dhc6FwzVGke131cp8mCVaZbuPNQLwkzYlIuUzm7QGY2zNyZhCJPNr2q51eT61TGhcS1S/O47ufmKs8dXIcZlpMiJ2PslObCKTRuPnAj18PChhvbpDM3v4OjecFu/ygXXr6cS+Gq9gxyXWO7mWuXli3d4xY299pAlhf45bq+VO2lWGTawqzHfMXh+ZXgOuVR7QMtFK5dWrZ0j1v43IWPLD9+Vi2vVH9Wnp1Mq1y7q4pvTb8SXFBXvGGrNQgsBK5TPdjl97iFy821P9r1Azdw55HjkjCXEcEuXSie28lTzaBU8i6Xm+2ZdbZonWm6mWutL1VH8Lju4ar6krXPmflmeW7hzsNm093qJLsob31mVmo2zmlkUT23S3fi58vNRUa2q5u5Tvced+FwVRynz4XGTUee3xKqlhvWPRVroLILXGZZqn0Z1dXMuxyuSpaqLFYbFxoXRV6P6y6uqi9a5dj1QTMKlZsOdcCy+/GzUog1KmYLXE4RONtVZcOV4GaTtVC5ucj1uO7kOvXVbLILiZsOdcDS7CJ3LjMeKwebfKoZgRNXpf9SuWY4ca3PFgKXLGnZ0j1u4XFVfUHVV83INhMvRK7tkvBKjOL5zgxUadlmZ5fDVcGp418L3HzSPW5hcfPpX9bnbuFm3XTPdrXLayfTbJg10trJt+ow40pwVbLs5C8ErmrkzlePxy0srvWziovpudu488hhhqVludo9Q5Fud+/Etdp1pbhOnGxB2M3cbP7zuO7jZmvXTu3ILVwJm033jA9XGdmmhrlMIy+Fa2eHk4yFxM0m0+MuTK57keWnOaZnjqO3E7Llz2f5g02efLl2U8ZPjyMAACAASURBVFOVzIXGzUWWx3Uf10mWFU7LsULlSuT5epl8Rm9zx8l3ZmMtlCrv5XJVn63cbPndys2W5nHdx80lv9u5tm8cVUV3pyuoo6Pqmd3IYZVntSWXEehKcu3gdq5xb+Y41aHHLXyunaxc2r9buBIO73RXRT67q/WzE1QBUWWD3VVVqZfCVcHKyRaQ3ca185fBcQqAHrcwuXb9zqmv2ukpdG7O57AuF9bloWqGlqteVcfMl+v0Od/8buSan9k1eo/rLu61gRzeh2WF+Xm2POZ0p6mhKi2XGdHlclUclYxcy+kGripNNcp7XHdy82n77uPaLAlVny81z6XIyMa1k5Mv146jkpFrOd3ANdJyWVJ4XPdyDTjJcBfX4d985TNaY0nPZQZgzWvHdcLlcPOxtdBmSZc7wzLjckZpj1sYXJUcu3trf3UDdx4Om+5WRdbPZqFCYVA2FMJMwIlnlZ2rDDdyneR53MLmqvqpGeb2b+3XbuCmQ/3GUWEEoHwav50RKp41KFqv2XC5XNXna4GbT5rHdQfXuozKltfcr93ATYciYJmDgSpNZYxxdeJZ86kKYBfsVM8vh6uyyQ7WJaebudb6scqw5vG4hc/N9szcL1WDe6Fz06GeYWl2ETDbLMtuXZrLrEulL19cKtcpSC8krqpec61fj1u4XLsVkXVLxG7boJC56cjh4Kj5XjM9M2B1ptOMxk6HSp8ZmiLtcrhWWG1UOWwhcO3uVTo8rju41nag6m+5zNoKnSth819zrAHJHBBUHV8VqLLJzeW5Kk8+szU7rspB2WQuBK5dPdmNdh7XHVzrvd3sxqkNFSo3HTYBy24Kal6G2K1BnWRZn+U6uuSbNxeutVxOshYSVzVLNp7nO4p73M+ea9e2rX3MyrWTVWjcdFyBf0Jhl24XLZ1k5MrJdTaRjZsLJ9tnN3Hzyedx3cXNp5/lKqPwuOpvCTW7mZRm+eMyr/lyrDZcKjcf/bl8dgtXle9S68fjFgbXCdb0bPkLkZuOHN6HdbkRPt8ZQbb7fPI6cQthxvNZcLPNPJ3keNzC5aqQrW+4gZuOLP/mS3W1CrZLUz3P1VCNdPlmmVeSqypDrra7keth4SFbW1e1ERSfC5WbDpuDo073wiLocqOnqiB2uqwyLpWb7whglrUQuao69bju4JqXjKoBy2kZ6RbuPLIsCfPpJJcTHKyBx+5eJfNSuU52ZLN9IXCdZHlc93GdOCrkIrvQuI5Lws8Kn9VmnxNUo4DH9biFxM1VlipfoXPnkeexhmsZl+MTj+txPw1uoc+QLm92BY5vHFUJdtr0vtwoa3e9GlzzfTauUxncyFXdO8Hjuouby0zGLn8hcyVy/DdfZiGXkmaXT7M8s7teaa713olrt6HvZq5xb/Whx10YXFVfzDV/IXOzHmvIF/nyLkXHleB+WnoKnZtbI/G4hcy91L7qTq7DK5LzWeKpHJhtqWY3ejjptpNzqVxVut293TO3ce1kqeBxC5/LNcXN8f8SmpU4RUanQGKd/qlkGc+E5T4X+/Ll5jolV+lwK9d87/TZ47qHq8KlznwKn3sJMyzVc+uzXO8vRdbl2JGLfhWsjcmtXBT3qs8e113cawd5bLrnGt2tswGrg51mcPnq+jS52WS6kesEj+subiH2mSvPtXlFsiraW52jUm7Op1oCWrl2swdh89yq71K5diiEhvdpci9nhPa4hcV1mnFl6wuFzE1HloOj1vUzZHYQa5BymkXlmm58VhXIzo58uHY8q9xsjcWNXCvHOhP2uO7kGm2eLPns+kAhc+eR47EG1YagKphh4WUIzpLPWjHme+Oznfx8uarZoNVpdoHVzVynxu9x3cu15rHKVKW5hTsPm1ckW4WoOoo5Ty6RUpXPPCNymhqqeJfDVeVz4i8UrmrAMF89rvu4TrAGvmxBoxC56bD5R6pOD6zO1SzPVQHNGmSsxjiNGE4B6Upwsz3PJY9buKD2iVPdeNzC5lr7lvmZnRy3cedh84pkxbOMh+aZi1M+64hhF2ByGS0+C66BhcRVDSoe171cuxWO3eTCnFbo3HTkeKzBaUrntFTM9Xm2PE6Vd6ncbA3gWuLmKtvjFi7XKY8KuQbPQuI6vq3BGv1UUzXzjOlSrvnKQsG72lwnuJHrYWEi3zZgzucW7lX5JxR2yDYTyIWbL+9SuZdio5u5HhYG8m0Dqr5R2Nwc/gmFWbDTbCub0myysnGzzcry4TrNuFTPrfa6nZtt9uxx3ctVtRMnWYXOTYfNbwnNUS/XJZxVIYp0O6OtHKerWc6lclUOtMtrfeZmrt29x1043Gxtwa1cCfUMKw1OU7Zc0jRFujXNTo6Va43Gl8s1eCob7eB2rh3s0j1u4XOzIZ+2UtjcLK+XUc2MVLMtOxlm5bkYZ71a01WyLoVrVwaVDGuZ3c5V+coq1+O6i5sL8slbuNwsvyW0mxnlGjXzzZdNXz6zvGxcJ9uE4rPqmVu5+fjV47qDe20gh39CkW8kt8jKCqeZw9Xk2uFa43rw4B7YLAntnl3pfRM7+Z8W14prjevBg7tg8+PnSxmxc9mnsrs3r90/TW6+WGjcbL7xuIXPvbbg8Ipk62eheObEzfVe2NxbA5F18/FyuCpbVFy7si4Ervm51a8e113cbNs2Tunu4tqcdLebtaiWhnaf7WBdupk52TbIrxTX2sFVXJWOhcbFkgYe121cLGlW2PVld3JtXpFsJlk/Oym1OtmJZ8dRXVV5L4frZLP5ebaG4Tau1SfWIO5x3clV8axyneAersML/HJ1isrBZhnWAGLX2ZygCkKXw7XLo7rPpsdNXEF6nZgDnDXN47qLa9evzBOHXAJEoXHTkcNJd3NEd4qaZqequHbPVIHMDtbKulRursHOqsftXGsnyEWXxy18rpHfLq9xbzeLK2RuOrK8ItlOqNMzsxLVSIHlmTnI2U2TVcuhy+VabbWDnR43cu3yelz3cu14Vrl2MtzEtXvjaNrVmqaaQeUyw8kF2SKsU2fNl5trY1HBrdx87j2ue7h2g5mwPFOtSAqdm44cD47apanyOkXJXDuZU3TOJudKci+lsRUyN98O4XELn6tKs5PnRm46bH5LqIEQ8poxo3KCER2tUdJ8b42sZo5Zj1WWKvJeKjebLCvH7vNC4Bqf8biu5tqlZbsvQK5QcSUyA1YCOCPgLkDLJ7qrkOvIYSfXGn1V+S6V68bR5kpzc60Tj1v43HzSCpwbBU6p8qoC1qwGf2/NfCkzHRXXCdm41oh8Jbl2tlvlLARuLvC47uKqPuc6uyl0bjoUm+7WQGWFqqNolquKc6kwy85XTi5cuzKqrguBmws8rru4qs9W2Xb3buJmzLA0YC4jkwcPHjx8NkgPWpY5WAio/FTN8eDBgwd7DALx1N3lLKI9ePDg4VNFDifdPXjw4KEw4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNrcNUCVlFREcFgkFAoRCgUypvv9/vx+aR5sViMcDicFzcSieSt0+CWlpbapsdiMYTIPIFbVFRELBa7JJ0qBIPBKyLH5/NRVlamtPly9KrKa9S5Fdl8eiXtUiHXeiktLSUQSD+aaMe1tkmVn3PlAo595Er4b6HgqgWse+65hxtuuIFbbrmFW265JW/+5z//eRobGwH43Oc+x7333psTz+/389hjj/Fnf/ZnVFRU5K03Fovxh3/4h7YB8qtf/apSbnNzM9/61rfy1qeCz+fj6aefviJBq6ioiO985zs5+SIfvarydnR0sHz58oy8sViMP/mTPyEajeZuuAnr169n69atl8QNhULs2rUra8D2+Xw888wzrFixIieutU1a/ZwPt6Kigi9+8Yu2tmVrk9cScnjj6CUKDgTw+Xz4/X4Abr31VsrLy4lGo/ziF7/g3nvvZXp6GiEEL730Epo2fxxs+fLlbN68mWAwyMWLF+nr62PLli08+uijWblCCLq7u1m0aFHacwNr1qxh3bp1HDx4kOHhYe6++27i8Tjnzp3jgw8+4L777nOcnQWDQWUj7OvrIxQK8Xu/93scP36cJUuWpMr7y1/+kl27dvEP//APPPXUU/z85z9n586dTE1NcebMGd5+++00WR0dHaxbt4729nYOHDjAQw89xNTUFD6fL6O8LS0t3HTTTQghePXVV1m5cmVK7wsvvMDU1BSTk5MIISgpKeH+++9P6R0cHGTz5s0p7tKlS1N633zzzTSbli5dyqpVq/jVr37Fk08+yeuvv57qaPv376erq4ulS5cyMDCAz+dL2SyE4Je//CWaprF9+3bOnTvHoUOH0mTfdtttaW1j586dDAwMEA6HeeONN7jzzjvRNI0PPviA+vp6Nm7cSDgc5pe//CV33HEHe/bs4Z577mHv3r309fWlyW5sbKSoqEjpq66urlS+ZDLJ8PAwbW1tLF++nJdeeimNu2zZMjo6OpidneWdd95Ja5N79uxJ87NVrxP3pZde4q677mLt2rW0trbS29ubVke5tMlrCZ/aHlZfXx+VlZV8+OGHCCHYunUrs7OzBAKBjABw4sQJurq6OHDgAIlEAoD+/n7q6+tpaGhw5M7NzXHu3DmGhoYYHh5OS/P7/dx0002UlpayYcMGBgcHWbNmDZ988glbt27lrrvuoqenh9HRUWUZQqEQgUDAdqRbunQpzc3NdHZ2cvPNNyOEYG5ujkgkQnNzM0IImpubicfj+P1+hoeHOX36dIac3/3udwwPD3Po0CFCoRDr16/nN7/5DR0dHallsoGRkRFKSko4fvw4w8PDaXqNDmOgqamJZcuWMTU1RTQapa2tjZMnT/L8888zPDycpteKaDRKU1MTmzdvprm5mWAwyMzMDOPj46xduxZN05icnKSkpCRl88svv8y///u/o2kayWSSzs5O5UzJbHMgECAajdLf309HRwfDw8McPnyYjz/+mKGhIbq7u1mxYgVvvvkmJSUlLF26lEAgQFNTU0Z5Abq6uqivr0cIkeErFTo7O1N+NnPb2to4c+YMa9asSQU6o01WVVU56nXilpeX8+abb9Ld3c3Jkycz6shok2NjY0p7rzVctYA1MTFBZWUlpaWlTE5OUllZyfvvv8/dd99NUVERQ0NDfPzxx4yOjipnQuPj42zcuJElS5YQi8WYnp5ONfxsXDsEAgEaGho4fvw4RUVFGcEumUwSDoeZm5tTLl9WrVpFa2srn/vc5zK40WiUc+fOMTExwZo1axgfH+fo0aMMDAwQj8eZnZ2loaEBv99PcXEx58+fp7y8nA0bNihtnZ6e5nOf+xzRaDTFnZ6ezshXVVXFBx98QHt7O3V1dWl6jaAeDoeJRqPE43F6eno4efIkk5OTqTpat24dixYtStNr3X+Jx+O0trayY8cOSktLKSoqYnZ2lrm5+d+exmIxYrEYmqYxOzvL4sWL2bhxI0VFRQQCAaX9QIbNVkxOTtLQ0EB7ezvRaBQhBEePHuXo0aNMTExQX19vOwOJRqOpfVSrr8wQQhCNRpmamlJyJyYmqKioSC2XzW0SSPNzvlwjUN95553Mzs6m1ZHRJmdnZ1Oyb7jhBpYuXaos70KHH/jPV0Pw2bNnCQaD9Pb28t577zEyMkJxcTEfffQRFy9e5NSpU5SXl9PZ2cn4+HgG//jx4yQSCU6fPo2maZw8eZLjx4/T1dXFsWPHHLlTU1NcuHAhY1RKJBKcOnWK0dFRuru7GRoa4ty5c1y4cIFz587x4YcfEggEOHjwILOzs2mNF6Cnp4cPP/yQN998MzXzMxAOhzl69CgfffQR4+PjvPvuu5SXl9PX18fFixc5ffo0LS0t1NXV8corrxAIBBgZGeHw4cPE4/E0WZqmcezYMcbGxlK+KisrY//+/RllGh8fp6SkhM7OTk6dOsWRI0dSent7ewkGg/T39zMyMsL58+cZGxujqKiIEydOcOLEidRM6fTp0yQSiZTe3t7eND1DQ0OcPXuW3/zmN3z44YeMjIxw7NgxTp8+TVdXF1NTU8zOztLf309/f39a/Rqz3jNnznDu3DlGRkbSZB89ejTN5t7eXrq6ujh58iQDAwNcuHCBeDzOyZMn8fl8nDlzhuHhYebm5jh27Bg1NTWsWrWKt956i8nJyTTZkUgkNeMeGhpK85V5sPP5fIyPj3P69OmUXjN3dHSU4uJiVqxYweuvv04ikUi1yb6+PoQQKT9PTEzkxR0eHqa7uzvVDq11pGqT4+PjzMzMZLT9hQ7vt4SfAvx+P7fddhuxWIwDBw5kBAMPcm9QNbvKhvb2dhYtWsTZs2c5fPjwVbBMoqamhi1btjA0NMS+ffvymtlfDtdDJrSr8ReNRrXq6mqtqqpKE0JcFR12f4FAQPP7/VeVGwwG8y5bOBzOSW9ZWZkWjUaviC/8fr9WVVWl+Xy+nPIXFRXZpgkhtKqqKi0QCCh51dXVWllZmQZoxcXFWnV1dU7l8Pl82ne/+10tFosp01euXKmtWLHikmzO9heNRlM2A1ppaWnKV0IIR9lGmuGXYDB4Rerscv6c6mgh/F21PazGxka++93vsnPnTtra2pR5zPtAQgjHeyeu9f6hhx6iqanJVo8TnLhmhMNhvve976XtdanKYKC6upovfelLOem95ZZb2LFjR1p6Nl/Y6Q2FQnz729+mvLzcNq9x7/f7+epXv5p2Jsic1+fz8dRTT9Ha2pphwxNPPMHq1av5yle+Qn19PV//+tdpbW3la1/7WsYXBVYkk0n++Z//Oe04hVnvunXrlBvbudhshbX8ixcv5mtf+1rqfufOnRQXFwOwceNGtm3bllWvEIIvf/nLrFy50laPyg67e6e0bHmtdZTNDrfhqh1rML7eBrl3dM8991BdXY3P5+P555/n85//PBMTEwQCAV555RUeeOABRkdHU+v+LVu2kEgk2Lt3LxcvXkzJ9fl8PProoynua6+9xj333MPk5CRdXV309fWxYcMGkskk58+f54477qC0tJSSkhKef/55du7cic/nY3Jykueffz5tet7a2prBDYfDlJeXs3v37rT9kbGxMRKJBF/4whd48cUXqaqqor29HZ/Px+uvv851112X4r744ovcdtttrFy5kmXLlnHq1Kk0X1n19vf3s2XLFp544gn27NmT5qvdu3dn2Gz21erVq1Pl/dnPfsbk5CTj4+MIISgrK+PBBx9MfWU+MDBAe3s7AHv37mXx4sWsXLmStrY2Dh06xCOPPJLS+8ILL3DPPfdQXl6u7AC1tbU899xzbNy4kWAwyNGjR6mqquLll18mmUxmbS8XLlxQ1u/u3bt566230o4gmNHe3p5m8xe+8AVGRkaIRCIZ9btixQpuuukmfD4fv/3tb5mdneX2229PHb0pLi5m0aJFCCGoqKjg5ptvBuCdd97J+FbRrPfAgQMMDQ2xYcMGrrvuOn7729/ywAMPpPz81ltvpXHvuusuwuEwxcXFvPTSS+zcuTNl83vvvcfjjz/Ou+++S1NTE52dnVx33XX09PQwPT3NwYMHU8vLvXv38sgjj9Df309xcXHqeIdRR9a2Ye5HbsVVPdYwNTXFnj17eP/991MVfuzYMSKRCJs2bWJsbIzJycnUhu3k5CQnTpygv7+fcDicOitkRigUSuMODQ1x3XXX8cknn9DR0cHJkyfp7u7m4MGDJBIJNm/ezMzMTEqOsTk+NDSUYa+V29HRwf79+6murqayMvPFhnNzc7z33ns8/PDDrF+/npMnT9LX18eqVavSuKWlpRw4cICenp6MYKXSC/IYSHV1NXV1dWnltcLqK3N5rae2GxoaaGpqYmBgAE3TUjbv3r2bgYEBDh06xMjICO+88w7BYDBN7/Lly6mvr6ezszNrvWuaxmuvvcbp06e59dZbUwEulxPn1voFGczsgp7V5tWrV/PKK6/Q1taWMbNbv349oVCI3t5eQqEQjz32GPv370/5fHx8PHV0ZWhoiCNHjnDkyBHlEQizXgMnT56kra2NxYsXp/nZCqNt/OIXv0DTtDSbY7EYY2NjdHR00NDQwOLFi5mamqKhoYFNmzaxZcsWfD4fHR0dJBIJwuEwfX19tLW1sWLFirQ6cupHbsVVC1ixWAyfz8fExAQgR69AIMCBAwcYHh5mcHAw1XlLS0vp6+sjEolw4403Ul9fz+HDh7nhhhtSp90NJJPJNK4ZRuMYHR2lo6OD5uZmRkdH6ezsTG3oRqNRfD4fr776qrIxmbljY2M0NjYihFBuCBuzlng8zvj4ONXV1ZSVlTExMZHBNY4Y3HvvvcoZillvcXFx2jEOu/ICGb4ylzeZTBIMBolEIsRiMWZmZujv70/NVgyb29vbqa+vT52l2r59O7FYLE2v8dW7pmmpJZMZ5vIKIfjGN75BPB6npqYGIQThcJg/+IM/yGl56FReK6w2z8zMsGTJEiYnJzPqd3x8nK6uLkZHR0kkEszOzqbKEgwG03wF8mjO4sWL2bx5s6Pe0tJSotEoMzMzaJrG9PR0mp/tfHXLLbcQDoczbJ6ZmUm1GZBHTQzZjY2NnD17lkQiQTAYTJVR0zQSiURaHTn1I7fiqn1LWF1dTXV1NadPn2ZmZoalS5cSDAY5efIkmqZRV1dHRUUFfX199Pf3s2zZMoqKilKdbfny5SSTSU6cOJExulq5zc3N9Pb2UlFRwYULF4hEIixevJgTJ04Qi8VoampiYmKC8+fPs2LFCsbHx1NLECvsuGfPns3I62Szims0yv7+fke9ixcvZnJyklAoRH9/PxUVFWnlNSMQCDjqLSoqYtmyZTn7ubq6mmg0ytmzZ5V1NDk5id/vz/BfSUlJml5VHTU1NbF///6sbcfKzQYnm7P5qra2lpmZmdQ3t2Zf+Xw+li9fzrlz5zKOuJj1Gu3qwoULVFdXc+bMGVpaWlJ+tnKdfDU5OUl5eXlqPy8ej5NMJvH7/YRCIQYHB6mpqUnZXFFRkRp4DL1GHfX09Dj2IzfCO9bwKcHn8xEKhWwPT3rw4CE7rtqSsLi4WLnvYyAQCFBXV5d1iZANoVCI2travL4JsX6z52TnlcKiRYt45plnbMt7++2329pxpXz1aaOyslK5fAQoLy9PewNBcXGx9+NeD1lx1XpAXV0d3/zmNzO+Fjc63Y4dO/j85z+f2h8wpxn7IOYOak43IxQK8d3vfjdtQ9ea13xfU1PDY489lrIrFAql9pXs9NoFw2w2m9HT08PLL7+c+kbKzA0EAtxwww2pNCvy9ZUZTmlWWdZ7u6vhD7NvjM9mWVu3buXuu+9W6l27di27du1K3W/YsIHm5uY0G8yy3RasPVwdXLVjDYODg5SXl/OlL32J5557jrvuuotIJEJFRQXPPvssq1ev5u233+a9996joqKCBx98kOHhYQYGBujr6+O2224D4Fe/+hWrV69OcX/605+m/RxnfHycubm51K/mFy1aRFtbG36/n3379rFq1Sp8Ph81NTU899xz3HzzzbS2ttLc3Mzp06epr6+nsrISIQTXX3+9LffZZ59N05vNZtWPmo1nBndwcJCenh4OHDjAj3/8YwYGBjI4fr8/L19Z9a5du5ZNmzZx8OBBPv7447S01atX09bWhqZp7Nu3j3Xr1qXKu2fPHr7zne9w+PBhWlpa2LdvH/feey/vvfceTU1N/N3f/R233HILFRUV/OQnP2H79u1pvlqzZg2rVq1K/ZzGOCeVTCaJx+P09/enXuUihGDFihWMjo7i9/t54okn6O7uprKykt/85jfs2rUr9TOlvXv35tcQPSwoXNVhy/j91rZt29iwYQPT09OcP38+9U1QX18fU1NT1NXVkUwmOXToEDfccEPq9TC//vWv0TQtjaua7czNzXHgwAEefvhhVq1axfHjx1O/6t+wYQP79+9PnU06ePAgPT09qY7d3d2dOlTZ3d1NS0tLGvfIkSNUVVVl/GYxm81OMLh79uzh7bffJplMKoMVyDNs+fjKjEAgkDpndP3112fINnz17LPP0tXVleYrI4gb35auXLmS7u5u1qxZQ1lZGR0dHVRVVbF27VqCwSCDg4NEIhFKS0upq6vj3nvvTW2wl5aWsnXrVrZu3Zp2uNKApmmpc0iJRAK/309vby+rV6+moaGBmpoa+vr6lL8b9XBt4arNsEB+81VZWcmJEydSswnjlRuxWCy1vzE5OUksFmPZsmUMDg5SVlZGUVERFy5cSJ0pMriqYODz+WhsbGRsbIzh4WEaGxuJRqOcOHGCoaEhVqxYgc/nS/1YNBgMsnPnTl5++WXKysqIRqOpX/ub5Q8NDdHc3KxcjmSz2QkG98Ybb8Tv92e8e8patnx8ZeWWlJRw9OhRamtrM2QbviotLVX6KplMkkgkUm9kmJubI5FIpI5zjI6OMjAwQFlZWZpcTdOIx+OUlJQQi8UYHh7mt7/9bVqeiooKSktL8fl8JJNJysvLU0dgrL4yfkBszNIaGxtZuXIlr776qqOfPSw8XLVvCf1+P42NjWiaxvnz54lEIlRXVzM9PU1fXx9NTU1MTU2lvnqur68nGAzS09NDOBymrKyMrq6u1Gs1DK7qh8Nm7tzcnK1eg2t8LWy8H6mioiLFraqqSr2IbdWqVfj9frZt28Zf//VfO+q12pwNZq5TgBNC5OUrKyorK/H7/fj9frq7u/Oqo9raWhKJBMlkEk3TEEKkDqMODQ1RW1vLxMQEs7OzqXNBwWAw5Vc7vSCPBEQiEc6fP586XzQ7O0tvby+VlZVMTU1RVlZGd3d3hq+KioqIRqPKw78eFja8Yw0OaGlpYeXKlRw9ejSnE94ePHi4uvAClgcPHlwD77tiDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48uAZewPLgwYNr4AUsDx48tixeTQAAACVJREFUuAZewPLgwYNr4AUsDx48uAaBbdu2fdY2ePDgwUNO+P8BvtbuGVfj9bQAAAAASUVORK5CYII=" width="300"/></a> <div class="thumbcaption"><div class="magnify"><a class="internal" data-href="/wiki/File:Grub-persistent_mode_indicator_in_kicksecure.cleaned.png" href="./File:Grub-persistent_mode_indicator_in_kicksecure.cleaned.png.html" title="Enlarge"></a></div>grub boot menu</div></div></div>
 <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
-<li class="toclevel-1 tocsection-1"><a href="#chroot_Creation"><span class="tocnumber">1</span> <span class="toctext">chroot Creation</span></a>
-<ul>
-<li class="toclevel-2 tocsection-2"><a href="#Qubes_Notes"><span class="tocnumber">1.1</span> <span class="toctext">Qubes Notes</span></a></li>
-<li class="toclevel-2 tocsection-3"><a href="#Install_Required_Tools"><span class="tocnumber">1.2</span> <span class="toctext">Install Required Tools</span></a></li>
-<li class="toclevel-2 tocsection-4"><a href="#Add_Signing_Key"><span class="tocnumber">1.3</span> <span class="toctext">Add Signing Key</span></a></li>
-<li class="toclevel-2 tocsection-5"><a href="#Set_Variables"><span class="tocnumber">1.4</span> <span class="toctext">Set Variables</span></a></li>
-<li class="toclevel-2 tocsection-6"><a href="#Set_Variables_2"><span class="tocnumber">1.5</span> <span class="toctext">Set Variables</span></a></li>
-<li class="toclevel-2 tocsection-7"><a href="#APT_Sources_List"><span class="tocnumber">1.6</span> <span class="toctext">APT Sources List</span></a></li>
-<li class="toclevel-2 tocsection-8"><a href="#APT_Cache"><span class="tocnumber">1.7</span> <span class="toctext">APT Cache</span></a></li>
-<li class="toclevel-2 tocsection-9"><a href="#Run_mmdebstrap"><span class="tocnumber">1.8</span> <span class="toctext">Run mmdebstrap</span></a></li>
-<li class="toclevel-2 tocsection-10"><a href="#Chroot_Post_Processing"><span class="tocnumber">1.9</span> <span class="toctext">Chroot Post Processing</span></a></li>
-<li class="toclevel-2 tocsection-11"><a href="#Host_Cleanup"><span class="tocnumber">1.10</span> <span class="toctext">Host Cleanup</span></a></li>
-</ul>
-</li>
-<li class="toclevel-1 tocsection-12"><a href="#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a>
-<ul>
-<li class="toclevel-2 tocsection-13"><a href="#Simple_Classic_Chroot_Method"><span class="tocnumber">2.1</span> <span class="toctext">Simple Classic Chroot Method</span></a></li>
-<li class="toclevel-2 tocsection-14"><a href="#systemd-nspawn_Method"><span class="tocnumber">2.2</span> <span class="toctext">systemd-nspawn Method</span></a>
-<ul>
-<li class="toclevel-3 tocsection-15"><a href="#Install_systemd-nspawn"><span class="tocnumber">2.2.1</span> <span class="toctext">Install systemd-nspawn</span></a></li>
-<li class="toclevel-3 tocsection-16"><a href="#systemd-nspawn_Simple_Chroot"><span class="tocnumber">2.2.2</span> <span class="toctext">systemd-nspawn Simple Chroot</span></a></li>
-<li class="toclevel-3 tocsection-17"><a href="#systemd-nspawn_Boot_Chroot_CLI_Only"><span class="tocnumber">2.2.3</span> <span class="toctext">systemd-nspawn Boot Chroot CLI Only</span></a></li>
-<li class="toclevel-3 tocsection-18"><a href="#systemd-nspawn_Boot_Chroot_with_GUI_Support"><span class="tocnumber">2.2.4</span> <span class="toctext">systemd-nspawn Boot Chroot with GUI Support</span></a></li>
-<li class="toclevel-3 tocsection-19"><a href="#Exit_systemd-nspawn_Chroot"><span class="tocnumber">2.2.5</span> <span class="toctext">Exit systemd-nspawn Chroot</span></a></li>
-<li class="toclevel-3 tocsection-20"><a href="#Limitations_of_systemd-nspawn_based_Chroot"><span class="tocnumber">2.2.6</span> <span class="toctext">Limitations of systemd-nspawn based Chroot</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toclevel-1 tocsection-21"><a href="#Footnotes"><span class="tocnumber">3</span> <span class="toctext">Footnotes</span></a></li>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Kernel_Boot_Parameter_Change"><span class="tocnumber">2</span> <span class="toctext">Kernel Boot Parameter Change</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Permanent_Configuration_Changes"><span class="tocnumber">3</span> <span class="toctext">Permanent Configuration Changes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Inspect_Grub_Configuration_Changes"><span class="tocnumber">4</span> <span class="toctext">Inspect Grub Configuration Changes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Footnotes"><span class="tocnumber">6</span> <span class="toctext">Footnotes</span></a></li>
 </ul>
 </div>
-<h1><span class="mw-headline" id="chroot_Creation">chroot Creation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=1" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=1.html" title="Edit section: chroot Creation">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<h2><span class="mw-headline" id="Qubes_Notes">Qubes Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=2.html" title="Edit section: Qubes Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Only users of Qubes need to consider these notes in this chapter.
-</p><p>Users that don't use Qubes or don't know what Qubes is should skip this chapter.
-</p><p>TODO: elaborate
+<h1><span class="mw-headline" id="Introduction">Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=1" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=1.html" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<p><a class="image" data-href="/wiki/File:Ambox_notice.png" href="./File:Ambox_notice.png"><img alt="Info" data-file-height="2000" data-file-width="2000" data-src="/w/images/thumb/c/c8/Ambox_notice.png/40px-Ambox_notice.png" data-srcset="/w/images/thumb/c/c8/Ambox_notice.png/60px-Ambox_notice.png 1.5x, /w/images/thumb/c/c8/Ambox_notice.png/80px-Ambox_notice.png 2x" decoding="async" height="40" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAtFBMVEUAAAAzZswrVdUuXdE5Y8Y2a8kzZswxYc4xYs4vaMYxY84yZM0xZ8gxZ84xZ84xZ84zZswyZc0yZ80xZcsyZ80yZc0yZ80yZs0yZssyZs0yZss0ZsszZcwzZ8w0Zss0ZsszZsozZswyZs00ZssyZc0yZs0zZ8wyZs00ZsszZ8wyZcwyZswzZ8wzZswzZswzZssyZswzZswyZcwyZcwzZcwzZswzZswzZcszZsszZsszZcwzZsx0fp/GAAAAO3RSTlMABQYLEhMUFRobHykqKjQ+S0xSU1xgYWtscHFxfHyFj5aWmJmdnaSsrcLDw8zX4ebn6+/w8PT19/f6+7st35YAAAEKSURBVDjLjdXbUsIwFEDRrUXQVkUBL4hSpYpGQ7Uo9XL+/798UJiGps3Zj5k1zaSdnIJTPMqMfX23NhsnNBZdWKmUX/f8bFLIVmXarbvjhXgqBtvuShq623VcJo2ZSOccOZHWHjbncNcB3JXz//eyCMHywLtxHcocICrCUBLgUhRlgNXAVUSscSKnjHQw9XwU32HkBaODS89ZvFB408IPLVRvrYSf2tdjGevgjEQHh5Br4Pce3GjgI9ArFbAPkIahAaBbBOHR3zUchOB0fbFvpTWzmRQ7ps3lncpsbJF57EzR+8Z9O7idlV43pdb+3PO4Q+8UT7JVVf089Zv/Cyfp81JE5MvOhu6g/wUnGQ6lMn7gQQAAAABJRU5ErkJggg==" width="40"/></a> This is a grub, not a Kicksecure ™ feature. <a data-href="/wiki/Unspecific" href="./Unspecific.html" title="Unspecific">Unspecific to Kicksecure ™.</a> Therefore <a class="mw-redirect" data-href="/wiki/Free_Support_Principle" href="./Free_Support_Principle.html" title="Free Support Principle">Free Support Principle</a> applies.
 </p>
-<ul><li>nosuid / nodev can cause issues?</li>
-<li>default private image size (/home folder) is too small for Kicksecure ™ XFCE</li></ul>
-<h2><span class="mw-headline" id="Install_Required_Tools">Install Required Tools</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=3.html" title="Edit section: Install Required Tools">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p><sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
+</div>
+<p>Before trying specific kernel boot parameters, it is advisable to first add them temporarily for testing or troubleshooting purposes. When the parameters have the intended effect, they can then be added permanently.
+</p><p>Kernel boot parameters are text strings that disable/enable certain features or change specific system behaviors. To achieve the desired change, note kernel boot parameters: <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
+</p>
+<ul><li>can be a simple keywords (like "<code>splash</code>" or "<code>noapic</code>")</li>
+<li>are case-sensitive (for example "<code>Noapic</code>" would not have any effect but "<code>noapic</code>" would take effect)</li>
+<li>might have an <code>=</code> sign to denote values (like "<code>acpi_backlight=vendor</code>")</li>
+<li>might include punctuation (""<code>i8042.noloop</code>")</li></ul>
+<p>Kernel boot parameters have no effect unless entered exactly as advised -- spelling/formatting errors or invalid values do not result in an error message.
+</p>
+<h1><span class="mw-headline" id="Kernel_Boot_Parameter_Change">Kernel Boot Parameter Change</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=2.html" title="Edit section: Kernel Boot Parameter Change">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p>Follow these steps to temporarily add kernel boot parameters. Useful for testing such a normal (non-recovery mode) boot while enabling verbose boot messages. Alternatively, if that is accessible <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>, see <a href="#Permanent_Configuration_Changes">Permanent Configuration Changes</a>.
 </p>
 <div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
-<p>Install <code>mmdebstrap apt-transport-https apt-transport-tor tor curl</code>.
-</p><p><b>1.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
-<p><b>2.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
-<p><b>3.</b> Install the <code>mmdebstrap apt-transport-https apt-transport-tor tor curl</code> package.
-</p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends mmdebstrap apt-transport-https apt-transport-tor tor curl</div>
-<p>The procedure of installing <code>mmdebstrap apt-transport-https apt-transport-tor tor curl</code> is complete.
+<p><b>1.</b> Restart the system. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
+</p><p><b>2.</b> Access the grub menu.
+</p><p>Repeatedly press the <code>Esc</code> key until the grub menu appears. Alternatively the <code>Shift</code> key can be held down continuously for BIOS-mode (not UEFI-mode) until the menu appears. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
+</p><p><b>3.</b> Select the relevant entry to edit.
+</p><p>Use the arrow keys to highlight the relevant entry and then press the <code>e</code> key to enter edit mode.
+</p><p><b>4.</b> Add kernel boot parameter changes.
+</p><p>Use the arrow keys to move down to the line that contains boot arguments: <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
+</p>
+<ul><li>On BIOS systems the line will begin with <code>linux</code>.</li>
+<li>On UEFI systems the line begins with <code>linuxefi</code>.</li></ul>
+<p>Press the <code>End</code> key to move the cursor to the end of that line. Press the space bar and carefully type in kernel boot parameters -- multiple parameters are separated with a space, but no spaces are added before/after any <code>=</code> signs or for punctuation in parameters.
+</p><p><b>5.</b> Reboot the system.
+</p><p>Press <code>Ctrl</code> + <code>X</code> to boot the system with the new, temporary parameters.
+</p><p>The effect will only last for this boot session; once the system is restarted they will no longer have any effect.
 </p>
 </div>
-<h2><span class="mw-headline" id="Add_Signing_Key">Add Signing Key</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=4.html" title="Edit section: Add Signing Key">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h1><span class="mw-headline" id="Permanent_Configuration_Changes">Permanent Configuration Changes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=3.html" title="Edit section: Permanent Configuration Changes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
-<p>It is required to add the signing key on the host because <code>mmdebstrap</code> will need it.
-</p><p>(Users of Kicksecure ™ and Kicksecure ™ could skip this step since the signing key is there by default.)
-</p><p>Key could be removed at the end. (Except Kicksecure ™ and Kicksecure ™ should not do this unless they upgrade from source code.)
-</p><p>Download <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Kicksecure ™ Signing Key</a>. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
+<p><b>1.</b> Learn how to configure permanent changes.
+</p><p>Inspect the following resources:
 </p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
-<p><u><b>If</b> you are using Debian</u>, run.
-</p><p></p><div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/derivative.asc</div>
-<p><u><b>If</b> you are using a Qubes Debian Template</u>, run.
-</p><p></p><div class="code-select">curl --proxy http://127.0.0.1:8082/ --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/derivative.asc</div>
-</div>
-<p>Users can <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key"><u>check</u> Kicksecure ™ Signing Key</a> for better security.
-</p><p>Add Kicksecure ™ signing key to APT trusted keys.
-</p><p></p><div class="code-select">sudo cp ~/derivative.asc /usr/share/keyrings/derivative.asc</div>
-<p>The procedure of adding Kicksecure ™ signing key is now complete.
-</p>
-</div>
-<h2><span class="mw-headline" id="Set_Variables">Set Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=5.html" title="Edit section: Set Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>File <code>/etc/hostname</code> must exist. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
-</p><p></p><div class="code-select">sudo touch /etc/hostname</div>
-<h2><span class="mw-headline" id="Set_Variables_2">Set Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=6.html" title="Edit section: Set Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Note: You could also replace <code>kicksecure-xfce</code> with <code>kicksecure-cli</code>.
-</p><p></p><div class="code-select">package=kicksecure-xfce
-repo=bullseye
-path_to_chroot=~/kicksecure-xfce-chroot
-path_to_temp_sources_list=~/temp-sources.list</div>
-<h2><span class="mw-headline" id="APT_Sources_List">APT Sources List</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=7.html" title="Edit section: APT Sources List">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Create temporary APT sources list for <code>mmdebstrap</code>.
-</p><p></p><div class="code-select">echo "
-deb https://deb.debian.org/debian-security/ bullseye/updates main contrib non-free
-deb https://deb.debian.org/debian bullseye main contrib non-free
-deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com $repo main contrib non-free
-" &gt; "$path_to_temp_sources_list"</div>
-<h2><span class="mw-headline" id="APT_Cache">APT Cache</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=8.html" title="Edit section: APT Cache">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Optional. If you are interested, please press Expand on the right side.
-</p>
-<div class="toccolours mw-collapsible mw-collapsed">
-<div class="mw-collapsible-content">
-<p>This shouldn't be done unless you are behind a firewall since apt-cacher-ng will by default listen on all network interfaces.
+<ul><li>folder <code>/etc/default/grub.d</code></li>
+<li>file <code>/etc/default/grub.d/40_kernel_hardening.cfg</code></li></ul>
+<p><b>2.</b> Create a new configuration file.
+</p><p>Open file <code>/etc/default/grub.d/50_user.cfg</code> in an editor with root rights.
+</p><p>(<a class="mw-redirect" data-href="/wiki/Kicksecure_in_Qubes" href="./Kicksecure_in_Qubes.html" title="Kicksecure in Qubes">Kicksecure ™ inside Qubes</a>: In Template)
 </p>
 <div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
-<p>Install <code>apt-cacher-ng</code>.
-</p><p><b>1.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
-<p><b>2.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
-<p><b>3.</b> Install the <code>apt-cacher-ng</code> package.
-</p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends apt-cacher-ng</div>
-<p>The procedure of installing <code>apt-cacher-ng</code> is complete.
+<p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Editor" href="./Software.html" title="Software">this link</a>.
+</p><p></p><div class="code-select">sudoedit /etc/default/grub.d/50_user.cfg</div>
+</div>
+<p><b>3.</b> Paste the necessary kernel parameters.
+</p><p>Notes:
+</p>
+<ul><li>The following example uses kernel parameter <code>nomodeset</code>.</li>
+<li>Replace only <code>nomodeset</code> with the actual kernel parameters you want to add.</li>
+<li>Do not remove the leading text (underlined): <code><u>GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX</u> nomodeset"</code>.</li>
+<li>Do not remove the trailing quote (<code><b>"</b></code>; marked in bold): <code>GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nomodeset<b>"</b></code>.</li></ul>
+<p></p><div class="code-select">GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nomodeset"</div>
+<p><b>4.</b> Save.
+</p><p><b>5.</b> Regenerate grub configuration.
+</p><p></p><div class="code-select">sudo update-grub</div>
+<p><b>6.</b> Done.
+</p><p>The process of adding a kernel parameter is complete.
+</p><p><b>7.</b> Verification.
+</p><p>Optional.
+</p><p>Inspect <code>/boot/grub/grub.cfg</code> because that is the generated file which is actually used during the boot process.
 </p>
 </div>
-<p>Set <code>apt_cacher_ng_maybe</code> variable.
-</p><p></p><div class="code-select">apt_cacher_ng_maybe="\
---aptopt='Acquire::http { Proxy \"http://127.0.0.1:3142\"; }' \
---aptopt='Acquire::https { Proxy \"http://127.0.0.1:3142\"; }' \
---aptopt='Acquire::tor { Proxy \"http://127.0.0.1:3142\"; }' \
-"</div>
-<p>Create apt-cacher-ng https compatible sources.list file.
-</p><p></p><div class="code-select">echo "
-deb http://HTTPS///deb.debian.org/debian-security/ buster/updates main contrib non-free
-deb http://HTTPS///deb.debian.org/debian buster main contrib non-free
-deb http://HTTPS///deb.whonix.org $repo main contrib non-free
-" &gt; "$path_to_temp_sources_list"</div>
-</div>
-</div>
-<h2><span class="mw-headline" id="Run_mmdebstrap">Run mmdebstrap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=9.html" title="Edit section: Run mmdebstrap">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Run <code>mmdebstrap</code>. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
-</p><p></p><div class="code-select">sudo \
-SECURITY_MISC_INSTALL=force \
-DERIVATIVE_APT_REPOSITORY_OPTS=stable \
-anon_shared_inst_tb=open \
-mmdebstrap \
---verbose \
---variant=required \
-$apt_cacher_ng_maybe \
---include $package \
-buster \
-"$path_to_chroot" \
-"$path_to_temp_sources_list"</div>
-<h2><span class="mw-headline" id="Chroot_Post_Processing">Chroot Post Processing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=10.html" title="Edit section: Chroot Post Processing">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Delete the chroot's temporary <code>/etc/apt/sources.list</code>. <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
-</p><p></p><div class="code-select">sudo rm "$path_to_chroot/etc/apt/sources.list"</div>
-<h2><span class="mw-headline" id="Host_Cleanup">Host Cleanup</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=11.html" title="Edit section: Host Cleanup">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<p>Optional: You can delete the signing key from the host.
-</p><p></p><div class="code-select">sudo rm /etc/apt/trusted.gpg.d/derivative.gpg</div>
-<h1><span class="mw-headline" id="Usage">Usage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=12.html" title="Edit section: Usage">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<h3><span class="mw-headline" id="Simple_Classic_Chroot_Method">Simple Classic Chroot Method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=13.html" title="Edit section: Simple Classic Chroot Method">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p></p><div class="code-select">sudo chroot ~/kicksecure-xfce-chroot bash</div>
-<h2><span class="mw-headline" id="systemd-nspawn_Method">systemd-nspawn Method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=14.html" title="Edit section: systemd-nspawn Method">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Install_systemd-nspawn">Install systemd-nspawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=15.html" title="Edit section: Install systemd-nspawn">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p></p><div class="code-select">sudo apt install systemd-container</div>
-<h3><span class="mw-headline" id="systemd-nspawn_Simple_Chroot">systemd-nspawn Simple Chroot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=16.html" title="Edit section: systemd-nspawn Simple Chroot">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p></p><div class="code-select">sudo systemd-nspawn -D ~/kicksecure-xfce-chroot</div>
-<h3><span class="mw-headline" id="systemd-nspawn_Boot_Chroot_CLI_Only">systemd-nspawn Boot Chroot CLI Only</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=17" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=17.html" title="Edit section: systemd-nspawn Boot Chroot CLI Only">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p></p><div class="code-select">sudo systemd-nspawn -D ~/kicksecure-xfce-chroot /sbin/init</div>
-<h3><span class="mw-headline" id="systemd-nspawn_Boot_Chroot_with_GUI_Support">systemd-nspawn Boot Chroot with GUI Support</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=18.html" title="Edit section: systemd-nspawn Boot Chroot with GUI Support">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>This is unfinished. Unspecific to Kicksecure ™. Could be resolved as per <a class="mw-redirect" data-href="/wiki/Free_Support_Principle" href="./Free_Support_Principle.html" title="Free Support Principle">Free Support Principle</a>.
-</p><p></p><div class="code-select">xhost +local:</div>
-<p></p><div class="code-select">sudo systemd-nspawn --setenv=DISPLAY=$DISPLAY -D ~/kicksecure-xfce-chroot /sbin/init</div>
-<h3><span class="mw-headline" id="Exit_systemd-nspawn_Chroot">Exit systemd-nspawn Chroot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=19.html" title="Edit section: Exit systemd-nspawn Chroot">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>To leave the chroot press keep holding key <code>CTRL</code> and press key <code>5</code> quickly 3 times within 1 second. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup>
+<h1><span class="mw-headline" id="Inspect_Grub_Configuration_Changes">Inspect Grub Configuration Changes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=4.html" title="Edit section: Inspect Grub Configuration Changes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p><b>1.</b> Put folder <code>/boot/grub</code> under git version control.
+</p><p>Git is a useful tool to record which files in a folder changed in what way.
 </p>
-<h3><span class="mw-headline" id="Limitations_of_systemd-nspawn_based_Chroot">Limitations of systemd-nspawn based Chroot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=20" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=20.html" title="Edit section: Limitations of systemd-nspawn based Chroot">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>Despite these limitations, <code>systemd-nspawn</code> should probably preferred over classic <code>chroot</code>. Depends on what you are trying to accomplish.
+<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<p>Git setup for folder <code>/boot/grub</code>.
+</p><p><a class="new" data-href="/w/index.php?title=Template:Git_version_control&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Template:Git_version_control&amp;action=edit&amp;redlink=1.html" title="Template:Git version control (page does not exist)">Template:Git version control</a>
 </p>
-<ul><li><a data-href="/wiki/Sdwdate" href="./Sdwdate.html" title="Sdwdate">sdwdate</a> (and <a data-href="/wiki/Boot_Clock_Randomization" href="./Boot_Clock_Randomization.html" title="Boot Clock Randomization">Boot Clock Randomization</a>) cannot work inside <code>systemd-nspawn</code>.</li>
-<li>Tor will fail to start inside <code>systemd-nspawn</code> <code>chroot</code> if Tor is already running on the host in default config (local listen post <code>9050</code>). But that shouldn't matter. The <code>systemd-nspawn</code> <code>chroot</code> will use the host's Tor in this case. <code>systemd-nspawn</code> has also option to run private networking but these have not been researched for Kicksecure ™ yet.</li></ul>
-<h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=21.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+</div>
+<p><b>2.</b> Change grub configuration.
+</p><p>Make changes according to <a href="#Permanent_Configuration_Changes">Permanent Configuration Changes</a>.
+</p><p><b>3.</b> See which files were modified by <code>update-grub</code>.
+</p><p>From the same folder.
+</p><p></p><div class="code-select">git status</div>
+<p><b>4.</b> Inspect the changes.
+</p><p>Using command line using default diff viewer <code>diff</code> which might be a bit difficult to read but an alternative is presented in the next step.
+</p><p></p><div class="code-select">git diff</div>
+<p>A graphical diff viewer can be used. <a data-href="/wiki/Unspecific" href="./Unspecific.html" title="Unspecific">Unspecific</a>. <a class="new" data-href="/w/index.php?title=Undocumented&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Undocumented&amp;action=edit&amp;redlink=1.html" title="Undocumented (page does not exist)">Undocumented</a>.
+</p><p></p><div class="code-select">git difftool</div>
+<h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=5.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<ul><li><a data-href="/wiki/Configuration_Files" href="./Configuration_Files.html" title="Configuration Files">Configuration Files</a></li>
+<li><a data-href="/wiki/Grub-live" href="./Grub-live.html" title="Grub-live">grub-live</a></li>
+<li><a data-href="/wiki/Recovery" href="./Recovery.html" title="Recovery">Recovery</a></li></ul>
+<h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=6.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="reflist" style="list-style-type: decimal;">
 <div class="mw-references-wrap"><ol class="references">
 <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">
-<ul><li><code>apt-transport-https</code> is required for some older Debian based Linux distributions that have not integrated https support into APT yet. If not available in your distribution, can be safely ignored.</li>
-<li><code>apt-transport-tor</code> is required because <a class="external text" data-href="https://github.com/Kicksecure/anon-apt-sources-list/blob/master/etc/apt/sources.list.d/debian.list" href="https://github.com/Kicksecure/anon-apt-sources-list/blob/master/etc/apt/sources.list.d/debian.list" rel="noreferrer noopener" target="_blank">/etc/apt/sources.list.d/debian.list</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/anon-apt-sources-list/blob/master/etc/apt/sources.list.d/debian.list" href="https://web.archive.org/web/https://github.com/Kicksecure/anon-apt-sources-list/blob/master/etc/apt/sources.list.d/debian.list" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup> is using <code>tor+https</code>. Otherwise we would see the following error.</li></ul>
-<pre>I: cleaning package lists and apt cache...
-Reading package lists...
-E: The method driver /usr/lib/apt/methods/tor+https could not be found.
-E: The method driver /usr/lib/apt/methods/tor+https could not be found.
-E: The method driver /usr/lib/apt/methods/tor+https could not be found.
-E: Failed to fetch tor+https://deb.debian.org/debian-security/dists/buster/updates/InRelease  
-E: Failed to fetch tor+https://deb.debian.org/debian/dists/buster/InRelease  
-E: Failed to fetch tor+https://deb.whonix.org/dists/buster-developers/InRelease  
-E: Some index files failed to download. They have been ignored, or old ones used instead.
-E: apt --option Dir::Etc::SourceList=/dev/null update -oAPT::Status-Fd=&lt;$fd&gt; -oDpkg::Use-Pty=false failed
-</pre>
-<ul><li><code>tor</code> is required so <code>apt-transport-tor</code> can use Tor. Otherwise we would see the following error.</li></ul>
-<pre>I: cleaning package lists and apt cache...
-Err:1 tor+https://deb.debian.org/debian-security buster/updates InRelease
-  Could not connect to 127.0.0.1:9050 (127.0.0.1). - connect (111: Connection refused)
-Err:2 tor+https://deb.debian.org/debian buster InRelease
-  Unable to connect to 127.0.0.1:9050:
-Err:3 tor+https://deb.whonix.org buster-developers InRelease
-  Could not connect to 127.0.0.1:9050 (127.0.0.1). - connect (111: Connection refused)
-Reading package lists...
-W: Failed to fetch tor+https://deb.debian.org/debian-security/dists/buster/updates/InRelease  Could not connect to 127.0.0.1:9050 (127.0.0.1). - connect (111: Connection refused)
-W: Failed to fetch tor+https://deb.debian.org/debian/dists/buster/InRelease  Unable to connect to 127.0.0.1:9050:
-W: Failed to fetch tor+https://deb.whonix.org/dists/buster-developers/InRelease  Could not connect to 127.0.0.1:9050 (127.0.0.1). - connect (111: Connection refused)
-W: Some index files failed to download. They have been ignored, or old ones used instead.
-</pre>
-<ul><li>Actually package <code>apt-transport-tor</code> recommends package <code>tor</code> but listing it here anyhow for those using APT with parameter <code>--no-install-recommends</code>.</li>
-<li><code>apt-transport-https</code> is suggested below to download the signing key.</li></ul>
-</span></li>
-<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
-See <a data-href="/wiki/Secure_Downloads" href="./Secure_Downloads.html" title="Secure Downloads">Secure Downloads</a> to understand why <code>curl</code> and the parameters <code>--tlsv1.3 --proto =https</code> are used instead of <code>wget</code>.</span>
+<a class="external free" data-href="https://wiki.ubuntu.com/Kernel/KernelBootParameters" href="https://wiki.ubuntu.com/Kernel/KernelBootParameters" rel="noreferrer noopener" target="_blank">https://wiki.ubuntu.com/Kernel/KernelBootParameters</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://wiki.ubuntu.com/Kernel/KernelBootParameters" href="https://web.archive.org/web/https://wiki.ubuntu.com/Kernel/KernelBootParameters" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup></span>
 </li>
-<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">
-Fixed in <code>mmdebstrap</code> <code>0.5.0</code>. Quote <a class="external text" data-href="https://gitlab.mister-muffin.de/josch/mmdebstrap/blob/master/CHANGELOG.md" href="https://gitlab.mister-muffin.de/josch/mmdebstrap/blob/master/CHANGELOG.md" rel="noreferrer noopener" target="_blank">changelog</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://gitlab.mister-muffin.de/josch/mmdebstrap/blob/master/CHANGELOG.md" href="https://web.archive.org/web/https://gitlab.mister-muffin.de/josch/mmdebstrap/blob/master/CHANGELOG.md" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup>:
-<blockquote>
-<p>do not copy /etc/resolv.conf or /etc/hostname if the host system doesn't have them
-</p>
-</blockquote>
-<p>Therefore no longer required in Debian <code>bullseye</code>.
-</p>
-</span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
+Not accessible if boot is broken obviously.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">Or shut it down and power it on again.</span>
+</li>
 <li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">
-<code>debootstrap</code> cannot be used since it is a single-mirror Debian chroot creation tool. I.e. it cannot use multiple APT repositories at the same time. And Kicksecure ™ APT repository does not ships no packages available from packages.debian.org. Therefore using <code>mmdebstrap</code> which is a multi-mirror Debian chroot creation. If you cannot use <code>mmdebstrap</code> either (cross platform builds?), you could first create a Debian chroot using <code>debootstrap</code> (or anything) and then install a Kicksecure ™ meta package manually inside the chroot.</span>
+The system might hang when holding down the <code>Shift</code> key. If that happens, just briefly release the <code>Shift</code> key and hold it down again until the grub menu appears.</span>
 </li>
 <li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">
-During chroot build process the following files were already created.
-
-<ul><li><code>/etc/apt/sources.list.d/debian.list</code></li>
-<li><code>/etc/apt/sources.list.d/derivative.list</code></li></ul>
-</span></li>
-<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">
-<a class="external free" data-href="https://unix.stackexchange.com/questions/577065/connected-to-container-mycontainer-press-three-times-within-1s-to-exit-sessi" href="https://unix.stackexchange.com/questions/577065/connected-to-container-mycontainer-press-three-times-within-1s-to-exit-sessi" rel="noreferrer noopener" target="_blank">https://unix.stackexchange.com/questions/577065/connected-to-container-mycontainer-press-three-times-within-1s-to-exit-sessi</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://unix.stackexchange.com/questions/577065/connected-to-container-mycontainer-press-three-times-within-1s-to-exit-sessi" href="https://web.archive.org/web/https://unix.stackexchange.com/questions/577065/connected-to-container-mycontainer-press-three-times-within-1s-to-exit-sessi" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup></span>
+<a class="external free" data-href="https://docs.fedoraproject.org/en-US/Fedora/22/html/Multiboot_Guide/GRUB-runtime.html" href="https://docs.fedoraproject.org/en-US/Fedora/22/html/Multiboot_Guide/GRUB-runtime.html" rel="noreferrer noopener" target="_blank">https://docs.fedoraproject.org/en-US/Fedora/22/html/Multiboot_Guide/GRUB-runtime.html</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://docs.fedoraproject.org/en-US/Fedora/22/html/Multiboot_Guide/GRUB-runtime.html" href="https://web.archive.org/web/https://docs.fedoraproject.org/en-US/Fedora/22/html/Multiboot_Guide/GRUB-runtime.html" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup></span>
 </li>
 </ol></div></div>
 <hr/>
@@ -536,11 +421,11 @@ During chroot build process the following files were already created.
 </div>
 </div>
 <div class="project-random-news-ticker">
-<p>Please help in testing <a data-href="/wiki/Contribute#Testing" href="./Contribute.html" title="Contribute">new features and bug fixes</a> in Kicksecure.
+<p>We are looking for <a data-href="/wiki/Contribute#Contributor" href="./Contribute.html" title="Contribute">contributors and developers</a>. Maybe you?
 </p>
 </div>
 </div></div>
-<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;oldid=53296" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;oldid=53296">https://www.kicksecure.com/w/index.php?title=Chroot&amp;oldid=53296</a>"</div></div>
+<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Grub&amp;oldid=55946" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;oldid=55946">https://www.kicksecure.com/w/index.php?title=Grub&amp;oldid=55946</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>
 </div>
