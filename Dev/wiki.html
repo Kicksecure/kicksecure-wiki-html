@@ -50,8 +50,8 @@ div.wip a {
 <meta content="../Dev/wiki" property="og:url"/>
 <meta content="links with web archive, onions, CodeSelect" property="og:description"/>
 <meta content="/w/images/thumb/f/fc/Kicksecure-twitter-post.jpg/470px-Kicksecure-twitter-post.jpg" property="og:image"/>
-<meta content="2022-06-11T14:35:55Z" property="article:modified_time"/>
-<meta content="2022-06-11T14:35:55Z" property="article:published_time"/>
+<meta content="2022-06-13T08:47:56Z" property="article:modified_time"/>
+<meta content="2022-06-13T08:47:56Z" property="article:published_time"/>
 <meta content="website" property="og:type"/>
 
 </head>
@@ -101,7 +101,7 @@ div.wip a {
 <div class="col2">
 <span class="headline page">Page</span>
 <a class="view" data-href="/wiki/Dev/wiki" href="../Dev/wiki">Read</a>
-<a class="edit" data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;oldid=56850" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;oldid=56850">Edit</a>
+<a class="edit" data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;oldid=56918" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;oldid=56918">Edit</a>
 <a class="history user-logged-in" data-href="/w/index.php?title=Dev/wiki&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=history">History</a>
 <a class="move user-logged-in" data-href="/wiki/Special:MovePage/Dev/wiki" href="../Special:MovePage/Dev/wiki">Move</a>
 <a class="protect" data-href="/w/index.php?title=Dev/wiki&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=protect">Protection</a>
@@ -171,7 +171,13 @@ div.wip a {
 </ul>
 </li>
 <li class="toclevel-1 tocsection-17"><a href="#MultiWiki"><span class="tocnumber">13</span> <span class="toctext">MultiWiki</span></a></li>
-<li class="toclevel-1 tocsection-18"><a href="#See_Also"><span class="tocnumber">14</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#ReplaceText"><span class="tocnumber">14</span> <span class="toctext">ReplaceText</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#space_removal_in_template_invocations"><span class="tocnumber">14.1</span> <span class="toctext">space removal in template invocations</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#template_rename"><span class="tocnumber">14.2</span> <span class="toctext">template rename</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#See_Also"><span class="tocnumber">15</span> <span class="toctext">See Also</span></a></li>
 </ul>
 </div>
 <h1><span class="mw-headline" id="LinkSuggest_vs_CodeMirror">LinkSuggest vs CodeMirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=1" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=1.html" title="Edit section: LinkSuggest vs CodeMirror">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -423,7 +429,39 @@ JavaScript version: Text is only show when JavaScript is active
 <p>The full list of wiki pages currently in <code>Category</code> <code>MultiWiki</code> can be found on the category page:
 </p>
 <ul><li><a data-href="/wiki/Category:MultiWiki" href="../Category:MultiWiki.html" title="Category:MultiWiki">Category:MultiWiki</a></li></ul>
-<h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=18.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span class="mw-headline" id="ReplaceText">ReplaceText</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=18.html" title="Edit section: ReplaceText">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p><b>1.</b> regex examples for <a data-href="/wiki/Special:ReplaceText" href="../Special:ReplaceText.html" title="Special:ReplaceText">Special:ReplaceText</a>.
+</p><p><b>2.</b> To use regex, check box <code>Use regular expressions</code> is required.
+</p>
+<h2><span class="mw-headline" id="space_removal_in_template_invocations">space removal in template invocations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=19.html" title="Edit section: space removal in template invocations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>4</b>
+</p><p>regex:
+</p>
+<pre>\{\{(\w+)\s(\w+)\s(\w+)\s(\w+)\}\}
+</pre>
+<p>replace:
+</p>
+<pre>{{$1_$2_$3_$4}}
+</pre>
+<p>(<code>\s</code> means "white space".)
+</p><p><b>3</b>
+</p>
+<pre>\{\{(\w+)\s(\w+)\s(\w+)\}\}
+</pre>
+<pre>{{$1_$2_$3}}
+</pre>
+<p><b>2</b>
+</p>
+<pre>\{\{(\w+)\s(\w+)\}\}
+</pre>
+<pre>{{$1_$2}}
+</pre>
+<h2><span class="mw-headline" id="template_rename">template rename</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=20" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=20.html" title="Edit section: template rename">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<pre>(?i)workstation.product.name.short
+</pre>
+<pre>(?i)\{\{project.name\}\}
+</pre>
+<h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;action=edit&amp;section=21.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <ul><li><a data-href="/wiki/Dev/mediawiki" href="../Dev/mediawiki.html" title="Dev/mediawiki">Dev/mediawiki</a></li>
 <li><a data-href="/wiki/Dev/Documentation_Guidelines" href="../Dev/Documentation_Guidelines.html" title="Dev/Documentation Guidelines">Dev/Documentation_Guidelines</a></li>
 <li><a data-href="/wiki/Dev/Documentation_Markup_Format_Converters" href="../Dev/Documentation_Markup_Format_Converters.html" title="Dev/Documentation Markup Format Converters">Dev/Documentation Markup Format Converters</a></li></ul>
@@ -595,7 +633,7 @@ JavaScript version: Text is only show when JavaScript is active
 </p>
 </div>
 </div></div>
-<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;oldid=56850" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;oldid=56850">https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;oldid=56850</a>"</div></div>
+<div class="printfooter">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;oldid=56918" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;oldid=56918">https://www.kicksecure.com/w/index.php?title=Dev/wiki&amp;oldid=56918</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>
 </div>
