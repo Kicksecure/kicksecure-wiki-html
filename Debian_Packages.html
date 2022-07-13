@@ -173,7 +173,7 @@ div.wip a {
 <p>It is actually a good idea to safely run <code>sudo apt autoremove</code> according to the following instructions on this wiki page to make sure extraneous packages which might no longer be recommended for default installation are removed.
 </p>
 <h1><span class="mw-headline" id="Re-install_Meta_Packages_and_Safely_Run_Autoremove">Re-install Meta Packages and Safely Run Autoremove</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Debian_Packages&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Debian_Packages&amp;action=edit&amp;section=2.html" title="Edit section: Re-install Meta Packages and Safely Run Autoremove">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p><b>1.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
 </p><p></p><div class="code-select">sudo apt update</div>
 <p><b>2.</b> Ensure a proper meta package is installed.
@@ -270,7 +270,7 @@ sudo apt purge qubes-core-agent-passwordless-root</div>
 <h2><span class="mw-headline" id="Removal_Instructions">Removal Instructions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Debian_Packages&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Debian_Packages&amp;action=edit&amp;section=6.html" title="Edit section: Removal Instructions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>These instructions allow for safe removal of a package (in this example the <code>uwt</code> package). This results in meta package removal without breaking the whole system when next time running <code>sudo apt autoremove</code>.
 </p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p><b>1.</b> Upgrade. 
 </p><p><a data-href="/wiki/Operating_System_Software_and_Updates" href="./Operating_System_Software_and_Updates.html" title="Operating System Software and Updates">Upgrade the system</a>.
 </p><p><b>2.</b> Clean up.
@@ -308,7 +308,7 @@ Do you want to continue? [Y/n]
 <a class="external text" data-href="https://forums.whonix.org/t/issues-with-removal-of-specific-packages-by-users-builders/653/9" href="https://forums.whonix.org/t/issues-with-removal-of-specific-packages-by-users-builders/653/9" rel="noreferrer noopener" target="_blank">Issues with removal of specific packages by users / builders</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://forums.whonix.org/t/issues-with-removal-of-specific-packages-by-users-builders/653/9" href="https://web.archive.org/web/https://forums.whonix.org/t/issues-with-removal-of-specific-packages-by-users-builders/653/9" rel="noreferrer noopener" target="_blank"><img data-src="/w/images/7/73/Internet_Archive_logo.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII="/></a></sup>.
 </p>
 <h2><span class="mw-headline" id="Technical_Information">Technical Information</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Debian_Packages&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Debian_Packages&amp;action=edit&amp;section=7.html" title="Edit section: Technical Information">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box {{{addToClass}}}">
 <p><a class="image" data-href="/wiki/File:Ambox_notice.png" href="./File:Ambox_notice.png"><img alt="Info" data-file-height="2000" data-file-width="2000" data-src="/w/images/thumb/c/c8/Ambox_notice.png/40px-Ambox_notice.png" data-srcset="/w/images/thumb/c/c8/Ambox_notice.png/60px-Ambox_notice.png 1.5x, /w/images/thumb/c/c8/Ambox_notice.png/80px-Ambox_notice.png 2x" decoding="async" height="40" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAtFBMVEUAAAAzZswrVdUuXdE5Y8Y2a8kzZswxYc4xYs4vaMYxY84yZM0xZ8gxZ84xZ84xZ84zZswyZc0yZ80xZcsyZ80yZc0yZ80yZs0yZssyZs0yZss0ZsszZcwzZ8w0Zss0ZsszZsozZswyZs00ZssyZc0yZs0zZ8wyZs00ZsszZ8wyZcwyZswzZ8wzZswzZswzZssyZswzZswyZcwyZcwzZcwzZswzZswzZcszZsszZsszZcwzZsx0fp/GAAAAO3RSTlMABQYLEhMUFRobHykqKjQ+S0xSU1xgYWtscHFxfHyFj5aWmJmdnaSsrcLDw8zX4ebn6+/w8PT19/f6+7st35YAAAEKSURBVDjLjdXbUsIwFEDRrUXQVkUBL4hSpYpGQ7Uo9XL+/798UJiGps3Zj5k1zaSdnIJTPMqMfX23NhsnNBZdWKmUX/f8bFLIVmXarbvjhXgqBtvuShq623VcJo2ZSOccOZHWHjbncNcB3JXz//eyCMHywLtxHcocICrCUBLgUhRlgNXAVUSscSKnjHQw9XwU32HkBaODS89ZvFB408IPLVRvrYSf2tdjGevgjEQHh5Br4Pce3GjgI9ArFbAPkIahAaBbBOHR3zUchOB0fbFvpTWzmRQ7ps3lncpsbJF57EzR+8Z9O7idlV43pdb+3PO4Q+8UT7JVVf089Zv/Cyfp81JE5MvOhu6g/wUnGQ6lMn7gQQAAAABJRU5ErkJggg==" width="40"/></a> This section provides technical information for interested readers and can be skipped.
 </p>
 </div>
@@ -526,7 +526,7 @@ Function <code>pkg-install-maybe</code> in <a class="external free" data-href="h
 </div>
 </div>
 <div class="project-random-news-ticker">
-<p>Did you know that anyone can edit the <a data-href="/wiki/Documentation" href="./Documentation.html" title="Documentation">Kicksecure wiki</a> to improve it?
+<p>You have <a data-href="/wiki/Dev/git#subscribe_to_code_changes" href="./Dev/git.html" title="Dev/git">5 options</a> for subscribing to Kicksecure source code changes.
 </p>
 </div>
 </div></div>

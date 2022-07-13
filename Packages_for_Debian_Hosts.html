@@ -181,12 +181,12 @@ div.wip a {
 </p><p>This guide shows how to download these select packages from the Kicksecure ™ repository; they can be downloaded stand-alone or combined.
 </p>
 <h2><span id="How-to:_Install_Kicksecure_.E2.84.A2_Packages"></span><span class="mw-headline" id="How-to:_Install_Kicksecure_™_Packages">How-to: Install Kicksecure ™ Packages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Packages_for_Debian_Hosts&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Packages_for_Debian_Hosts&amp;action=edit&amp;section=2.html" title="Edit section: How-to: Install Kicksecure ™ Packages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p>Complete the following steps to add the <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Kicksecure ™ Signing Key</a> to the system's APT keyring.
 </p><p>Open a terminal.
 </p><p><b>1.</b> Package <code>curl</code> needs to be installed.
 </p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p>Install <code>curl</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
 </p><p></p><div class="code-select">sudo apt update</div>
@@ -201,7 +201,7 @@ div.wip a {
 </div>
 <p><b>2.</b> Download <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Kicksecure ™ Signing Key</a>. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
 </p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p><u><b>If</b> you are using Debian</u>, run.
 </p><p></p><div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/derivative.asc</div>
 <p><u><b>If</b> you are using a Qubes Debian Template</u>, run.
@@ -214,11 +214,11 @@ div.wip a {
 </p><p>The procedure of adding Kicksecure ™ signing key is now complete.
 </p>
 </div>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p>Add Kicksecure ™ Repository.
 </p><p>Choose either: Option <u>A</u>, Option <u>B</u> <u><b>OR</b></u> Option <u>C</u>.
 </p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <div class="toccolours mw-collapsible mw-collapsed">
 <p><b>Option <u>A</u></b>: Add Kicksecure ™ Onion Repository.
 </p><p>To add Kicksecure ™ Repository over Onion please press on expand on the right.
@@ -231,7 +231,7 @@ div.wip a {
 </div>
 </div>
 </div>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <div class="toccolours mw-collapsible mw-collapsed">
 <p><b>Option <u>B</u></b>: Add Kicksecure ™ Clearnet Repository over Tor.
 </p><p>To add Kicksecure ™ Repository over torified clearnet please press on expand on the right.
@@ -244,7 +244,7 @@ div.wip a {
 </div>
 </div>
 </div>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <div class="toccolours mw-collapsible mw-collapsed">
 <p><b>Option <u>C</u></b>: Add Kicksecure Clearnet Repository over clearnet.
 </p><p>To add Kicksecure ™ Repository over clearnet please press on expand on the right.
@@ -256,10 +256,10 @@ div.wip a {
 </div>
 </div>
 </div>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p>Install <code>package-name</code>.
 </p>
-<div style="background: #F8F8F8; border: 2px; padding: 5px; margin: 10px; border-style: solid; border-color: black; width: 100%">
+<div class="info-box">
 <p>Install <code>package-name</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
 </p><p></p><div class="code-select">sudo apt update</div>
@@ -455,7 +455,7 @@ Placing an additional signing key into folder <code>/usr/share/keyrings</code> b
 </div>
 </div>
 <div class="project-random-news-ticker">
-<p>Host or VM can be booted into Live Mode using <a data-href="/wiki/Host_Live_Mode" href="./Host_Live_Mode.html" title="Host Live Mode">Host Live Mode</a> <u>or</u> <a data-href="/wiki/VM_Live_Mode" href="./VM_Live_Mode.html" title="VM Live Mode">VM Live Mode</a>
+<p>Want to make Kicksecure better? We're looking for help. See <a data-href="https://forums.whonix.org/search?expanded=true&amp;q=tags%3Astatus_open_issue_todo" href="https://forums.whonix.org/search?expanded=true&amp;q=tags%3Astatus_open_issue_todo" rel="noreferrer" target="_blank">issues</a> or <a data-href="https://forums.kicksecure.com/c/development" href="https://forums.kicksecure.com/c/development" rel="noreferrer" target="_blank">forum</a>
 </p>
 </div>
 </div></div>
