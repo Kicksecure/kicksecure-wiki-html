@@ -234,26 +234,31 @@
 </p>
 <ul><li><u>Option 1</u>: Create a snapshot of your VM; <b>or</b></li>
 <li><u>Option 2</u>: Alternatively backup the <code>/boot</code> folder.</li></ul>
-<p></p><div class="code-select">sudo cp -a /boot /boot.back</div>
+<p><br/>
+</p><div class="code-select">sudo cp -a /boot /boot.back</div>
 <p><b>2.</b> Install <code>ro-mode-init</code>.
 </p>
 <div class="info-box">
 <div class="info-box">
 <p>Install <code>ro-mode-init</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="../Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>ro-mode-init</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="../Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends ro-mode-init</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends ro-mode-init</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>ro-mode-init</code> is complete.
 </p>
 </div>
 </div>
 <p><b>3.</b> Upate initial ramdisk. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
-</p><p></p><div class="code-select">sudo update-initramfs -u</div>
+</p><p><br/>
+</p><div class="code-select">sudo update-initramfs -u</div>
 <p><b>4.</b> Set the VM disk to read-only.
 </p><p>The <a href="#Read-only_VM_Setting">read-only VM</a> setting is necessary (see below), otherwise the VM disk will always boot into persistent mode.
 </p>
@@ -268,20 +273,24 @@
 </p><p><code>VirtualBox</code> → <code>Settings</code> → <code>Storage</code> → <code>Type:</code> <code>LsiLogic SAS</code> → <code>OK</code>
 </p><p><b>3.</b> Learn the syntax.
 </p><p>Do not run the following command. Only look at it.
-</p><p></p><div class="code-select">VBoxManage setextradata vmname "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
+</p><p><br/>
+</p><div class="code-select">VBoxManage setextradata vmname "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
 <p>Replace <code>vmname</code> with the name of the actual VM name.
 </p><p><b>4.</b> On the command line run.
 </p><p><u>Kicksecure ™ XFCE example</u>:
-</p><p></p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
+</p><p><br/>
+</p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
 <p><u>Kicksecure ™ XFCE example</u>:
-</p><p></p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
+</p><p><br/>
+</p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
 <h3><span class="mw-headline" id="Read-write_disk_on_VirtualBox">Read-write disk on VirtualBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=6.html" title="Edit section: Read-write disk on VirtualBox">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>To boot into read-write mode again, simply revert this change.
 </p>
 <ol><li>Power off the machine.</li>
 <li>From the command line run.</li></ol>
 <p>Use the syntax below.
-</p><p></p><div class="code-select">VBoxManage setextradata vmname "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly"</div>
+</p><p><br/>
+</p><div class="code-select">VBoxManage setextradata vmname "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly"</div>
 <p>Replace <code>vmname</code> with the name of the actual VM name.
 </p>
 <h2><span class="mw-headline" id="KVM">KVM</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=7.html" title="Edit section: KVM">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -303,7 +312,8 @@
 <h1><span class="mw-headline" id="Debugging">Debugging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=11.html" title="Edit section: Debugging">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>An inconsistent filesystem will likely result in errors during booting in live mode. For instance, inconsistencies can arise when the VM is killed instead of performing a normal shutdown in persistent mode. Therefore to ensure it is consistent, run <code>fsck</code> in persistent mode. Debian automatically does this during boot. VMs running in live mode can be killed without problems.
 </p><p>In the case of non-<code>fsck</code> related errors using <code>ro-mode-init</code> (like dropping to an initramfs shell), add the following to the kernel command line/GRUB menu for easier debugging:
-</p><p></p><div class="code-select">debug=1 break=init-premount</div>
+</p><p><br/>
+</p><div class="code-select">debug=1 break=init-premount</div>
 <h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;action=edit&amp;section=12.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="reflist" style="list-style-type: decimal;">
 <div class="mw-references-wrap"><ol class="references">
@@ -486,10 +496,7 @@ Required for now but not forever.
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3064-0!canonicalwww.kicksecure.com and timestamp 20230130203831 and revision id 65547.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;oldid=65547" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;oldid=65547">https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/ro-mode-init&amp;oldid=65547</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

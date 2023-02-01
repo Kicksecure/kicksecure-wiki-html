@@ -213,31 +213,41 @@
 <ul><li>Update Kicksecure ™ debian package repository.</li></ul>
 <ul><li>add your own <code>default-key</code> to your own <code>/home/user/.gnupg/gpg.conf</code>.</li></ul>
 <ul><li>Check that all packages point to a signed git commit and signed git tag.</li></ul>
-<p></p><div class="code-select">~/derivative-maker/packages/kicksecure/developer-meta-files/debug-steps/packaging-helper-script pkg_verify_signed_commit_and_tag</div>
+<p><br/>
+</p><div class="code-select">~/derivative-maker/packages/kicksecure/developer-meta-files/debug-steps/packaging-helper-script pkg_verify_signed_commit_and_tag</div>
 <ul><li>push the source code to github</li></ul>
-<p></p><div class="code-select">git push origin master</div>
+<p><br/>
+</p><div class="code-select">git push origin master</div>
 <ul><li>Check, that the current git commit is a signed. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup></li></ul>
-<p></p><div class="code-select">git log --show-signature HEAD^..HEAD</div>
+<p><br/>
+</p><div class="code-select">git log --show-signature HEAD^..HEAD</div>
 <p>Or use the generic makefile as a shortcut.
-</p><p></p><div class="code-select">make git-commit-verify</div>
+</p><p><br/>
+</p><div class="code-select">make git-commit-verify</div>
 <ul><li>Create an OpenPGP signed git tag. This will also be used as Kicksecure ™ version number.</li></ul>
-<p></p><div class="code-select">git tag -s version</div>
+<p><br/>
+</p><div class="code-select">git tag -s version</div>
 <ul><li>Make sure the current git head is a signed git commit and signed git tag.</li></ul>
 <p>To simplify this, you could use the generic makefile.
-</p><p></p><div class="code-select">make git-verify</div>
+</p><p><br/>
+</p><div class="code-select">make git-verify</div>
 <ul><li>Push the OpenPGP signed git tag to github.</li></ul>
-<p></p><div class="code-select">git push origin version</div>
+<p><br/>
+</p><div class="code-select">git push origin version</div>
 <ul><li>Enable Kicksecure ™ stable repository by default.</li></ul>
-<p></p><div class="code-select">export DERIVATIVE_APT_REPOSITORY_OPTS='--enable --repository stable'</div>
+<p><br/>
+</p><div class="code-select">export DERIVATIVE_APT_REPOSITORY_OPTS='--enable --repository stable'</div>
 <ul><li>And use <code>sudo -E</code> so above environment is kept.</li></ul>
 </div>
 </div>
 <h2><span class="mw-headline" id="Building">Building</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=3.html" title="Edit section: Building">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <h3><span class="mw-headline" id="Build">Build</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=4.html" title="Edit section: Build">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Build Kicksecure ™. For example Kicksecure ™ with XFCE for VirtualBox.
-</p><p></p><div class="code-select">sudo -E ./derivative-maker --build --repo true --target virtualbox --flavor whonix-gateway-xfce</div>
+</p><p><br/>
+</p><div class="code-select">sudo -E ./derivative-maker --build --repo true --target virtualbox --flavor whonix-gateway-xfce</div>
 <p>Build Kicksecure ™. For example Kicksecure ™ with XFCE for VirtualBox.
-</p><p></p><div class="code-select">sudo -E ./derivative-maker --build --repo true --target virtualbox --flavor whonix-workstation-xfce</div>
+</p><p><br/>
+</p><div class="code-select">sudo -E ./derivative-maker --build --repo true --target virtualbox --flavor whonix-workstation-xfce</div>
 <p>For other options and platforms also see <a data-href="/wiki/Dev/Build_Documentation" href="../Dev/Build_Documentation.html" title="Dev/Build Documentation">build documentation</a>.
 </p>
 <h2><span class="mw-headline" id="Post_Building">Post Building</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=5.html" title="Edit section: Post Building">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -255,7 +265,8 @@
 <li><b>B)</b> <u>official</u> Kicksecure ™ builds: <b>Mandatory</b> sign the images.</li></ul>
 <div class="info-box">
 <ul><li>OpenPGP sign the images.</li></ul>
-<p></p><div class="code-select">~/derivative-maker/packages/kicksecure/developer-meta-files/release/prepare_release --flavor whonix-workstation --target virtualbox --build</div>
+<p><br/>
+</p><div class="code-select">~/derivative-maker/packages/kicksecure/developer-meta-files/release/prepare_release --flavor whonix-workstation --target virtualbox --build</div>
 </div>
 </div>
 <div class="info-box">
@@ -264,11 +275,13 @@
 </p>
 </div>
 <ul><li>Upload the images.</li></ul>
-<p></p><div class="code-select">~/derivative-maker/packages/kicksecure/developer-meta-files/release/upload_images</div>
+<p><br/>
+</p><div class="code-select">~/derivative-maker/packages/kicksecure/developer-meta-files/release/upload_images</div>
 </div>
 <h3><span class="mw-headline" id="Testing">Testing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=6.html" title="Edit section: Testing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul><li><div class="code-select">/usr/share/whonix-ws-firewall/unit_tests/stream_isolation_test</div></li>
-<li>At least a few testers should test final releases before posting a news. Testers may be found by posting a news.</li>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">/usr/share/whonix-ws-firewall/unit_tests/stream_isolation_test</div>
+<ul><li>At least a few testers should test final releases before posting a news. Testers may be found by posting a news.</li>
 <li><a class="new" data-href="/w/index.php?title=LeakTests&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=LeakTests&amp;action=edit&amp;redlink=1.html" title="LeakTests (page does not exist)">LeakTests</a>!</li>
 <li><a data-href="/wiki/Test" href="../Test.html" title="Test">Test</a> the images before final release! (Testers-only releases can be uploaded straight away.)</li></ul>
 <h3><span class="mw-headline" id="Update_Permanent_Links">Update Permanent Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=7.html" title="Edit section: Update Permanent Links">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
@@ -287,7 +300,8 @@
 </p>
 <h3><span class="mw-headline" id="Announcement_Text_Creation">Announcement Text Creation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=9.html" title="Edit section: Announcement Text Creation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Create Changelog and Announcement.
-</p><p></p><div class="code-select">./debug-steps/packaging-helper-script pkg_git_packages_git_log_writer</div>
+</p><p><br/>
+</p><div class="code-select">./debug-steps/packaging-helper-script pkg_git_packages_git_log_writer</div>
 <h3><span class="mw-headline" id="Wiki_Page_Updates">Wiki Page Updates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;action=edit&amp;section=10.html" title="Edit section: Wiki Page Updates">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <div class="info-box">
 <p><b>Only required if you want to redistribute (official) Kicksecure ™ builds.</b>
@@ -362,7 +376,8 @@ get rid of .directory files inside the source code:
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 Get rid of <code>~backup</code> files. In other words, get rid of files starting with <code>~</code>.
 
-<div class="code-select">find ./ -name '*~' | xargs trash-put</div></span>
+
+<div class="code-select">find ./ -name '*~' | xargs trash-put</div> </span>
 </li>
 <li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">
 You might wish using a <code>git</code> or <code>bash</code> alias to safe typing.</span>
@@ -537,10 +552,7 @@ You might wish using a <code>git</code> or <code>bash</code> alias to safe typin
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3193-0!canonicalwww.kicksecure.com and timestamp 20230131010801 and revision id 64593.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=64593" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=64593">https://www.kicksecure.com/w/index.php?title=Dev/Redistribution&amp;oldid=64593</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a data-href="/wiki/Category:Development" href="../Category:Development.html" title="Category:Development">Development</a></li><li><a data-href="/wiki/Category:Design" href="../Category:Design.html" title="Category:Design">Design</a></li></ul></div></div>
 </div>

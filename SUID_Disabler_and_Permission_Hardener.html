@@ -292,7 +292,8 @@ SGID is similar to SUID. The difference between both is that SUID assumes owner 
 </div>
 <h2><span class="mw-headline" id="Temporary_Until_Package_Re-Installation">Temporary Until Package Re-Installation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=5.html" title="Edit section: Temporary Until Package Re-Installation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>As long as SUID Disabler and Permission Hardener is for testers-only, it is recommended to initially manually run from the command line. Optional. This is useful to better understand what SUID Disabler and Permission Hardener is actually doing.
-</p><p></p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening</div>
+</p><p><br/>
+</p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening</div>
 <p>(The printout will look similar to <a href="#SUID_Disabler_and_Permission_Hardener_Printout">this</a>.)
 </p><p>However, if any package that ships any SUID binary is re-installed, the SUID bit will be re-enabled. Therefore it is recommend to permanently enable SUID Disabler and Permission Hardener to ensure that re-installed packages will keep previously disabled SUID binaries permanently disabled.
 </p>
@@ -302,52 +303,64 @@ SGID is similar to SUID. The difference between both is that SUID assumes owner 
 </p>
 </div>
 <p>Enable systemd unit.
-</p><p></p><div class="code-select">sudo systemctl enable permission-hardening.service</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl enable permission-hardening.service</div>
 <p>Start systemd unit.
-</p><p></p><div class="code-select">sudo systemctl start permission-hardening.service</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl start permission-hardening.service</div>
 <h1><span class="mw-headline" id="SUID_Disabler_and_Permission_Hardener_Operations">SUID Disabler and Permission Hardener Operations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=7.html" title="Edit section: SUID Disabler and Permission Hardener Operations">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="Show_dpkg-statoverride_List">Show dpkg-statoverride List</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=8.html" title="Edit section: Show dpkg-statoverride List">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>SUID Disabler is based on the standard Debian tool <code>dpkg-statoverride</code> (<a class="external text" data-href="https://manpages.debian.org/dpkg-statoverride" href="https://manpages.debian.org/dpkg-statoverride" rel="noreferrer noopener" target="_blank">man page</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://manpages.debian.org/dpkg-statoverride" href="https://web.archive.org/web/https://manpages.debian.org/dpkg-statoverride" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>). It is a tool to reliably override ownership and mode of files.
 </p><p>SUID Disabler would be incomplete if it did not use <code>dpkg-statoverride</code>. This is because when a package is upgraded or re-installed, <code>dpkg</code> would reset the original file permissions. I.e. re-enable SUID. To prevent a race condition (malware abusing SUID before SUID can re-disable), <code>dpkg-statoverride</code> is being used.
 </p><p>It might be helpful to view the list of overwritten dpkg file permissions.
-</p><p></p><div class="code-select">dpkg-statoverride --list</div>
+</p><p><br/>
+</p><div class="code-select">dpkg-statoverride --list</div>
 <p>Note that even when not using SUID Disabler at all, Debian (and a few other packages) by default adds a few dpkg statoverwrites by themselves. Not all entries in the list of dpkg statoverwrites are the caused by SUID Disabler. Therefore SUID Disabler maintains its own lists of changes. It records permissions before it applies any changes as well as records the new permissions set by SUID Disabler. In case of any issues it might however be useful to check the list of file permission changes enforced by <code>dpkg-statoverride</code>.
 </p>
 <h2><span class="mw-headline" id="View_List_of_Debian_Default_File_Permissions_Before_Changes">View List of Debian Default File Permissions Before Changes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=9.html" title="Edit section: View List of Debian Default File Permissions Before Changes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>File <code>/var/lib/permission-hardening/existing_mode/statoverride</code> records modes before changing them using SUID Disabler and Permission Hardener. To view, run the following command.
-</p><p></p><div class="code-select">cat /var/lib/permission-hardening/existing_mode/statoverride</div>
+</p><p><br/>
+</p><div class="code-select">cat /var/lib/permission-hardening/existing_mode/statoverride</div>
 <h2><span class="mw-headline" id="View_List_of_Changed_Mode_Permissions">View List of Changed Mode Permissions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=10.html" title="Edit section: View List of Changed Mode Permissions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>File <code>/var/lib/permission-hardening/new_mode/statoverride</code> records modes that were changed by SUID Disabler and Permission Hardener. To view, run the following command.
-</p><p></p><div class="code-select">cat /var/lib/permission-hardening/new_mode/statoverride</div>
+</p><p><br/>
+</p><div class="code-select">cat /var/lib/permission-hardening/new_mode/statoverride</div>
 <p>Alternatively see <a href="#Show_dpkg-statoverride_List">dpkg-statoverride list</a>.
 </p>
 <h2><span class="mw-headline" id="Compare_Mode_Changes">Compare Mode Changes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=11.html" title="Edit section: Compare Mode Changes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To view previous modes and how these were changed (replace <code>meld</code> with your favorite <code>diff</code> viewer):
-</p><p></p><div class="code-select">meld /var/lib/permission-hardening/existing_mode/statoverride /var/lib/permission-hardening/new_mode/statoverride</div>
+</p><p><br/>
+</p><div class="code-select">meld /var/lib/permission-hardening/existing_mode/statoverride /var/lib/permission-hardening/new_mode/statoverride</div>
 <h2><span class="mw-headline" id="Re-enable_Specific_SUID_Binaries">Re-enable Specific SUID Binaries</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=12.html" title="Edit section: Re-enable Specific SUID Binaries">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Syntax:
-</p><p></p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening-undo /full/path/to/file</div>
+</p><p><br/>
+</p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening-undo /full/path/to/file</div>
 <p>Example:
-</p><p></p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening-undo /usr/sbin/exim4</div>
+</p><p><br/>
+</p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening-undo /usr/sbin/exim4</div>
 <p>This is only effective only reboot. To make the change permanent the SUID binary needs to be whitelisted as per the next chapter.
 </p>
 <h2><span class="mw-headline" id="Whitelist_Specific_SUID_Binaries">Whitelist Specific SUID Binaries</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=13.html" title="Edit section: Whitelist Specific SUID Binaries">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <div class="info-box">
 <p><b>1.</b> Create settings folder.
-</p><p></p><div class="code-select">sudo mkdir -p /etc/permission-hardening.d</div>
+</p><p><br/>
+</p><div class="code-select">sudo mkdir -p /etc/permission-hardening.d</div>
 <p><b>2.</b> Open file <code>/etc/permission-hardening.d/20_user.conf</code> in an editor with root rights.
 </p><p>(<a data-href="/wiki/Qubes" href="./Qubes.html" title="Qubes">Kicksecure ™ for Qubes</a>: In Template)
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/permission-hardening.d/20_user.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/permission-hardening.d/20_user.conf</div>
 </div>
 <p><b>3.</b> Learn the syntax.
 </p><p>Do <u>not</u> add this.
-</p><p></p><div class="code-select">/full/path/to/file exactwhitelist</div>
+</p><p><br/>
+</p><div class="code-select">/full/path/to/file exactwhitelist</div>
 <p><b>4.</b> Add.
 </p><p>Example. Replace <code>/usr/sbin/exim4</code> with the actual path to the binary intended to be whitelisted.
-</p><p></p><div class="code-select">/usr/sbin/exim4 exactwhitelist</div>
+</p><p><br/>
+</p><div class="code-select">/usr/sbin/exim4 exactwhitelist</div>
 <p><b>5.</b> Save.
 </p><p><b>6.</b> Re-enable SUID binary.
 </p><p>Steps in this chapter by itself are not sufficient. It is required to <a href="#Re-Enable_Specific_SUID_Binaries">re-enable the specific SUID binary</a> as per above chapter.
@@ -360,15 +373,19 @@ SGID is similar to SUID. The difference between both is that SUID assumes owner 
 <p><b>1.</b> Follow the same instructions as in above chapter <a href="#Whitelist_Specific_SUID_Binaries">Whitelist Specific SUID Binaries</a> even though this is a capability binary and not a SUID binary.
 </p><p><b>2.</b> Learn the syntax.
 </p><p>Do <u>not</u> run this command.
-</p><p></p><div class="code-select">sudo setcap capability /full/path/to/binary</div>
+</p><p><br/>
+</p><div class="code-select">sudo setcap capability /full/path/to/binary</div>
 <p><b>3.</b> Re-add previously removed capability.
 </p><p>The following example adds capability <code>cap_net_raw+ep</code> to binary <code>/bin/ping</code>. Replace <code>cap_net_raw+ep</code> with the actual capability and binary <code>/bin/ping</code> with the actual binary intended to be re-added.
-</p><p></p><div class="code-select">sudo setcap cap_net_raw+ep /bin/ping</div>
+</p><p><br/>
+</p><div class="code-select">sudo setcap cap_net_raw+ep /bin/ping</div>
 <p><b>4.</b> Verify capability was re-added.
 </p><p>Syntax.
-</p><p></p><div class="code-select">sudo getcap /full/path/to/binary</div>
+</p><p><br/>
+</p><div class="code-select">sudo getcap /full/path/to/binary</div>
 <p>Example.
-</p><p></p><div class="code-select">sudo getcap /bin/ping</div>
+</p><p><br/>
+</p><div class="code-select">sudo getcap /bin/ping</div>
 <p>Should show.
 </p>
 <pre>/bin/ping = cap_net_raw+ep
@@ -382,14 +399,18 @@ SGID is similar to SUID. The difference between both is that SUID assumes owner 
 </p><p>Advanced users only! This breaks even <code>sudo</code>.
 </p>
 </div>
-<p></p><div class="code-select">whitelists_disable_all=true</div>
+<p><br/>
+</p><div class="code-select">whitelists_disable_all=true</div>
 <h2><span class="mw-headline" id="Disable_SUID_Disabler_and_Permission_Hardener">Disable SUID Disabler and Permission Hardener</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=16.html" title="Edit section: Disable SUID Disabler and Permission Hardener">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Undo all changes. The following command is is only efficient until upgrade of package security-misc or reboot. To disable permanently the subsequent <code>systemctl</code> commands are required as well.
-</p><p></p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening-undo all</div>
+</p><p><br/>
+</p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening-undo all</div>
 <p>Stop systemd unit.
-</p><p></p><div class="code-select">sudo systemctl stop permission-hardening.service</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl stop permission-hardening.service</div>
 <p>Mask systemd unit.
-</p><p></p><div class="code-select">sudo systemctl mask permission-hardening.service</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl mask permission-hardening.service</div>
 <h1><span class="mw-headline" id="SUID_SGID_Hardening_Issues">SUID SGID Hardening Issues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=17" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=17.html" title="Edit section: SUID SGID Hardening Issues">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>This is a list of SUID/SGID programs which have their <code>set-user-id</code> bit and/or <code>set-group-id</code> bit removed.
 </p><p>To use the following programs you need to:
@@ -459,9 +480,11 @@ SGID is similar to SUID. The difference between both is that SUID assumes owner 
 </p>
 <h1><span class="mw-headline" id="SUID_SGID_Troubleshooting">SUID SGID Troubleshooting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=19.html" title="Edit section: SUID SGID Troubleshooting">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Syntax:
-</p><p></p><div class="code-select">stat -c "%n %a %U %G" /path/to/filename</div>
+</p><p><br/>
+</p><div class="code-select">stat -c "%n %a %U %G" /path/to/filename</div>
 <p>Example:
-</p><p></p><div class="code-select">stat -c "%n %a %U %G" /usr/bin/sudo</div>
+</p><p><br/>
+</p><div class="code-select">stat -c "%n %a %U %G" /usr/bin/sudo</div>
 <p>Expected output.
 </p>
 <pre>/usr/bin/sudo 4755 root root
@@ -474,7 +497,8 @@ SGID is similar to SUID. The difference between both is that SUID assumes owner 
 <h1><span class="mw-headline" id="SUID_Disabler_and_Permission_Hardener_Printout">SUID Disabler and Permission Hardener Printout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=21.html" title="Edit section: SUID Disabler and Permission Hardener Printout">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>This printout was added in November 2020. It might not be kept up to date. It is for illustrative purposes to document what SUID Disabler and Permission Hardener is actually doing.
 </p><p>When initially running SUID Disabler and Permission Hardener for the first time.
-</p><p></p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening</div>
+</p><p><br/>
+</p><div class="code-select">sudo /usr/libexec/security-misc/permission-hardening</div>
 <p>The printout will look like the following.
 </p>
 <pre>INFO: START parsing config_file: '/etc/permission-hardening.d/30_default.conf'
@@ -604,7 +628,8 @@ INFO: fso: '/usr/local/lib64/' - does not exist. This is likely normal.
 <h1><span class="mw-headline" id="Search_for_SUID_SGID">Search for SUID SGID</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=31" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=31.html" title="Edit section: Search for SUID SGID">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>After enabling SUID Disabler and Permission Hardener.
 </p><p>Search for SUID binaries.
-</p><p></p><div class="code-select">sudo find / -perm -4000 -type f -executable</div>
+</p><p><br/>
+</p><div class="code-select">sudo find / -perm -4000 -type f -executable</div>
 <p>Ignore the following.
 </p>
 <pre>find: ‘/proc/5422/task/5422/fd/6’: No such file or directory
@@ -622,14 +647,16 @@ find: ‘/proc/5422/fdinfo/5’: No such file or directory
 /usr/bin/sudo
 </pre>
 <p>Search for SGID binaries.
-</p><p></p><div class="code-select">sudo find / -perm -2000 -type f -executable</div>
+</p><p><br/>
+</p><div class="code-select">sudo find / -perm -2000 -type f -executable</div>
 <p>The following list shows only white listed SGID binaries.
 </p>
 <pre>/usr/lib/x86_64-linux-gnu/utempter/utempter
 </pre>
 <h1><span class="mw-headline" id="Debugging">Debugging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=32" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=32.html" title="Edit section: Debugging">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Look what SUID Disabler and Permission Hardener is actually doing. Most interesting to run this command during initial enabling of SUID Disabler and Permission Hardener.
-</p><p></p><div class="code-select">sudo journalctl --no-pager -b -o cat -u permission-hardening</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl --no-pager -b -o cat -u permission-hardening</div>
 <h1><span class="mw-headline" id="Future_Work">Future Work</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=33" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;action=edit&amp;section=33.html" title="Edit section: Future Work">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <ul><li>Add a scan script for scanning folders where SUID binaries commonly reside. Option to scan whole disk.</li>
 <li>Add an APT hook to scan folders where SUID binaries commonly reside to scan after package installation and notify user when new SUID where installed.</li></ul>
@@ -824,10 +851,7 @@ find: ‘/proc/5422/fdinfo/5’: No such file or directory
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3021-0!canonicalwww.kicksecure.com and timestamp 20230131002106 and revision id 61471.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;oldid=61471" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;oldid=61471">https://www.kicksecure.com/w/index.php?title=SUID_Disabler_and_Permission_Hardener&amp;oldid=61471</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

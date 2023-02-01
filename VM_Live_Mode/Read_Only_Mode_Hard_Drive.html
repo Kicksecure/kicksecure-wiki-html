@@ -203,14 +203,16 @@
 <li>Set the disk to read-only.
 <ul><li>The name of the VM in the following example below is <code>Kicksecure-XFCE</code>. It could be replaced with the name of any other VM such as <code>Kicksecure-XFCE</code>.</li>
 <li>On the host command line, run.</li></ul></li></ul>
-<p></p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
+<p><br/>
+</p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly" 1</div>
 <p><b>2.</b> Remove VirtualBox virtual DVD drive.
 </p><p>This is only required if the VM has a virtual DVD drive. It is not required in Kicksecure ™ version <code>15.0.1.2.7</code> and above since it no longer comes with a virtual DVD drive by default. See footnote for a Kicksecure ™ build version lower than <code>15.0.1.2.7</code>. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
 </p><p><b>3.</b> Launch the live system.
 </p><p>Following reboot, a second boot entry called "VM Live Mode-mode" will be visible. Select it and then press <code>Enter</code> to boot the live system and use it as normal.
 </p><p><b>4.</b> <i>Optional:</i> Revert the read-only change.
 </p><p>To boot into normal mode again, run this command on the host to revert the change.
-</p><p></p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly"</div>
+</p><p><br/>
+</p><div class="code-select">VBoxManage setextradata Kicksecure-XFCE "VBoxInternal/Devices/lsilogicsas/0/LUN#0/AttachedDriver/Config/ReadOnly"</div>
 <p>The normal boot option can now be selected in the GRUB menu.
 </p><p><b>5.</b> <i>Optional:</i> Re-add the virtual DVD.
 </p><p>Only when you need this; see footnotes. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
@@ -440,10 +442,7 @@ Careful. If you remove the wrong drive, your VM will no longer boot. If you are 
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3015-0!canonicalwww.kicksecure.com and timestamp 20230130215904 and revision id 65550.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/Read_Only_Mode_Hard_Drive&amp;oldid=65550" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/Read_Only_Mode_Hard_Drive&amp;oldid=65550">https://www.kicksecure.com/w/index.php?title=VM_Live_Mode/Read_Only_Mode_Hard_Drive&amp;oldid=65550</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -239,11 +239,14 @@
 <li>Since the Intevation CA certificate has been imported, no errors should be encountered when the <code>gpg4win</code> package is downloaded.</li></ul>
 <p><b>2.</b> Verify the <code>gpg4win</code> package by running SignTool from the command prompt.
 </p><p>To open a command prompt, in the Windows Start Menu, run.
-</p><p></p><div class="code-select">cmd.exe</div>
+</p><p><br/>
+</p><div class="code-select">cmd.exe</div>
 <p>From the command prompt, change to the Downloads directory.
-</p><p></p><div class="code-select">cd C:\Users\&lt;your_user_name&gt;\Downloads</div>
+</p><p><br/>
+</p><div class="code-select">cd C:\Users\&lt;your_user_name&gt;\Downloads</div>
 <p>Verify the <code>gpg4win</code> package using SignTool.
-</p><p></p><div class="code-select">signtool verify /pa gpg4win-3-1.12.exe</div>
+</p><p><br/>
+</p><div class="code-select">signtool verify /pa gpg4win-3-1.12.exe</div>
 <p>The following output shows a successful <code>gpg4win</code> verification.
 </p><p><b>Figure:</b> <i>Successful Verification</i>
 </p><p><a class="image" data-href="/wiki/File:Signtool_verify_gpg4win_success.png" href="./File:Signtool_verify_gpg4win_success.png"><img alt="Signtool verify gpg4win success.png" data-file-height="129" data-file-width="562" data-src="/w/images/5/56/Signtool_verify_gpg4win_success.png" decoding="async" height="129" loading="lazy" src="data:image/png;base64,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" width="562"/></a>
@@ -267,15 +270,18 @@
 </p>
 <div class="info-box">
 <p><b>1.</b> If not already completed, have GnuPG initialize your user data folder.
-</p><p></p><div class="code-select">gpg --fingerprint</div>
+</p><p><br/>
+</p><div class="code-select">gpg --fingerprint</div>
 <p><b>2.</b> Download <a data-href="/wiki/Patrick_Schleizer" href="./Patrick_Schleizer.html" title="Patrick Schleizer">Patrick Schleizer</a>'s (adrelanos') <a data-href="/wiki/OpenPGP" href="./OpenPGP.html" title="OpenPGP">OpenPGP</a> key. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup><br/>
 </p>
 <i><span style="background-color:#FBFBFB"><u><b><div class="error">Error in <a class="new" data-href="/w/index.php?title=Widget:Key_Patrick&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Widget:Key_Patrick&amp;action=edit&amp;redlink=1.html" title="Widget:Key Patrick (page does not exist)">widget Key_Patrick</a>: Unable to load template 'wiki:Key_Patrick'</div></b></u></span></i>
 <p>Store the key as <code>C:\Users\&lt;user_name&gt;\Downloads\derivative.asc</code>
 </p><p><b>3.</b> Change to the <code>C:\Users\&lt;user_name&gt;\Downloads\</code> directory.
-</p><p></p><div class="code-select">cd C:\Users\&lt;user_name&gt;\Downloads\</div>
+</p><p><br/>
+</p><div class="code-select">cd C:\Users\&lt;user_name&gt;\Downloads\</div>
 <p><b>4.</b> Check fingerprints/owners without importing anything.
-</p><p></p><div class="code-select">gpg --keyid-format long --with-fingerprint derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --with-fingerprint derivative.asc</div>
 <p><b>5.</b> Verify the output.
 </p><p>The most important check is confirming the key fingerprint <u>exactly</u> matches the output below. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p>
@@ -283,7 +289,8 @@
 </pre>
 <p>The message <code>gpg: key 8D66066A2EEACCDA: 104 signatures not checked due to missing keys</code> is related to the <a data-href="/wiki/OpenPGP#The_OpenPGP_Web_of_Trust" href="./OpenPGP.html" title="OpenPGP">The OpenPGP Web of Trust</a>. Advanced users can learn more about this <a data-href="/wiki/Main/Project_Signing_Key#OpenPGP_Web_of_Trust" href="./Main/Project_Signing_Key.html" title="Main/Project Signing Key">here</a>.
 </p><p><b>6.</b> Import the key.
-</p><p></p><div class="code-select">gpg --import derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">gpg --import derivative.asc</div>
 <p>The output should include the key was imported.
 </p>
 <pre>gpg: Total number processed: 1
@@ -311,11 +318,14 @@ gpg:              unchanged: 1
 <li>Download the Kicksecure ™ VM Image and Signature from <a data-href="/wiki/VirtualBox/CLI" href="./VirtualBox/CLI.html" title="VirtualBox/CLI">VirtualBox/CLI Table</a>.</li></ul>
 <p><b>2.</b> Start the cryptographic verification; this process can take several minutes.
 </p><p>At the Windows command prompt, change to the directory with the <code>Whonix.ova</code> and corresponding signature file.
-</p><p></p><div class="code-select">cd C:\Users\&lt;user_name&gt;\&lt;directory_name&gt;</div>
+</p><p><br/>
+</p><div class="code-select">cd C:\Users\&lt;user_name&gt;\&lt;directory_name&gt;</div>
 <p><b>3.</b> Verify the <code>Whonix.ova</code> image.
-</p><p></p><div class="code-select">gpg --verify-options show-notations --verify Whonix*.ova.asc Whonix*.ova</div>
+</p><p><br/>
+</p><div class="code-select">gpg --verify-options show-notations --verify Whonix*.ova.asc Whonix*.ova</div>
 <p>If the Virtual Machine image is correct the output will tell you that the signature is good.
-</p><p></p><div class="code-select">gpg: Signature made Mon 19 Jan 2015 11:45:41 PM CET using RSA key ID 77BB3C48
+</p><p><br/>
+</p><div class="code-select">gpg: Signature made Mon 19 Jan 2015 11:45:41 PM CET using RSA key ID 77BB3C48
 gpg: Good signature from "Patrick Schleizer &lt;adrelanos@whonix.org&gt;" [unknown]
 gpg: Signature notation: issuer-fpr@notations.openpgp.fifthhorseman.net=6E979B28A6F37C43BE30AFA1CB8D50BB77BB3C48
 gpg: Signature notation: file@name=Kicksecure-16.0.9.0.ova
@@ -361,7 +371,8 @@ gpg:          There is no indication that the signature belongs to the owner.
 <div class="info-box">
 <p><b>1.</b> Open a command prompt.
 </p><p>In the Windows Start menu, run.
-</p><p></p><div class="code-select">cmd.exe</div>
+</p><p><br/>
+</p><div class="code-select">cmd.exe</div>
 <p><b>2.</b> Add the path to <code>signtool.exe</code> to your system PATH.
 </p><p>The default installation path for <code>signtool.exe</code>:
 </p>
@@ -369,9 +380,11 @@ gpg:          There is no indication that the signature belongs to the owner.
 x64 systems:  C:\Program Files (x86)\Windows Kits\&lt;windows_version&gt;\bin\x64
 </pre>
 <p>Run the following command to add "path\to\signtool.exe" to your system PATH. Also be sure to add the Windows version to the path.
-</p><p></p><div class="code-select">set PATH="path to signtool.ext";%PATH%</div>
+</p><p><br/>
+</p><div class="code-select">set PATH="path to signtool.ext";%PATH%</div>
 <p>For example, the following command adds the path for an <code>x64</code> system.
-</p><p></p><div class="code-select">set PATH="C:\Program Files (x86)\Windows Kits\&lt;windows_version&gt;\bin\x64";%PATH%</div>
+</p><p><br/>
+</p><div class="code-select">set PATH="C:\Program Files (x86)\Windows Kits\&lt;windows_version&gt;\bin\x64";%PATH%</div>
 </div>
 <h2><span class="mw-headline" id="SignTool_Certificate_Chain_Error">SignTool Certificate Chain Error</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Verify_the_virtual_machine_images_using_Windows&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Verify_the_virtual_machine_images_using_Windows&amp;action=edit&amp;section=7.html" title="Edit section: SignTool Certificate Chain Error">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><b>Figure:</b> <i>Root Certificate Error</i>
@@ -386,7 +399,7 @@ x64 systems:  C:\Program Files (x86)\Windows Kits\&lt;windows_version&gt;\bin\x6
 <div class="reflist" style="list-style-type: decimal;">
 <div class="mw-references-wrap"><ol class="references">
 <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">
-<div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output derivative.asc https://www.whonix.org/derivative.asc</div></span>
+<div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output derivative.asc https://www.whonix.org/derivative.asc</div> </span>
 </li>
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 Minor changes in the output such as new uids (email addresses) or newer expiration dates are inconsequential.</span>
@@ -572,10 +585,7 @@ As defined by TUF: Attacks and Weaknesses:
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:693-0!canonicalwww.kicksecure.com and timestamp 20230131005129 and revision id 60933.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Verify_the_virtual_machine_images_using_Windows&amp;oldid=60933" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Verify_the_virtual_machine_images_using_Windows&amp;oldid=60933">https://www.kicksecure.com/w/index.php?title=Verify_the_virtual_machine_images_using_Windows&amp;oldid=60933</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

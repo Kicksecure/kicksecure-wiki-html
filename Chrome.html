@@ -206,9 +206,11 @@
 </p>
 </div>
 <p>Download the signing key.
-</p><p></p><div class="code-select">scurl-download https://dl.google.com/linux/linux_signing_key.pub</div>
+</p><p><br/>
+</p><div class="code-select">scurl-download https://dl.google.com/linux/linux_signing_key.pub</div>
 <p>View OpenPGP key information.
-</p><p></p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint linux_signing_key.pub</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint linux_signing_key.pub</div>
 <pre>pub   dsa1024/A040830F7FAC5991 2007-03-08 [SC]
       Key fingerprint = 4CCA 1EAF 950C EE4A B839  76DC A040 830F 7FAC 5991
 uid                            Google, Inc. Linux Package Signing Key &lt;linux-packages-keymaster@google.com&gt;
@@ -221,27 +223,33 @@ uid                            Google Inc. (Linux Packages Signing Authority) &l
 sub   rsa4096/78BD65473CB3BD13 2019-07-22 [S] [expires: 2022-07-21]
 </pre>
 <p>Convert assci armored <code>linux_signing_key.pub</code> to gpg keyring format <code>linux_signing_key.pub.gpg</code>. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
-</p><p></p><div class="code-select">gpg --no-default-keyring --keyring linux_signing_key.pub.gpg --import linux_signing_key.pub</div>
+</p><p><br/>
+</p><div class="code-select">gpg --no-default-keyring --keyring linux_signing_key.pub.gpg --import linux_signing_key.pub</div>
 <p><sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p>Create keyring with the RSA 4096 signing key only.
-</p><p></p><div class="code-select">gpg --no-default-keyring --keyring linux_signing_key.pub.gpg --armor --export "EB4C 1BFD 4F04 2F6D DDCC  EC91 7721 F63B D38B 4796" | gpg --dearmor --no-options --no-default-keyring &gt; google.gpg</div>
+</p><p><br/>
+</p><div class="code-select">gpg --no-default-keyring --keyring linux_signing_key.pub.gpg --armor --export "EB4C 1BFD 4F04 2F6D DDCC  EC91 7721 F63B D38B 4796" | gpg --dearmor --no-options --no-default-keyring &gt; google.gpg</div>
 <p>Install the Google RSA 4096 APT signing key.
-</p><p></p><div class="code-select">sudo cp google.gpg /user/share/keyrings/google.gpg</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp google.gpg /user/share/keyrings/google.gpg</div>
 <h2><span class="mw-headline" id="Avoid_Google_Chrome_Automatic_Repository_Configuration">Avoid Google Chrome Automatic Repository Configuration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chrome&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Chrome&amp;action=edit&amp;section=4.html" title="Edit section: Avoid Google Chrome Automatic Repository Configuration">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Due to <a data-href="/wiki/Google_Chrome_Repository_Insecurity" href="./Google_Chrome_Repository_Insecurity.html" title="Google Chrome Repository Insecurity">Google Chrome Repository Insecurity</a>.
 </p><p>Create file <code>/etc/default/google-chrome</code> to avoid Google Chrome Automatic Repository Configuration. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
 </p><p>Note: this will only work if Google Chrome Repository hasn't been previously added.
-</p><p></p><div class="code-select">sudo touch /etc/default/google-chrome</div>
+</p><p><br/>
+</p><div class="code-select">sudo touch /etc/default/google-chrome</div>
 <h2><span class="mw-headline" id="Repository_Installation">Repository Installation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chrome&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Chrome&amp;action=edit&amp;section=5.html" title="Edit section: Repository Installation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Open file <code>/etc/apt/sources.list.d/google-chrome.list</code> in an editor with root rights.
 </p><p>(<a data-href="/wiki/Qubes" href="./Qubes.html" title="Qubes">Kicksecure ™ for Qubes</a>: In Template)
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/apt/sources.list.d/google-chrome.list</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/apt/sources.list.d/google-chrome.list</div>
 </div>
 <p>Paste.
-</p><p></p><div class="code-select">deb [arch=amd64] [signed-by=/user/share/keyrings/google.gpg] https://dl.google.com/linux/chrome/deb/ stable main</div>
+</p><p><br/>
+</p><div class="code-select">deb [arch=amd64] [signed-by=/user/share/keyrings/google.gpg] https://dl.google.com/linux/chrome/deb/ stable main</div>
 <p>Save.
 </p>
 <h2><span class="mw-headline" id="Package_Installation">Package Installation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chrome&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Chrome&amp;action=edit&amp;section=6.html" title="Edit section: Package Installation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -255,12 +263,15 @@ sub   rsa4096/78BD65473CB3BD13 2019-07-22 [S] [expires: 2022-07-21]
 <div class="info-box">
 <p>Install <code>google-chrome-stable</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>google-chrome-stable</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends google-chrome-stable</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends google-chrome-stable</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>google-chrome-stable</code> is complete.
 </p>
@@ -459,10 +470,7 @@ gpg: no ultimately trusted keys found
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2961-0!canonicalwww.kicksecure.com and timestamp 20230131005539 and revision id 60804.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Chrome&amp;oldid=60804" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Chrome&amp;oldid=60804">https://www.kicksecure.com/w/index.php?title=Chrome&amp;oldid=60804</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

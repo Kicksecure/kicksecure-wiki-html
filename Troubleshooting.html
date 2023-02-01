@@ -261,12 +261,16 @@
 </p><p><b>2.</b> Exclude basic <a href="#Hardware_Issues">hardware issues</a>.
 </p><p><b>3.</b> Ensure the virtual machine (VM) images have been imported into a supported virtualizer listed on the <a data-href="/wiki/Download" href="./Download.html" title="Download">Download</a> page.
 </p><p><b>4.</b> Debian (based) Linux host operating system users only: The following command should not show any errors. <sup class="reference" id="cite_ref-lengthy_test_2-0"><a href="#cite_note-lengthy_test-2">[2]</a></sup>
-</p><p></p><div class="code-select">sudo dpkg-reconfigure -a</div>
+</p><p><br/>
+</p><div class="code-select">sudo dpkg-reconfigure -a</div>
 <p><b>5.</b> Debian (based) Linux host operating system users only: The following command should be silent and not show any errors or output at all. <sup class="reference" id="cite_ref-lengthy_test_2-1"><a href="#cite_note-lengthy_test-2">[2]</a></sup>
-</p><p></p><div class="code-select">sudo dpkg --configure -a</div>
+</p><p><br/>
+</p><div class="code-select">sudo dpkg --configure -a</div>
 <p><b>6.</b> Debian (based) Linux host operating system users only: Next attempt to retrieve all available updates.
-</p><p></p><div class="code-select">sudo apt update</div>
-<p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
+<p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>7.</b> Check for possible <a href="#Low_RAM_Issues">Low RAM Issues</a>.
 </p>
 <ul><li><a href="#Free_up_Additional_Memory_Resources">Free up Additional Memory Resources</a>.</li>
@@ -326,13 +330,17 @@
 <h3><span class="mw-headline" id="KVM">KVM</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=10.html" title="Edit section: KVM">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <div class="info-box">
 <p><b>1.</b> Shutdown the virtual machine(s).
-</p><p></p><div class="code-select">virsh -c qemu:///system shutdown &lt;vm_name&gt;</div>
+</p><p><br/>
+</p><div class="code-select">virsh -c qemu:///system shutdown &lt;vm_name&gt;</div>
 <p><b>2.</b> Increase the maximum memory.
-</p><p></p><div class="code-select">virsh setmaxmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
+</p><p><br/>
+</p><div class="code-select">virsh setmaxmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
 <p><b>3.</b> Set the actual memory.
-</p><p></p><div class="code-select">virsh setmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
+</p><p><br/>
+</p><div class="code-select">virsh setmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
 <p><b>4.</b> Restart the virtual machine(s).
-</p><p></p><div class="code-select">virsh -c qemu:///system start &lt;vm_name&gt;</div>
+</p><p><br/>
+</p><div class="code-select">virsh -c qemu:///system start &lt;vm_name&gt;</div>
 </div>
 <h3><span id="Kicksecure_.E2.84.A2_for_Qubes"></span><span class="mw-headline" id="Kicksecure_™_for_Qubes">Kicksecure ™ for Qubes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=11.html" title="Edit section: Kicksecure ™ for Qubes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Utilize Qube Manager: <br/>
@@ -348,15 +356,19 @@
 </p>
 <h2><span class="mw-headline" id="Check_Systemd_Journal_Log_of_Current_Boot">Check Systemd Journal Log of Current Boot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=14.html" title="Edit section: Check Systemd Journal Log of Current Boot">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To inspect the systemd journal log of the current boot, run.
-</p><p></p><div class="code-select">sudo journalctl -b</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b</div>
 <p>This command requires pressing arrow keys like ↑, ↓, ←, →, as well as <code>PgUp</code> and <code>PgDn</code> for scrolling.
 </p><p>For convenient reading of the log (until the command is issued), the log can be dumped to file. For example, the following command would write the log to file <code>~/systemd-log</code>.
-</p><p></p><div class="code-select">sudo journalctl -b &gt; ~/systemd-log</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b &gt; ~/systemd-log</div>
 <p>Use any available editor to read the log file, such as <code>mousepad</code>.
-</p><p></p><div class="code-select">mousepad ~/systemd-log</div>
+</p><p><br/>
+</p><div class="code-select">mousepad ~/systemd-log</div>
 <h2><span class="mw-headline" id="Watch_Systemd_Journal_Log_of_Current_Boot">Watch Systemd Journal Log of Current Boot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=15.html" title="Edit section: Watch Systemd Journal Log of Current Boot">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>It is possible to to watch the systemd journal log as it is written.
-</p><p></p><div class="code-select">sudo journalctl -b -f</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b -f</div>
 <h2><span class="mw-headline" id="Enable_Persistent_Systemd_Journal_Log">Enable Persistent Systemd Journal Log</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=16.html" title="Edit section: Enable Persistent Systemd Journal Log">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>By default, a persistent systemd journal log is not enabled in Debian. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup> To enable it, apply the following steps.
 </p><p>Platform specific notes:
@@ -365,31 +377,38 @@
 <li><u>Qubes users</u>: The following changes must be applied in a VM with a persistent root image like a Template or Standalone. It could be confusing if applied in App Qubes since the systemd journal log might be mixed up with boots by the Template, while the App Qube systemd journal logs would not be persistent. <a class="external text" data-href="https://www.qubes-os.org/doc/bind-dirs/" href="https://www.qubes-os.org/doc/bind-dirs/" rel="noreferrer noopener" target="_blank">bind-dirs</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.qubes-os.org/doc/bind-dirs/" href="https://web.archive.org/web/https://www.qubes-os.org/doc/bind-dirs/" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> might be helpful, but further research is required.</li></ul>
 <div class="info-box">
 <p><b>1.</b> Create folder <code>/etc/systemd/journald.conf.d</code>.
-</p><p></p><div class="code-select">sudo mkdir -p /etc/systemd/journald.conf.d</div>
+</p><p><br/>
+</p><div class="code-select">sudo mkdir -p /etc/systemd/journald.conf.d</div>
 <p><b>2.</b> Open file <code>/etc/systemd/journald.conf.d/60_persistent_journal.conf</code> in an editor with root rights.
 </p><p>(<a data-href="/wiki/Qubes" href="./Qubes.html" title="Qubes">Kicksecure ™ for Qubes</a>: In Template)
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/systemd/journald.conf.d/60_persistent_journal.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/systemd/journald.conf.d/60_persistent_journal.conf</div>
 </div>
 <p><b>3.</b> Add the following setting.
-</p><p></p><div class="code-select">[Journal]
+</p><p><br/>
+</p><div class="code-select">[Journal]
 Storage=persistent</div>
 <p>Save.
 </p><p><b>4.</b> Restart <code>systemd-journald</code>.
-</p><p></p><div class="code-select">sudo systemctl restart systemd-journald</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl restart systemd-journald</div>
 <p>A persistent systemd journal log has now been enabled.
 </p>
 </div>
 <h2><span class="mw-headline" id="Check_Systemd_Journal_Log_of_Previous_Boot">Check Systemd Journal Log of Previous Boot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=17" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=17.html" title="Edit section: Check Systemd Journal Log of Previous Boot">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>After following the <a href="#Enable_Persistent_Systemd_Journal_Log">Enable Persistent Systemd Journal Log</a> steps, it is possible to inspect the systemd journal log of the previous boot.
-</p><p></p><div class="code-select">sudo journalctl -b -1</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b -1</div>
 <p>This command requires pressing arrow keys like ↑, ↓, ←, →, as well as <code>PgUp</code> and <code>PgDn</code> for scrolling.
 </p><p>For convenient reading of the log (until the command is issued), the log can be dumped to file. For example, the following command would write the log to file <code>~/systemd-log-previous</code>.
-</p><p></p><div class="code-select">sudo journalctl -b -1 &gt; ~/systemd-log-previous</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b -1 &gt; ~/systemd-log-previous</div>
 <p>Use any available editor to read the log file, such as <code>mousepad</code>.
-</p><p></p><div class="code-select">mousepad ~/systemd-log-previous</div>
+</p><p><br/>
+</p><div class="code-select">mousepad ~/systemd-log-previous</div>
 <h2><span class="mw-headline" id="View_List_of_Systemd_Journal_Logs">View List of Systemd Journal Logs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=18.html" title="Edit section: View List of Systemd Journal Logs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p></p><div class="code-select">sudo journalctl --list-boots</div>
 <p><span class="manually-placed-anchor" id="Daemon_Log"></span>
@@ -397,21 +416,27 @@ Storage=persistent</div>
 <h2><span class="mw-headline" id="Daemon_Log_View">Daemon Log View</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=19.html" title="Edit section: Daemon Log View">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To view the log of a specific systemd unit. Syntax:
 </p><p>(Replace <code>unit-name</code> with the actual name of the systemd unit.)
-</p><p></p><div class="code-select">sudo journalctl -b --no-pager -u unit-name</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b --no-pager -u unit-name</div>
 <p>Example:
-</p><p></p><div class="code-select">sudo journalctl -b --no-pager -u sdwdate</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b --no-pager -u sdwdate</div>
 <h2><span class="mw-headline" id="Daemon_Log_Follow">Daemon Log Follow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=20" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=20.html" title="Edit section: Daemon Log Follow">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To follow the log of a specific systemd unit. Syntax:
 </p><p>(Replace <code>unit-name</code> with the actual name of the systemd unit.)
-</p><p></p><div class="code-select">sudo journalctl -f -b --no-pager -u unit-name</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -f -b --no-pager -u unit-name</div>
 <p>Example:
-</p><p></p><div class="code-select">sudo journalctl -f -b --no-pager -u sdwdate</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -f -b --no-pager -u sdwdate</div>
 <h2><span class="mw-headline" id="Daemon_Status">Daemon Status</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=21.html" title="Edit section: Daemon Status">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To view the status of a specific systemd unit. Syntax:
 </p><p>(Replace <code>unit-name</code> with the actual name of the systemd unit.)
-</p><p></p><div class="code-select">sudo systemctl status --no-pager unit-name</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl status --no-pager unit-name</div>
 <p>Example:
-</p><p></p><div class="code-select">sudo systemctl status --no-pager sdwdate</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl status --no-pager sdwdate</div>
 <h2><span class="mw-headline" id="Check_Systemd_Journal_Log_of_Failed_Boot">Check Systemd Journal Log of Failed Boot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=22" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=22.html" title="Edit section: Check Systemd Journal Log of Failed Boot">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>An alternative to recovery mode might be <a data-href="/wiki/Desktop#Virtual_Consoles" href="./Desktop.html" title="Desktop">virtual consoles</a>, since they are an easier and more lightweight solution. A virtual console login might still be possible when the graphical user interface no longer starts.
 </p><p>Prerequisite knowledge: <a data-href="/wiki/Desktop#Virtual_Consoles" href="./Desktop.html" title="Desktop">Virtual Consoles</a>. Try to log in to a virtual console in a functional VM as an exercise. If that works, try a virtual console login in the broken VM.
@@ -436,7 +461,8 @@ Storage=persistent</div>
 </p><p><code>Start Menu</code> → <code>Xfce Terminal</code>
 </p>
 </div>
-<p></p><div class="code-select">sudo chown --recursive user:user /home/user</div>
+<p><br/>
+</p><div class="code-select">sudo chown --recursive user:user /home/user</div>
 <h1><span class="mw-headline" id="Hardware_Issues">Hardware Issues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=24" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=24.html" title="Edit section: Hardware Issues">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="General_Recommendations">General Recommendations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=25" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;action=edit&amp;section=25.html" title="Edit section: General Recommendations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Rhetorical questions:
@@ -463,12 +489,15 @@ Storage=persistent</div>
 <div class="info-box">
 <p>Install <code>memtest86+</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>memtest86+</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends memtest86+</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends memtest86+</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>memtest86+</code> is complete.
 </p>
@@ -681,10 +710,7 @@ This process can be lengthy.</span>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3046-0!canonicalwww.kicksecure.com and timestamp 20230130232129 and revision id 62030.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;oldid=62030" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;oldid=62030">https://www.kicksecure.com/w/index.php?title=Troubleshooting&amp;oldid=62030</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

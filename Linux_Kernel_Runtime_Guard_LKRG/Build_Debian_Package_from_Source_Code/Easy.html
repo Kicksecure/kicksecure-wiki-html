@@ -193,32 +193,40 @@
 </div>
 <h2><span class="mw-headline" id="Get_Build_Dependencies">Get Build Dependencies</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-1" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-1.html" title="Edit section: Get Build Dependencies">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><a class="new" data-href="/w/index.php?title=Security_Guide&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Security_Guide&amp;action=edit&amp;redlink=1.html" title="Security Guide (page does not exist)">Update</a> your package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p>Install from Debian repository.
-</p><p></p><div class="code-select">sudo apt install build-essential devscripts git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install build-essential devscripts git</div>
 <h2><span class="mw-headline" id="Change_Directory_to_Build_Folder">Change Directory to Build Folder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-2" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-2.html" title="Edit section: Change Directory to Build Folder">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>This chapter is recommended for better usability, but is not strictly required. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
 </p><p>Create folder <code>~/lkrg-build</code>.
-</p><p></p><div class="code-select">mkdir -p ~/lkrg-build</div>
+</p><p><br/>
+</p><div class="code-select">mkdir -p ~/lkrg-build</div>
 <p>Change directory to folder <code>~/lkrg-build</code>.
-</p><p></p><div class="code-select">cd ~/lkrg-build</div>
+</p><p><br/>
+</p><div class="code-select">cd ~/lkrg-build</div>
 <h2><span class="mw-headline" id="Get_the_Source_Code">Get the Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-3" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-3.html" title="Edit section: Get the Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Get the the package's source code.
-</p><p></p><div class="code-select">git clone https://github.com/Kicksecure/lkrg.git</div>
+</p><p><br/>
+</p><div class="code-select">git clone https://github.com/Kicksecure/lkrg.git</div>
 <p>Remember it is <b>K</b>icksecure, not <b>k</b>icksecure! If you are prompted for a username for github, it means you have mistyped the web address.
 </p>
 <h2><span class="mw-headline" id="Change_Directory_to_Source_Code_Folder">Change Directory to Source Code Folder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-4" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-4.html" title="Edit section: Change Directory to Source Code Folder">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Get into the package's source code folder because later on package build commands are expected to be run from the root of the source folder.
-</p><p></p><div class="code-select">cd lkrg</div>
+</p><p><br/>
+</p><div class="code-select">cd lkrg</div>
 <h2><span class="mw-headline" id="Choose_Version">Choose Version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-5" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-5.html" title="Edit section: Choose Version">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>This is optional in case you want to build from master branch.
 </p><p>Do not use version <code>0.1</code> but a sensible version number.
-</p><p></p><div class="code-select">git checkout 0.7.1-1</div>
+</p><p><br/>
+</p><div class="code-select">git checkout 0.7.1-1</div>
 <h2><span class="mw-headline" id="Build_the_Package">Build the Package</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-6" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-6.html" title="Edit section: Build the Package">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p></p><div class="code-select">dpkg-buildpackage -b</div>
 <h2><span class="mw-headline" id="Build_Result">Build Result</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-7" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-7.html" title="Edit section: Build Result">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>When a package is build using <code>dpkg-buildpackage</code> the resulting packages will be created in the parent folder. I.e. in this case in the <code>~/lkrg-build</code> folder.
-</p><p></p><div class="code-select">ls ../</div>
+</p><p><br/>
+</p><div class="code-select">ls ../</div>
 <p>Should show something like this.
 </p><p><code>
 lkrg  lkrg0.7.1-1-1_amd64.buildinfo  lkrg0.7.1-1-1_amd64.changes
@@ -229,10 +237,12 @@ lkrg  lkrg0.7.1-1-1_amd64.buildinfo  lkrg0.7.1-1-1_amd64.changes
 <h2><span class="mw-headline" id="Clean_Up">Clean Up</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-9" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package_Easy&amp;action=edit&amp;section=T-9.html" title="Edit section: Clean Up">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Delete temporary files debhelper files in package source folder as well as debhelper artifacts (.deb file etc.) in parent folder.
 </p><p>1) Show extraneous (temporary files debhelper) files.
-</p><p></p><div class="code-select">git clean -ndff</div>
+</p><p><br/>
+</p><div class="code-select">git clean -ndff</div>
 <p>2) <u>NOTE</u>: Read above output carefully if you added files of your own files to that folder.
 </p><p>If that looks good, actually remove.
-</p><p></p><div class="code-select">git clean -dff</div>
+</p><p><br/>
+</p><div class="code-select">git clean -dff</div>
 <p>3) Delete debhelper artifacts (.deb file etc.) in parent folder.
 </p><p>TODO: document
 </p>
@@ -589,10 +599,7 @@ When a package is build using <code>dpkg-buildpackage</code> the resulting packa
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3491-0!canonicalwww.kicksecure.com and timestamp 20230131011135 and revision id 61207.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG/Build_Debian_Package_from_Source_Code/Easy&amp;oldid=61207" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG/Build_Debian_Package_from_Source_Code/Easy&amp;oldid=61207">https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG/Build_Debian_Package_from_Source_Code/Easy&amp;oldid=61207</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>

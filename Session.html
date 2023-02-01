@@ -195,12 +195,15 @@
 </p>
 <div class="info-box">
 <p><u><b>If</b> you are using Kicksecure ™</u> (<code>kicksecure</code>), run.
-</p><p></p><div class="code-select">scurl https://deb.loki.network/pub.gpg --output loki.gpg</div>
+</p><p><br/>
+</p><div class="code-select">scurl https://deb.loki.network/pub.gpg --output loki.gpg</div>
 <p><u><b>If</b> you are using a Qubes Template</u> (<code>kicksecure-16</code>), run. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
-</p><p></p><div class="code-select">scurl --proxy http://127.0.0.1:8082/ https://deb.loki.network/pub.gpg --output loki.gpg</div>
+</p><p><br/>
+</p><div class="code-select">scurl --proxy http://127.0.0.1:8082/ https://deb.loki.network/pub.gpg --output loki.gpg</div>
 </div>
 <p>Display the key's fingerprint. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
-</p><p></p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint loki.gpg</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint loki.gpg</div>
 <p>Verify the output.
 </p>
 <div class="info-box">
@@ -216,21 +219,26 @@
 </p>
 </div>
 <p>Copy the signing key to the APT keyring folder. <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup>
-</p><p></p><div class="code-select">sudo cp loki.gpg /usr/share/keyrings/loki.gpg</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp loki.gpg /usr/share/keyrings/loki.gpg</div>
 </div>
 <p><b>2.</b> Add the Session third-party APT repository. <sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup>
-</p><p></p><div class="code-select">echo 'deb [signed-by=/usr/share/keyrings/loki.gpg] tor+https://deb.loki.network bullseye main' | sudo tee /etc/apt/sources.list.d/loki.list</div>
+</p><p><br/>
+</p><div class="code-select">echo 'deb [signed-by=/usr/share/keyrings/loki.gpg] tor+https://deb.loki.network bullseye main' | sudo tee /etc/apt/sources.list.d/loki.list</div>
 <p><b>3.</b> Install Session.
 </p>
 <div class="info-box">
 <p>Install <code>session-desktop</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>session-desktop</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends session-desktop</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends session-desktop</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>session-desktop</code> is complete.
 </p>
@@ -443,10 +451,7 @@ See <a data-href="/wiki/Advanced_Host_Security#apt-transport-tor" href="./Advanc
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3358-0!canonicalwww.kicksecure.com and timestamp 20230130203927 and revision id 61624.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Session&amp;oldid=61624" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Session&amp;oldid=61624">https://www.kicksecure.com/w/index.php?title=Session&amp;oldid=61624</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

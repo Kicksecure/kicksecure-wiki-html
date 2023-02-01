@@ -273,10 +273,12 @@ In July 2017, security firm Dr. Web reported that its researchers had found Tria
 </p>
 <h4><span class="mw-headline" id="Debian_based">Debian based</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Processor_Microcode_Updates&amp;action=edit&amp;section=T-2" href="https://www.kicksecure.com/w/index.php?title=Template:Processor_Microcode_Updates&amp;action=edit&amp;section=T-2.html" title="Edit section: Debian based">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
 <p>On the host. Run.
-</p><p></p><div class="code-select">dpkg -l | grep microcode</div>
+</p><p><br/>
+</p><div class="code-select">dpkg -l | grep microcode</div>
 <h4><span class="mw-headline" id="Qubes">Qubes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Processor_Microcode_Updates&amp;action=edit&amp;section=T-3" href="https://www.kicksecure.com/w/index.php?title=Template:Processor_Microcode_Updates&amp;action=edit&amp;section=T-3.html" title="Edit section: Qubes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
 <p>In dom0. Run.
-</p><p></p><div class="code-select">dnf list | grep microcode</div>
+</p><p><br/>
+</p><div class="code-select">dnf list | grep microcode</div>
 <p>The Qubes check should confirm the <code>microcode_ctl.x86_64</code> package is already installed. <sup class="reference" id="cite_ref-20"><a href="#cite_note-20">[20]</a></sup>
 </p>
 <h3><span class="mw-headline" id="Install_Microcode_Package">Install Microcode Package</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Processor_Microcode_Updates&amp;action=edit&amp;section=T-4" href="https://www.kicksecure.com/w/index.php?title=Template:Processor_Microcode_Updates&amp;action=edit&amp;section=T-4.html" title="Edit section: Install Microcode Package">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
@@ -284,12 +286,15 @@ In July 2017, security firm Dr. Web reported that its researchers had found Tria
 <div class="info-box">
 <p>Install <code>intel-microcode</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>intel-microcode</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends intel-microcode</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends intel-microcode</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>intel-microcode</code> is complete.
 </p>
@@ -298,12 +303,15 @@ In July 2017, security firm Dr. Web reported that its researchers had found Tria
 <div class="info-box">
 <p>Install <code>amd64-microcode</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>amd64-microcode</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends amd64-microcode</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends amd64-microcode</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>amd64-microcode</code> is complete.
 </p>
@@ -315,12 +323,15 @@ In July 2017, security firm Dr. Web reported that its researchers had found Tria
 <div class="info-box">
 <p>Install <code>spectre-meltdown-checker</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>spectre-meltdown-checker</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends spectre-meltdown-checker</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends spectre-meltdown-checker</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>spectre-meltdown-checker</code> is complete.
 </p>
@@ -546,10 +557,7 @@ In July 2017, security firm Dr. Web reported that its researchers had found Tria
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3030-0!canonicalwww.kicksecure.com and timestamp 20230130223447 and revision id 67079.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Firmware_Security_and_Updates&amp;oldid=67079" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Firmware_Security_and_Updates&amp;oldid=67079">https://www.kicksecure.com/w/index.php?title=Firmware_Security_and_Updates&amp;oldid=67079</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

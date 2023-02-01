@@ -293,14 +293,18 @@
 </p>
 <div class="info-box">
 <p><b>1.</b> List the available drives and partitions.
-</p><p></p><div class="code-select">fdisk -l</div>
+</p><p><br/>
+</p><div class="code-select">fdisk -l</div>
 <p><b>2.</b> Mount the partition.
-</p><p></p><div class="code-select">mount /dev/sda1 /mnt</div>
+</p><p><br/>
+</p><div class="code-select">mount /dev/sda1 /mnt</div>
 <p>Replace "/dev/sda1" with the drive partition name.
 </p><p><b>3.</b> Chroot into the partition.
-</p><p></p><div class="code-select">chroot /mnt /bin/bash</div>
+</p><p><br/>
+</p><div class="code-select">chroot /mnt /bin/bash</div>
 <p><b>4.</b> <i>Optional:</i> If the PATH variable is incorrect, it can be fixed with the following command.
-</p><p></p><div class="code-select">source /etc/profile</div>
+</p><p><br/>
+</p><div class="code-select">source /etc/profile</div>
 </div>
 <h1><span class="mw-headline" id="Serial_Console">Serial Console</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Recovery&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=Recovery&amp;action=edit&amp;section=13.html" title="Edit section: Serial Console">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="VirtualBox_2">VirtualBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Recovery&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Recovery&amp;action=edit&amp;section=14.html" title="Edit section: VirtualBox">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -311,12 +315,15 @@
 <div class="info-box">
 <p>Install <code>socat</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>socat</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends socat</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends socat</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>socat</code> is complete.
 </p>
@@ -329,12 +336,15 @@
 <div class="info-box">
 <p>Install <code>serial-console-enable</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>serial-console-enable</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends serial-console-enable</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends serial-console-enable</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>serial-console-enable</code> is complete.
 </p>
@@ -355,13 +365,16 @@
 <li><u>Path/Address</u>: <code>/home/user/vbox-raw-file</code></li></ul>
 <p><b>2.</b> View the file with a text editor.
 </p><p>Any text editor can be used for this purpose. For example to view the file with mousepad, run.
-</p><p></p><div class="code-select">mousepad /home/user/vbox-raw-file</div>
+</p><p><br/>
+</p><div class="code-select">mousepad /home/user/vbox-raw-file</div>
 <p><b>3.</b> <i>Optional:</i> View the file as it is being appended to from a terminal emulator.
 </p><p>The logfile is also compatible with other standard linux utlitites such as <code>tail</code>. To view it as it is being written, run.
-</p><p></p><div class="code-select">tail -f /home/user/vbox-raw-file</div>
+</p><p><br/>
+</p><div class="code-select">tail -f /home/user/vbox-raw-file</div>
 <p><b>4.</b> Retain the file contents.
 </p><p>After VM shutdown it may be useful to retain its contents by copying the <code>vbox-raw-file</code> elsewhere to make it a persistent log file. If this is desirable, run.
-</p><p></p><div class="code-select">cp /home/user/vbox-raw-file /home/user/vbox-console-log</div>
+</p><p><br/>
+</p><div class="code-select">cp /home/user/vbox-raw-file /home/user/vbox-console-log</div>
 </div>
 <h3><span class="mw-headline" id="Interactive_Serial_Console">Interactive Serial Console</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Recovery&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Recovery&amp;action=edit&amp;section=19.html" title="Edit section: Interactive Serial Console">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>This procedure does not yet work during the grub boot menu.
@@ -378,7 +391,8 @@
 <p><sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
 </p><p><b>2.</b> Connect to the relevant unix domain socket file.
 </p><p>On the host, run the following socat command to connect to the unix domain socket file which is connected to the operating system running inside the virtual machine. <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
-</p><p></p><div class="code-select">socat - UNIX-CONNECT:/home/user/vbox-socket-file</div>
+</p><p><br/>
+</p><div class="code-select">socat - UNIX-CONNECT:/home/user/vbox-socket-file</div>
 <p>Depending on when the above command is run, nothing might appear. The reason is an interactive serial console will only show messages once connected to the serial console; old messages cannot be viewed that way. If the above command is run during early boot, then verbose messages will appear during boot. However, if you press <code>Enter</code> that should result in the virtual console asking for authentication.
 </p><p><b>3.</b> Log in to the Kicksecure ™ session.
 </p><p>Press <code>Enter</code>. The following prompt will appear.
@@ -429,10 +443,10 @@ Interface: IConsole {872da645-4a9b-1727-bee2-5585105b9eed}
 </p>
 </span></li>
 <li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">
-<div class="code-select">vboxmanage modifyvm Kicksecure-XFCE --uart1 0x3F8 4 --uartmode1=server /home/user/vbox-socket-file</div></span>
+<div class="code-select">vboxmanage modifyvm Kicksecure-XFCE --uart1 0x3F8 4 --uartmode1=server /home/user/vbox-socket-file</div> </span>
 </li>
 <li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">
-<div class="code-select">socat - UNIX-CONNECT:/home/user/vbox-socket-file</div></span>
+<div class="code-select">socat - UNIX-CONNECT:/home/user/vbox-socket-file</div> </span>
 </li>
 </ol></div></div>
 <hr/>
@@ -604,10 +618,7 @@ Interface: IConsole {872da645-4a9b-1727-bee2-5585105b9eed}
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3043-0!canonicalwww.kicksecure.com and timestamp 20230130232105 and revision id 65808.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Recovery&amp;oldid=65808" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Recovery&amp;oldid=65808">https://www.kicksecure.com/w/index.php?title=Recovery&amp;oldid=65808</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

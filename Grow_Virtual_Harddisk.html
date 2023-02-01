@@ -196,10 +196,12 @@
 </p><p><b>2.</b> On the host: Delete all existing snapshots.
 </p><p><b>3.</b> On the host: Increase the disk size.
 </p><p><code>1G</code> below should be replaced with the amount of memory to be added in gigabytes.
-</p><p></p><div class="code-select">qemu-img resize vmdisk.img +1G</div>
+</p><p><br/>
+</p><div class="code-select">qemu-img resize vmdisk.img +1G</div>
 <p><b>4.</b> Boot up and check if it is still working.
 </p><p><b>5.</b> Install GParted in Kicksecure ™ and resize the filesystem to claim the newly added space.
-</p><p></p><div class="code-select">sudo apt install gparted</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install gparted</div>
 </div>
 <h2><span class="mw-headline" id="VirtualBox">VirtualBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grow_Virtual_Harddisk&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Grow_Virtual_Harddisk&amp;action=edit&amp;section=4.html" title="Edit section: VirtualBox">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>If more disk space is required for virtual hard disks, the good news is this is simple in <a data-href="/wiki/VirtualBox" href="./VirtualBox.html" title="VirtualBox">VirtualBox</a> --  Kicksecure ™ is nothing special because it is just another VM image. Any suggestions that are found for VirtualBox will similarly work for Kicksecure ™. <a data-href="/wiki/Support#Free_Support_Principle" href="./Support.html" title="Support">Free Support Principle</a> applies.
@@ -216,12 +218,14 @@
 </p>
 <ul><li>Adjust the filename of the virtual hdd.</li>
 <li>Adjust <code>100000</code> to for example <code>200000</code>.</li></ul>
-<p></p><div class="code-select">VBoxManage modifyhd "Kicksecure-disk1.vdi" --resize 100000</div>
+<p><br/>
+</p><div class="code-select">VBoxManage modifyhd "Kicksecure-disk1.vdi" --resize 100000</div>
 <p><b>5.</b> Boot up and check if it is still working.
 </p><p><b>6.</b> Until now only the physical size was increased, but the filesystem has not been changed. Shut down again.
 </p><p><b>7.</b> Inside VM: It is necessary to boot from a boot CD (Ubuntu Precise *DVD* did work) and use a tool like <code>gparted</code> to grow the filesystem.
 </p><p>Start a terminal.
-</p><p></p><div class="code-select">lxsudo gparted</div>
+</p><p><br/>
+</p><div class="code-select">lxsudo gparted</div>
 <p>This procedure is also likely possible using the command line in <a data-href="/wiki/Recovery" href="./Recovery.html" title="Recovery">recovery mode</a>. <a class="mw-redirect" data-href="/wiki/Undocumented" href="./Undocumented.html" title="Undocumented">Undocumented</a>.
 </p><p><b>8.</b> Inside VM: Increase the size of the filesystem. Apply changes and shut down.
 </p><p>The procedure is complete.
@@ -229,7 +233,8 @@
 </div>
 <h2><span class="mw-headline" id="Build_from_Source_Code">Build from Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grow_Virtual_Harddisk&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Grow_Virtual_Harddisk&amp;action=edit&amp;section=5.html" title="Edit section: Build from Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Refer to <a data-href="/wiki/Dev/Build_Documentation" href="./Dev/Build_Documentation.html" title="Dev/Build Documentation">Build and Update Kicksecure ™ from Source Code</a> and utilize this setting:
-</p><p></p><div class="code-select">--vmsize 200G</div>
+</p><p><br/>
+</p><div class="code-select">--vmsize 200G</div>
 <h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grow_Virtual_Harddisk&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Grow_Virtual_Harddisk&amp;action=edit&amp;section=6.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <ul><li><a data-href="/wiki/Shrink_Virtual_Harddisk" href="./Shrink_Virtual_Harddisk.html" title="Shrink Virtual Harddisk">Shrink Virtual Harddisk</a></li></ul>
 <div class="reflist" style="list-style-type: decimal;">
@@ -403,10 +408,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3099-0!canonicalwww.kicksecure.com and timestamp 20230130205425 and revision id 62013.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Grow_Virtual_Harddisk&amp;oldid=62013" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Grow_Virtual_Harddisk&amp;oldid=62013">https://www.kicksecure.com/w/index.php?title=Grow_Virtual_Harddisk&amp;oldid=62013</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

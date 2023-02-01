@@ -193,9 +193,11 @@
 <h2><span class="mw-headline" id="Prerequisites">Prerequisites</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=2.html" title="Edit section: Prerequisites">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Might be a good idea to create a backup and/or clone before trying to update.
 </p><p>If you haven't done already, disable Kicksecure ™ APT repository. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
-</p><p></p><div class="code-select">sudo repository-dist --disable</div>
+</p><p><br/>
+</p><div class="code-select">sudo repository-dist --disable</div>
 <p>Upgrade from Debian packages.
-</p><p></p><div class="code-select">sudo apt update &amp;&amp; sudo apt --yes full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update &amp;&amp; sudo apt --yes full-upgrade</div>
 <h2><span class="mw-headline" id="Get_the_Source_Code">Get the Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=3.html" title="Edit section: Get the Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <h3><span class="mw-headline" id="Get_the_Signing_Key">Get the Signing Key</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=4.html" title="Edit section: Get the Signing Key">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p><b>This step is recommended for better security, but is not strictly required.</b> (See <a data-href="/wiki/Trust" href="../../Trust.html" title="Trust">Trust</a>)
@@ -220,21 +222,27 @@ a.freelink
 </p>
 </div>
 <p>Install git.
-</p><p></p><div class="code-select">sudo apt update &amp;&amp; sudo apt install git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update &amp;&amp; sudo apt install git</div>
 <p>Get the source code including git submodules. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
 </p><p>Note: Replace <code>16.0.9.0-stable</code> with the actual tag you want to build.
-</p><p></p><div class="code-select">git clone --depth=1 --branch 16.0.9.0-stable --jobs=4 --recurse-submodules --shallow-submodules https://github.com/Kicksecure/derivative-maker.git</div>
+</p><p><br/>
+</p><div class="code-select">git clone --depth=1 --branch 16.0.9.0-stable --jobs=4 --recurse-submodules --shallow-submodules https://github.com/Kicksecure/derivative-maker.git</div>
 <h3><span class="mw-headline" id="Change_Directory">Change Directory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=6.html" title="Edit section: Change Directory">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Get into the <code>Kicksecure</code> source code folder because later on package build commands using <code>./derivative-maker</code> are expected to be run from the root of the source folder.
-</p><p></p><div class="code-select">cd derivative-maker</div>
+</p><p><br/>
+</p><div class="code-select">cd derivative-maker</div>
 <h3><span class="mw-headline" id="OpenPGP_Verify_the_Source_Code">OpenPGP Verify the Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=7.html" title="Edit section: OpenPGP Verify the Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p><b>This chapter is recommended for better security, but is not strictly required.</b> (See <a data-href="/wiki/Trust" href="../../Trust.html" title="Trust">Trust</a>.)
 </p><p>Change directly into source code folder.
-</p><p></p><div class="code-select">cd derivative-maker</div>
+</p><p><br/>
+</p><div class="code-select">cd derivative-maker</div>
 <p>Git fetch. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
-</p><p></p><div class="code-select">git fetch</div>
+</p><p><br/>
+</p><div class="code-select">git fetch</div>
 <p>Verify the chosen tag to build. Replace with tag you want to build.
-</p><p></p><div class="code-select">git verify-tag 16.0.9.0-stable</div>
+</p><p><br/>
+</p><div class="code-select">git verify-tag 16.0.9.0-stable</div>
 <p>The output should look similar to this.
 </p>
 <div class="pre">object 1844108109a5f2f8bddcf2257b9f3675be5cfb22
@@ -255,7 +263,8 @@ gpg: Good signature from "Patrick Schleizer &lt;adrelanos@kicksecure.com&gt;" [u
 gpg:          There is no indication that the signature belongs to the owner.</div>
 <p>Is explained on the <a data-href="/wiki/Signing_Key" href="../../Signing_Key.html" title="Signing Key">Kicksecure ™ Signing Key</a> page and can be safely ignored.
 </p><p>By convention, git tags should point to signed git commits. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup> (<a class="external text" data-href="https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" href="https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" rel="noreferrer noopener" target="_blank">forum discussion</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" href="https://web.archive.org/web/https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>) It is advisable to verify the signature of the git commit as well (replace <code>16.0.9.0</code> with the actual git tag being verified).
-</p><p></p><div class="code-select">git verify-commit 16.0.9.0-stable^{commit}</div>
+</p><p><br/>
+</p><div class="code-select">git verify-commit 16.0.9.0-stable^{commit}</div>
 <p>The output should look similar to this.
 </p>
 <div class="pre">commit 5aa1c307c943be60e7d2bfa5727fa5ada3a79c4a
@@ -267,18 +276,22 @@ Date:   Sun Dec 7 01:22:22 2014 +0000
     .</div>
 <h3><span class="mw-headline" id="Choose_Version">Choose Version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=8.html" title="Edit section: Choose Version">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Retrieve a list of available git tags.
-</p><p></p><div class="code-select">git --no-pager tag</div>
+</p><p><br/>
+</p><div class="code-select">git --no-pager tag</div>
 <p>Use <i>git checkout</i> to select the preferred version to build.
-</p><p></p><div class="code-select">git checkout --recurse-submodules 16.0.9.0-stable</div>
+</p><p><br/>
+</p><div class="code-select">git checkout --recurse-submodules 16.0.9.0-stable</div>
 <p>Replace <code>16.0.9.0-stable</code> with the actual version chosen for the build: the stable, testers-only or developers version. Common sense is required when choosing the right version number. For example, the latest available version number is not necessarily the most stable or suitable. Follow the <a data-href="/wiki/Stay_Tuned" href="../../Stay_Tuned.html" title="Stay Tuned">Kicksecure ™ News Blog</a> as it might contain information.
 </p><p>Check if you really got the version you want.
-</p><p></p><div class="code-select">git describe</div>
+</p><p><br/>
+</p><div class="code-select">git describe</div>
 <p>Should show:
 </p><p><code>
 16.0.9.0-stable
 </code>
 </p><p>Check if source folder is pristine.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>Should show nothing.
 </p><p><code>
 HEAD detached at 16.0.9.0-stable<br/>
@@ -288,12 +301,14 @@ nothing to commit, working tree clean
 </p>
 <h3><span class="mw-headline" id="Check_Git">Check Git</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=9.html" title="Edit section: Check Git">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Check if you really got the version you want.
-</p><p></p><div class="code-select">git describe</div>
+</p><p><br/>
+</p><div class="code-select">git describe</div>
 <p>The output should show.
 </p>
 <div class="pre">{{{version}}}</div>
 <p>Check if the source folder is pristine.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>The output should show nothing.
 </p>
 <div class="pre">HEAD detached at {{{version}}}<br/>
@@ -302,21 +317,26 @@ nothing to commit, working tree clean</div>
 </p>
 <h2><span class="mw-headline" id="Build_Dependencies">Build Dependencies</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=10.html" title="Edit section: Build Dependencies">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Get all build dependencies.
-</p><p></p><div class="code-select">sudo -E ./build-steps.d/1100_prepare-build-machine --internalrun --build --target root</div>
+</p><p><br/>
+</p><div class="code-select">sudo -E ./build-steps.d/1100_prepare-build-machine --internalrun --build --target root</div>
 <p>Why <code>--target root</code>? This is correct, if you want to know why, see footnote. <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup>
 </p>
 <h2><span class="mw-headline" id="Create_the_Packages">Create the Packages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=11.html" title="Edit section: Create the Packages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>If you're not debugging, create the packages with:
-</p><p></p><div class="code-select">sudo -E ./build-steps.d/1200_create-debian-packages --build --internalrun --target root</div>
+</p><p><br/>
+</p><div class="code-select">sudo -E ./build-steps.d/1200_create-debian-packages --build --internalrun --target root</div>
 <p>If debugging, use the following command. Developers only! <sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup> Potentially insecure unless the untagged / uncommited changes are by you or by a trusted developer with a git gpg signature that you verified.
-</p><p></p><div class="code-select">sudo -E ./build-steps.d/1200_create-debian-packages --build --allow-untagged true --allow-uncommitted true --internalrun --target root</div>
+</p><p><br/>
+</p><div class="code-select">sudo -E ./build-steps.d/1200_create-debian-packages --build --allow-untagged true --allow-uncommitted true --internalrun --target root</div>
 <h2><span id="Upgrade_Kicksecure_.E2.84.A2_Debian_Packages"></span><span class="mw-headline" id="Upgrade_Kicksecure_™_Debian_Packages">Upgrade Kicksecure ™ Debian Packages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=12.html" title="Edit section: Upgrade Kicksecure ™ Debian Packages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Upgrade Kicksecure ™ Debian Packages without contacting a Kicksecure ™ APT Repository, using your own locally created apt package repository.
 </p><p>For Kicksecure ™.
-</p><p></p><div class="code-select">sudo ./packages/kicksecure/developer-meta-files/debug-steps/locally-upgrade-derivative-debian-packages --build --target root --flavor whonix-gateway</div>
+</p><p><br/>
+</p><div class="code-select">sudo ./packages/kicksecure/developer-meta-files/debug-steps/locally-upgrade-derivative-debian-packages --build --target root --flavor whonix-gateway</div>
 <p><sup class="reference" id="cite_ref-9"><a href="#cite_note-9">[9]</a></sup>
 </p><p>For Kicksecure ™.
-</p><p></p><div class="code-select">sudo ./packages/kicksecure/developer-meta-files/debug-steps/locally-upgrade-derivative-debian-packages --build --target root --flavor whonix-workstation</div>
+</p><p><br/>
+</p><div class="code-select">sudo ./packages/kicksecure/developer-meta-files/debug-steps/locally-upgrade-derivative-debian-packages --build --target root --flavor whonix-workstation</div>
 <p>There will be a lot debug output. <sup class="reference" id="cite_ref-10"><a href="#cite_note-10">[10]</a></sup>
 </p><p>If everything went well, you will see <sup class="reference" id="cite_ref-11"><a href="#cite_note-11">[11]</a></sup> <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup>
 </p>
@@ -346,7 +366,8 @@ nothing to commit, working tree clean</div>
 </p><p>Remove temporary files.
 </p><p>WARNING: This will run <code>git clean -d --force --force</code> in <a class="external text" data-href="https://github.com/Kicksecure/derivative-maker" href="https://github.com/Kicksecure/derivative-maker" rel="noreferrer noopener" target="_blank">derivative-maker's main source code folder</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/derivative-maker" href="https://web.archive.org/web/https://github.com/Kicksecure/derivative-maker" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> (<code>~/derivative-maker</code>) as well as in all sub folders of the <a class="external text" data-href="https://github.com/Kicksecure/derivative-maker/tree/master/packages" href="https://github.com/Kicksecure/derivative-maker/tree/master/packages" rel="noreferrer noopener" target="_blank">Whonix packages folder</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/derivative-maker/tree/master/packages" href="https://web.archive.org/web/https://github.com/Kicksecure/derivative-maker/tree/master/packages" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> <code>~/derivative-maker/packages</code>. This means, if you knowingly added any files to any of these folders that have not been committed to git, these will be deleted.
 </p><p><sup class="reference" id="cite_ref-13"><a href="#cite_note-13">[13]</a></sup>
-</p><p></p><div class="code-select">./help-steps/cleanup-files</div>
+</p><p><br/>
+</p><div class="code-select">./help-steps/cleanup-files</div>
 <p><br/>
 </p>
 <h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;action=edit&amp;section=14.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -370,9 +391,10 @@ Knowledgeable <code>git</code> users are free to drop any of these optional para
 <li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">
 Alternatively, this can be achieved with the following commands in several steps. This is useful if network issues arise.
 
+
 <div class="code-select">git clone --depth=1 --branch 16.0.9.0-stable https://github.com/Kicksecure/derivative-maker.git</div>
 <div class="code-select">cd derivative-maker</div>
-<div class="code-select">git submodule update --init --recursive --progress --jobs=4</div></span>
+<div class="code-select">git submodule update --init --recursive --progress --jobs=4</div> </span>
 </li>
 <li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">
 Optional. [...]</span>
@@ -569,10 +591,7 @@ Beginning from git tag 9.6 and above.</span>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3117-0!canonicalwww.kicksecure.com and timestamp 20230131010433 and revision id 64136.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;oldid=64136" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;oldid=64136">https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/Upgrading_Derivative_Deb_Packages_from_Source_Code&amp;oldid=64136</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>

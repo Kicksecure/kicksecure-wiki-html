@@ -189,14 +189,16 @@
 </p>
 <h1><span class="mw-headline" id="Debugging">Debugging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Qubes/AppArmor&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Qubes/AppArmor&amp;action=edit&amp;section=3.html" title="Edit section: Debugging">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>If you see any of the following messages that means the instructions above have not been applied.
-</p><p></p><div class="code-select">sudo systemctl status apparmor</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl status apparmor</div>
 <pre>Dec 21 06:57:56 host systemd[1]: Starting Load AppArmor profiles…
 Dec 21 06:57:56 host apparmor.systemd[483]: Error: Loading AppArmor profiles - failed, Do you have the correct privileges?
 Dec 21 06:57:56 host systemd[1]: apparmor.service: Main process exited, code=exited, status=4/NOPERMISSION
 Dec 21 06:57:56 host systemd[1]: apparmor.service: Failed with result ‘exit-code’.
 Dec 21 06:57:56 host systemd[1]: Failed to start Load AppArmor profiles.
 </pre>
-<p></p><div class="code-select">sudo /lib/apparmor/apparmor.systemd reload</div>
+<p><br/>
+</p><div class="code-select">sudo /lib/apparmor/apparmor.systemd reload</div>
 <pre>Error: Loading AppArmor profiles - failed, Do you have the correct privileges?
 </pre>
 <h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Qubes/AppArmor&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Qubes/AppArmor&amp;action=edit&amp;section=4.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -375,8 +377,6 @@ Dec 21 06:57:56 host systemd[1]: Failed to start Load AppArmor profiles.
   <div class="code-select"></div>
 </div>
 </div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3072-0!canonicalwww.kicksecure.com and timestamp 20230131010203 and revision id 65865.
- -->
 </div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Qubes/AppArmor&amp;oldid=65865" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Qubes/AppArmor&amp;oldid=65865">https://www.kicksecure.com/w/index.php?title=Qubes/AppArmor&amp;oldid=65865</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li><li><a data-href="/wiki/Category:MultiWiki" href="../Category:MultiWiki.html" title="Category:MultiWiki">MultiWiki</a></li></ul></div></div>

@@ -219,12 +219,15 @@
 <div class="info-box">
 <p>Install <code>hardened-malloc-light-enable</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>hardened-malloc-light-enable</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends hardened-malloc-light-enable</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends hardened-malloc-light-enable</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>hardened-malloc-light-enable</code> is complete.
 </p>
@@ -243,16 +246,19 @@
 <h2><span class="mw-headline" id="Disable_Hardened_Malloc_Light_Globally">Disable Hardened Malloc Light Globally</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc_Light&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc_Light&amp;action=edit&amp;section=6.html" title="Edit section: Disable Hardened Malloc Light Globally">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Apply the following steps to globally disable Hardened Malloc Light.
 </p><p>If the system is still fully functional, the easiest way is to uninstall the <code>hardened-malloc-light-enable</code> package.
-</p><p></p><div class="code-select">sudo apt purge hardened-malloc-light-enable</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt purge hardened-malloc-light-enable</div>
 <p>Otherwise...
 </p><p><b>1)</b> <a data-href="/wiki/Recovery#Recovery_Mode" href="./Recovery.html" title="Recovery">Boot into recovery mode</a>. Optional.
 </p><p>This is only required if the system is no longer bootable. In this case, refer to <a data-href="/wiki/Recovery#Recovery_Mode" href="./Recovery.html" title="Recovery">boot into recovery mode</a>.
 </p><p><b>2)</b> View the <code>/etc/ld.so.preload</code> configuration file.
-</p><p></p><div class="code-select">cat /etc/ld.so.preload</div>
+</p><p><br/>
+</p><div class="code-select">cat /etc/ld.so.preload</div>
 <p><b>3)</b> Remove <code>/usr/lib/libhardened_malloc.so/libhardened_malloc-light.so</code> from <code>/etc/ld.so.preload</code>.
 </p><p>If not using <code>/etc/ld.so.preload</code> for anything else, it is the easiest to simply delete the configuration file.
 </p><p>Warning: this removes all entries from <code>/etc/ld.so.preload</code>.
-</p><p></p><div class="code-select">sudo rm /etc/ld.so.preload</div>
+</p><p><br/>
+</p><div class="code-select">sudo rm /etc/ld.so.preload</div>
 <h1><span class="mw-headline" id="Issues">Issues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc_Light&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc_Light&amp;action=edit&amp;section=7.html" title="Edit section: Issues">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Same as <a data-href="/wiki/Hardened_Malloc#Issues" href="./Hardened_Malloc.html" title="Hardened Malloc">Hardened Malloc (Default) Issues</a>.
 </p>
@@ -442,10 +448,7 @@ In the experience of Kicksecure ™ developer Patrick, the VirtualBox host softw
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2955-0!canonicalwww.kicksecure.com and timestamp 20230130212335 and revision id 61163.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc_Light&amp;oldid=61163" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc_Light&amp;oldid=61163">https://www.kicksecure.com/w/index.php?title=Hardened_Malloc_Light&amp;oldid=61163</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

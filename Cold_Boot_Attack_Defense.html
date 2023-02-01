@@ -327,12 +327,15 @@ A cold boot attack is: <sup class="reference" id="cite_ref-5"><a href="#cite_not
 <div class="info-box">
 <p>Install <code>dracut</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>dracut</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends dracut</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends dracut</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>dracut</code> is complete.
 </p>
@@ -343,26 +346,32 @@ A cold boot attack is: <sup class="reference" id="cite_ref-5"><a href="#cite_not
 </p>
 <div class="info-box">
 <p><b>1.</b> Download the <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Signing Key</a>.
-</p><p></p><div class="code-select">wget https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">wget https://www.kicksecure.com/keys/derivative.asc</div>
 <p><b>2.</b> <i>Optional:</i> <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Check the Signing Key</a> for better security.
 </p><p><b>3.</b> Add Kicksecure ™ signing key.
-</p><p></p><div class="code-select">sudo cp derivative.asc /usr/share/keyrings/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp derivative.asc /usr/share/keyrings/derivative.asc</div>
 <p><b>4.</b> Kicksecure ™ APT repository choices.
 </p><p><i>Optional:</i> See <a data-href="/wiki/Packages_for_Debian_Hosts" href="./Packages_for_Debian_Hosts.html" title="Packages for Debian Hosts">Kicksecure ™ Packages for Debian Hosts and Kicksecure ™ Host Enhancements</a> instead of the next step for more secure and complex options.
 </p><p><b>5.</b> Add Kicksecure ™ APT repository.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
 </div>
 <p><b>4.</b> Install <code>ram-wipe</code>.
 </p>
 <div class="info-box">
 <p>Install <code>ram-wipe</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>ram-wipe</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends ram-wipe</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends ram-wipe</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>ram-wipe</code> is complete.
 </p>
@@ -431,8 +440,9 @@ And/or the memory should be wiped upon shutdown. This is a theoretical concern a
 See: <a class="external text" data-href="https://forums.whonix.org/t/is-ram-wipe-possible-inside-whonix-cold-boot-attack-defense/5596" href="https://forums.whonix.org/t/is-ram-wipe-possible-inside-whonix-cold-boot-attack-defense/5596" rel="noreferrer noopener" target="_blank">Is RAM Wipe possible inside Whonix? Cold Boot Attack Defense</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://forums.whonix.org/t/is-ram-wipe-possible-inside-whonix-cold-boot-attack-defense/5596" href="https://web.archive.org/web/https://forums.whonix.org/t/is-ram-wipe-possible-inside-whonix-cold-boot-attack-defense/5596" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></span>
 </li>
 <li id="cite_note-23"><span class="mw-cite-backlink"><a href="#cite_ref-23">↑</a></span> <span class="reference-text">
-<ul><li>In Linux, launch a terminal and run. <div class="code-select">sudo dmidecode --type memory</div></li>
-<li>In Windows, select the PC Task Manager after pressing <code>Ctrl</code> + <code>Alt</code> + <code>Delete</code>. Click "more details" and navigate to the performance tab. Then select the memory option.</li>
+<ul><li>In Linux, launch a terminal and run.</li></ul>
+<div class="code-select">sudo dmidecode --type memory</div>
+<ul><li>In Windows, select the PC Task Manager after pressing <code>Ctrl</code> + <code>Alt</code> + <code>Delete</code>. Click "more details" and navigate to the performance tab. Then select the memory option.</li>
 <li>In macOS, click the Apple logo and select "About This Mac". For additional information, click the "More Info..." button and navigate to the "Memory" tab.</li></ul>
 </span></li>
 <li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite_ref-24">↑</a></span> <span class="reference-text">
@@ -608,10 +618,7 @@ Since ram-wipe is unavailable for initramfs the user needs to change dracut, the
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3009-0!canonicalwww.kicksecure.com and timestamp 20230130203748 and revision id 66567.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Cold_Boot_Attack_Defense&amp;oldid=66567" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Cold_Boot_Attack_Defense&amp;oldid=66567">https://www.kicksecure.com/w/index.php?title=Cold_Boot_Attack_Defense&amp;oldid=66567</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -405,11 +405,14 @@ Kicksecure ™ virtual machine images are cryptographically signed by Kicksecure
 <p><b>1.</b> On the host.
 </p><p>Open a terminal.
 </p><p><b>2.</b> Update the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>3.</b> Install VirtualBox and Linux kernel headers.
-</p><p></p><div class="code-select">sudo apt install virtualbox linux-headers-generic</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install virtualbox linux-headers-generic</div>
 <p><b>4.</b> Add your current user to group <code>vboxusers</code>. <sup class="reference" id="cite_ref-vboxusersgroupadd_1-0"><a href="#cite_note-vboxusersgroupadd-1">[1]</a></sup>
-</p><p></p><div class="code-select">sudo adduser $(whoami) vboxusers</div>
+</p><p><br/>
+</p><div class="code-select">sudo adduser $(whoami) vboxusers</div>
 <p><b>5.</b> Done.
 </p><p>The procedure of installing the VirtualBox host software is complete.
 </p>
@@ -451,17 +454,23 @@ Kicksecure ™ virtual machine images are cryptographically signed by Kicksecure
 </p><p>Open a terminal.
 </p><p><b>2.</b> Add Debian the <code>fasttrack</code> repository.
 </p><p>Update the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p>Install the Debian <code>fasttrack</code> signing key.
-</p><p></p><div class="code-select">sudo apt install fasttrack-archive-keyring</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install fasttrack-archive-keyring</div>
 <p>Add the Debian <code>fasttrack</code> repository.
-</p><p></p><div class="code-select">echo 'deb https://fasttrack.debian.net/debian/ bullseye-fasttrack main contrib non-free' | sudo tee /etc/apt/sources.list.d/fasttrack.list</div>
+</p><p><br/>
+</p><div class="code-select">echo 'deb https://fasttrack.debian.net/debian/ bullseye-fasttrack main contrib non-free' | sudo tee /etc/apt/sources.list.d/fasttrack.list</div>
 <p><b>3.</b> Update the package lists again. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>4.</b> Install VirtualBox and Linux kernel headers.
-</p><p></p><div class="code-select">sudo apt install virtualbox linux-headers-$(dpkg --print-architecture)</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install virtualbox linux-headers-$(dpkg --print-architecture)</div>
 <p><b>5.</b> Add your current user to group <code>vboxusers</code>. <sup class="reference" id="cite_ref-vboxusersgroupadd_1-1"><a href="#cite_note-vboxusersgroupadd-1">[1]</a></sup>
-</p><p></p><div class="code-select">sudo adduser $(whoami) vboxusers</div>
+</p><p><br/>
+</p><div class="code-select">sudo adduser $(whoami) vboxusers</div>
 <p><b>6.</b> Done.
 </p><p>The procedure of installing the VirtualBox host software is complete.
 </p>
@@ -474,11 +483,14 @@ Kicksecure ™ virtual machine images are cryptographically signed by Kicksecure
 </p><p><b>1.</b> On the host.
 </p><p>Open a terminal.
 </p><p><b>2.</b> Update package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>3.</b> Install VirtualBox and Linux kernel headers.
-</p><p></p><div class="code-select">sudo apt install virtualbox</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install virtualbox</div>
 <p><b>4.</b> Add your current user to group <code>vboxusers</code>. <sup class="reference" id="cite_ref-vboxusersgroupadd_1-2"><a href="#cite_note-vboxusersgroupadd-1">[1]</a></sup>
-</p><p></p><div class="code-select">sudo adduser $(whoami) vboxusers</div>
+</p><p><br/>
+</p><div class="code-select">sudo adduser $(whoami) vboxusers</div>
 <p><b>6.</b> Done.
 </p><p>The procedure of installing the VirtualBox host software is complete.
 </p>
@@ -631,17 +643,16 @@ This is because by Kicksecure ™ default:
 On the Linux platform.<br/>
 <b>1.</b> Read <a data-href="/wiki/Kicksecure:Copyrights" href="../Kicksecure:Copyrights.html" title="Kicksecure:Copyrights">License Agreement</a>:
 
+
 <div class="code-select">vboxmanage import Kicksecure-XFCE-16.0.9.0.ova --vsys 0 --eula show --vsys 1 --eula show</div>
 <b>2.</b> Import Kicksecure and Kicksecure ™.
 
-<div class="code-select">vboxmanage import Kicksecure-XFCE-16.0.9.0.ova --vsys 0 --eula accept --vsys 1 --eula accept</div></span>
+
+<div class="code-select">vboxmanage import Kicksecure-XFCE-16.0.9.0.ova --vsys 0 --eula accept --vsys 1 --eula accept</div> </span>
 </li>
 </ol></div></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:1908-0!canonicalwww.kicksecure.com and timestamp 20230131005251 and revision id 60611.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VirtualBox_Testers_Only_Version/XFCE&amp;oldid=60611" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VirtualBox_Testers_Only_Version/XFCE&amp;oldid=60611">https://www.kicksecure.com/w/index.php?title=VirtualBox_Testers_Only_Version/XFCE&amp;oldid=60611</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

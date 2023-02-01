@@ -261,17 +261,22 @@
 </p><p><b>2.</b> Add the current Debian stable backports codename <code>bullseye-backports</code> to Debian apt sources.
 </p><p>Note: this applies to Kicksecure ™ 16.0.9.0. Later Kicksecure ™ versions may use a codename different to <code>bullseye</code>.
 </p><p>In Kicksecure ™ (<code>kicksecure-16</code>) Template, run.
-</p><p></p><div class="code-select">sudo su -c "echo -e 'deb tor+https://deb.debian.org/debian bullseye-backports main contrib non-free' &gt; /etc/apt/sources.list.d/backports.list"</div>
+</p><p><br/>
+</p><div class="code-select">sudo su -c "echo -e 'deb tor+https://deb.debian.org/debian bullseye-backports main contrib non-free' &gt; /etc/apt/sources.list.d/backports.list"</div>
 <p>Alternatively, users who like <a data-href="/wiki/Onionizing_Repositories" href="./Onionizing_Repositories.html" title="Onionizing Repositories">Onionizing Repositories</a> can set the <i>.onion</i> mirror.
-</p><p></p><div class="code-select">sudo su -c "echo -e 'deb tor+http://2s4yqjx5ul6okpp3f2gaunr2syex5jgbfpfvhxxbbjwnrsvbk5v3qbid.onion/debian bullseye-backports main contrib non-free' &gt; /etc/apt/sources.list.d/backports.list"</div>
+</p><p><br/>
+</p><div class="code-select">sudo su -c "echo -e 'deb tor+http://2s4yqjx5ul6okpp3f2gaunr2syex5jgbfpfvhxxbbjwnrsvbk5v3qbid.onion/debian bullseye-backports main contrib non-free' &gt; /etc/apt/sources.list.d/backports.list"</div>
 <p><b>3.</b> <a data-href="/wiki/Operating_System_Software_and_Updates#Updates" href="./Operating_System_Software_and_Updates.html" title="Operating System Software and Updates">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>4.</b> Install the select software.
-</p><p></p><div class="code-select">sudo apt -t bullseye-backports install linux-image-$(dpkg --print-architecture) linux-headers-$(dpkg --print-architecture)</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt -t bullseye-backports install linux-image-$(dpkg --print-architecture) linux-headers-$(dpkg --print-architecture)</div>
 <p>The procedure is now complete.
 </p><p><b>5.</b> Undo.
 </p><p>On occasion it is necessary to undo this configuration, for example when upgrading from Debian <code>bullseye</code> to <code>bookworm</code>. <sup class="reference" id="cite_ref-17"><a href="#cite_note-17">[17]</a></sup> To proceed, run.
-</p><p></p><div class="code-select">sudo rm /etc/apt/sources.list.d/backports.list</div>
+</p><p><br/>
+</p><div class="code-select">sudo rm /etc/apt/sources.list.d/backports.list</div>
 </div>
 <p>These steps can be repeated for any other host operating system installations or other VMs.
 </p>
@@ -496,10 +501,7 @@ Most often this step applies before attempting major Kicksecure ™ upgrades; up
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3011-0!canonicalwww.kicksecure.com and timestamp 20230130232203 and revision id 61198.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Kernel&amp;oldid=61198" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Kernel&amp;oldid=61198">https://www.kicksecure.com/w/index.php?title=Kernel&amp;oldid=61198</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

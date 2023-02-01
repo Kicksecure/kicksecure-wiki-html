@@ -249,17 +249,22 @@
 <li><code>firmware-11.1.0-amd64-DVD-1.iso</code> (non-freedom version)</li></ul></li></ul>
 <p>Note: Either adjust the link if later needed or download using a web browser. (Perhaps wiki <a data-href="/wiki/Template:Stable_project_version_based_on_Debian_version_iso" href="./Template:Stable_project_version_based_on_Debian_version_iso.html" title="Template:Stable project version based on Debian version iso">Template:stable project version based on Debian version iso</a> needs to be updated.)
 </p><p>Download <code>.iso</code> image.
-</p><p></p><div class="code-select">scurl-download https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.1.0-amd64-DVD-1.iso</div>
+</p><p><br/>
+</p><div class="code-select">scurl-download https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.1.0-amd64-DVD-1.iso</div>
 <p>Download hash sum digital software signature.
-</p><p></p><div class="code-select">scurl-download https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/SHA512SUMS.sign</div>
+</p><p><br/>
+</p><div class="code-select">scurl-download https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/SHA512SUMS.sign</div>
 <p>Download hash sum file.
-</p><p></p><div class="code-select">scurl-download https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/SHA512SUMS</div>
+</p><p><br/>
+</p><div class="code-select">scurl-download https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/SHA512SUMS</div>
 <p><b>4.</b> Install the <code>debian-keyring</code> package, which contains the Debian signing key. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
-</p><p></p><div class="code-select">sudo apt install debian-keyring</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install debian-keyring</div>
 <p><b>5.</b> Change directory.
 </p><p>Navigate to the folder where the files <code>SHA512SUMS</code>, <code>SHA512SUMS.sign</code> and the ISO were downloaded.
 </p><p><b>6.</b> Digital software signature verification of the <code>SHA512SUMS</code> file.
-</p><p></p><div class="code-select">gpg --no-default-keyring --keyring /usr/share/keyrings/debian-role-keys.gpg --verify SHA512SUMS.sign</div>
+</p><p><br/>
+</p><div class="code-select">gpg --no-default-keyring --keyring /usr/share/keyrings/debian-role-keys.gpg --verify SHA512SUMS.sign</div>
 <p><b>7.</b> Confirm the signature is valid.
 </p><p>The output must show.
 </p>
@@ -273,7 +278,8 @@ gpg:          There is no indication that the signature belongs to the owner.
 <p>This message does not alter the validity of the signature related to the downloaded key. Rather, this warning refers to the level of trust placed in the Kicksecure ™ signing key and the <a data-href="/wiki/OpenPGP#The_OpenPGP_Web_of_Trust" href="./OpenPGP.html" title="OpenPGP">web of trust</a>. To remove this warning, the Kicksecure ™ signing key must be personally signed with your own key.
 </p><p><b>8.</b> Hash sum check
 </p><p>Verify that the <code>.iso</code> matches the signed <code>SHA512SUMS</code> file.
-</p><p></p><div class="code-select">sha512sum --check --ignore-missing SHA512SUMS</div>
+</p><p><br/>
+</p><div class="code-select">sha512sum --check --ignore-missing SHA512SUMS</div>
 <p>The output must show.
 </p>
 <pre>OK
@@ -311,18 +317,22 @@ gpg:          There is no indication that the signature belongs to the owner.
 <li>All data on the device will be lost!</li></ul>
 <p>NOTE: Replace <code>debian-11.1.0-amd64-DVD-1.iso</code> with the file name / path to another ISO file if another ISO was downloaded or downloaded in a different location.
 </p>
-<ul><li>freedom version: <div class="code-select">sudo dd bs=64K conv=noerror,sync status=progress if=debian-11.1.0-amd64-DVD-1.iso of=/dev/xvdi</div></li>
-<li>non-freedom version: <div class="code-select">sudo dd bs=64K conv=noerror,sync status=progress if=firmware-11.1.0-amd64-DVD-1.iso of=/dev/xvdi</div></li></ul>
+<ul><li>freedom version:</li></ul>
+<p></p><div class="code-select">sudo dd bs=64K conv=noerror,sync status=progress if=debian-11.1.0-amd64-DVD-1.iso of=/dev/xvdi</div>
+<ul><li>non-freedom version:</li></ul>
+<p></p><div class="code-select">sudo dd bs=64K conv=noerror,sync status=progress if=firmware-11.1.0-amd64-DVD-1.iso of=/dev/xvdi</div>
 <p><b>10.</b> Check exit code.
 </p><p>Inside the <code>iso-download</code> App Qubes.
-</p><p></p><div class="code-select">echo $?</div>
+</p><p><br/>
+</p><div class="code-select">echo $?</div>
 <p>Expected output if success.
 </p>
 <pre>0
 </pre>
 <p><b>11.</b> Shutdown the VM.
 </p><p>Inside the <code>iso-download</code> App Qube.
-</p><p></p><div class="code-select">sudo poweroff</div>
+</p><p><br/>
+</p><div class="code-select">sudo poweroff</div>
 <p><b>11.</b> Use Qubes Devices in dom0 to detach the USB hard drive from the <code>iso-download</code> App Qube.
 </p><p><b>12.</b> Done.
 </p><p>The process of writing the ISO image to the USB drive has been completed.
@@ -370,17 +380,25 @@ Feel free to choose:
 </div>
 <div class="info-box">
 <p><b>1.</b> Check open ports.
-</p><p></p><div class="code-select">su -</div>
-<p></p><div class="code-select">netstat -anltp</div>
+</p><p><br/>
+</p><div class="code-select">su -</div>
+<p><br/>
+</p><div class="code-select">netstat -anltp</div>
 <p>A safe configuration must show no ports are open (no reply).
 </p><p><b>2.</b> Remove any services which open ports. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
-</p><p></p><div class="code-select">su -</div>
-<p></p><div class="code-select">apt remove dovecot-core openbsd-inetd bind9 samba cups cups-daemon apache2 postgres*</div>
-<p></p><div class="code-select">apt remove exim4 exim4-daemon-light rpcbind openssh-server apache2.2-bin avahi*</div>
-<p></p><div class="code-select">apt autoremove</div>
+</p><p><br/>
+</p><div class="code-select">su -</div>
+<p><br/>
+</p><div class="code-select">apt remove dovecot-core openbsd-inetd bind9 samba cups cups-daemon apache2 postgres*</div>
+<p><br/>
+</p><div class="code-select">apt remove exim4 exim4-daemon-light rpcbind openssh-server apache2.2-bin avahi*</div>
+<p><br/>
+</p><div class="code-select">apt autoremove</div>
 <p><b>3.</b> Check open ports again.
-</p><p></p><div class="code-select">su -</div>
-<p></p><div class="code-select">netstat -anltp</div>
+</p><p><br/>
+</p><div class="code-select">su -</div>
+<p><br/>
+</p><div class="code-select">netstat -anltp</div>
 <p>A safe configuration must show no ports are open (no reply).
 </p>
 </div>
@@ -406,11 +424,14 @@ Feel free to choose:
 </p>
 <div class="info-box">
 <p>Become root.
-</p><p></p><div class="code-select">su</div>
+</p><p><br/>
+</p><div class="code-select">su</div>
 <p>Add the <i><span style="background-color:#FBFBFB">user</span></i> account to the sudoer's group. Replace <i><span style="background-color:#FBFBFB">user</span></i> with the actual operating system user name.
-</p><p></p><div class="code-select">sudo adduser user sudo</div>
+</p><p><br/>
+</p><div class="code-select">sudo adduser user sudo</div>
 <p>Reboot so group changes take effect.
-</p><p></p><div class="code-select">reboot</div>
+</p><p><br/>
+</p><div class="code-select">reboot</div>
 </div>
 <h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Debian_Tips&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Debian_Tips&amp;action=edit&amp;section=14.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="reflist" style="list-style-type: decimal;">
@@ -600,10 +621,7 @@ If this action is taken, <i><span style="background-color:#FBFBFB">sudo</span></
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3081-0!canonicalwww.kicksecure.com and timestamp 20230130225019 and revision id 63909.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Debian_Tips&amp;oldid=63909" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Debian_Tips&amp;oldid=63909">https://www.kicksecure.com/w/index.php?title=Debian_Tips&amp;oldid=63909</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

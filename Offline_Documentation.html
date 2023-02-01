@@ -187,20 +187,26 @@
 <div class="info-box">
 <p>Install <code>git</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>git</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends git</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>git</code> is complete.
 </p>
 </div>
-<p></p><div class="code-select">mkdir ~/Downloads/</div>
-<p></p><div class="code-select">cd ~/Downloads/</div>
+<p><br/>
+</p><div class="code-select">mkdir ~/Downloads/</div>
+<p><br/>
+</p><div class="code-select">cd ~/Downloads/</div>
 <p>Use <code>git</code> to download the Kicksecure ™ wiki documentation.
-</p><p></p><div class="code-select">git clone --depth=1 https://gitlab.com/kicksecure/kicksecure-wiki-html.git</div>
+</p><p><br/>
+</p><div class="code-select">git clone --depth=1 https://gitlab.com/kicksecure/kicksecure-wiki-html.git</div>
 <h1><span class="mw-headline" id="Usage">Usage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Offline_Documentation&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Offline_Documentation&amp;action=edit&amp;section=2.html" title="Edit section: Usage">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p></p><div class="code-select">x-www-browser ~/Downloads/kicksecure-wiki-html/Documentation.html</div>
 <h1><span class="mw-headline" id="Advantages">Advantages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Offline_Documentation&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Offline_Documentation&amp;action=edit&amp;section=3.html" title="Edit section: Advantages">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -246,12 +252,14 @@
 <li>Possible to <a data-href="/wiki/Hosting_a_Mirror#rsync_from_kicksecure.com" href="./Hosting_a_Mirror.html" title="Hosting a Mirror">rsync from kicksecure.com</a>.</li></ul>
 <p>Recommended steps to restore in a new mediawiki installation:
 </p><p><b>1)</b> Restore full wiki history.
-</p><p></p><div class="code-select">sudo -u www-data php /var/www/w/maintenance/importDump.php --uploads --dry-run /path/to/wiki-backup-dump-content-full/dumpContent.xml</div>
+</p><p><br/>
+</p><div class="code-select">sudo -u www-data php /var/www/w/maintenance/importDump.php --uploads --dry-run /path/to/wiki-backup-dump-content-full/dumpContent.xml</div>
 <ul><li>Path to mediawiki maintenance script <code>importDump.php</code> will likely be different.</li>
 <li>drop: <code>--dry-run</code></li>
 <li>Probably also drop (likely broken) <code>--uploads</code> (not important)</li></ul>
 <p><b>2)</b> Restore all wiki images.
-</p><p></p><div class="code-select">sudo -u www-data php /var/www/w/maintenance/importImages.php /path/to/wiki/wiki-backup-dump-content-current/mediafiles</div>
+</p><p><br/>
+</p><div class="code-select">sudo -u www-data php /var/www/w/maintenance/importImages.php /path/to/wiki/wiki-backup-dump-content-current/mediafiles</div>
 <ul><li>Path to mediawiki maintenance script <code>importImages.php</code> will likely be different.</li>
 <li>Check permissions. Folder to import from must be readable by user www-data. To test, run: <code>sudo -u www-data cp -r /path/to/wiki/wiki-backup-dump-content-current/mediafiles /tmp/delete</code> or so.</li></ul>
 <h1><span class="mw-headline" id="Alternative_Wiki_Backup_Formats">Alternative Wiki Backup Formats</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Offline_Documentation&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=Offline_Documentation&amp;action=edit&amp;section=8.html" title="Edit section: Alternative Wiki Backup Formats">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -435,10 +443,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3080-0!canonicalwww.kicksecure.com and timestamp 20230131010223 and revision id 66487.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Offline_Documentation&amp;oldid=66487" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Offline_Documentation&amp;oldid=66487">https://www.kicksecure.com/w/index.php?title=Offline_Documentation&amp;oldid=66487</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

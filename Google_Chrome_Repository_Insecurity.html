@@ -206,7 +206,8 @@
 </p><p>What this does is using the <code>wget</code> command line downloader to download an APT signing key and then using Debian's <code>apt-key</code> utility to install the signing key to the system's APT keyring <code>/etc/apt/trusted.gpg</code>. Sidenote: both <code>apt-key</code> and <code>/etc/apt/trusted.gpg</code> are deprecated by Debian <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> but that doesn't have a security impact here.
 </p><p><b>1)</b> Download <a class="external free" data-href="https://dl.google.com/linux/linux_signing_key.pub" href="https://dl.google.com/linux/linux_signing_key.pub" rel="noreferrer noopener" target="_blank">https://dl.google.com/linux/linux_signing_key.pub</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://dl.google.com/linux/linux_signing_key.pub" href="https://web.archive.org/web/https://dl.google.com/linux/linux_signing_key.pub" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>
 </p><p><b>2)</b> View OpenPGP key information.
-</p><p></p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint linux_signing_key.pub</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint linux_signing_key.pub</div>
 <p><b>3)</b> Will show.
 </p>
 <pre>pub   dsa1024/A040830F7FAC5991 2007-03-08 [SC]
@@ -429,10 +430,7 @@ Quote <a class="external free" data-href="https://blog.jak-linux.org/2021/02/18/
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2962-0!canonicalwww.kicksecure.com and timestamp 20230131005543 and revision id 60974.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Google_Chrome_Repository_Insecurity&amp;oldid=60974" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Google_Chrome_Repository_Insecurity&amp;oldid=60974">https://www.kicksecure.com/w/index.php?title=Google_Chrome_Repository_Insecurity&amp;oldid=60974</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -290,19 +290,21 @@
 <h2><span class="mw-headline" id="New_Removable_Media">New Removable Media</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=11.html" title="Edit section: New Removable Media">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Gnome Disks Utility creates LUKS partitions with AES-128 by default which is insufficient in event of quantum computers materializing. This has been successfully reported and fixed upstream as of February 2019, <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup> <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup> but until it lands in Debian, an appropriately secure container must be manually created. Afterwards, unlock the device and format the internal filesystem as EXT4 in Gnome Disks.
 </p><p>First enumerate the device. They will usually be called 'sdb1', as sdaX is reserved for the system on default installs. To avoid confusion, only connect one removable device at a time.
-</p><div class="code-select"># ls /dev/</div>
+</p><p></p><div class="code-select"># ls /dev/</div>
 <p>Create a LUKS container and change the device name as needed, then follow the prompts.
-</p><div class="code-select"># cryptsetup -v --cipher aes-xts-plain64 --key-size 512 --hash sha512 --use-random luksFormat &lt;device&gt;</div>
+</p><p></p><div class="code-select"># cryptsetup -v --cipher aes-xts-plain64 --key-size 512 --hash sha512 --use-random luksFormat &lt;device&gt;</div>
 <h2><span class="mw-headline" id="Legacy_Device_Encryption_Upgrade">Legacy Device Encryption Upgrade</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=12.html" title="Edit section: Legacy Device Encryption Upgrade">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>It is safer to re-encrypt the device with a stronger key rather than performing a quick format that will otherwise leave the old/weaker header intact.
 </p>
 <div class="info-box">
 <p><b>1.</b> First enumerate the device.
 </p><p>They will usually be called 'sdb1', as sdaX is reserved for the system on default installs. To avoid confusion, only connect one removable device at a time.
-</p><p></p><div class="code-select"># ls /dev/</div>
+</p><p><br/>
+</p><div class="code-select"># ls /dev/</div>
 <p><b>2.</b> View the LUKS header data in order to make necessary adjustments.
 </p><p>Run.
-</p><p></p><div class="code-select"># cryptsetup luksDump --debug &lt;device&gt;</div>
+</p><p><br/>
+</p><div class="code-select"># cryptsetup luksDump --debug &lt;device&gt;</div>
 <p>LUKS header data legend:
 </p>
 <ul><li>'MK' means 'Master Key'. <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup></li>
@@ -310,7 +312,8 @@
 <li>'Payload offset' is 4096 for 256-bit keys and 2048 for 128-bit keys. <sup class="reference" id="cite_ref-9"><a href="#cite_note-9">[9]</a></sup></li></ul>
 <p><b>3.</b> Re-encrypt the device with stronger keys. <sup class="reference" id="cite_ref-10"><a href="#cite_note-10">[10]</a></sup>
 </p><p>Fortunately, header resizing is usually unnecessary (otherwise it will abort the process).
-</p><p></p><div class="code-select"># cryptsetup-reencrypt &lt;device&gt; -c aes-xts-plain64 -s 512 --use-directio</div>
+</p><p><br/>
+</p><div class="code-select"># cryptsetup-reencrypt &lt;device&gt; -c aes-xts-plain64 -s 512 --use-directio</div>
 <p>Abruptly disconnecting power can cause data loss. To safely pause the process (in case of system sleep/shutdown), cryptsetup can be suspended (e.g. by <code>Ctrl+C</code>) and it will automatically restart from where it left off if temporary header files are present in the home directory. <sup class="reference" id="cite_ref-11"><a href="#cite_note-11">[11]</a></sup>
 </p>
 </div>
@@ -329,7 +332,7 @@
 <h3><span class="mw-headline" id="Recommended_Security_Settings">Recommended Security Settings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=15.html" title="Edit section: Recommended Security Settings">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p><u>Important Note:</u> In order to have post-quantum resistance, the <code>aes.xts-plain64.512.sha512</code> option is recommended for 256-bit encryption (the encryption key-size is split in two with XTS mode).
 </p><p>To view the container header, run.
-</p><div class="code-select">sudo cryptsetup luksDump --debug /home/user/&lt;file_name&gt;</div>
+</p><p></p><div class="code-select">sudo cryptsetup luksDump --debug /home/user/&lt;file_name&gt;</div>
 <p>With LUKS it is possible to nest containers of different encryption ciphers; for example, by placing a Serpent and Twofish container inside each other, wrapped in an outer AES one. Be sure to select the <code>.xts-plain64.512.sha512</code> variants in all cases. Each inner layer should be 1 MB less than the outer layer to allow space for each container's respective encryption header.
 </p><p>The plausible deniability feature is available with volume types <code>Normal+Hidden Truecrypt/Veracrypt</code>. Veracrypt volumes support crypto-cascades as a feature, so manual nesting is unnecessary. However, be warned that Truecrypt/Veracrypt volume types only support AES-128. Plain dm-crypt containers with a non-zero offset can be used to provide hidden volumes according to Zulucrypt's manual. This is yet to be tested by Kicksecure ™ developers.
 </p>
@@ -353,9 +356,9 @@
 <td>
 <p>This is a much quicker alternative to zeroing data on a HDD with <a class="external text" data-href="https://dban.org/" href="https://dban.org/" rel="noreferrer noopener" target="_blank">Darik's Boot and Nuke (DBAN)</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://dban.org/" href="https://web.archive.org/web/https://dban.org/" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>. <sup class="reference" id="cite_ref-14"><a href="#cite_note-14">[14]</a></sup> <sup class="reference" id="cite_ref-15"><a href="#cite_note-15">[15]</a></sup> This is an effective measure on spinning HDDs where wiped data is confirmed to be destroyed. The OS only needs to read the LUKS header off disk once – not every single second. Wiping the header makes the disk impossible to unlock in the future. <sup class="reference" id="cite_ref-16"><a href="#cite_note-16">[16]</a></sup>
 </p><p>Replace <code>/dev/sdXY</code> with the encrypted partition. Reply <code>YES</code> to the prompt.
-</p><div class="code-select">sudo cryptsetup luksErase /dev/sdXY</div>
+</p><p></p><div class="code-select">sudo cryptsetup luksErase /dev/sdXY</div>
 <p>Alternatively, to accomplish the same goal without being prompted, run.
-</p><div class="code-select">sudo dd if=/dev/zero of=/dev/sdXY bs=1M count=2</div>
+</p><p></p><div class="code-select">sudo dd if=/dev/zero of=/dev/sdXY bs=1M count=2</div>
 <p>This will overwrite the first two megabytes of the partition <code>/dev/sdXY</code>, which should cover the entire LUKS encryption header for version 1. If you are using LUKS2 with cryptsetup version 2.1.0 (Debian Buster default) the default header size is now 16MiB. Previous cryptsetup versions used a 4MiB LUKS2 header. In that case, simply adjust the dd command: dd if=/dev/zero of=/dev/sdXY bs=1M count=16 (or count=4). Determine your header size with the cryptsetup luksDump --debug &lt;device&gt; command.
 </p>
 </td></tr>
@@ -407,10 +410,12 @@
 <p>Encryption software uses Password-Based Key Derivation Functions (PBKDF) to slow down access attempts and provide some protection against low-entropy passphrases. Higher wait times, or iterations,  can often be used. Iteration values are low by default for impatient users and weak processors, also making systematic attempts to access such protected data much easier for unauthorized users. Choosing how long wait times should be should depend on how long you are willing to wait to access your own data and how long someone else should wait if they try. Computing power gets cheaper with time, so what works today might be weak in the future.
 </p>
 <ul><li>LUKS version 1 uses PBKDF2<sup class="reference" id="cite_ref-31"><a href="#cite_note-31">[31]</a></sup> and allows the option --iter-time (or -i) for the LuksFormat, LuksAddKey, and LuksChangeKey commands. Iter-time is measured in milliseconds, so ten seconds would look like:</li></ul>
-<p></p><div class="code-select">$ sudo cryptsetup luksChangeKey --iter-time 10000 &lt;device&gt;</div>
+<p><br/>
+</p><div class="code-select">$ sudo cryptsetup luksChangeKey --iter-time 10000 &lt;device&gt;</div>
 <ul><li>LUKS 2 (available with Debian Buster) added support for <a class="external text" data-href="https://www.cryptolux.org/index.php/Argon2" href="https://www.cryptolux.org/index.php/Argon2" rel="noreferrer noopener" target="_blank">Argon2i/Argon2id</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.cryptolux.org/index.php/Argon2" href="https://web.archive.org/web/https://www.cryptolux.org/index.php/Argon2" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>. In addition to processor time, Argon2 iterations use RAM and can be multi-threaded, making it difficult for hash bruteforcing using graphics cards. <sup class="reference" id="cite_ref-32"><a href="#cite_note-32">[32]</a></sup></li></ul>
 <p>Argon2 iterations will vary depending on environment.
-</p><p></p><div class="code-select">$ sudo cryptsetup benchmark</div>
+</p><p><br/>
+</p><div class="code-select">$ sudo cryptsetup benchmark</div>
 <p>will show you how many iterations could be made in a requested 2000 ms. To customize wait times, specify (with values) --pbkdf --pbkdf-force-iterations --pbkdf-memory<sup class="reference" id="cite_ref-33"><a href="#cite_note-33">[33]</a></sup> --pbkdf-parallel (number of threads) when using the LuksFormat command. Be aware that incorrect values can make wait times extremely long.
 </p>
 <ul><li>Veracrypt improved upon TrueCrypt's iterations when performing operations on volumes.</li></ul>
@@ -428,7 +433,8 @@
 <h1><span class="mw-headline" id="Gnome_Disks_Utility">Gnome Disks Utility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=18.html" title="Edit section: Gnome Disks Utility">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Gnome Disks utility provides a convenient way to manipulate LUKS container passphrases (including the host's) and the overlying filesystems. Previously, it could not be relied upon for encryption because it used AES-128 as a hardcoded default <sup class="reference" id="cite_ref-44"><a href="#cite_note-44">[44]</a></sup> <sup class="reference" id="cite_ref-45"><a href="#cite_note-45">[45]</a></sup> (as of Debian stretch). However, this bug was fixed in Debian buster so it now provides adequate <a data-href="/wiki/PQCrypto" href="./PQCrypto.html" title="PQCrypto">post-quantum security</a>. For encrypting removable media refer to this <a href="#Protection_Against_Powerful_Adversaries">guide</a>.
 </p><p>To install it, run.
-</p><p></p><div class="code-select">sudo apt install gnome-disk-utility</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install gnome-disk-utility</div>
 <h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;action=edit&amp;section=19.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="mininav">
 <ul><li><a data-href="/wiki/System_Configuration_and_Access" href="./System_Configuration_and_Access.html" title="System Configuration and Access">System Configuration and Access</a></li>
@@ -710,10 +716,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3008-0!canonicalwww.kicksecure.com and timestamp 20230130213958 and revision id 65552.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;oldid=65552" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;oldid=65552">https://www.kicksecure.com/w/index.php?title=Full_Disk_Encryption&amp;oldid=65552</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

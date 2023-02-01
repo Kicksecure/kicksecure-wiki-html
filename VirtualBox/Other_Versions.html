@@ -244,12 +244,15 @@
 <b>Step 1</b> <div class="info-box">
 <p>Install <code>extrepo</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="../Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>extrepo</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="../Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends extrepo</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends extrepo</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>extrepo</code> is complete.
 </p>
@@ -259,15 +262,18 @@
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="../Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/extrepo/config.yaml</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/extrepo/config.yaml</div>
 </div>
 <p><b>Step 3</b> Paste at the end.
-</p><p></p><div class="code-select">- contrib
+</p><p><br/>
+</p><div class="code-select">- contrib
 - non-free</div>
 <p><sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p><b>Step 4</b> Save and exit.
 </p><p><b>Step 5</b> Use extrepo to enable the VirtualBox.org APT repository.
-</p><p></p><div class="code-select">sudo extrepo enable virtualbox</div>
+</p><p><br/>
+</p><div class="code-select">sudo extrepo enable virtualbox</div>
 <p>If everything goes well, extrepo will just print some empty lines.
 </p><p><b>Step 6</b> Enable https for VirtualBox.org APT repository.
 </p><p>Optional but recommended for better security.
@@ -276,7 +282,8 @@
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="../Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/apt/sources.list.d/extrepo_virtualbox.sources</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/apt/sources.list.d/extrepo_virtualbox.sources</div>
 </div>
 <p>Replace <code>http</code> with <code>https</code>. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
 </p><p>Save and exit.
@@ -293,14 +300,17 @@
 <div class="mw-collapsible-content">
 <p><b>Step 1</b> Add the Oracle apt sources list.
 </p><p>Make sure to change <code>bullseye</code> to the current name of your stable distribution.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/virtualbox-archive-keyring.asc] https://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/virtualbox-archive-keyring.asc] https://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list</div>
 <p><b>Step 2</b> Add Oracle's signing key to APT keyring.
 </p>
 <div class="info-box">
 <p><b>Step 1</b> <a data-href="/wiki/Secure_Downloads" href="../Secure_Downloads.html" title="Secure Downloads">Securely download</a> the key.
-</p><p></p><div class="code-select">curl --tlsv1.3 --proto =https --remote-name --tlsv1.2 https://www.virtualbox.org/download/oracle_vbox_2016.asc</div>
+</p><p><br/>
+</p><div class="code-select">curl --tlsv1.3 --proto =https --remote-name --tlsv1.2 https://www.virtualbox.org/download/oracle_vbox_2016.asc</div>
 <p><b>Step 2</b> Display the key's fingerprint.
-</p><p></p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint oracle_vbox_2016.asc</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint oracle_vbox_2016.asc</div>
 <p><b>Step 3</b> Verify the fingerprint.
 </p><p>The most important check is confirming the key fingerprint <u>exactly</u> matches the output below.
 </p>
@@ -311,7 +321,8 @@
 </p>
 </div>
 <p><b>Step 4</b> Add the signing key.
-</p><p></p><div class="code-select">sudo cp oracle_vbox_2016.asc /usr/share/keyrings/virtualbox-archive-keyring.asc</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp oracle_vbox_2016.asc /usr/share/keyrings/virtualbox-archive-keyring.asc</div>
 <p><b>Step 5</b> Done.
 </p><p>The key has been added to the keyring.
 </p>
@@ -322,9 +333,11 @@
 </div>
 </div>
 <p><b>2.</b> <a class="mw-redirect" data-href="/wiki/Update" href="../Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>3.</b> Install VirtualBox and Linux Kernel Headers, which are a dependency.
-</p><p></p><div class="code-select">sudo apt install virtualbox-6.1 linux-headers-$(uname -r)</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install virtualbox-6.1 linux-headers-$(uname -r)</div>
 <p><b>4.</b> Update VirtualBox guest additions.
 </p><p><u>Note</u>: After upgrading the VirtualBox host version, this might cause issues with the guest VMs such as broken VM size adjustment (full screen) <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup> unless the VirtualBox guest additions are also upgraded inside your virtual machine.
 </p><p>To upgrade, at time of writing 11 September 2022, as of VirtualBox version <code>6.1.38</code> <a data-href="/wiki/VirtualBox/Guest_Additions#Migration_to_Oracle_Style_VirtualBox_Guest_Additions" href="../VirtualBox/Guest_Additions.html" title="VirtualBox/Guest Additions">Migration to Oracle Style VirtualBox Guest Additions</a> is recommended.
@@ -521,10 +534,7 @@ The following comments in that file...
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:1147-0!canonicalwww.kicksecure.com and timestamp 20230130233456 and revision id 65958.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Other_Versions&amp;oldid=65958" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Other_Versions&amp;oldid=65958">https://www.kicksecure.com/w/index.php?title=VirtualBox/Other_Versions&amp;oldid=65958</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

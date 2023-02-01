@@ -165,7 +165,8 @@
 </div>
 <p>Architecture dependent. What works on Intel / AMD64 might not work on arm64 etc.
 </p><p>To watch for systemd seccomp issues:
-</p><p></p><div class="code-select">sudo journalctl _AUDIT_TYPE_NAME=SECCOMP -f</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl _AUDIT_TYPE_NAME=SECCOMP -f</div>
 <p>Sample issue (<b>bold</b> added):
 </p>
 <blockquote><p>SECCOMP auid=4294967295 uid=108 gid=118 ses=4294967295 subj==/usr/bin/sdwdate (enforce) pid=9740 comm="sdwdate" exe="/usr/bin/python3.7" sig=31 arch=c0000015 <b>syscall=140</b> compat=0 ip=0x7fff96cc7df4 code=0x0</p></blockquote>
@@ -176,7 +177,8 @@
 </p><p><code>_llseek</code>
 </p><p>Maybe a better table: <a class="external free" data-href="https://marcin.juszkiewicz.com.pl/download/tables/syscalls.html" href="https://marcin.juszkiewicz.com.pl/download/tables/syscalls.html" rel="noreferrer noopener" target="_blank">https://marcin.juszkiewicz.com.pl/download/tables/syscalls.html</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://marcin.juszkiewicz.com.pl/download/tables/syscalls.html" href="https://web.archive.org/web/https://marcin.juszkiewicz.com.pl/download/tables/syscalls.html" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>
 </p><p>Note: Replace <code>sdwdate</code> with the systemd unit name to debug.
-</p><p></p><div class="code-select">sudoedit /lib/systemd/system/sdwdate.service &amp;&amp; sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart sdwdate &amp;&amp; sudo systemctl --no-pager status sdwdate</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /lib/systemd/system/sdwdate.service &amp;&amp; sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart sdwdate &amp;&amp; sudo systemctl --no-pager status sdwdate</div>
 <p><code>SystemCallFilter=</code> needs to be adjusted.
 </p>
 <hr/>
@@ -348,10 +350,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3048-0!canonicalwww.kicksecure.com and timestamp 20230131010041 and revision id 62174.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Seccomp&amp;oldid=62174" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Seccomp&amp;oldid=62174">https://www.kicksecure.com/w/index.php?title=Seccomp&amp;oldid=62174</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

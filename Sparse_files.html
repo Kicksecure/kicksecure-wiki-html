@@ -189,11 +189,14 @@
 When reading sparse files, the file system transparently converts metadata representing empty blocks into "real" blocks filled with null bytes at runtime. The application is unaware of this conversion.</p></blockquote>
 <h1><span class="mw-headline" id="Check_Real_Size">Check Real Size</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Sparse_files&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Sparse_files&amp;action=edit&amp;section=2.html" title="Edit section: Check Real Size">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>You must change directory into the correct folder first. For your home folder. Depending on which one you want to check.
-</p><p></p><div class="code-select">cd ~</div>
+</p><p><br/>
+</p><div class="code-select">cd ~</div>
 <p>Or.
-</p><p></p><div class="code-select">cd /var/lib/libvirt/images/</div>
+</p><p><br/>
+</p><div class="code-select">cd /var/lib/libvirt/images/</div>
 <p>Run.
-</p><p></p><div class="code-select">du -h Kicksecure-*.qcow2</div>
+</p><p><br/>
+</p><div class="code-select">du -h Kicksecure-*.qcow2</div>
 <p>Should show something like this.
 </p><p><code>
 2.5G    Kicksecure-*.qcow2
@@ -201,7 +204,8 @@ When reading sparse files, the file system transparently converts metadata repre
 </p>
 <h1><span class="mw-headline" id="Check_Apparent_Size">Check Apparent Size</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Sparse_files&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Sparse_files&amp;action=edit&amp;section=3.html" title="Edit section: Check Apparent Size">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Run.
-</p><p></p><div class="code-select">du -h --apparent-size Kicksecure-*.qcow2</div>
+</p><p><br/>
+</p><div class="code-select">du -h --apparent-size Kicksecure-*.qcow2</div>
 <p>Should show something like this.
 </p><p><code>
 101G    Kicksecure-*.qcow2
@@ -387,10 +391,7 @@ When reading sparse files, the file system transparently converts metadata repre
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3112-0!canonicalwww.kicksecure.com and timestamp 20230130225026 and revision id 63580.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Sparse_files&amp;oldid=63580" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Sparse_files&amp;oldid=63580">https://www.kicksecure.com/w/index.php?title=Sparse_files&amp;oldid=63580</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -322,7 +322,8 @@ a.freelink
 <ul><li><a data-href="/wiki/KVM/Verify_the_virtual_machine_images_using_the_command_line" href="./KVM/Verify_the_virtual_machine_images_using_the_command_line.html" title="KVM/Verify the virtual machine images using the command line">Verify the Kicksecure ™ KVM images</a></li></ul>
 <h3><span class="mw-headline" id="Decompress">Decompress</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=KVM&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=KVM&amp;action=edit&amp;section=5.html" title="Edit section: Decompress">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Use <i><span style="background-color:#FBFBFB">tar</span></i> to decompress the archive.
-</p><p></p><div class="code-select">tar -xvf Kicksecure*.libvirt.xz</div>
+</p><p><br/>
+</p><div class="code-select">tar -xvf Kicksecure*.libvirt.xz</div>
 <p>Do not use <i><span style="background-color:#FBFBFB">unxz</span></i>! Extract the images using <i><span style="background-color:#FBFBFB">tar</span></i>.
 </p>
 <h2><span id="Importing_Kicksecure_.E2.84.A2_VM_Template"></span><span class="mw-headline" id="Importing_Kicksecure_™_VM_Template">Importing Kicksecure ™ VM Template</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=KVM&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=KVM&amp;action=edit&amp;section=6.html" title="Edit section: Importing Kicksecure ™ VM Template">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -332,13 +333,15 @@ a.freelink
 <p><b>1.</b> Kicksecure ™ works with the network named <i>default</i> out of the box.
 </p><p><br/>
 <b>2.</b> Import the Kicksecure ™ image.
-</p><p></p><div class="code-select">virsh -c qemu:///system define Kicksecure*.xml</div>
+</p><p><br/>
+</p><div class="code-select">virsh -c qemu:///system define Kicksecure*.xml</div>
 </div>
 <h2><span id="Moving_the_Kicksecure_.E2.84.A2_Image_File"></span><span class="mw-headline" id="Moving_the_Kicksecure_™_Image_File">Moving the Kicksecure ™ Image File</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=KVM&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=KVM&amp;action=edit&amp;section=7.html" title="Edit section: Moving the Kicksecure ™ Image File">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>The XML files are configured to point to the default storage location of <code>/var/lib/libvirt/images</code>. The following steps move the images there so the machines can boot.
 </p><p><u>Note:</u> Changing the default location may cause conflicts with SELinux, which will prevent the machines from booting.
 </p><p>It is recommended to move the image file instead of copying it.
-</p><p></p><div class="code-select">sudo mv Kicksecure*.qcow2 /var/lib/libvirt/images/Kicksecure.qcow2</div>
+</p><p><br/>
+</p><div class="code-select">sudo mv Kicksecure*.qcow2 /var/lib/libvirt/images/Kicksecure.qcow2</div>
 <p><span class="manually-placed-anchor" id="sparse_files"></span>
 </p>
 <h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=KVM&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=KVM&amp;action=edit&amp;section=8.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -513,10 +516,7 @@ a.freelink
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2346-0!canonicalwww.kicksecure.com and timestamp 20230130235000 and revision id 65685.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=KVM&amp;oldid=65685" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=KVM&amp;oldid=65685">https://www.kicksecure.com/w/index.php?title=KVM&amp;oldid=65685</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

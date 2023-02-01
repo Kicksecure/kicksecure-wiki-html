@@ -228,7 +228,8 @@
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/default/grub.d/50_user.cfg</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/default/grub.d/50_user.cfg</div>
 </div>
 <p><b>3.</b> Paste the necessary kernel parameters.
 </p><p>Notes:
@@ -237,10 +238,12 @@
 <li>Replace only <code>nomodeset</code> with the actual kernel parameters you want to add.</li>
 <li>Do not remove the leading text (underlined): <code><u>GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX</u> nomodeset"</code>.</li>
 <li>Do not remove the trailing quote (<code><b>"</b></code>; marked in bold): <code>GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nomodeset<b>"</b></code>.</li></ul>
-<p></p><div class="code-select">GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nomodeset"</div>
+<p><br/>
+</p><div class="code-select">GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nomodeset"</div>
 <p><b>4.</b> Save.
 </p><p><b>5.</b> Regenerate grub configuration.
-</p><p></p><div class="code-select">sudo update-grub</div>
+</p><p><br/>
+</p><div class="code-select">sudo update-grub</div>
 <p><b>6.</b> Done.
 </p><p>The process of adding a kernel parameter is complete.
 </p><p><b>7.</b> Verification.
@@ -258,39 +261,51 @@
 <div class="info-box">
 <p>Install <code>git auditd</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>git auditd</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends git auditd</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends git auditd</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>git auditd</code> is complete.
 </p>
 </div>
 <p>Change directory to folder <code>/boot/grub</code>.
-</p><p></p><div class="code-select">cd /boot/grub</div>
+</p><p><br/>
+</p><div class="code-select">cd /boot/grub</div>
 <p>Initialize git in that folder.
-</p><p></p><div class="code-select">sudo git init</div>
+</p><p><br/>
+</p><div class="code-select">sudo git init</div>
 <p>Git needs an e-mail address. That e-mail address doesn't need to actually exist. That e-mail address would appear in git commit change logs if that git repository was ever pushed to any remote. If only used locally, the default <code>you@example.com</code> could be kept. Otherwise, the user may change <code>you@example.com</code> to any e-mail address of their choice.
-</p><p></p><div class="code-select">sudo git config user.email "you@example.com"</div>
+</p><p><br/>
+</p><div class="code-select">sudo git config user.email "you@example.com"</div>
 <p>Git needs an name. That name address doesn't need to actually exist. That name would appear in git commit change logs if that git repository was ever pushed to any remote. If only used locally, the default <code>Your Name</code> could be kept. Otherwise, the user may change <code>Your Name</code> to any name of their choice.
-</p><p></p><div class="code-select">sudo git config user.name "Your Name"</div>
+</p><p><br/>
+</p><div class="code-select">sudo git config user.name "Your Name"</div>
 <p>Add all files in that folder to git.
-</p><p></p><div class="code-select">sudo git add -A</div>
+</p><p><br/>
+</p><div class="code-select">sudo git add -A</div>
 <p>Commit all files to git. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup>
-</p><p></p><div class="code-select">sudo git commit -a -m .</div>
+</p><p><br/>
+</p><div class="code-select">sudo git commit -a -m .</div>
 </div>
 <p><b>2.</b> Change grub configuration.
 </p><p>Make changes according to <a href="#Permanent_Configuration_Changes">Permanent Configuration Changes</a>.
 </p><p><b>3.</b> See which files were modified by <code>update-grub</code>.
 </p><p>From the same folder.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p><b>4.</b> Inspect the changes.
 </p><p>Using command line using default diff viewer <code>diff</code> which might be a bit difficult to read but an alternative is presented in the next step.
-</p><p></p><div class="code-select">git diff</div>
+</p><p><br/>
+</p><div class="code-select">git diff</div>
 <p>A graphical diff viewer can be used. <a data-href="/wiki/Unspecific" href="./Unspecific.html" title="Unspecific">Unspecific</a>. <a class="mw-redirect" data-href="/wiki/Undocumented" href="./Undocumented.html" title="Undocumented">Undocumented</a>.
-</p><p></p><div class="code-select">git difftool</div>
+</p><p><br/>
+</p><div class="code-select">git difftool</div>
 <h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Grub&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;action=edit&amp;section=5.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <ul><li><a data-href="/wiki/Configuration_Files" href="./Configuration_Files.html" title="Configuration Files">Configuration Files</a></li>
 <li><a data-href="/wiki/Grub-live" href="./Grub-live.html" title="Grub-live">grub-live</a></li>
@@ -485,10 +500,7 @@ Commits all files to git with commit message <code>.</code> for simplicity. Comm
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3351-0!canonicalwww.kicksecure.com and timestamp 20230130232723 and revision id 62010.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Grub&amp;oldid=62010" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Grub&amp;oldid=62010">https://www.kicksecure.com/w/index.php?title=Grub&amp;oldid=62010</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

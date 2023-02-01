@@ -184,10 +184,13 @@
 </th>
 <td>
 <ul><li>To change the keyboard layout:
-<ul><li><div class="code-select">sudo dpkg-reconfigure keyboard-configuration</div></li>
-<li><div class="code-select">sudo dpkg-reconfigure console-data</div></li></ul></li>
-<li>Make the reconfigured keyboard-configuration change take effect:
-<ul><li><div class="code-select">sudo setupcon</div></li></ul></li></ul>
+<ul><li class="mw-empty-elt"></li></ul></li></ul>
+<p></p><div class="code-select">sudo dpkg-reconfigure keyboard-configuration</div>
+<ul><li><ul><li class="mw-empty-elt"></li></ul></li></ul>
+<p></p><div class="code-select">sudo dpkg-reconfigure console-data</div>
+<ul><li>Make the reconfigured keyboard-configuration change take effect:
+<ul><li class="mw-empty-elt"></li></ul></li></ul>
+<p></p><div class="code-select">sudo setupcon</div>
 </td></tr>
 <tr>
 <th scope="row">Connection Wizard (Enable/Disable Tor)
@@ -195,8 +198,10 @@
 <td>
 <p>Not yet available in Kicksecure ™. This notice might be outdated.
 </p>
-<ul><li><div class="code-select">lxsudo anon-connection-wizard</div></li>
-<li><div class="code-select">sudo setup-wizard-dist</div></li></ul>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">lxsudo anon-connection-wizard</div>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">sudo setup-wizard-dist</div>
 </td></tr>
 <tr>
 <th scope="row">Default Username and Password.
@@ -209,9 +214,12 @@
 <th scope="row">Important Logs
 </th>
 <td>Not yet available in Kicksecure ™. This notice might be outdated.
-<ul><li><div class="code-select">sudo tail -f /var/log/syslog</div></li>
-<li><div class="code-select">sudo sdwdate-log-viewer</div></li>
-<li><div class="code-select">tail -f /var/run/tor/log</div></li></ul>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">sudo tail -f /var/log/syslog</div>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">sudo sdwdate-log-viewer</div>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">tail -f /var/run/tor/log</div>
 </td></tr>
 <tr>
 <th scope="row">Nyx: Tor Command Line Monitor <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
@@ -246,7 +254,8 @@
 <p></p><div class="code-select">sudo date -s "17 FEB 2019 24:00:00" &amp;&amp; sudo hwclock -w</div>
 <ul><li>Randomize the time: <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup> <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
 <ul><li><code>clock-random-manual-gui</code>: a randomized clock setting (in UTC) is entered via a GUI.</li>
-<li><code>clock-random-manual-cli</code>: a randomized clock setting (in UTC) is entered on the command line. For example: <div class="code-select">echo "Wed Dec 04 06:20:13 UTC 2019" | /usr/bin/clock-random-manual-cli</div></li></ul></li></ul>
+<li><code>clock-random-manual-cli</code>: a randomized clock setting (in UTC) is entered on the command line. For example:</li></ul></li></ul>
+<p></p><div class="code-select">echo "Wed Dec 04 06:20:13 UTC 2019" | /usr/bin/clock-random-manual-cli</div>
 </td></tr>
 <tr>
 <th scope="row">Tor
@@ -262,7 +271,7 @@
 <p></p><div class="code-select">anon-info</div>
 <ul><li>Check the Tor configuration:</li></ul>
 <p></p><div class="code-select">anon-verify</div>
-<div class="code-select">sudo -u debian-tor tor --verify-config</div>
+<p></p><div class="code-select">sudo -u debian-tor tor --verify-config</div>
 </td></tr>
 <tr>
 <th scope="row">Virtual Consoles
@@ -292,7 +301,8 @@
 <th scope="row">DNS Resolution Functionality Test
 </th>
 <td>
-<ul><li><div class="code-select">nslookup check.torproject.org</div></li></ul>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">nslookup check.torproject.org</div>
 </td></tr>
 <tr>
 <th scope="row">GnuPG (OpenPGP)
@@ -315,15 +325,19 @@
 <th scope="row">Network Restart
 </th>
 <td>
-<ul><li><div class="code-select">sudo service networking restart</div></li></ul>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">sudo service networking restart</div>
 </td></tr>
 <tr>
 <th scope="row">OS Updates / Software Installation
 </th>
 <td>
-<ul><li><div class="code-select">upgrade-nonroot</div> or</li>
-<li><div class="code-select">sudo apt update &amp;&amp; sudo apt full-upgrade</div></li>
-<li>Install the <code>package-name</code> package.</li></ul>
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">upgrade-nonroot</div>   or
+
+<ul><li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">sudo apt update &amp;&amp; sudo apt full-upgrade</div>
+<ul><li>Install the <code>package-name</code> package.</li></ul>
 <p></p><div class="code-select">sudo apt install package-name</div>
 <ul><li>Install the <code>package-name</code> package from Debian backports. Requires enabling <a data-href="/wiki/Install_Software#Backports" href="./Install_Software.html" title="Install Software">backports</a> repository.</li></ul>
 <p></p><div class="code-select">sudo apt -t bullseye-backports install package-name</div>
@@ -341,8 +355,9 @@ kicksecure</code> command, which already lists common Kicksecure ™ command lin
 <li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">A non-zero exit codes signifies an error, while <code>0</code> means it succeeded.</span>
 </li>
 <li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">Also see:
+
 <div class="code-select">man clock-random-manual-gui</div>
-<div class="code-select">man clock-random-manual-cli</div></span>
+<div class="code-select">man clock-random-manual-cli</div> </span>
 </li>
 </ol></div></div>
 <hr/>
@@ -514,10 +529,7 @@ kicksecure</code> command, which already lists common Kicksecure ™ command lin
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2979-0!canonicalwww.kicksecure.com and timestamp 20230131005633 and revision id 60809.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Common_CLI_Commands&amp;oldid=60809" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Common_CLI_Commands&amp;oldid=60809">https://www.kicksecure.com/w/index.php?title=Common_CLI_Commands&amp;oldid=60809</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

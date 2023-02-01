@@ -267,7 +267,8 @@
 <div class="info-box">
 <p><b>1.</b> Generate the SSH keypair.
 </p><p>Use a tool called "ssh-keygen". On the command line, type.
-</p><p></p><div class="code-select">ssh-keygen -o -a 75 -t ed25519</div>
+</p><p><br/>
+</p><div class="code-select">ssh-keygen -o -a 75 -t ed25519</div>
 <ul><li><code>-o</code> produces a key that is compatible with OpenSSH instead of the older style <code>.pem</code>.</li>
 <li><code>-a</code> refers to the number of rounds of KDF (key derivation function). This strengthens the key against a brute force attack to break the passphrase if the (private) key were to be stolen. A value of 75 to 100 is more than adequate. Remember that the more rounds that are specified, the longer it takes to authenticate (sign in). This depends on your CPU, your workload at the time of sign in, the amount of cores, and available memory among other factors.</li>
 <li><code>-t</code> specifies what type of key to generate. The choices are: <code>rsa</code>, <code>ecdsa</code> and <code>ed25519</code>. RSA and ECDSA are older keys, and OpenSSH recommends <code>ed25519</code> as the best choice.</li></ul>
@@ -285,7 +286,8 @@
 <li>Replace <code>127.0.0.1</code> with the actual IP address of the server.</li>
 <li>The example user name below is <code>root</code> which is the default first time login user name by many server providers.</li>
 <li>If this is a first time login and/or password based login, enter the SSH login password. Password should be provided by server provider. No password might be provided if the server provider already pre-installed a ssh key.</li></ul>
-<p></p><div class="code-select">ssh-copy-id -i ~/.ssh/id_ed25519.pub root@127.0.0.1</div>
+<p><br/>
+</p><div class="code-select">ssh-copy-id -i ~/.ssh/id_ed25519.pub root@127.0.0.1</div>
 <p>The <code>ssh-copy-id</code> utility will check for the correct permissions before it allows the key to be transferred.
 </p><p>The the following example the ssh server fingerprint is <code>zBAIUzWnW+Y9cS+5cND/XWw0XFIhtSnxCEIbNUcCd8c</code>.
 </p>
@@ -301,7 +303,8 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 <p>Once the ssh public key was copied to the server, the user can login any time.
 </p><p>Login into the server.
 </p><p>Note: Replace <code>127.0.0.1</code> with the actual IP address of the server.
-</p><p></p><div class="code-select">ssh root@127.0.0.1</div>
+</p><p><br/>
+</p><div class="code-select">ssh root@127.0.0.1</div>
 <p>A password prompt for the key would be shown if a passphrase has been previously set.
 </p><p>If the ssh login was successful, like the shell prompt will be different from the usual Kicksecure ™ shell prompt <code>user@host</code>. For example <code>root@server</code>.
 </p><p><b>Figure:</b> <i>Example SSH Login</i> <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
@@ -378,13 +381,15 @@ Tunnel no
 </p><p>One is used as a backup should the SSH connection be accidentally closed in the middle of the setup.
 </p><p><b>2.</b> View the fingerprint of the server's ed25519 public key.
 </p><p>Fine hosting providers will also show the server fingerprint in the server web interface.
-</p><p></p><div class="code-select">ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub</div>
+</p><p><br/>
+</p><div class="code-select">ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub</div>
 <p>Example output:
 </p>
 <pre>256 SHA256:1Ri62BbzONwKbRau92UcyA1K4vu+mctfeddDTUu04ao root@nc-ph-1401-50 (ED25519)
 </pre>
 <p><b>3.</b> Restart the <code>sshd</code> daemon.
-</p><p></p><div class="code-select">sudo systemctl restart sshd</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl restart sshd</div>
 <p>Existing SSH connections should not be interrupted by Debian default.
 </p><p><b>4.</b> Open a new terminal (tab) and see if you can still SSH to the server.
 </p><p>If yes, proceed.
@@ -412,11 +417,13 @@ Host key verification failed.
 <pre>256 SHA256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649 root@node (ED25519)
 </pre>
 <p><b>6.</b> Make a backup of the old SSH configuration file.
-</p><p></p><div class="code-select">cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup</div>
+</p><p><br/>
+</p><div class="code-select">cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup</div>
 <p><b>7.</b> View the backup file <code>/etc/ssh/ssh_config_backup</code> with a text editor to check if the backup was successful.
 </p><p><b>8.</b> Clear contents of <code>/etc/ssh/sshd_config</code>.
 </p><p>TODO: Since Debian <code>bullseye</code> it might be better to use file <code>/etc/ssh/sshd_config.d/50_user.conf</code> instead.
-</p><p></p><div class="code-select">echo "" | sudo tee /etc/ssh/sshd_config</div>
+</p><p><br/>
+</p><div class="code-select">echo "" | sudo tee /etc/ssh/sshd_config</div>
 <p><b>9.</b> Open file <code>/etc/ssh/sshd_config</code> with root rights.
 </p><p>TODO: Since Debian <code>bullseye</code> it might be better to use file <code>/etc/ssh/sshd_config.d/50_user.conf</code> instead.
 </p><p><b>10.</b> Paste the following contents.
@@ -554,7 +561,8 @@ DebianBanner no
 </pre>
 <p>Save the file.
 </p><p><b>11.</b> Restart the <code>sshd</code> daemon. All existing SSH connections will remain open.
-</p><p></p><div class="code-select">sudo systemctl restart sshd</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl restart sshd</div>
 <p>Keep the ssh connection open.
 </p><p><b>12.</b> Open another terminal (tab) and try to SSH to the server.
 </p>
@@ -573,11 +581,14 @@ DebianBanner no
 </p>
 </div>
 <p>It is necessary to make specific firewall rules for your intended SSH activity. For example, if you wanted to connect to a server at <code>123.45.678</code> and both your configuration and the server's configuration specify port <code>4675</code> to communicate over:
-</p><p></p><div class="code-select">sudo iptables -A OUTPUT -p tcp -o [interface-name] -s [your client ssh ip] -d [ssh server ip] --dport 4675 --j ACCEPT</div>
+</p><p><br/>
+</p><div class="code-select">sudo iptables -A OUTPUT -p tcp -o [interface-name] -s [your client ssh ip] -d [ssh server ip] --dport 4675 --j ACCEPT</div>
 <p>Then to let them respond:
-</p><p></p><div class="code-select">sudo iptables -A INPUT -p tcp -i [interface-name] -s [ssh server ip] -d [your client ip] --dport 4675 --j ACCEPT</div>
+</p><p><br/>
+</p><div class="code-select">sudo iptables -A INPUT -p tcp -i [interface-name] -s [ssh server ip] -d [your client ip] --dport 4675 --j ACCEPT</div>
 <p>This assumes a default-deny policy for INPUT and OUTPUT. If you have a default-allow for OUTPUT, then the following rule must be added as the last one in the OUTPUT chain:
-</p><p></p><div class="code-select">sudo iptables -A OUTPUT --j DROP</div>
+</p><p><br/>
+</p><div class="code-select">sudo iptables -A OUTPUT --j DROP</div>
 <p>This ensures the outgoing rules you have are the only ones that allow traffic. Iptables parses in order, so when it does not see a rule matching a packet not on your list, it checks each one in the chain until it finds a match with the last rule and drops the packet. Also, SSH only uses the TCP protocol, so no UDP rules are explicitly needed.
 </p><p>This should complete the SSH setup. Some people also recommend re-generating the moduli file that comes in <code>/etc/ssh</code>. If you use the settings above, look at the kex algorithms. Since no diffie hellman group exchange kex algorithms are used to exchange keys, it is unnecessary to regenerate the moduli. The chosen kex algo is curve25519.
 </p>
@@ -773,10 +784,7 @@ Having too lax permissions will prevent logins and cause unwanted errors.</span>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3061-0!canonicalwww.kicksecure.com and timestamp 20230130225413 and revision id 61685.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=SSH&amp;oldid=61685" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=SSH&amp;oldid=61685">https://www.kicksecure.com/w/index.php?title=SSH&amp;oldid=61685</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

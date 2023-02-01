@@ -245,7 +245,8 @@ The most used MAC systems are SELinux and AppArmor. SELinux is a lot more secure
 <p>Some AppArmor profiles for some default installed applications are enforced by default. Some are installed by default but not enforced by default.
 </p><p>To see which, run.
 </p><p><b>1.</b> Run <code>aa-status</code>.
-</p><p></p><div class="code-select">sudo aa-status</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-status</div>
 <p><b>2.</b> See the output of <code>aa-status</code>.
 </p>
 <ul><li><b>A)</b> Profiles under <code>profiles are in enforce mode.</code> are enforced by default. A few profiles are being enforced for software that is not installed, but this does not have any adverse impacts.</li>
@@ -268,35 +269,44 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 </div>
 <p><b>1.</b> Check which profiles are in complain mode (not actually providing protection) and which are in enforce mode (providing actual protection).
 </p><p>Run.
-</p><p></p><div class="code-select">sudo aa-status</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-status</div>
 <p><b>2.</b> Locate the profile to enable.
 </p><p>To enable a profile which is currently in complain mode, locate it in folder <code>/etc/apparmor.d</code>.
-</p><p></p><div class="code-select">ls /etc/apparmor.d</div>
+</p><p><br/>
+</p><div class="code-select">ls /etc/apparmor.d</div>
 <p><b>3.</b> Enable the profile.
 </p><p>After locating the relevant profile, enable it. For example.
 </p><p>(The following example is already enforced by default if installed as per above.)
-</p><p></p><div class="code-select">sudo aa-enforce /etc/apparmor.d/home.tor-browser.firefox</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-enforce /etc/apparmor.d/home.tor-browser.firefox</div>
 <p>It might be inadvisable or unsuitable to enable all available AppArmor profiles.
 </p><p><b>4.</b> Inspect other available AppArmor profiles.
 </p><p>The <code>/usr/share/apparmor/extra-profiles</code> folder has additional AppArmor profiles.
-</p><p></p><div class="code-select">ls /usr/share/apparmor/extra-profiles</div>
+</p><p><br/>
+</p><div class="code-select">ls /usr/share/apparmor/extra-profiles</div>
 <p><b>5.</b> Copy relevant AppArmor profiles.
 </p><p>Testers only!
 </p>
 <ul><li>Option <b>A)</b> If any of these applications are in use, copy the profile over to folder <code>/etc/apparmor.d</code>.
 <ul><li>Note: Replace <code>bin.netstat</code> with the actual AppArmor profile to enable.</li>
-<li>Example: <div class="code-select">sudo cp /usr/share/apparmor/extra-profiles/bin.netstat /etc/apparmor.d</div></li></ul></li>
-<li>Option <b>B)</b> Copy all profiles. <div class="code-select">sudo cp /usr/share/apparmor/extra-profiles/* /etc/apparmor.d</div></li></ul>
+<li>Example:</li></ul></li></ul>
+<p></p><div class="code-select">sudo cp /usr/share/apparmor/extra-profiles/bin.netstat /etc/apparmor.d</div>
+<ul><li>Option <b>B)</b> Copy all profiles.</li></ul>
+<p></p><div class="code-select">sudo cp /usr/share/apparmor/extra-profiles/* /etc/apparmor.d</div>
 <p><b>6.</b> View all available AppArmor profiles in the <code>/etc/apparmor.d</code> folder.
 </p><p>Optional.
-</p><p></p><div class="code-select">ls -la /etc/apparmor.d/*</div>
+</p><p><br/>
+</p><div class="code-select">ls -la /etc/apparmor.d/*</div>
 <p>Alternatively also any other tool such as a graphical file manager could be used.
 </p><p><b>7.</b> Enable the additional profile(s).
 </p>
 <ul><li>Option <b>A)</b> Enable a profile.
 <ul><li>Note: Replace <code>bin.netstat</code> with the actual AppArmor profile to enable.</li>
-<li>Example: <div class="code-select">sudo aa-enforce /etc/apparmor.d/bin.netstat</div></li></ul></li>
-<li>Option <b>B)</b> Enable all profiles. <div class="code-select">sudo aa-enforce /etc/apparmor.d/*</div></li></ul>
+<li>Example:</li></ul></li></ul>
+<p></p><div class="code-select">sudo aa-enforce /etc/apparmor.d/bin.netstat</div>
+<ul><li>Option <b>B)</b> Enable all profiles.</li></ul>
+<p></p><div class="code-select">sudo aa-enforce /etc/apparmor.d/*</div>
 </div>
 <h2><span class="mw-headline" id="Install_Select_AppArmor_Profiles">Install Select AppArmor Profiles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=6.html" title="Edit section: Install Select AppArmor Profiles">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <div class="toccolours mw-collapsible mw-collapsed">
@@ -304,44 +314,54 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 </p>
 <div class="mw-collapsible-content">
 <p><a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> your package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <hr/>
 <p><code>apparmor-profiles</code>
 </p>
 <ul><li><a class="external text" data-href="https://packages.debian.org/bullseye/apparmor-profiles" href="https://packages.debian.org/bullseye/apparmor-profiles" rel="noreferrer noopener" target="_blank"><code>apparmor-profiles</code> package description</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-profiles" href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-profiles" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
 <li><a class="external text" data-href="https://packages.debian.org/bullseye/all/apparmor-profiles/filelist" href="https://packages.debian.org/bullseye/all/apparmor-profiles/filelist" rel="noreferrer noopener" target="_blank"><code>apparmor-profiles</code> file list</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/bullseye/all/apparmor-profiles/filelist" href="https://web.archive.org/web/https://packages.debian.org/bullseye/all/apparmor-profiles/filelist" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li></ul>
-<p></p><div class="code-select">sudo apt install apparmor-profiles</div>
+<p><br/>
+</p><div class="code-select">sudo apt install apparmor-profiles</div>
 <hr/>
 <p><code>apparmor-profiles-extra</code>
 </p>
 <ul><li><a class="external text" data-href="https://packages.debian.org/bullseye/apparmor-profiles-extra" href="https://packages.debian.org/bullseye/apparmor-profiles-extra" rel="noreferrer noopener" target="_blank"><code>apparmor-profiles-extra</code> package description</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-profiles-extra" href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-profiles-extra" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
 <li><a class="external text" data-href="https://packages.debian.org/bullseye/all/apparmor-profiles-extra/filelist" href="https://packages.debian.org/bullseye/all/apparmor-profiles-extra/filelist" rel="noreferrer noopener" target="_blank"><code>apparmor-profiles-extra</code> file list</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/bullseye/all/apparmor-profiles-extra/filelist" href="https://web.archive.org/web/https://packages.debian.org/bullseye/all/apparmor-profiles-extra/filelist" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li></ul>
-<p></p><div class="code-select">sudo apt install apparmor-profiles-extra</div>
+<p><br/>
+</p><div class="code-select">sudo apt install apparmor-profiles-extra</div>
 <hr/>
 <p>Profile for <a class="new" data-href="/w/index.php?title=Tor_Browser&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Tor_Browser&amp;action=edit&amp;redlink=1.html" title="Tor Browser (page does not exist)">Tor Browser</a>. Useful in Kicksecure ™. <sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup>
-</p><p></p><div class="code-select">sudo apt install apparmor-profile-torbrowser</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install apparmor-profile-torbrowser</div>
 <hr/>
 <p>Profile for the <a data-href="/wiki/HexChat" href="./HexChat.html" title="HexChat">HexChat</a> client. Useful in Kicksecure ™. (Soon to be renamed <code>apparmor-profile-hexchat</code>.)
-</p><p></p><div class="code-select">sudo apt install apparmor-profile-xchat</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install apparmor-profile-xchat</div>
 <hr/>
 <p>Profile for the <a data-href="/wiki/E-Mail#Mozilla_Thunderbird_with_TorBirdy" href="./E-Mail.html" title="E-Mail">Mozilla Thunderbird</a> <a data-href="/wiki/E-Mail" href="./E-Mail.html" title="E-Mail">E-Mail</a> client. Useful in Kicksecure ™. (Soon to be renamed <code>apparmor-profile-thunderbird</code>.)
-</p><p></p><div class="code-select">sudo apt install apparmor-profile-thunderbird</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install apparmor-profile-thunderbird</div>
 </div>
 </div>
 <h2><span class="mw-headline" id="Profile_Unloading">Profile Unloading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=7.html" title="Edit section: Profile Unloading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>The name of the specific profile to unload must be known in advance; refer to the <a href="#Install_Select_AppArmor_Profiles">list</a> above.
 </p><p><b>1.</b> If it is necessary to disable an AppArmor profile, first list those which are available.
-</p><p></p><div class="code-select">ls /etc/apparmor.d/</div>
+</p><p><br/>
+</p><div class="code-select">ls /etc/apparmor.d/</div>
 <p>Or.
-</p><p></p><div class="code-select">sudo aa-status</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-status</div>
 <p><b>2.</b> Once a profile is loaded in the kernel, it can be easily removed.
-</p><p></p><div class="code-select">sudo aa-disable /etc/apparmor.d/profile-name</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-disable /etc/apparmor.d/profile-name</div>
 <p>This command expects the profile file to exist, so if it has been manually deleted or removed via <code>apt purge</code>, it can only be unloaded by rebooting.
 </p><p><b>3.</b> Done.
 </p><p>The process of disabling the AppArmor profile has been completed.
 </p><p><b>4.</b> Verification.
 </p><p>Optional. To confirm, use the <code>aa-status</code> command.
-</p><p></p><div class="code-select">sudo aa-status</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-status</div>
 <h1><span class="mw-headline" id="Common_Operations">Common Operations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=8.html" title="Edit section: Common Operations">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="Maintain_Tor_Browser_Functionality">Maintain Tor Browser Functionality</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=9.html" title="Edit section: Maintain Tor Browser Functionality">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Tor Browser upgrades frequently break the Kicksecure ™ AppArmor profile used to contain it. Even when AppArmor-related fixes are confirmed in forums.kicksecure.com, most often updated, fixed packages are immediately made available to Kicksecure ™ stable or even the developer version.
@@ -351,10 +371,12 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 <p><b>1.</b> Open a terminal in Kicksecure ™ (<code>kicksecure-16</code>).
 </p><p><code>kicksecure-16</code> → <code>Xfce Terminal</code>
 </p><p><b>2.</b> List the available AppArmor profiles.
-</p><p></p><div class="code-select">ls /etc/apparmor.d/</div>
+</p><p><br/>
+</p><div class="code-select">ls /etc/apparmor.d/</div>
 <p><b>3.</b> Edit the Tor Browser AppArmor profile.
 </p><p>Note: change the name of the file to match whatever version is installed on the system.
-</p><p></p><div class="code-select">sudoedit /etc/apparmor.d/home.tor-browser.firefox</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/apparmor.d/home.tor-browser.firefox</div>
 <p><b>4.</b> Navigate to the Kicksecure ™ Github resource for AppArmor.
 </p><p>The latest git commits can be found <a class="external text" data-href="https://github.com/Kicksecure/apparmor-profile-torbrowser" href="https://github.com/Kicksecure/apparmor-profile-torbrowser" rel="noreferrer noopener" target="_blank">here</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/apparmor-profile-torbrowser" href="https://web.archive.org/web/https://github.com/Kicksecure/apparmor-profile-torbrowser" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>.
 </p><p>Select <code>Code</code> → <code>etc/apparmor.d</code> → <code>home.tor-browser.firefox</code>
@@ -368,7 +390,8 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 </p><p><b>5.</b> Enforce the new Tor Browser profile.
 </p><p>In the command below, change the name of the file to match whatever version is installed on the system.
 </p><p>In Kicksecure ™ (<code>kicksecure-16</code>), run.
-</p><p></p><div class="code-select">sudo aa-enforce /etc/apparmor.d/home.tor-browser.firefox</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-enforce /etc/apparmor.d/home.tor-browser.firefox</div>
 <p><b>6.</b> Shutdown Kicksecure ™ (<code>kicksecure-16</code>).
 </p><p><b>7.</b> Restart Kicksecure ™ (<code>kicksecure</code>).
 </p><p>Launch Tor Browser. If everything has been applied correctly, Tor Browser will have full functionality. If the following AppArmor warning appears, it can be safely ignored.
@@ -377,7 +400,8 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 </pre>
 <p><b>8.</b> Manually check AppArmor is correctly running and enforced.
 </p><p>In a terminal, run.
-</p><p></p><div class="code-select">sudo aa-status</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-status</div>
 <p>The output should show the Tor Browser profile is loaded and in enforce mode.
 </p>
 </div>
@@ -391,7 +415,8 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 <h2><span class="mw-headline" id="AppArmor_Notifications">AppArmor Notifications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=11.html" title="Edit section: AppArmor Notifications">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <h3><span class="mw-headline" id="apparmor-info">apparmor-info</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=12.html" title="Edit section: apparmor-info">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p><a class="external text" data-href="https://github.com/Kicksecure/helper-scripts/blob/master/usr/sbin/apparmor-info" href="https://github.com/Kicksecure/helper-scripts/blob/master/usr/sbin/apparmor-info" rel="noreferrer noopener" target="_blank"><code>apparmor-info</code></a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/helper-scripts/blob/master/usr/sbin/apparmor-info" href="https://web.archive.org/web/https://github.com/Kicksecure/helper-scripts/blob/master/usr/sbin/apparmor-info" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> is a helper utility to simplify viewing AppArmor logs. It parses AppArmor logs, hides unnecessary information <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup> and removes duplicates.
-</p><p></p><div class="code-select">sudo apparmor-info --boot | grep DENIED</div>
+</p><p><br/>
+</p><div class="code-select">sudo apparmor-info --boot | grep DENIED</div>
 <h3><span class="mw-headline" id="apparmor-notify">apparmor-notify</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=13.html" title="Edit section: apparmor-notify">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p><a class="external text" data-href="https://packages.debian.org/bullseye/apparmor-notify" href="https://packages.debian.org/bullseye/apparmor-notify" rel="noreferrer noopener" target="_blank">apparmor-notify</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-notify" href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-notify" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> is not installed by default. <sup class="reference" id="cite_ref-13"><a href="#cite_note-13">[13]</a></sup> By installing it, desktop notifications would appear concerning AppArmor denied messages, which are stored in file <code>/var/log/kern.log</code>.
 </p><p>To install:
@@ -399,19 +424,23 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 <div class="info-box">
 <p>Install <code>apparmor-notify</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>apparmor-notify</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends apparmor-notify</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends apparmor-notify</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>apparmor-notify</code> is complete.
 </p>
 </div>
 <p>If <code>apparmor-notify</code> is manually installed, then on occasion an application may be functional but AppArmor "denied" messages constantly appear. Rather than updating the relevant AppArmor profile(s), it is possible to disable notifications instead.
 </p><p>In the offending Kicksecure ™ (App)VM, launch Xfce Terminal and run.
-</p><p></p><div class="code-select">sudo killall aa-notify</div>
+</p><p><br/>
+</p><div class="code-select">sudo killall aa-notify</div>
 <p>To revert this change, reboot the VM.
 </p>
 <h3><span class="mw-headline" id="Manual_Notifications_Inspection">Manual Notifications Inspection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=14.html" title="Edit section: Manual Notifications Inspection">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
@@ -424,14 +453,17 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /var/log/kern.log</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /var/log/kern.log</div>
 </div>
 <p><b>2.</b> Show denied AppArmor messages of any age.
 </p><p>Run.
-</p><p></p><div class="code-select">sudo cat /var/log/kern.log | grep DENIED</div>
+</p><p><br/>
+</p><div class="code-select">sudo cat /var/log/kern.log | grep DENIED</div>
 <p><b>3.</b> <i>Optional</i>: Keep watching the file as it is appended.
 </p><p>This is useful for reproducing AppArmor denied messages and testing amended profiles.
-</p><p></p><div class="code-select">sudo tail -f /var/log/kern.log | grep --line-buffered DENIED</div>
+</p><p><br/>
+</p><div class="code-select">sudo tail -f /var/log/kern.log | grep --line-buffered DENIED</div>
 </div>
 <h2><span class="mw-headline" id="More_Profiles">More Profiles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=15.html" title="Edit section: More Profiles">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>It is possible to utilize profiles by other vendors since AppArmor is <a data-href="/wiki/Unspecific" href="./Unspecific.html" title="Unspecific">unspecific to Kicksecure ™</a>. This however is <a data-href="/wiki/Unsupported" href="./Unsupported.html" title="Unsupported">unsupported</a> by Kicksecure ™ developers due to time constraints. As a reminder, it is not necessary to install AppArmor profiles for any applications that are unlikely to be used (such as dovecot). Additional options include:
@@ -439,7 +471,8 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 <ol><li>Debian has packages that can be <a class="external text" data-href="https://wiki.debian.org/AppArmor/HowToUse#Enable_.2F_install_more_profiles" href="https://wiki.debian.org/AppArmor/HowToUse" rel="noreferrer noopener" target="_blank">easily installed via the APT package manager</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://wiki.debian.org/AppArmor/HowToUse#Enable_.2F_install_more_profiles" href="https://web.archive.org/web/https://wiki.debian.org/AppArmor/HowToUse" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>.</li>
 <li>Ubuntu also <a class="external text" data-href="https://bazaar.launchpad.net/~apparmor-dev/apparmor-profiles/master/files/head:/ubuntu/16.10/" href="https://bazaar.launchpad.net/~apparmor-dev/apparmor-profiles/master/files/head:/ubuntu/16.10/" rel="noreferrer noopener" target="_blank">provides profiles</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://bazaar.launchpad.net/~apparmor-dev/apparmor-profiles/master/files/head:/ubuntu/16.10/" href="https://web.archive.org/web/https://bazaar.launchpad.net/~apparmor-dev/apparmor-profiles/master/files/head:/ubuntu/16.10/" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>. It is not easy to download these as a package to be installed in Debian. Further, the profiles may or may not differ from (or complement) profiles listed earlier.</li>
 <li>Advanced users can attempt to create additional, strict AppArmor profiles by executing: <sup class="reference" id="cite_ref-madaidan_MAC_2-1"><a href="#cite_note-madaidan_MAC-2">[2]</a></sup></li></ol>
-<p></p><div class="code-select">aa-genprof $path_to_program</div>
+<p><br/>
+</p><div class="code-select">aa-genprof $path_to_program</div>
 <p>Then open the program and use it as normal. AppArmor detects which files need to be accessed and adds them to the profile if you choose. This is insufficient for high quality profiles though; refer to the <a class="external text" data-href="https://gitlab.com/apparmor/apparmor/-/wikis/Documentation" href="https://gitlab.com/apparmor/apparmor/-/wikis/Documentation" rel="noreferrer noopener" target="_blank">AppArmor documentation</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://gitlab.com/apparmor/apparmor/-/wikis/Documentation" href="https://web.archive.org/web/https://gitlab.com/apparmor/apparmor/-/wikis/Documentation" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> for further details.
 </p>
 <h2><span class="mw-headline" id="Fix_Profiles">Fix Profiles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=AppArmor&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;action=edit&amp;section=16.html" title="Edit section: Fix Profiles">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -452,32 +485,42 @@ Some even more experimental profiles are included in folder <code>/usr/share/app
 <div class="info-box">
 <p>Install <code>git auditd</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>git auditd</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends git auditd</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends git auditd</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>git auditd</code> is complete.
 </p>
 </div>
 <p>Change directory to folder <code>/etc/apparmor.d</code>.
-</p><p></p><div class="code-select">cd /etc/apparmor.d</div>
+</p><p><br/>
+</p><div class="code-select">cd /etc/apparmor.d</div>
 <p>Initialize git in that folder.
-</p><p></p><div class="code-select">sudo git init</div>
+</p><p><br/>
+</p><div class="code-select">sudo git init</div>
 <p>Git needs an e-mail address. That e-mail address doesn't need to actually exist. That e-mail address would appear in git commit change logs if that git repository was ever pushed to any remote. If only used locally, the default <code>you@example.com</code> could be kept. Otherwise, the user may change <code>you@example.com</code> to any e-mail address of their choice.
-</p><p></p><div class="code-select">sudo git config user.email "you@example.com"</div>
+</p><p><br/>
+</p><div class="code-select">sudo git config user.email "you@example.com"</div>
 <p>Git needs an name. That name address doesn't need to actually exist. That name would appear in git commit change logs if that git repository was ever pushed to any remote. If only used locally, the default <code>Your Name</code> could be kept. Otherwise, the user may change <code>Your Name</code> to any name of their choice.
-</p><p></p><div class="code-select">sudo git config user.name "Your Name"</div>
+</p><p><br/>
+</p><div class="code-select">sudo git config user.name "Your Name"</div>
 <p>Add all files in that folder to git.
-</p><p></p><div class="code-select">sudo git add -A</div>
+</p><p><br/>
+</p><div class="code-select">sudo git add -A</div>
 <p>Commit all files to git. <sup class="reference" id="cite_ref-14"><a href="#cite_note-14">[14]</a></sup>
-</p><p></p><div class="code-select">sudo git commit -a -m .</div>
+</p><p><br/>
+</p><div class="code-select">sudo git commit -a -m .</div>
 </div>
 <p><b>2.</b> Open your application/s which caused the Denied/Allowed messages.
 </p><p><b>3.</b> Use <code>aa-logprof</code> to correct them. <sup class="reference" id="cite_ref-15"><a href="#cite_note-15">[15]</a></sup>
-</p><p></p><div class="code-select">sudo aa-logprof</div>
+</p><p><br/>
+</p><div class="code-select">sudo aa-logprof</div>
 <p>This is an example for fixing the AppArmor profile for Tor Browser.
 </p><p>Sample printout:
 </p>
@@ -537,7 +580,8 @@ Enforce-mode changes:
 </pre>
 <p><b>6.</b> See which files were modified by <code>aa-logprof</code>.
 </p><p>From the same folder.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p><code>git</code> will show which files have been modified.
 </p><p>Sample printout:
 </p>
@@ -550,7 +594,8 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 </pre>
 <p><b>7.</b> Open the modified file(s) with a text editor.
-</p><p></p><div class="code-select">sudoedit /etc/apparmor.d/home.tor-browser.firefox</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/apparmor.d/home.tor-browser.firefox</div>
 <p><b>8.</b> Submit fixes to developers, if applicable (general bug).
 </p><p>Ideally to github:
 </p>
@@ -590,7 +635,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Kicksecure ™ means all Kicksecure ™ platforms except <a data-href="/wiki/Qubes" href="./Qubes.html" title="Qubes">Kicksecure ™ inside Qubes</a>. This includes Kicksecure ™ <a data-href="/wiki/KVM" href="./KVM.html" title="KVM">KVM</a>, Kicksecure ™ <a data-href="/wiki/VirtualBox" href="./VirtualBox.html" title="VirtualBox">VirtualBox</a> and Kicksecure ™.</span>
 </li>
 <li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text">Advanced users attempting to enable SE Linux instead would utilize the following parameters in this section:
-<div class="code-select">selinux=1 security=selinux</div></span>
+
+<div class="code-select">selinux=1 security=selinux</div> </span>
 </li>
 <li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text">
 <a class="external free" data-href="https://packages.debian.org/bullseye/apparmor-profiles" href="https://packages.debian.org/bullseye/apparmor-profiles" rel="noreferrer noopener" target="_blank">https://packages.debian.org/bullseye/apparmor-profiles</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-profiles" href="https://web.archive.org/web/https://packages.debian.org/bullseye/apparmor-profiles" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></span>
@@ -789,10 +835,7 @@ Commits all files to git with commit message <code>.</code> for simplicity. Comm
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3427-0!canonicalwww.kicksecure.com and timestamp 20230130204711 and revision id 63755.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;oldid=63755" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=AppArmor&amp;oldid=63755">https://www.kicksecure.com/w/index.php?title=AppArmor&amp;oldid=63755</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -228,8 +228,10 @@
 <p>Alternatively press the <code>[Expand]</code> button next to the "Free Download" button on the download page <a data-href="/wiki/VirtualBox/CLI" href="../VirtualBox/CLI.html" title="VirtualBox/CLI">VirtualBox/CLI</a> or <a data-href="/wiki/VirtualBox/XFCE" href="../VirtualBox/XFCE.html" title="VirtualBox/XFCE">VirtualBox/XFCE</a>. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
 </p><p><b>4.</b> Start the cryptographic verification.
 </p><p>This process can take several minutes.
-</p><p></p><div class="code-select">cd [the directory in which you downloaded the .ova and the .asc]</div>
-<p></p><div class="code-select">gpg --verify-options show-notations --verify Kicksecure-*.ova.asc Kicksecure-*.ova</div>
+</p><p><br/>
+</p><div class="code-select">cd [the directory in which you downloaded the .ova and the .asc]</div>
+<p><br/>
+</p><div class="code-select">gpg --verify-options show-notations --verify Kicksecure-*.ova.asc Kicksecure-*.ova</div>
 <p><b>5.</b> Check the output of the verification step.
 </p><p><u>If the file is verified successfully</u>, the output will include <code>Good signature</code>, which is the most important thing to check.
 </p><p>Should look similar to the following example.
@@ -261,7 +263,8 @@ gpg:          There is no indication that the signature belongs to the owner.
 </p>
 </div>
 <p>The <code>file@name</code> OpenPGP notation in Kicksecure ™ release signatures describes the file name. This helps to confirm that the file name has not been tampered with; see the example below.
-</p><p></p><div class="code-select">gpg: Signature notation: file@name=Kicksecure-16.0.9.0.ova</div>
+</p><p><br/>
+</p><div class="code-select">gpg: Signature notation: file@name=Kicksecure-16.0.9.0.ova</div>
 <p><u>If the Virtual Machine image is not correct</u>, the output will inform that the signature is bad:
 </p>
 <pre>gpg: Signature made Sun Nov 25 21:48:54 2012 UTC
@@ -470,10 +473,7 @@ This is free software, and you are welcome to redistribute it under certain cond
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:124-0!canonicalwww.kicksecure.com and timestamp 20230131005039 and revision id 63518.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Verify_the_virtual_machine_images_using_the_command_line&amp;oldid=63518" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Verify_the_virtual_machine_images_using_the_command_line&amp;oldid=63518">https://www.kicksecure.com/w/index.php?title=VirtualBox/Verify_the_virtual_machine_images_using_the_command_line&amp;oldid=63518</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

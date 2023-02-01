@@ -357,7 +357,8 @@ Your note was always understood. Of course not rooting doesn't imply using the s
 <p>Once the boot chain is verified, the kernel should verify the rest of the OS with something similar to dm-verity. Verified boot that covers only the boot chain is mostly useless but with some exceptions <sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup>.
 </p><p>We can have 2 separate partitions for the base system and user-installed apps. Mount the base system partition as read-only and verify it with dm-verity. Mount the apps partition as <code>/apps</code> and <code>chroot</code> into it. The apps partition will not be verified.
 </p><p>For example:
-</p><p></p><div class="code-select">mount /path/to/unverified_image /apps
+</p><p><br/>
+</p><div class="code-select">mount /path/to/unverified_image /apps
 
 for dir in bin sbin usr lib lib64 var etc
 do
@@ -588,10 +589,7 @@ Quote <a class="external free" data-href="https://www.elstel.org/debcheckroot/" 
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3146-0!canonicalwww.kicksecure.com and timestamp 20230130204652 and revision id 63664.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Verified_Boot&amp;oldid=63664" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Verified_Boot&amp;oldid=63664">https://www.kicksecure.com/w/index.php?title=Verified_Boot&amp;oldid=63664</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a data-href="/wiki/Category:Design" href="./Category:Design.html" title="Category:Design">Design</a></li><li><a data-href="/wiki/Category:Development" href="./Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>

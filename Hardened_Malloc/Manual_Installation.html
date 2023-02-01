@@ -185,9 +185,11 @@
 </p>
 <div class="info-box">
 <p><b>1.</b> Update the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>2.</b> Install <code>g++</code>, and <code>git</code> to clone the repository.
-</p><p></p><div class="code-select">sudo apt install g++ git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install g++ git</div>
 <p><b>3.</b> The following block explains how to download and signature verify hardened malloc.
 </p>
 <div class="info-box">
@@ -197,9 +199,11 @@
 <div class="info-box">
 <p>Run the following commands in a terminal to download and verify the signing key and source code.
 </p><p>Retrieve the signing key. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
-</p><p></p><div class="code-select">scurl-download https://github.com/thestinger.gpg</div>
+</p><p><br/>
+</p><div class="code-select">scurl-download https://github.com/thestinger.gpg</div>
 <p>Verify the key fingerprint.
-</p><p></p><div class="code-select">gpg --keyid-format long --with-fingerprint thestinger.gpg</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --with-fingerprint thestinger.gpg</div>
 <p>Should show.
 </p>
 <blockquote>
@@ -215,13 +219,17 @@ uid                           Daniel Micay &lt;security@grapheneos.org&gt;<br/>
 sub   rsa4096/7363D2F61FDC8A7F 2012-12-06 [E]</p></blockquote>
 </blockquote>
 <p>Import the key.
-</p><p></p><div class="code-select">gpg --import thestinger.gpg</div>
+</p><p><br/>
+</p><div class="code-select">gpg --import thestinger.gpg</div>
 <p>Get the source code.
-</p><p></p><div class="code-select">git clone https://github.com/GrapheneOS/hardened_malloc</div>
+</p><p><br/>
+</p><div class="code-select">git clone https://github.com/GrapheneOS/hardened_malloc</div>
 <p>Navigate to the <code>hardened_malloc</code> folder.
-</p><p></p><div class="code-select">cd hardened_malloc</div>
+</p><p><br/>
+</p><div class="code-select">cd hardened_malloc</div>
 <p><a data-href="/wiki/Warning#Always_Verify_Signatures" href="../Warning.html" title="Warning">Always verify software signatures!</a> Check the hardened malloc signature.
-</p><p></p><div class="code-select">git tag --verify 8</div>
+</p><p><br/>
+</p><div class="code-select">git tag --verify 8</div>
 <p>Should show.
 </p>
 <blockquote>
@@ -244,23 +252,29 @@ Primary key fingerprint: 65EE FE02 2108 E2B7 08CB  FCF7 F9E7 12E5 9AF5 F22A</p><
 </blockquote>
 </div>
 <p><b>4.</b> Checkout the tag.
-</p><p></p><div class="code-select">git checkout 8</div>
+</p><p><br/>
+</p><div class="code-select">git checkout 8</div>
 <p><b>5.</b> Build the program.
 </p><p>This will only take a few seconds, depending on your system's resources.
-</p><p></p><div class="code-select">make</div>
+</p><p><br/>
+</p><div class="code-select">make</div>
 <p><b>6.</b> Move the hardened_malloc library to the system library folder
 </p><p>Create folder <code>/usr/lib/libhardened_malloc.so</code>
-</p><p></p><div class="code-select">sudo mkdir -p /usr/lib/libhardened_malloc.so</div>
+</p><p><br/>
+</p><div class="code-select">sudo mkdir -p /usr/lib/libhardened_malloc.so</div>
 <p>Move the library.
-</p><p></p><div class="code-select">sudo mv libhardened_malloc.so /usr/lib/libhardened_malloc.so/libhardened_malloc.so</div>
+</p><p><br/>
+</p><div class="code-select">sudo mv libhardened_malloc.so /usr/lib/libhardened_malloc.so/libhardened_malloc.so</div>
 </div>
 <h1><span class="mw-headline" id="How-to:_Launch_Applications_with_Hardened_Malloc">How-to: Launch Applications with Hardened Malloc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=2.html" title="Edit section: How-to: Launch Applications with Hardened Malloc">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="Systemd_Services">Systemd Services</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=3.html" title="Edit section: Systemd Services">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To launch individual systemd services with hardened malloc, add drop a systemd configuration snippet.
-</p><p></p><div class="code-select">Environment="LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so'"</div>
+</p><p><br/>
+</p><div class="code-select">Environment="LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so'"</div>
 <h2><span class="mw-headline" id="Other_Applications">Other Applications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=4.html" title="Edit section: Other Applications">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To launch other applications with Hardened Malloc, the <code>LD_PRELOAD</code> environment variable must be edited before starting the application. For example, to launch <code>application-name</code> in this way, run.
-</p><p></p><div class="code-select">LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so' application-name</div>
+</p><p><br/>
+</p><div class="code-select">LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so' application-name</div>
 <h2><span class="mw-headline" id="All_Applications_by_Default">All Applications by Default</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;action=edit&amp;section=5.html" title="Edit section: All Applications by Default">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><u>Note</u>: This action may break numerous applications such as man, apt or Xorg.
 </p><p>It is possible to make all applications use Hardened Malloc as the default memory allocator. To configure this option, the path to the <code>hardened_malloc.so</code> library must be added to the <code>/etc/ld.so.preload</code> file.
@@ -272,10 +286,12 @@ Open file <code>/etc/ld.so.preload</code> in an editor with root rights.
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="../Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/ld.so.preload</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/ld.so.preload</div>
 </div>
 <p><b>2.</b> Add the <code>hardened_malloc.so</code> library.
-</p><p></p><div class="code-select">/usr/lib/libhardened_malloc.so/libhardened_malloc.so</div>
+</p><p><br/>
+</p><div class="code-select">/usr/lib/libhardened_malloc.so/libhardened_malloc.so</div>
 <p><b>3.</b> Save the file.
 </p><p>The procedure is complete.
 </p>
@@ -459,10 +475,7 @@ Open file <code>/etc/ld.so.preload</code> in an editor with root rights.
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2957-0!canonicalwww.kicksecure.com and timestamp 20230131005523 and revision id 60513.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;oldid=60513" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;oldid=60513">https://www.kicksecure.com/w/index.php?title=Hardened_Malloc/Manual_Installation&amp;oldid=60513</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

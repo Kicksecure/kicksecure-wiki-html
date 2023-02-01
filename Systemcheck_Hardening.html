@@ -193,7 +193,8 @@
 <h1><span class="mw-headline" id="Hardening_Steps">Hardening Steps</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=2.html" title="Edit section: Hardening Steps">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="Prevent_Autostart">Prevent Autostart</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=3.html" title="Edit section: Prevent Autostart">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To prevent <code>systemcheck</code> from automatically starting, run.
-</p><p></p><div class="code-select">sudo systemctl mask systemcheck</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl mask systemcheck</div>
 <p><span class="manually-placed-anchor" id="Prevent_Downloading_Kicksecure_™_News"></span>
 </p><p><span class="manually-placed-anchor" id="Prevent_Downloading_Whonix_.E2.84.A2_News_and_Whonix_.E2.84.A2_User_Census_Counting"></span>
 </p><p><span class="manually-placed-anchor" id="Prevent_Kicksecure_™_User_Census_Counting"></span>
@@ -215,10 +216,12 @@
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/systemcheck.d/50_user.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/systemcheck.d/50_user.conf</div>
 </div>
 <p>Add the following content.
-</p><p></p><div class="code-select">SYSTEMCHECK_DISABLE_TRANS_PORT_TEST="1"</div>
+</p><p><br/>
+</p><div class="code-select">SYSTEMCHECK_DISABLE_TRANS_PORT_TEST="1"</div>
 <p>Save.
 </p>
 <h2><span class="mw-headline" id="Prevent_Running_APT">Prevent Running APT</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=6.html" title="Edit section: Prevent Running APT">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -232,10 +235,12 @@
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/systemcheck.d/50_user.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/systemcheck.d/50_user.conf</div>
 </div>
 <p>Add the following content.
-</p><p></p><div class="code-select">systemcheck_skip_functions+=" check_operating_system "</div>
+</p><p><br/>
+</p><div class="code-select">systemcheck_skip_functions+=" check_operating_system "</div>
 <h2><span class="mw-headline" id="Prevent_torproject.org_Connections">Prevent torproject.org Connections</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;action=edit&amp;section=7.html" title="Edit section: Prevent torproject.org Connections">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Connections to The Tor Project are prevented by default, therefore no action is required.
 </p><p><code>systemcheck</code> only connects to <code>torproject.org</code> if the command <code>systemcheck --leak-tests</code> is manually run.
@@ -412,10 +417,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3023-0!canonicalwww.kicksecure.com and timestamp 20230131005905 and revision id 61029.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;oldid=61029" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;oldid=61029">https://www.kicksecure.com/w/index.php?title=Systemcheck_Hardening&amp;oldid=61029</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

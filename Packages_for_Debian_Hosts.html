@@ -220,12 +220,15 @@
 <div class="info-box">
 <p>Install <code>curl</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>curl</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends curl</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends curl</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>curl</code> is complete.
 </p>
@@ -234,13 +237,16 @@
 </p>
 <div class="info-box">
 <p><u><b>If</b> you are using Debian</u>, run.
-</p><p></p><div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
 <p><u><b>If</b> you are using a Qubes Debian Template</u>, run.
-</p><p></p><div class="code-select">curl --proxy http://127.0.0.1:8082/ --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">curl --proxy http://127.0.0.1:8082/ --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
 </div>
 <p><b>3.</b> Users can <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key"><u>check</u> Kicksecure ™ Signing Key</a> for better security.
 </p><p><b>4.</b> Add the Kicksecure ™ signing key to APT's keyring folder. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
-</p><p></p><div class="code-select">sudo cp ~/derivative.asc /usr/share/keyrings/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp ~/derivative.asc /usr/share/keyrings/derivative.asc</div>
 <p><b>5.</b> Done.
 </p><p>The procedure of adding Kicksecure ™ signing key is now complete.
 </p>
@@ -253,22 +259,27 @@
 <div class="info-box active" data-tcc-id="add-apt-repository-options" data-tcc-title="A : Onion Rep.">
 <p><b>Option <u>A</u></b>: Add Kicksecure ™ Onion Repository.
 </p><p>To add Kicksecure ™ Repository over Onion please install apt-transport-tor from the Debian repository.
-</p><p></p><div class="code-select">sudo apt install apt-transport-tor</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install apt-transport-tor</div>
 <p>Add <a data-href="/wiki/Project-APT-Repository" href="./Project-APT-Repository.html" title="Project-APT-Repository">Kicksecure ™ APT repository</a> for default Kicksecure ™ using Debian <i><span style="background-color:#FBFBFB">stable</span></i>. At the time of writing this was <code>bullseye</code>.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+http://deb.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+http://deb.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
 </div>
 <div class="info-box" data-tcc-id="add-apt-repository-options" data-tcc-title="B : Clearnet Rep. via Tor">
 <p><b>Option <u>B</u></b>: Add Kicksecure ™ Clearnet Repository over Tor.
 </p><p>To add Kicksecure ™ Repository over torified clearnet install <code>apt-transport-tor</code> from the Debian repository.
-</p><p></p><div class="code-select">sudo apt install apt-transport-tor</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install apt-transport-tor</div>
 <p>Add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bullseye</code>.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
 </div>
 <div class="info-box" data-tcc-id="add-apt-repository-options" data-tcc-title="C : Clearnet Rep.">
 <p><b>Option <u>C</u></b>: Add Kicksecure Clearnet Repository over clearnet.
 </p><p>NOTE: When later using <a data-href="/wiki/APT_Repository" href="./APT_Repository.html" title="APT Repository">Kicksecure ™ repository tool</a>, then this will be upgraded to "Clearnet Rep. via Tor", unless see footnote. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
 </p><p>To add Kicksecure ™ Repository over clearnet please add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bullseye</code>.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
 </div>
 </div>
 <div class="info-box">
@@ -277,12 +288,15 @@
 <div class="info-box">
 <p>Install <code>package-name</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>package-name</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends package-name</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends package-name</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>package-name</code> is complete.
 </p>
@@ -479,10 +493,7 @@ Unless using <code>repository-dist --transport plain-tls</code>. See also <code>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:1143-0!canonicalwww.kicksecure.com and timestamp 20230130223320 and revision id 65566.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Packages_for_Debian_Hosts&amp;oldid=65566" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Packages_for_Debian_Hosts&amp;oldid=65566">https://www.kicksecure.com/w/index.php?title=Packages_for_Debian_Hosts&amp;oldid=65566</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

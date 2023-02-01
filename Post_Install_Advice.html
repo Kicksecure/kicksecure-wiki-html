@@ -234,13 +234,17 @@
 <h3><span class="mw-headline" id="KVM">KVM</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;section=5.html" title="Edit section: KVM">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <div class="info-box">
 <p><b>1.</b> Shutdown the virtual machine(s).
-</p><p></p><div class="code-select">virsh -c qemu:///system shutdown &lt;vm_name&gt;</div>
+</p><p><br/>
+</p><div class="code-select">virsh -c qemu:///system shutdown &lt;vm_name&gt;</div>
 <p><b>2.</b> Increase the maximum memory.
-</p><p></p><div class="code-select">virsh setmaxmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
+</p><p><br/>
+</p><div class="code-select">virsh setmaxmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
 <p><b>3.</b> Set the actual memory.
-</p><p></p><div class="code-select">virsh setmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
+</p><p><br/>
+</p><div class="code-select">virsh setmem &lt;vm_name&gt; &lt;memsize&gt; --config</div>
 <p><b>4.</b> Restart the virtual machine(s).
-</p><p></p><div class="code-select">virsh -c qemu:///system start &lt;vm_name&gt;</div>
+</p><p><br/>
+</p><div class="code-select">virsh -c qemu:///system start &lt;vm_name&gt;</div>
 </div>
 <h2><span class="mw-headline" id="Change_Keyboard_Layout">Change Keyboard Layout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;action=edit&amp;section=6.html" title="Edit section: Change Keyboard Layout">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <div class="info-box">
@@ -258,9 +262,9 @@
 <li>Open file <code>~/testfile</code> in a <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">text editor</a> of your choice as a regular, non-root user.</li></ul>
 <div class="info-box">
 <p><u>If you are using a graphical environment</u>, run.
-</p><div class="code-select">mousepad ~/testfile</div>
+</p><p></p><div class="code-select">mousepad ~/testfile</div>
 <p><u>If you are using a terminal</u>, run.
-</p><div class="code-select">nano ~/testfile</div>
+</p><p></p><div class="code-select">nano ~/testfile</div>
 </div>
 <p>Try typing the words <code>user</code>, <code>changeme</code> and <code>qwerty</code>. Try typing further words to ensure the desired keyboard layout is functional.
 </p><p><span class="manually-placed-anchor" id="Change_Passwords"></span>
@@ -279,7 +283,8 @@
 </p><p><code>Start menu</code> → <code>Applications</code> → <code>System</code> → <code>Terminal</code>
 </p><p><b>3.</b> Run a test command as <code>root</code> by using <code>sudo</code>.
 </p><p>Run. <sup class="reference" id="cite_ref-pwd_change_11-0"><a href="#cite_note-pwd_change-11">[11]</a></sup>
-</p><p></p><div class="code-select">sudo systemd-detect-virt</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemd-detect-virt</div>
 <p><b>4.</b> Read the note below regarding the username and password.
 </p>
 <div class="info-box default-passwords">
@@ -290,7 +295,8 @@
 <p>When typing the password it will <u>not</u> appear on the screen, nor will the asterisk sign (<code>*</code>) be visible. It is necessary to type blindly and trust the procedure.
 </p><p><b>5.</b> Change the user (and <code>sudo</code>) password.
 </p><p>To change the <code>user</code> (Kicksecure ™ default user) password, run. <sup class="reference" id="cite_ref-pwd_change_11-1"><a href="#cite_note-pwd_change-11">[11]</a></sup> This will also be the password when running <code>sudo</code> from Linux user account <code>user</code>. <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup>
-</p><p></p><div class="code-select">sudo passwd user</div>
+</p><p><br/>
+</p><div class="code-select">sudo passwd user</div>
 <p><b>6.</b> Root password.
 </p><p>No changes required. Optional, for details, see <a data-href="/wiki/Root#Root_Account" href="./Root.html" title="Root">root account in Kicksecure ™</a>.
 </p><p><b>7.</b> Done.
@@ -316,7 +322,8 @@
 </p><p><code>Start Menu</code> → <code>Xfce Terminal</code>
 </p>
 </div>
-<p></p><div class="code-select">cat /etc/*_version</div>
+<p><br/>
+</p><div class="code-select">cat /etc/*_version</div>
 <p>Should show.
 </p><p><code>11.1<br/>
 16</code>
@@ -527,10 +534,7 @@ Usual Debian / sudo default. Unspecific to Kicksecure ™,</span>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2983-0!canonicalwww.kicksecure.com and timestamp 20230131005649 and revision id 61045.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;oldid=61045" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;oldid=61045">https://www.kicksecure.com/w/index.php?title=Post_Install_Advice&amp;oldid=61045</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -203,9 +203,11 @@
 <div class="info-box">
 <p><i>Optional:</i> Complete the steps below if unfamiliar with GnuPG or if they haven't already been performed. This will fix eventual <i><span style="background-color:#FBFBFB">gpg: WARNING: unsafe ownership</span></i> warnings.
 </p><p>Have GnuPG initialize your user data folder.
-</p><p></p><div class="code-select">gpg --fingerprint</div>
+</p><p><br/>
+</p><div class="code-select">gpg --fingerprint</div>
 <p>Set warning free permissions.
-</p><p></p><div class="code-select">chmod --recursive og-rwx ~/.gnupg</div>
+</p><p><br/>
+</p><div class="code-select">chmod --recursive og-rwx ~/.gnupg</div>
 </div>
 <div class="info-box">
 <p><b>1.</b> <a data-href="/wiki/Secure_Downloads" href="../Secure_Downloads.html" title="Secure Downloads">Securely</a> download Kicksecure ™ KVM developer HulaHoop's <a data-href="/wiki/OpenPGP" href="../OpenPGP.html" title="OpenPGP">OpenPGP</a> key. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup><br/>
@@ -217,7 +219,8 @@
 </a><a class="onion-download" data-href="http://www.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion/keys/hulahoop.asc" href="http://www.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion/keys/hulahoop.asc.html" title="Onion link"></a>
 </p><p><b>2.</b> Store the key as <code>hulahoop.asc</code>.
 </p><p><b>3.</b> Check fingerprints/owners without importing anything.
-</p><p></p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint hulahoop.asc</div>
+</p><p><br/>
+</p><div class="code-select">gpg --keyid-format long --import --import-options show-only --with-fingerprint hulahoop.asc</div>
 <p><b>4.</b> Verify the output.
 </p><p>The most important check is confirming the key fingerprint <u>exactly</u> matches the output below. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p>
@@ -231,7 +234,8 @@
 </p>
 </div>
 <p><b>5.</b> Import the key.
-</p><p></p><div class="code-select">gpg --import hulahoop.asc</div>
+</p><p><br/>
+</p><div class="code-select">gpg --import hulahoop.asc</div>
 <p>The output should include the key was imported.
 </p>
 <pre>gpg: Total number processed: 1
@@ -271,7 +275,8 @@ gpg:              unchanged: 1
 <p><b>1.</b> First, acquire Patrick's signing key.
 </p><p>Refer the the more secure, detailed <a data-href="/wiki/Main/Project_Signing_Key" href="../Main/Project_Signing_Key.html" title="Main/Project Signing Key">Kicksecure ™ Main, VirtualBox, APT Repository and Source Code Signing Key</a> instructions.
 </p><p><b>2.</b> Verify the key was also signed by Kicksecure ™ lead developer <a data-href="/wiki/Patrick_Schleizer" href="../Patrick_Schleizer.html" title="Patrick Schleizer">Patrick Schleizer</a>.
-</p><p></p><div class="code-select">gpg --check-sigs "04EF 2F66 6D36 C354 058B 9DD4 50C7 8B6F 9FF2 EC85"</div>
+</p><p><br/>
+</p><div class="code-select">gpg --check-sigs "04EF 2F66 6D36 C354 058B 9DD4 50C7 8B6F 9FF2 EC85"</div>
 <p>The output should be identical to the message below.
 </p>
 <pre>pub   rsa4096/0x50C78B6F9FF2EC85 2018-11-26 [SCEA]
@@ -321,7 +326,7 @@ This is free software, and you are welcome to redistribute it under certain cond
 <div class="reflist" style="list-style-type: decimal;">
 <div class="mw-references-wrap"><ol class="references">
 <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">
-<div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/hulahoop.asc https://www.kicksecure.com/keys/hulahoop.asc</div></span>
+<div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/hulahoop.asc https://www.kicksecure.com/keys/hulahoop.asc</div> </span>
 </li>
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 Minor changes in the output such as new uids (email addresses) or newer expiration dates are inconsequential.</span>
@@ -523,10 +528,7 @@ HYttYy0gOeaawq8RhRxN+l3oOi9Zwll3kOpagj5xvNyrfwayp/E=
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2923-0!canonicalwww.kicksecure.com and timestamp 20230131005439 and revision id 65982.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=KVM/Project_Signing_Key&amp;oldid=65982" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=KVM/Project_Signing_Key&amp;oldid=65982">https://www.kicksecure.com/w/index.php?title=KVM/Project_Signing_Key&amp;oldid=65982</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li><li><a data-href="/wiki/Category:MultiWiki" href="../Category:MultiWiki.html" title="Category:MultiWiki">MultiWiki</a></li></ul></div></div>
 </div>

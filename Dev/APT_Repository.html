@@ -188,28 +188,36 @@
 <ul><li>easier to debug: Should there be an issue with <code>/usr/share/keysrings/derivative.asc</code> (such as key expired) then it would be easier for the user to check which version of the key has been originally imported</li></ul></li></ul>
 <h1><span class="mw-headline" id="Maintenance">Maintenance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/APT_Repository&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Dev/APT_Repository&amp;action=edit&amp;section=3.html" title="Edit section: Maintenance">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Update <a class="external text" data-href="https://blog.ganneff.de/2008/09/valid-until-field-in-release-f.html" href="https://blog.ganneff.de/2008/09/valid-until-field-in-release-f.html" rel="noreferrer noopener" target="_blank">Valid-Until</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://blog.ganneff.de/2008/09/valid-until-field-in-release-f.html" href="https://web.archive.org/web/https://blog.ganneff.de/2008/09/valid-until-field-in-release-f.html" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> field.
-</p><p></p><div class="code-select">./release/resign_repository</div>
+</p><p><br/>
+</p><div class="code-select">./release/resign_repository</div>
 <hr/>
 <p>Upload repository.
-</p><p></p><div class="code-select">./release/upload_repository</div>
+</p><p><br/>
+</p><div class="code-select">./release/upload_repository</div>
 <hr/>
 <p>Migrate from developers APT repository to testers APT repository.
-</p><p></p><div class="code-select">./release/migrate_to_testers_repository</div>
+</p><p><br/>
+</p><div class="code-select">./release/migrate_to_testers_repository</div>
 <hr/>
 <p>Migrate from testers APT repository to bullseye APT repository.
-</p><p></p><div class="code-select">./release/migrate_to_bullseye_repository</div>
+</p><p><br/>
+</p><div class="code-select">./release/migrate_to_bullseye_repository</div>
 <hr/>
 <p>Manually add package to developers repository.
-</p><p></p><div class="code-select">./debug-steps/reprepro-wrapper includedeb developers ../Kicksecure/packages/*.deb</div>
+</p><p><br/>
+</p><div class="code-select">./debug-steps/reprepro-wrapper includedeb developers ../Kicksecure/packages/*.deb</div>
 <hr/>
 <p>Copy package-name from developers to testers repository.
-</p><p></p><div class="code-select">./debug-steps/reprepro-wrapper copy testers developers package-name</div>
+</p><p><br/>
+</p><div class="code-select">./debug-steps/reprepro-wrapper copy testers developers package-name</div>
 <hr/>
 <p>Copy package-name from bullseye-proposed-updates to bullseye repository.
-</p><p></p><div class="code-select">./debug-steps/reprepro-wrapper copy bullseye bullseye-proposed-updates package-name</div>
+</p><p><br/>
+</p><div class="code-select">./debug-steps/reprepro-wrapper copy bullseye bullseye-proposed-updates package-name</div>
 <hr/>
 <p>Migrate all packages matching <span style="border:1px dotted #005cb9">apparmor-profile-*</span> from bullseye-proposed-updates to bullseye repository.
-</p><p></p><div class="code-select">./debug-steps/reprepro-wrapper copymatched bullseye bullseye-proposed-updates "apparmor-profile-*"</div>
+</p><p><br/>
+</p><div class="code-select">./debug-steps/reprepro-wrapper copymatched bullseye bullseye-proposed-updates "apparmor-profile-*"</div>
 <h1><span class="mw-headline" id="Misc">Misc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/APT_Repository&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Dev/APT_Repository&amp;action=edit&amp;section=4.html" title="Edit section: Misc">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p></p><div class="code-select">pkg_name=corridor
 ./debug-steps/reprepro-wrapper copy testers developers "$pkg_name"
@@ -394,10 +402,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3165-0!canonicalwww.kicksecure.com and timestamp 20230131010634 and revision id 64250.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/APT_Repository&amp;oldid=64250" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/APT_Repository&amp;oldid=64250">https://www.kicksecure.com/w/index.php?title=Dev/APT_Repository&amp;oldid=64250</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>

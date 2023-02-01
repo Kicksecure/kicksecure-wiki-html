@@ -183,18 +183,23 @@
 </div>
 <h2><span class="mw-headline" id="Get_Build_Dependencies">Get Build Dependencies</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-1" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-1.html" title="Edit section: Get Build Dependencies">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><a class="new" data-href="/w/index.php?title=Security_Guide&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Security_Guide&amp;action=edit&amp;redlink=1.html" title="Security Guide (page does not exist)">Update</a> your package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p>Install from Debian repository.
-</p><p></p><div class="code-select">sudo apt install build-essential devscripts git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install build-essential devscripts git</div>
 <h2><span class="mw-headline" id="Change_Directory_to_Build_Folder">Change Directory to Build Folder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-2" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-2.html" title="Edit section: Change Directory to Build Folder">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>This chapter is recommended for better usability, but is not strictly required. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
 </p><p>Create folder <code>~/generic-package-build</code>.
-</p><p></p><div class="code-select">mkdir -p ~/generic-package-build</div>
+</p><p><br/>
+</p><div class="code-select">mkdir -p ~/generic-package-build</div>
 <p>Change directory to folder <code>~/generic-package-build</code>.
-</p><p></p><div class="code-select">cd ~/generic-package-build</div>
+</p><p><br/>
+</p><div class="code-select">cd ~/generic-package-build</div>
 <h2><span class="mw-headline" id="Get_the_Source_Code">Get the Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-3" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-3.html" title="Edit section: Get the Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Get the the package's source code.
-</p><p></p><div class="code-select">git clone https://github.com/Kicksecure/generic-package.git</div>
+</p><p><br/>
+</p><div class="code-select">git clone https://github.com/Kicksecure/generic-package.git</div>
 <p>Remember it is <b>K</b>icksecure, not <b>k</b>icksecure! If you are prompted for a username for github, it means you have mistyped the web address.
 </p>
 <h2><span class="mw-headline" id="Get_the_Signing_Key">Get the Signing Key</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-4" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-4.html" title="Edit section: Get the Signing Key">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
@@ -205,11 +210,14 @@
 <p>Note: If Kicksecure ™ is already being used, this process can be simplified. See the footnotes. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p>2. Store it as <code>derivative.asc</code>.
 </p><p>3. Import the key.
-</p><p></p><div class="code-select">gpg --import derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">gpg --import derivative.asc</div>
 <p>4. Verify the key using this fingerprint.
-</p><p></p><div class="code-select">gpg --fingerprint 916B8D99C38EAF5E8ADC7A2A8D66066A2EEACCDA</div>
+</p><p><br/>
+</p><div class="code-select">gpg --fingerprint 916B8D99C38EAF5E8ADC7A2A8D66066A2EEACCDA</div>
 <p>The output should show.
-</p><p></p><div class="code-select">pub   rsa4096 2014-01-16 [SC] [expires: 2021-04-17]
+</p><p><br/>
+</p><div class="code-select">pub   rsa4096 2014-01-16 [SC] [expires: 2021-04-17]
       916B 8D99 C38E AF5E 8ADC  7A2A 8D66 066A 2EEA CCDA
 uid           [  full  ] Patrick Schleizer &lt;adrelanos@whonix.org&gt;
 sub   rsa4096 2014-01-16 [E] [expires: 2021-04-17]
@@ -219,14 +227,17 @@ sub   rsa4096 2014-01-16 [S] [expires: 2021-04-17]</div>
 </p>
 <h2><span class="mw-headline" id="Change_Directory">Change Directory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-5" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-5.html" title="Edit section: Change Directory">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Get into the package's source code folder because later on package build commands using <code>make</code> are expected to be run from the root of the source folder.
-</p><p></p><div class="code-select">cd generic-package</div>
+</p><p><br/>
+</p><div class="code-select">cd generic-package</div>
 <h2><span class="mw-headline" id="OpenPGP_Verify_the_Source_Code">OpenPGP Verify the Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-6" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-6.html" title="Edit section: OpenPGP Verify the Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>OpenPGP Verify the Source Code
 </p><p><b>This chapter is recommended for better security, but is not strictly required.</b><sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
 </p><p>Retrieve a list of available git tags.
-</p><p></p><div class="code-select">git --no-pager tag</div>
+</p><p><br/>
+</p><div class="code-select">git --no-pager tag</div>
 <p>Verify the tag you want to build. Replace it with the tag chosen to build.
-</p><p></p><div class="code-select">git tag -v 0.1</div>
+</p><p><br/>
+</p><div class="code-select">git tag -v 0.1</div>
 <p>The output should look similar to this.
 </p>
 <pre>object 1844108109a5f2f8bddcf2257b9f3675be5cfb22
@@ -247,18 +258,22 @@ gpg:          There is no indication that the signature belongs to the owner.
 </p>
 <h2><span class="mw-headline" id="Choose_Version">Choose Version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-7" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-7.html" title="Edit section: Choose Version">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Retrieve a list of available git tags.
-</p><p></p><div class="code-select">git --no-pager tag</div>
+</p><p><br/>
+</p><div class="code-select">git --no-pager tag</div>
 <p>Use <i>git checkout</i> to select the preferred version to build.
-</p><p></p><div class="code-select">git checkout  0.1</div>
+</p><p><br/>
+</p><div class="code-select">git checkout  0.1</div>
 <p>Replace <code>0.1</code> with the actual version chosen for the build: the stable, testers-only or developers version. Common sense is required when choosing the right version number. For example, the latest available version number is not necessarily the most stable or suitable. Follow the <a data-href="/wiki/Stay_Tuned" href="../../Stay_Tuned.html" title="Stay Tuned">Kicksecure ™ News Blog</a> as it might contain information.
 </p><p>Check if you really got the version you want.
-</p><p></p><div class="code-select">git describe</div>
+</p><p><br/>
+</p><div class="code-select">git describe</div>
 <p>Should show:
 </p><p><code>
 0.1
 </code>
 </p><p>Check if source folder is pristine.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>Should show nothing.
 </p><p><code>
 HEAD detached at 0.1<br/>
@@ -268,13 +283,16 @@ nothing to commit, working tree clean
 </p>
 <h2><span class="mw-headline" id="Build_the_Package">Build the Package</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-8" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-8.html" title="Edit section: Build the Package">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Install build dependencies.
-</p><p></p><div class="code-select">sudo mk-build-deps --remove --install</div>
+</p><p><br/>
+</p><div class="code-select">sudo mk-build-deps --remove --install</div>
 <p>If that did not work, have a look in <code>debian/control</code> file and manually install all packages listed under <code>Build-Depends</code> and <code>Depends</code>.
 </p><p>Build the package without signing it (not required for personal use) and install it.
-</p><p></p><div class="code-select">dpkg-buildpackage -b</div>
+</p><p><br/>
+</p><div class="code-select">dpkg-buildpackage -b</div>
 <h2><span class="mw-headline" id="Build_Result">Build Result</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-9" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-9.html" title="Edit section: Build Result">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>When a package is build using <code>dpkg-buildpackage</code> the resulting packages will be created in the parent folder. I.e. in this case in the <code>~/generic-package-build</code> folder.
-</p><p></p><div class="code-select">ls ../</div>
+</p><p><br/>
+</p><div class="code-select">ls ../</div>
 <p>Should show something like this.
 </p><p><code>
 generic-package  generic-package0.1-1_amd64.buildinfo  generic-package0.1-1_amd64.changes
@@ -282,14 +300,17 @@ generic-package  generic-package0.1-1_amd64.buildinfo  generic-package0.1-1_amd6
 </p>
 <h2><span class="mw-headline" id="Install_the_Package">Install the Package</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-10" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-10.html" title="Edit section: Install the Package">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>The package can be found in the parent folder.
-</p><p></p><div class="code-select">sudo dpkg -i ../generic-package*.deb</div>
+</p><p><br/>
+</p><div class="code-select">sudo dpkg -i ../generic-package*.deb</div>
 <h2><span class="mw-headline" id="Clean_Up">Clean Up</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-11" href="https://www.kicksecure.com/w/index.php?title=Template:Build_Documentation_Build_Package&amp;action=edit&amp;section=T-11.html" title="Edit section: Clean Up">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Delete temporary files debhelper files in package source folder as well as debhelper artifacts (.deb file etc.) in parent folder.
 </p><p>1) Show extraneous (temporary files debhelper) files.
-</p><p></p><div class="code-select">git clean -ndff</div>
+</p><p><br/>
+</p><div class="code-select">git clean -ndff</div>
 <p>2) <u>NOTE</u>: Read above output carefully if you added files of your own files to that folder.
 </p><p>If that looks good, actually remove.
-</p><p></p><div class="code-select">git clean -dff</div>
+</p><p><br/>
+</p><div class="code-select">git clean -dff</div>
 <p>3) Delete debhelper artifacts (.deb file etc.) in parent folder.
 </p><p>TODO: document
 </p>
@@ -301,7 +322,8 @@ When a package is build using <code>dpkg-buildpackage</code> the resulting packa
 </li>
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 Steps 1-3 can be completed with just one command.
-<div class="code-select">gpg --import /usr/share/whonix/whonix-keys.d/derivative.asc</div></span>
+
+<div class="code-select">gpg --import /usr/share/whonix/whonix-keys.d/derivative.asc</div> </span>
 </li>
 <li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">See <a data-href="/wiki/Trust" href="../../Trust.html" title="Trust">Trust</a>.</span>
 </li>
@@ -475,10 +497,7 @@ Steps 1-3 can be completed with just one command.
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3121-0!canonicalwww.kicksecure.com and timestamp 20230131010446 and revision id 60788.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/generic-package&amp;oldid=60788" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/generic-package&amp;oldid=60788">https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/generic-package&amp;oldid=60788</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>

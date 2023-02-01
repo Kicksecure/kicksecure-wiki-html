@@ -214,25 +214,31 @@
 <h2><span class="mw-headline" id="How-to:_Invoke_scurl-download">How-to: Invoke scurl-download</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Secure_Downloads&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Secure_Downloads&amp;action=edit&amp;section=3.html" title="Edit section: How-to: Invoke scurl-download">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Note: In the examples below, the file will be saved in the user's current working directory. If the file should be saved elsewhere, change the current working directory before running scurl.
 </p><p>To invoke scurl-download to download a file, simply run (replace the https:// example with the actual file location).
-</p><p></p><div class="code-select">scurl https://example.com/browser.tar.xz</div>
+</p><p><br/>
+</p><div class="code-select">scurl https://example.com/browser.tar.xz</div>
 <p>This will download <code>browser.tar.xz </code> to the current working directory.
 </p><p>To invoke scurl-download to download a web page, run (replace the https:// example with the actual webpage).
-</p><p></p><div class="code-select">scurl-download https://example.com</div>
+</p><p><br/>
+</p><div class="code-select">scurl-download https://example.com</div>
 <p>All other curl/Linux features continue to work, such as storing the input inside of a file (change <i>index.html</i> to the desired file name).
-</p><p></p><div class="code-select">scurl https://example.com &gt; index.html</div>
+</p><p><br/>
+</p><div class="code-select">scurl https://example.com &gt; index.html</div>
 <h2><span class="mw-headline" id="scurl_Errors">scurl Errors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Secure_Downloads&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Secure_Downloads&amp;action=edit&amp;section=4.html" title="Edit section: scurl Errors">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>As expected, attempting scurl with plain HTTP will fail.
-</p><p></p><div class="code-select">scurl http://example.com</div>
+</p><p><br/>
+</p><div class="code-select">scurl http://example.com</div>
 <p>This will result in the following output.
 </p>
 <pre>curl: (1) Protocol http not supported or disabled in libcurl</pre>
 <p>Similarly, scurl fails with the following attempt.
-</p><p></p><div class="code-select">scurl example.com</div>
+</p><p><br/>
+</p><div class="code-select">scurl example.com</div>
 <p>Returning the following output.
 </p>
 <pre>curl: (1) Protocol http not supported or disabled in libcurl</pre>
 <p>Running scurl against a self-signed or invalid SSL certificate also fails.
-</p><p></p><div class="code-select">scurl https://www.example.com</div>
+</p><p><br/>
+</p><div class="code-select">scurl https://www.example.com</div>
 <p>This results in an error, for example.
 </p>
 <pre>curl: (60) SSL certificate problem: self signed certificate
@@ -455,10 +461,7 @@ If you'd like to turn off curl's verification of the certificate, use
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2996-0!canonicalwww.kicksecure.com and timestamp 20230130205515 and revision id 61061.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Secure_Downloads&amp;oldid=61061" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Secure_Downloads&amp;oldid=61061">https://www.kicksecure.com/w/index.php?title=Secure_Downloads&amp;oldid=61061</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -205,11 +205,14 @@
 <p><b>1.</b> Create a relevant configuration file.
 </p><p>For example, create a file called <code>/etc/X11/xorg.conf.d/00-virtualbox-monitor.conf</code>.
 </p><p>Create the directory if it does not already exist.
-</p><p></p><div class="code-select">sudo mkdir -p /etc/X11/xorg.conf.d</div>
+</p><p><br/>
+</p><div class="code-select">sudo mkdir -p /etc/X11/xorg.conf.d</div>
 <p><b>2.</b> Open the configuration file in an editor with root rights.
-</p><p></p><div class="code-select">sudoedit /etc/X11/xorg.conf.d/00-virtualbox-monitor.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/X11/xorg.conf.d/00-virtualbox-monitor.conf</div>
 <p><b>3.</b> Add the following contents.
-</p><p></p><div class="code-select">Section "Device"
+</p><p><br/>
+</p><div class="code-select">Section "Device"
   Identifier "VirtualBox-Device"
   Option "Monitor-default" "VirtualBox-Monitor"
 EndSection
@@ -240,7 +243,8 @@ EndSection</div>
 </p>
 <ul><li><code>Start Menu</code> → <code>System Tools</code> → <code>Display</code>.</li></ul>
 <p>If the preferred screen resolution is not listed (e.g. <code>1440x900</code>), try running this command on the host.
-</p><p></p><div class="code-select">vboxmanage setextradata "VM Name" "CustomVideoMode1" "1440x900x32"</div>
+</p><p><br/>
+</p><div class="code-select">vboxmanage setextradata "VM Name" "CustomVideoMode1" "1440x900x32"</div>
 <p>If the Start Menu button is not visible (because it is outside the screen), then start Konsole and manually start System Settings by running <i><span style="background-color:#FBFBFB">systemsettings</span></i>.
 </p>
 </div>
@@ -256,7 +260,8 @@ EndSection</div>
 <li>Reboot.</li></ol>
 <h1><span class="mw-headline" id="Troubleshooting">Troubleshooting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;action=edit&amp;section=4.html" title="Edit section: Troubleshooting">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>If this procedure does not work or you want to revert the changes, delete <code>/etc/X11/xorg.conf.d/00-virtualbox-monitor.conf</code>.
-</p><p></p><div class="code-select">sudo rm /etc/X11/xorg.conf.d/00-virtualbox-monitor.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudo rm /etc/X11/xorg.conf.d/00-virtualbox-monitor.conf</div>
 <p>Next, restart the display manager or reboot.
 </p>
 <h1><span class="mw-headline" id="Technical_Information">Technical Information</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;action=edit&amp;section=5.html" title="Edit section: Technical Information">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -448,10 +453,7 @@ EndSection</div>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:404-0!canonicalwww.kicksecure.com and timestamp 20230130213529 and revision id 60965.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;oldid=60965" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;oldid=60965">https://www.kicksecure.com/w/index.php?title=VirtualBox/Higher_Screen_Resolution_without_installing_VirtualBox_Guest_Additions&amp;oldid=60965</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

@@ -247,7 +247,8 @@
 <p>VirtualBox shared folders are found inside the virtual machine in folder <code>/media/</code>.
 &lt;/ref&gt;
 </p><p>In the above example, the <code>shared</code> folder will become <code>cd /media/sf_shared</code>. <sup class="reference" id="cite_ref-11"><a href="#cite_note-11">[11]</a></sup> The folder can be opened using a <a data-href="/wiki/Software#File_Manager" href="../Software.html" title="Software">file manager</a> such as for example Thunar. To open it using the the command line, run.
-</p><p></p><div class="code-select">cd /media/sf_shared</div>
+</p><p><br/>
+</p><div class="code-select">cd /media/sf_shared</div>
 </div>
 <h2><span id="Kicksecure-Custom-Workstation_.E2.84.A2"></span><span class="mw-headline" id="Kicksecure-Custom-Workstation_™">Kicksecure-Custom-Workstation ™</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=5.html" title="Edit section: Kicksecure-Custom-Workstation ™">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <div class="toccolours mw-collapsible mw-collapsed">
@@ -257,8 +258,9 @@
 <p>Two options exist: automatic mounting or manual mounting. The automatic mounting method is described below. For additional information on shared folders refer to the <a class="external text" data-href="https://www.virtualbox.org/manual/ch04.html#sharedfolders" href="https://www.virtualbox.org/manual/ch04.html" rel="noreferrer noopener" target="_blank">VirtualBox manual</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.virtualbox.org/manual/ch04.html#sharedfolders" href="https://web.archive.org/web/https://www.virtualbox.org/manual/ch04.html" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>. Any additional questions are unspecific to Kicksecure ™ and should be addressed as per the <a data-href="/wiki/Support#Free_Support_Principle" href="../Support.html" title="Support">Free Support Principle</a>.
 </p>
 <ol><li>Install VirtualBox guest additions inside the VM. <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup></li>
-<li>Add the user that will utilize shared folders from inside the VM to group <code>vboxsf</code>: <div class="code-select">sudo addgroup user vboxsf</div></li>
-<li>A reboot is required to make group changes take effect.</li>
+<li>Add the user that will utilize shared folders from inside the VM to group <code>vboxsf</code>:</li></ol>
+<p></p><div class="code-select">sudo addgroup user vboxsf</div>
+<ol><li>A reboot is required to make group changes take effect.</li>
 <li>Follow the instructions above.</li></ol>
 </div>
 </div>
@@ -372,25 +374,30 @@
 <p>If the user is currently using VirtualBox packages <code>virtualbox-guest-utils</code> and <code>virtualbox-guest-x11</code> (Debian style) and wishes to migrate to Oracle Style VirtualBox Guest Additions from package <code>virtualbox-guest-additions-iso</code>, complete the following steps.
 </p><p><b>1.</b> Uninstall the Debian style VirtualBox Guest Additions Packages.
 </p><p>This step is mandatory. Otherwise <a href="#vbox-guest-installer">vbox-guest-installer</a> would refuse to install Oracle Style VirtualBox Guest Additions because only 1 installation source for guest additions must be active at the same time.
-</p><p></p><div class="code-select">sudo apt purge virtualbox-guest-utils virtualbox-guest-x11</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt purge virtualbox-guest-utils virtualbox-guest-x11</div>
 <p><b>2.</b> Make sure package <code>virtualbox-guest-additions-iso</code> is installed.
 </p><p>Should be installed by default. To check and install if required, run.
 </p>
 <div class="info-box">
 <p>Install <code>virtualbox-guest-additions-iso</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="../Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>virtualbox-guest-additions-iso</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="../Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends virtualbox-guest-additions-iso</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends virtualbox-guest-additions-iso</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>virtualbox-guest-additions-iso</code> is complete.
 </p>
 </div>
 <p><b>3.</b> Run vbox-guest-installer.
-</p><p></p><div class="code-select">sudo vbox-guest-installer</div>
+</p><p><br/>
+</p><div class="code-select">sudo vbox-guest-installer</div>
 <p><b>4.</b> Reboot.
 </p><p><b>5.</b> Done.
 </p><p>Migration from VirtualBox Guest Additions (Debian style) to VirtualBox Guest Additions ISO (Oracle style) has been completed.
@@ -404,12 +411,15 @@
 <div class="info-box">
 <p>Install <code>virtualbox-guest-utils virtualbox-guest-x11</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="../Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>virtualbox-guest-utils virtualbox-guest-x11</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="../Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends virtualbox-guest-utils virtualbox-guest-x11</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends virtualbox-guest-utils virtualbox-guest-x11</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>virtualbox-guest-utils virtualbox-guest-x11</code> is complete.
 </p>
@@ -431,13 +441,18 @@
 <h2><span class="mw-headline" id="Uninstall_virtualbox-guest-additions-iso">Uninstall virtualbox-guest-additions-iso</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=16.html" title="Edit section: Uninstall virtualbox-guest-additions-iso">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>This is discouraged and should not be required. However, if you wish to uninstall VirtualBox guest additions as installed by <code>vbox-guest-installer</code> by Kicksecure ™ developers, follow the steps below.
 </p><p><b>1.</b> Kicksecure ™ 16: No purge of package <code>virtualbox-guest-additions-iso</code> required since <code>vbox-guest-installer</code> effectively does nothing if VirtualBox guest additions packages are installed. If purging <code>virtualbox-guest-additions-iso</code> is desired this is OK too.
-</p><p><b>2.</b> Remove VirtualBox guest additions (previously installed by Kicksecure ™ from <code>virtualbox-guest-additions-iso</code>. Run VirtualBox guest additions uninstaller by VirtualBox developers. </p><div class="code-select">sudo /usr/sbin/vbox-uninstall-guest-additions</div>
+</p><p><b>2.</b> Remove VirtualBox guest additions (previously installed by Kicksecure ™ from <code>virtualbox-guest-additions-iso</code>. Run VirtualBox guest additions uninstaller by VirtualBox developers. 
+</p><div class="code-select">sudo /usr/sbin/vbox-uninstall-guest-additions</div>
 <h2><span class="mw-headline" id="Debugging">Debugging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=17" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=17.html" title="Edit section: Debugging">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To help debug issues, inspect the following logs and services.
-</p><p></p><div class="code-select">cat /var/log/vboxadd-install.log</div>
-<p></p><div class="code-select">sudo systemctl status vboxadd</div>
-<p></p><div class="code-select">sudo systemctl status vboxadd-service.service</div>
-<p></p><div class="code-select">ls -la /opt/VBoxGuestAdditions-*/init/</div>
+</p><p><br/>
+</p><div class="code-select">cat /var/log/vboxadd-install.log</div>
+<p><br/>
+</p><div class="code-select">sudo systemctl status vboxadd</div>
+<p><br/>
+</p><div class="code-select">sudo systemctl status vboxadd-service.service</div>
+<p><br/>
+</p><div class="code-select">ls -la /opt/VBoxGuestAdditions-*/init/</div>
 <h3><span class="mw-headline" id="Kernel_Upgrades">Kernel Upgrades</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;action=edit&amp;section=18.html" title="Edit section: Kernel Upgrades">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>The following issue is happening during kernel <a data-href="/wiki/Operating_System_Software_and_Updates" href="../Operating_System_Software_and_Updates.html" title="Operating System Software and Updates">upgrades</a>.
 </p>
@@ -688,10 +703,7 @@ By default, VirtualBox uses the prefix <code>sf_</code>.</span>
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:101-0!canonicalwww.kicksecure.com and timestamp 20230130232314 and revision id 62324.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;oldid=62324" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;oldid=62324">https://www.kicksecure.com/w/index.php?title=VirtualBox/Guest_Additions&amp;oldid=62324</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="../Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

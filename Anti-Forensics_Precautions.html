@@ -208,13 +208,16 @@
 <div class="info-box">
 <p><b>1.</b> Disable swap either temporarily or persistently.
 </p><p>The following command will disable swap and delete the file during the life of this session.
-</p><p></p><div class="code-select">sudo swapoff -a</div>
+</p><p><br/>
+</p><div class="code-select">sudo swapoff -a</div>
 <p>To disable swap in a persistent way, edit the <code>fstab</code> file and comment out the line (using <code>#</code>) with the swap partition.
-</p><p></p><div class="code-select">sudoedit /etc/fstab</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/fstab</div>
 <p><b>2.</b> Save and reboot.
 </p><p><b>3.</b> Confirm swap is disabled.
 </p><p>To check it is off, run the <code>free</code> command. The swap line should show zeros.
-</p><p></p><div class="code-select">free -h</div>
+</p><p><br/>
+</p><div class="code-select">free -h</div>
 </div>
 <p>TODO: the existing swap partition should be securely wiped since sensitive information like encryption keys might have already leaked there.
 </p>
@@ -233,16 +236,19 @@
 </p><p>A user must go out of their way to enable kernel memory dumps since it is not enabled by default; kdump-tools is utilized in Debian. <sup class="reference" id="cite_ref-13"><a href="#cite_note-13">[13]</a></sup>
 </p><p><u>Userspace</u>
 </p><p>The default core dump file size is <code>0</code> on Debian Linux: <sup class="reference" id="cite_ref-14"><a href="#cite_note-14">[14]</a></sup>
-</p><p></p><div class="code-select">ulimit -c
+</p><p><br/>
+</p><div class="code-select">ulimit -c
 0</div>
 <p>This setting is enforced for systemd-coredump too and can be verified by inspecting the lack of core files in <code>/var/spool</code> or <code>/var/lib/systemd/coredump</code> when an intentional crash is induced (<code>/var/crash</code> does not exist in Debian but it may be available in other Linux distributions). <sup class="reference" id="cite_ref-15"><a href="#cite_note-15">[15]</a></sup>
 </p><p><u>Disable setuid processes dumping their memory</u>
 </p><p>Processes with elevated permissions (or the setuid bit) might still be able to perform a core dump, depending on your other settings. These processes usually have more access and might contain more sensitive data segments in memory, so they should be changed as well. The behavior can be altered with a sysctl key, or directly via the <code>/proc</code> file system. For permanent settings, the sysctl command and configuration is typically used. A setting is called a ‘key’, which has a related value attached to it (also known as a key-value pair).
 </p><p>To disable programs with the setuid bit to dump, set the fs.suid_dumpable to zero:
-</p><p></p><div class="code-select">sudo su</div>
-<p></p><div class="code-select">echo "fs.suid_dumpable=0" &gt;&gt; /etc/sysctl.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudo su</div>
+<p><br/>
+</p><div class="code-select">echo "fs.suid_dumpable=0" &gt;&gt; /etc/sysctl.conf</div>
 <p>Reload the sysctl configuration with the -p flag to activate any changes you made.
-</p><div class="code-select">sysctl -p</div>
+</p><p></p><div class="code-select">sysctl -p</div>
 <h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Anti-Forensics_Precautions&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Anti-Forensics_Precautions&amp;action=edit&amp;section=7.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="reflist" style="list-style-type: decimal;">
 <div class="mw-references-wrap mw-references-columns"><ol class="references">
@@ -458,10 +464,7 @@ When set and supported by the hypervisor, memory pages belonging to the domain w
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3014-0!canonicalwww.kicksecure.com and timestamp 20230130214516 and revision id 65548.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Anti-Forensics_Precautions&amp;oldid=65548" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Anti-Forensics_Precautions&amp;oldid=65548">https://www.kicksecure.com/w/index.php?title=Anti-Forensics_Precautions&amp;oldid=65548</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

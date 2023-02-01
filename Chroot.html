@@ -228,12 +228,15 @@
 <div class="info-box">
 <p>Install <code>mmdebstrap apt-transport-https apt-transport-tor tor curl</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>mmdebstrap apt-transport-https apt-transport-tor tor curl</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends mmdebstrap apt-transport-https apt-transport-tor tor curl</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends mmdebstrap apt-transport-https apt-transport-tor tor curl</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>mmdebstrap apt-transport-https apt-transport-tor tor curl</code> is complete.
 </p>
@@ -247,29 +250,35 @@
 </p>
 <div class="info-box">
 <p><u><b>If</b> you are using Debian</u>, run.
-</p><p></p><div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">curl --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
 <p><u><b>If</b> you are using a Qubes Debian Template</u>, run.
-</p><p></p><div class="code-select">curl --proxy http://127.0.0.1:8082/ --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">curl --proxy http://127.0.0.1:8082/ --tlsv1.3 --proto =https --max-time 180 --output ~/derivative.asc https://www.kicksecure.com/keys/derivative.asc</div>
 </div>
 <p><b>3.</b> Users can <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key"><u>check</u> Kicksecure ™ Signing Key</a> for better security.
 </p><p><b>4.</b> Add the Kicksecure ™ signing key to APT's keyring folder. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
-</p><p></p><div class="code-select">sudo cp ~/derivative.asc /usr/share/keyrings/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp ~/derivative.asc /usr/share/keyrings/derivative.asc</div>
 <p><b>5.</b> Done.
 </p><p>The procedure of adding Kicksecure ™ signing key is now complete.
 </p>
 </div>
 <h2><span class="mw-headline" id="Set_Variables">Set Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=5.html" title="Edit section: Set Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>File <code>/etc/hostname</code> must exist. <sup class="reference" id="cite_ref-4"><a href="#cite_note-4">[4]</a></sup>
-</p><p></p><div class="code-select">sudo touch /etc/hostname</div>
+</p><p><br/>
+</p><div class="code-select">sudo touch /etc/hostname</div>
 <h2><span class="mw-headline" id="Set_Variables_2">Set Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=6.html" title="Edit section: Set Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Note: You could also replace <code>kicksecure-xfce</code> with <code>kicksecure-cli</code>.
-</p><p></p><div class="code-select">package=kicksecure-xfce
+</p><p><br/>
+</p><div class="code-select">package=kicksecure-xfce
 repo=bullseye
 path_to_chroot=~/kicksecure-xfce-chroot
 path_to_temp_sources_list=~/temp-sources.list</div>
 <h2><span class="mw-headline" id="APT_Sources_List">APT Sources List</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=7.html" title="Edit section: APT Sources List">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Create temporary APT sources list for <code>mmdebstrap</code>.
-</p><p></p><div class="code-select">echo "
+</p><p><br/>
+</p><div class="code-select">echo "
 deb https://deb.debian.org/debian-security/ bullseye/updates main contrib non-free
 deb https://deb.debian.org/debian bullseye main contrib non-free
 deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com $repo main contrib non-free
@@ -284,24 +293,29 @@ deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com $r
 <div class="info-box">
 <p>Install <code>apt-cacher-ng</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>apt-cacher-ng</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends apt-cacher-ng</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends apt-cacher-ng</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>apt-cacher-ng</code> is complete.
 </p>
 </div>
 <p>Set <code>apt_cacher_ng_maybe</code> variable.
-</p><p></p><div class="code-select">apt_cacher_ng_maybe="\
+</p><p><br/>
+</p><div class="code-select">apt_cacher_ng_maybe="\
 --aptopt='Acquire::http { Proxy \"http://127.0.0.1:3142\"; }' \
 --aptopt='Acquire::https { Proxy \"http://127.0.0.1:3142\"; }' \
 --aptopt='Acquire::tor { Proxy \"http://127.0.0.1:3142\"; }' \
 "</div>
 <p>Create apt-cacher-ng https compatible sources.list file.
-</p><p></p><div class="code-select">echo "
+</p><p><br/>
+</p><div class="code-select">echo "
 deb http://HTTPS///deb.debian.org/debian-security/ buster/updates main contrib non-free
 deb http://HTTPS///deb.debian.org/debian buster main contrib non-free
 deb http://HTTPS///deb.whonix.org $repo main contrib non-free
@@ -310,7 +324,8 @@ deb http://HTTPS///deb.whonix.org $repo main contrib non-free
 </div>
 <h2><span class="mw-headline" id="Run_mmdebstrap">Run mmdebstrap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=9.html" title="Edit section: Run mmdebstrap">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Run <code>mmdebstrap</code>. <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
-</p><p></p><div class="code-select">sudo \
+</p><p><br/>
+</p><div class="code-select">sudo \
 SECURITY_MISC_INSTALL=force \
 DERIVATIVE_APT_REPOSITORY_OPTS=stable \
 anon_shared_inst_tb=open \
@@ -324,10 +339,12 @@ buster \
 "$path_to_temp_sources_list"</div>
 <h2><span class="mw-headline" id="Chroot_Post_Processing">Chroot Post Processing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=10.html" title="Edit section: Chroot Post Processing">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Delete the chroot's temporary <code>/etc/apt/sources.list</code>. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup>
-</p><p></p><div class="code-select">sudo rm "$path_to_chroot/etc/apt/sources.list"</div>
+</p><p><br/>
+</p><div class="code-select">sudo rm "$path_to_chroot/etc/apt/sources.list"</div>
 <h2><span class="mw-headline" id="Host_Cleanup">Host Cleanup</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=11.html" title="Edit section: Host Cleanup">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Optional: You can delete the signing key from the host.
-</p><p></p><div class="code-select">sudo rm /etc/apt/trusted.gpg.d/derivative.gpg</div>
+</p><p><br/>
+</p><div class="code-select">sudo rm /etc/apt/trusted.gpg.d/derivative.gpg</div>
 <h1><span class="mw-headline" id="Usage">Usage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=12" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=12.html" title="Edit section: Usage">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h3><span class="mw-headline" id="Simple_Classic_Chroot_Method">Simple Classic Chroot Method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=13.html" title="Edit section: Simple Classic Chroot Method">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p></p><div class="code-select">sudo chroot ~/kicksecure-xfce-chroot bash</div>
@@ -340,8 +357,10 @@ buster \
 <p></p><div class="code-select">sudo systemd-nspawn -D ~/kicksecure-xfce-chroot /sbin/init</div>
 <h3><span class="mw-headline" id="systemd-nspawn_Boot_Chroot_with_GUI_Support">systemd-nspawn Boot Chroot with GUI Support</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=18.html" title="Edit section: systemd-nspawn Boot Chroot with GUI Support">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>This is unfinished. Unspecific to Kicksecure ™. Could be resolved as per <a data-href="/wiki/Support#Free_Support_Principle" href="./Support.html" title="Support">Free Support Principle</a>.
-</p><p></p><div class="code-select">xhost +local:</div>
-<p></p><div class="code-select">sudo systemd-nspawn --setenv=DISPLAY=$DISPLAY -D ~/kicksecure-xfce-chroot /sbin/init</div>
+</p><p><br/>
+</p><div class="code-select">xhost +local:</div>
+<p><br/>
+</p><div class="code-select">sudo systemd-nspawn --setenv=DISPLAY=$DISPLAY -D ~/kicksecure-xfce-chroot /sbin/init</div>
 <h3><span class="mw-headline" id="Exit_systemd-nspawn_Chroot">Exit systemd-nspawn Chroot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=19.html" title="Edit section: Exit systemd-nspawn Chroot">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>To leave the chroot press keep holding key <code>CTRL</code> and press key <code>5</code> quickly 3 times within 1 second. <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup>
 </p>
@@ -581,10 +600,7 @@ During chroot build process the following files were already created.
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2543-0!canonicalwww.kicksecure.com and timestamp 20230130235002 and revision id 65686.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;oldid=65686" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;oldid=65686">https://www.kicksecure.com/w/index.php?title=Chroot&amp;oldid=65686</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

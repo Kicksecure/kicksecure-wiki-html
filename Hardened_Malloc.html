@@ -248,12 +248,15 @@
 <h2><span class="mw-headline" id="Launch_Specific_Applications_with_Hardened_Malloc_Default">Launch Specific Applications with Hardened Malloc Default</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=5.html" title="Edit section: Launch Specific Applications with Hardened Malloc Default">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To launch chosen applications with Hardened Malloc (Default), the <code>LD_PRELOAD</code> environment variable must be edited before starting the application.
 </p><p>For example, to launch <code>application-name</code> in this way, run.
-</p><p></p><div class="code-select">LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so' application-name</div>
+</p><p><br/>
+</p><div class="code-select">LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so' application-name</div>
 <p>Using administrative rights, example:
-</p><p></p><div class="code-select">sudo LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so' apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so' apt update</div>
 <h2><span class="mw-headline" id="Launch_Systemd_Services_with_Hardened_Malloc_Default">Launch Systemd Services with Hardened Malloc Default</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=6.html" title="Edit section: Launch Systemd Services with Hardened Malloc Default">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To launch individual systemd services with Hardened Malloc (Default), add a drop-in systemd configuration snippet.
-</p><p></p><div class="code-select">Environment="LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so'"</div>
+</p><p><br/>
+</p><div class="code-select">Environment="LD_PRELOAD='/usr/lib/libhardened_malloc.so/libhardened_malloc.so'"</div>
 <h2><span class="mw-headline" id="Launch_All_Applications_by_Default_with_Hardened_Malloc_Default">Launch All Applications by Default with Hardened Malloc Default</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=7.html" title="Edit section: Launch All Applications by Default with Hardened Malloc Default">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>It is possible to make all applications use Hardened Malloc (Default) as the default memory allocator.
 </p><p><u>Note</u>:
@@ -269,11 +272,13 @@ Open file <code>/etc/ld.so.preload</code> in an editor with root rights.
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/ld.so.preload</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/ld.so.preload</div>
 </div>
 <p><b>2.</b> Add the <code>hardened_malloc.so</code> library.
 </p><p>Paste.
-</p><p></p><div class="code-select">/usr/lib/libhardened_malloc.so/libhardened_malloc.so</div>
+</p><p><br/>
+</p><div class="code-select">/usr/lib/libhardened_malloc.so/libhardened_malloc.so</div>
 <p><b>3.</b> Save the file.
 </p><p><b>4.</b> Done.
 </p><p>The procedure is complete. Hardened Malloc Default has been enabled for all applications by default.
@@ -284,13 +289,15 @@ Open file <code>/etc/ld.so.preload</code> in an editor with root rights.
 </p><p>Apply the following steps to disable Hardened Malloc Default/Light per application.
 </p><p>Prepend the <a class="external text" data-href="https://github.com/Kicksecure/helper-scripts/blob/master/usr/bin/ld-system-preload-disable" href="https://github.com/Kicksecure/helper-scripts/blob/master/usr/bin/ld-system-preload-disable" rel="noreferrer noopener" target="_blank"><code>ld-system-preload-disable</code></a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/helper-scripts/blob/master/usr/bin/ld-system-preload-disable" href="https://web.archive.org/web/https://github.com/Kicksecure/helper-scripts/blob/master/usr/bin/ld-system-preload-disable" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> wrapper.
 </p><p>Syntax:
-</p><p></p><div class="code-select">ld-system-preload-disable application</div>
+</p><p><br/>
+</p><div class="code-select">ld-system-preload-disable application</div>
 <p>Example:
 </p><p>Notes:
 </p>
 <ul><li>This disabled all ld system preload. This only matters in case the user previously modified ld system preload configuration file <code>/etc/ld.so.preload</code> which the vast majority of users does not do.</li>
 <li>Replace <code><a data-href="/wiki/Chromium" href="./Chromium.html" title="Chromium">chromium</a></code> with the actual application which should be started without ld system preload.</li></ul>
-<p></p><div class="code-select">ld-system-preload-disable chromium</div>
+<p><br/>
+</p><div class="code-select">ld-system-preload-disable chromium</div>
 <h1><span class="mw-headline" id="Issues">Issues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=9.html" title="Edit section: Issues">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <h2><span class="mw-headline" id="Incompatible_Applications">Incompatible Applications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=10.html" title="Edit section: Incompatible Applications">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <h3><span class="mw-headline" id="Graphical_Desktop_Environment_Xorg">Graphical Desktop Environment Xorg</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=11.html" title="Edit section: Graphical Desktop Environment Xorg">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
@@ -397,10 +404,12 @@ Open file <code>/etc/ld.so.preload</code> in an editor with root rights.
 <h2><span class="mw-headline" id="Check_If_Hardened_Malloc_is_Enabled">Check If Hardened Malloc is Enabled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=21.html" title="Edit section: Check If Hardened Malloc is Enabled">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Open the terminal and type either:
 </p>
-<ul><li><b>A)</b>: Using <code>hardened-malloc-enabled-test</code>. <div class="code-select">hardened-malloc-enabled-test</div>
-<ul><li>If enabled, should output should show: <blockquote><p>yes</p></blockquote></li></ul></li>
-<li><b>B)</b>: For advanced users: Using <a data-href="/wiki/Systemcheck" href="./Systemcheck.html" title="Systemcheck">systemcheck</a> with command line parameter <code>--verbose</code>. <div class="code-select">systemcheck --verbose</div>
-<ul><li>If enabled, should output should include: <blockquote><p>[INFO] [systemcheck] Hardened Malloc: Hardened Malloc enabled.</p></blockquote></li></ul></li></ul>
+<ul><li><b>A)</b>: Using <code>hardened-malloc-enabled-test</code>.</li></ul>
+<p></p><div class="code-select">hardened-malloc-enabled-test</div>
+<ul><li><ul><li>If enabled, should output should show: <blockquote><p>yes</p></blockquote></li></ul></li>
+<li><b>B)</b>: For advanced users: Using <a data-href="/wiki/Systemcheck" href="./Systemcheck.html" title="Systemcheck">systemcheck</a> with command line parameter <code>--verbose</code>.</li></ul>
+<p></p><div class="code-select">systemcheck --verbose</div>
+<ul><li><ul><li>If enabled, should output should include: <blockquote><p>[INFO] [systemcheck] Hardened Malloc: Hardened Malloc enabled.</p></blockquote></li></ul></li></ul>
 <h2><span class="mw-headline" id="Check_If_Hardened_Malloc_Default_or_Hardened_Malloc_Light_is_Enabled">Check If Hardened Malloc Default or Hardened Malloc Light is Enabled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=22" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;action=edit&amp;section=22.html" title="Edit section: Check If Hardened Malloc Default or Hardened Malloc Light is Enabled">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p></p><div class="code-select">hardened-malloc-type-test</div>
 <p>Possible outputs:
@@ -447,16 +456,19 @@ Tor Browser is also based on Firefox, therefore the following advice equally app
 <a data-href="/wiki/Install_Software#Flatpak" href="./Install_Software.html" title="Install Software">Flatpak</a> does not honor <code>/etc/ld.so.preload</code>.
 Viewing contents of <code>/etc/ld.so.preload</code> on the host operating system.
 
-<div class="code-select">cat /etc/ld.so.preload</div>
+
+<div class="code-select">cat /etc/ld.so.preload</div>  
 
 Expected output:
 
 <pre>/usr/lib/libhardened_malloc.so/libhardened_malloc-light.so
 </pre>
 <p>Starting a shell inside a Flatpak application sandbox. This example uses <code>org.chromium.Chromium</code> and could be replaced with any other Flatpak application.
-</p><p></p><div class="code-select">flatpak run --command=sh org.chromium.Chromium</div>
+</p><p><br/>
+</p><div class="code-select">flatpak run --command=sh org.chromium.Chromium</div>
 <p>Viewing contents of <code>/etc/ld.so.preload</code> inside the Flatpak sandbox.
-</p><p></p><div class="code-select">cat /etc/ld.so.preload</div>
+</p><p><br/>
+</p><div class="code-select">cat /etc/ld.so.preload</div>
 <p>Conclusion: File  <code>/etc/ld.so.preload</code> does not exist inside the Flatpak sandbox.
 </p>
 <pre>cat: /etc/ld.so.preload: No such file or directory
@@ -632,10 +644,7 @@ Expected output:
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:2956-0!canonicalwww.kicksecure.com and timestamp 20230130213515 and revision id 61164.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;oldid=61164" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;oldid=61164">https://www.kicksecure.com/w/index.php?title=Hardened_Malloc&amp;oldid=61164</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

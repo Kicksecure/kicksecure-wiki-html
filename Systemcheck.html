@@ -220,7 +220,7 @@
 </p><p><u>If you are using a graphical Whonix</u>, complete the following steps.
 </p><p><code>Start Menu</code> → <code>System</code> → <code>systemcheck</code>
 </p><p><u>If you are using a terminal-only Whonix</u>, complete the following step.
-</p><div class="code-select">systemcheck</div>
+</p><p></p><div class="code-select">systemcheck</div>
 </div>
 <p>Depending on system specifications, systemcheck can take up to a few minutes to complete. If everything is working as intended, the output should highlight each <span style="color:#008000"> INFO </span> heading in green (not red). A successful systemcheck process will have output similar to below.
 </p>
@@ -377,7 +377,8 @@ This information is made available so <code>systemcheck</code> can determine whi
 </p>
 <h2><span class="mw-headline" id="Check_Version">Check Version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Systemcheck&amp;action=edit&amp;section=9" href="https://www.kicksecure.com/w/index.php?title=Systemcheck&amp;action=edit&amp;section=9.html" title="Edit section: Check Version">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>To check the current Kicksecure ™ version, run the following command.
-</p><p></p><div class="code-select">systemcheck --verbose --function show_versions</div>
+</p><p><br/>
+</p><div class="code-select">systemcheck --verbose --function show_versions</div>
 <p>The output should be similar to below.
 </p>
 <blockquote><p>[INFO] [systemcheck] disp766 | Kicksecure | kicksecure-16-dvm DispVM AppVM | Sun 25 Apr 2021 07:13:17 AM UTC
@@ -462,13 +463,16 @@ Alternatively, if want to run from command line, but still use the graphical use
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/systemcheck.d/50_user.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/systemcheck.d/50_user.conf</div>
 </div>
 <p>Add the following content.
-</p><p></p><div class="code-select">canary=false</div>
+</p><p><br/>
+</p><div class="code-select">canary=false</div>
 <h1><span class="mw-headline" id="Arg_Max_Check">Arg Max Check</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Systemcheck&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Systemcheck&amp;action=edit&amp;section=14.html" title="Edit section: Arg Max Check">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Only useful in case of systemcheck GUI issues.
-</p><p></p><div class="code-select">systemcheck --function check_arg_max</div>
+</p><p><br/>
+</p><div class="code-select">systemcheck --function check_arg_max</div>
 <p>Expected result:
 </p>
 <pre>[INFO] [systemcheck] ERROR: ARG_MAX exceeded!
@@ -498,8 +502,9 @@ $0: /usr/libexec/systemcheck/systemcheck
 <br/>
 Type each command below, followed by the <code>ENTER</code> key.
 
+
 <div class="code-select">xfce4-terminal-emulator</div>
-<div class="code-select">systemcheck</div></span>
+<div class="code-select">systemcheck</div> </span>
 </li>
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 This is only expected to affect those following the <a data-href="/wiki/KVM" href="./KVM.html" title="KVM">KVM</a> instructions.</span>
@@ -528,7 +533,7 @@ The <a class="external text" data-href="https://github.com/Kicksecure/dist-base-
 <li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">For convenience, the clearnet link that is unused by systemcheck can be previewed here: <a class="external free" data-href="https://download.kicksecure.com/developer-meta-files/canary/canary.txt.embed.sig" href="https://download.kicksecure.com/developer-meta-files/canary/canary.txt.embed.sig" rel="noreferrer noopener" target="_blank">https://download.kicksecure.com/developer-meta-files/canary/canary.txt.embed.sig</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://download.kicksecure.com/developer-meta-files/canary/canary.txt.embed.sig" href="https://web.archive.org/web/https://download.kicksecure.com/developer-meta-files/canary/canary.txt.embed.sig" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></span>
 </li>
 <li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text">
-<div class="code-select">sudo -u canary signify-openbsd -V -e -p /usr/share/repository-dist/derivative-distribution-signify-key.pub -x /var/lib/canary/canary.txt.embed.sig -m /var/lib/canary/canary-unembed.txt</div></span>
+<div class="code-select">sudo -u canary signify-openbsd -V -e -p /usr/share/repository-dist/derivative-distribution-signify-key.pub -x /var/lib/canary/canary.txt.embed.sig -m /var/lib/canary/canary-unembed.txt</div> </span>
 </li>
 </ol></div></div>
 <hr/>
@@ -700,10 +705,7 @@ The <a class="external text" data-href="https://github.com/Kicksecure/dist-base-
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3139-0!canonicalwww.kicksecure.com and timestamp 20230130211955 and revision id 62158.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Systemcheck&amp;oldid=62158" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Systemcheck&amp;oldid=62158">https://www.kicksecure.com/w/index.php?title=Systemcheck&amp;oldid=62158</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li><li><a data-href="/wiki/Category:Design" href="./Category:Design.html" title="Category:Design">Design</a></li></ul></div></div>
 </div>

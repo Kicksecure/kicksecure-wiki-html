@@ -329,18 +329,22 @@
 <div class="info-box">
 <p>Install <code>cpuid</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>cpuid</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends cpuid</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends cpuid</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>cpuid</code> is complete.
 </p>
 </div>
 <p><b>3.</b> Run <code>cpuid</code>.
-</p><p></p><div class="code-select">cpuid</div>
+</p><p><br/>
+</p><div class="code-select">cpuid</div>
 <p><b>4.</b> Done.
 </p><p>The process of showing information from the processor's cpuid function has been completed.
 </p>
@@ -363,8 +367,9 @@
 <p>On Linux systems, there are at least two ways to access CPU information.
 </p>
 <ul><li><b>A)</b> <i><code>/proc/cpuinfo</code>:</i> Is a virtual file provided by the kernel providing information about the CPU.
-<ul><li>To view, run: <div class="code-select">cat /proc/cpuinfo</div></li>
-<li><a data-href="/wiki/Security-misc#Reduce_Kernel_Information_Leaks" href="./Security-misc.html" title="Security-misc"><code>hide-hardware-info.service</code></a> can prevent access to this virtual file.</li></ul></li>
+<ul><li>To view, run:</li></ul></li></ul>
+<p></p><div class="code-select">cat /proc/cpuinfo</div>
+<ul><li><ul><li><a data-href="/wiki/Security-misc#Reduce_Kernel_Information_Leaks" href="./Security-misc.html" title="Security-misc"><code>hide-hardware-info.service</code></a> can prevent access to this virtual file.</li></ul></li>
 <li><b>B)</b> <i><code>cpuid</code>:</i> Is a program that queries the CPU's cpuid function directly to get information about the CPU.
 <ul><li>To view, see above chapter <a href="#cpuid_usage"><code>cpuid</code> usage</a>.</li>
 <li>This cannot be prevented, see <a href="#CPUID_Technical_Background">CPUID Technical Background</a>.</li></ul></li></ul>
@@ -554,10 +559,7 @@
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3474-0!canonicalwww.kicksecure.com and timestamp 20230131011123 and revision id 62913.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=CPUID&amp;oldid=62913" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=CPUID&amp;oldid=62913">https://www.kicksecure.com/w/index.php?title=CPUID&amp;oldid=62913</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Design" href="./Category:Design.html" title="Category:Design">Design</a></li></ul></div></div>
 </div>

@@ -339,22 +339,27 @@ a.freelink
 </p>
 <div class="info-box">
 <p><b>1.</b> Download the <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Signing Key</a>.
-</p><p></p><div class="code-select">wget https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">wget https://www.kicksecure.com/keys/derivative.asc</div>
 <p><b>2.</b> <i>Optional:</i> <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Check the Signing Key</a> for better security.
 </p><p><b>3.</b> Add Kicksecure ™ signing key.
-</p><p></p><div class="code-select">sudo cp derivative.asc /usr/share/keyrings/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp derivative.asc /usr/share/keyrings/derivative.asc</div>
 <p><b>4.</b> Kicksecure ™ APT repository choices.
 </p><p><i>Optional:</i> See <a data-href="/wiki/Packages_for_Debian_Hosts" href="./Packages_for_Debian_Hosts.html" title="Packages for Debian Hosts">Kicksecure ™ Packages for Debian Hosts and Kicksecure ™ Host Enhancements</a> instead of the next step for more secure and complex options.
 </p><p><b>5.</b> Add Kicksecure ™ APT repository.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
 </div>
 <p>Install LKRG.
 </p>
 <div class="info-box">
 <p><b>1.</b> Update the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>2.</b> Install LKRG. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup> <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup> <sup class="reference" id="cite_ref-8"><a href="#cite_note-8">[8]</a></sup>
-</p><p></p><div class="code-select">sudo apt install lkrg-dkms linux-headers-amd64</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install lkrg-dkms linux-headers-amd64</div>
 </div>
 <p>The LKRG installation is complete. <sup class="reference" id="cite_ref-9"><a href="#cite_note-9">[9]</a></sup>
 </p><p>It is recommended to review optional hardening and other entries below, but this is not required.
@@ -382,7 +387,8 @@ a.freelink
 <th scope="row">View Current Runtime Configuration
 </th>
 <td>To view the current configuration, run.
-<p></p><div class="code-select">sudo sysctl -a | grep lkrg</div>
+<p><br/>
+</p><div class="code-select">sudo sysctl -a | grep lkrg</div>
 <p>Refer to <a class="external text" data-href="https://github.com/lkrg-org/lkrg/blob/main/README" href="https://github.com/lkrg-org/lkrg/blob/main/README" rel="noreferrer noopener" target="_blank">upstream readme</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/lkrg-org/lkrg/blob/main/README" href="https://web.archive.org/web/https://github.com/lkrg-org/lkrg/blob/main/README" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> chapter <code>Runtime configuration</code>.
 </p>
 </td></tr>
@@ -391,7 +397,8 @@ a.freelink
 </th>
 <td>To temporarily change configuration settings until next reboot, run.
 <p>Note: Replace <code>lkrg.pcfi_validate=1</code> with the actual sysctl setting you like to change as per upstream documentation.
-</p><p></p><div class="code-select">sudo sysctl -w lkrg.pcfi_validate=1</div>
+</p><p><br/>
+</p><div class="code-select">sudo sysctl -w lkrg.pcfi_validate=1</div>
 </td></tr>
 <tr>
 <th scope="row">Persistent Configuration Changes
@@ -402,11 +409,13 @@ a.freelink
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/sysctl.d/50_user.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/sysctl.d/50_user.conf</div>
 </div>
 <p>Paste (LKRG) sysctl settings such as.
 </p><p>Note: Replace <code>lkrg.pcfi_validate=1</code> with the actual sysctl setting you like to change as per upstream documentation.
-</p><p></p><div class="code-select">lkrg.pcfi_validate=1</div>
+</p><p><br/>
+</p><div class="code-select">lkrg.pcfi_validate=1</div>
 <p>Save.
 </p><p>The procedure of persistently changing sysctl settings is complete.
 </p>
@@ -446,9 +455,11 @@ a.freelink
 <h1><span class="mw-headline" id="Usage">Usage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;action=edit&amp;section=10" href="https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;action=edit&amp;section=10.html" title="Edit section: Usage">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Once LKRG has been installed, little effort is required since it will protect the kernel without the user's knowledge and/or interaction. However, it is sensible to check that LKRG is running correctly and to monitor system logs for any suspicious entries. Check this entry at a later date for any additional recommendations.
 </p><p>To check systemd journal log for kernel messages by LKRG, run.
-</p><p></p><div class="code-select">sudo journalctl -b | grep lkrg</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b | grep lkrg</div>
 <p>To keep watching systemd journal log for new LKRG messages, run.
-</p><p></p><div class="code-select">sudo journalctl -b -f | grep lkrg</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -b -f | grep lkrg</div>
 <p>At this stage a graphical user interface (GUI) is not provided that can proactively inform users who fail to analyze the systemd journal log for relevant LKRG messages. A GUI or popup notification might be developed  later on -- <a data-href="/wiki/Contribute" href="./Contribute.html" title="Contribute">help is most welcome</a>.
 </p>
 <h1><span class="mw-headline" id="Recovery">Recovery</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;action=edit&amp;section=11.html" title="Edit section: Recovery">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -566,9 +577,10 @@ No need for package <code>lkrg-systemd</code>. See <a class="external text" data
 <li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text">
 Package <code>lkrg</code> is just a meta package. The only thing it would do is adding <code>Depends:</code> <code>lkrg-dkms</code> and <code>Recommends:</code> <code>lkrg-systemd</code>. See also:
 
+
 <div class="code-select">apt-cache show lkrg</div>
 <div class="code-select">apt-cache show lkrg-dkms</div>
-<div class="code-select">apt-cache show lkrg-systemd</div></span>
+<div class="code-select">apt-cache show lkrg-systemd</div> </span>
 </li>
 <li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text">
 Note that LKRG versioning is based on upstream's git master branch intention to remain in the "prerelease" stage.
@@ -750,10 +762,7 @@ Note that LKRG versioning is based on upstream's git master branch intention to 
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3012-0!canonicalwww.kicksecure.com and timestamp 20230130204945 and revision id 62086.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;oldid=62086" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;oldid=62086">https://www.kicksecure.com/w/index.php?title=Linux_Kernel_Runtime_Guard_LKRG&amp;oldid=62086</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

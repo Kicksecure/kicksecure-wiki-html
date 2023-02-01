@@ -210,7 +210,8 @@
 </p>
 <h2><span class="mw-headline" id="Compare">Compare</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=3.html" title="Edit section: Compare">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Upstream git issue. Currently not easy to compare tags in a superproject while showing what changed in the submodules.
-</p><p></p><div class="code-select">git log -p --submodule=log 15.0.0.3.3-stable..15.0.0.3.7-developers-only</div>
+</p><p><br/>
+</p><div class="code-select">git log -p --submodule=log 15.0.0.3.3-stable..15.0.0.3.7-developers-only</div>
 <h2><span class="mw-headline" id="master">master</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=4.html" title="Edit section: master">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <ul><li><s>Adrelanos's progress of work.</s></li>
 <li>Not calling it unstable, because the changes will most likely never make it unstable but it is just not tested if it still builds.</li>
@@ -269,18 +270,23 @@ a.freelink
 </p>
 </div>
 <p>Install git.
-</p><p></p><div class="code-select">sudo apt update &amp;&amp; sudo apt install git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update &amp;&amp; sudo apt install git</div>
 <p>Get the source code including git submodules. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p>Note: Replace <code>16.0.9.0-stable</code> with the actual tag you want to build.
-</p><p></p><div class="code-select">git clone --depth=1 --branch 16.0.9.0-stable --jobs=4 --recurse-submodules --shallow-submodules https://github.com/Kicksecure/derivative-maker.git</div>
+</p><p><br/>
+</p><div class="code-select">git clone --depth=1 --branch 16.0.9.0-stable --jobs=4 --recurse-submodules --shallow-submodules https://github.com/Kicksecure/derivative-maker.git</div>
 <h3><span class="mw-headline" id="OpenPGP_Verify_the_Source_Code">OpenPGP Verify the Source Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=16.html" title="Edit section: OpenPGP Verify the Source Code">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p><b>This chapter is recommended for better security, but is not strictly required.</b> (See <a data-href="/wiki/Trust" href="../Trust.html" title="Trust">Trust</a>.)
 </p><p>Change directly into source code folder.
-</p><p></p><div class="code-select">cd derivative-maker</div>
+</p><p><br/>
+</p><div class="code-select">cd derivative-maker</div>
 <p>Git fetch. <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
-</p><p></p><div class="code-select">git fetch</div>
+</p><p><br/>
+</p><div class="code-select">git fetch</div>
 <p>Verify the chosen tag to build. Replace with tag you want to build.
-</p><p></p><div class="code-select">git verify-tag 16.0.9.0-stable</div>
+</p><p><br/>
+</p><div class="code-select">git verify-tag 16.0.9.0-stable</div>
 <p>The output should look similar to this.
 </p>
 <div class="pre">object 1844108109a5f2f8bddcf2257b9f3675be5cfb22
@@ -301,7 +307,8 @@ gpg: Good signature from "Patrick Schleizer &lt;adrelanos@kicksecure.com&gt;" [u
 gpg:          There is no indication that the signature belongs to the owner.</div>
 <p>Is explained on the <a data-href="/wiki/Signing_Key" href="../Signing_Key.html" title="Signing Key">Kicksecure ™ Signing Key</a> page and can be safely ignored.
 </p><p>By convention, git tags should point to signed git commits. <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup> (<a class="external text" data-href="https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" href="https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" rel="noreferrer noopener" target="_blank">forum discussion</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" href="https://web.archive.org/web/https://forums.whonix.org/t/security-git-general-verification-verifying-whonix-submodules/513" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>) It is advisable to verify the signature of the git commit as well (replace <code>16.0.9.0</code> with the actual git tag being verified).
-</p><p></p><div class="code-select">git verify-commit 16.0.9.0-stable^{commit}</div>
+</p><p><br/>
+</p><div class="code-select">git verify-commit 16.0.9.0-stable^{commit}</div>
 <p>The output should look similar to this.
 </p>
 <div class="pre">commit 5aa1c307c943be60e7d2bfa5727fa5ada3a79c4a
@@ -313,18 +320,22 @@ Date:   Sun Dec 7 01:22:22 2014 +0000
     .</div>
 <h3><span class="mw-headline" id="Choose_Version">Choose Version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=17" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=17.html" title="Edit section: Choose Version">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Retrieve a list of available git tags.
-</p><p></p><div class="code-select">git --no-pager tag</div>
+</p><p><br/>
+</p><div class="code-select">git --no-pager tag</div>
 <p>Use <i>git checkout</i> to select the preferred version to build.
-</p><p></p><div class="code-select">git checkout --recurse-submodules 16.0.9.0-stable</div>
+</p><p><br/>
+</p><div class="code-select">git checkout --recurse-submodules 16.0.9.0-stable</div>
 <p>Replace <code>16.0.9.0-stable</code> with the actual version chosen for the build: the stable, testers-only or developers version. Common sense is required when choosing the right version number. For example, the latest available version number is not necessarily the most stable or suitable. Follow the <a data-href="/wiki/Stay_Tuned" href="../Stay_Tuned.html" title="Stay Tuned">Kicksecure ™ News Blog</a> as it might contain information.
 </p><p>Check if you really got the version you want.
-</p><p></p><div class="code-select">git describe</div>
+</p><p><br/>
+</p><div class="code-select">git describe</div>
 <p>Should show:
 </p><p><code>
 16.0.9.0-stable
 </code>
 </p><p>Check if source folder is pristine.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>Should show nothing.
 </p><p><code>
 HEAD detached at 16.0.9.0-stable<br/>
@@ -334,12 +345,14 @@ nothing to commit, working tree clean
 </p>
 <h3><span class="mw-headline" id="Check_Git">Check Git</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=18.html" title="Edit section: Check Git">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>Check if you really got the version you want.
-</p><p></p><div class="code-select">git describe</div>
+</p><p><br/>
+</p><div class="code-select">git describe</div>
 <p>The output should show.
 </p>
 <div class="pre">16.0.9.0-stable</div>
 <p>Check if the source folder is pristine.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>The output should show nothing.
 </p>
 <div class="pre">HEAD detached at 16.0.9.0-stable<br/>
@@ -348,10 +361,12 @@ nothing to commit, working tree clean</div>
 </p>
 <h2><span class="mw-headline" id="Find_Keywords">Find Keywords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=19" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=19.html" title="Edit section: Find Keywords">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><b>1.</b> Create folder <code>~/bin</code>.
-</p><p></p><div class="code-select">mkdir -p ~/bin</div>
+</p><p><br/>
+</p><div class="code-select">mkdir -p ~/bin</div>
 <p><b>2.</b> Create a file <code>~/bin/mygrep</code>.
 </p><p><b>3.</b> Paste the following content.
-</p><p></p><div class="code-select">#!/bin/bash
+</p><p><br/>
+</p><div class="code-select">#!/bin/bash
 set -x
 grep \
 --exclude=README.md \
@@ -367,19 +382,24 @@ grep \
 --exclude-dir=chroot-buster "$@"</div>
 <p><b>4.</b> Save.
 </p><p><b>5.</b> Make executable.
-</p><p></p><div class="code-select">chmod +x ~/bin/mygrep</div>
+</p><p><br/>
+</p><div class="code-select">chmod +x ~/bin/mygrep</div>
 <p><b>6.</b> Reboot required.
 </p><p><b>7.</b> You need to be inside the source code folder. If not already, change directory.
-</p><p></p><div class="code-select">cd derivative-maker</div>
+</p><p><br/>
+</p><div class="code-select">cd derivative-maker</div>
 <p><b>8.</b> Search for a textual string (keyword).
 </p><p>For example <code>grub-pc</code>. Replace <code>grub-pc</code> with the actual keyword.
-</p><p></p><div class="code-select">mygrep -r -i grub-pc</div>
+</p><p><br/>
+</p><div class="code-select">mygrep -r -i grub-pc</div>
 <h2><span class="mw-headline" id="Find_Files">Find Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=20" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=20.html" title="Edit section: Find Files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p><b>1.</b> Create folder <code>~/bin</code>.
-</p><p></p><div class="code-select">mkdir -p ~/bin</div>
+</p><p><br/>
+</p><div class="code-select">mkdir -p ~/bin</div>
 <p><b>2.</b> Create a file <code>~/bin/myfind</code>.
 </p><p><b>3.</b> Paste the following.
-</p><p></p><div class="code-select">#!/bin/bash
+</p><p><br/>
+</p><div class="code-select">#!/bin/bash
 set -x
 find \
 "$@" \
@@ -387,12 +407,15 @@ find \
 -not -iwholename '*.git*'</div>
 <p><b>4.</b> Save.
 </p><p><b>5.</b> Make executable.
-</p><p></p><div class="code-select">chmod +x ~/bin/myfind</div>
+</p><p><br/>
+</p><div class="code-select">chmod +x ~/bin/myfind</div>
 <p><b>6.</b> You need to be inside the source code folder. If not already, change directory.
-</p><p></p><div class="code-select">cd derivative-maker</div>
+</p><p><br/>
+</p><div class="code-select">cd derivative-maker</div>
 <p><b>7.</b> Search for a file name.
 </p><p>For example <code>/etc/apparmor.d</code>.
-</p><p></p><div class="code-select">myfind . | grep --color -i /etc/apparmor.d</div>
+</p><p><br/>
+</p><div class="code-select">myfind . | grep --color -i /etc/apparmor.d</div>
 <hr/>
 <h1><span class="mw-headline" id="Compiled_Code">Compiled Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=21" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=21.html" title="Edit section: Compiled Code">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p></p><div class="code-select">find . -name '*.c' -not -iwholename '*.git*'</div>
@@ -404,29 +427,39 @@ find \
 </pre>
 <h1><span class="mw-headline" id="Put_folder_under_Git_Version_Control">Put folder under Git Version Control</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/git&amp;action=edit&amp;section=22" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;action=edit&amp;section=22.html" title="Edit section: Put folder under Git Version Control">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p><a data-href="/wiki/Operating_System_Software_and_Updates" href="../Operating_System_Software_and_Updates.html" title="Operating System Software and Updates">Operating System Software and Updates</a>
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p>Install <code>git</code>.
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends git</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends git</div>
 <p>Unless you want to use git for pushing changes to remotes which you probably won't in a testing VM you can use the following git config without using any real names or pseudonyms. (These are the git suggested defaults. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup>)
-</p><p></p><div class="code-select">git config --global user.email "you@example.com"</div>
-<p></p><div class="code-select">git config --global user.name "Your Name"</div>
+</p><p><br/>
+</p><div class="code-select">git config --global user.email "you@example.com"</div>
+<p><br/>
+</p><div class="code-select">git config --global user.name "Your Name"</div>
 <p>Desalinize git in current folder or <code>cd</code> to any folder you want to put under git version control. Can even be done for <code>/home/user</code> folder which is very useful.
-</p><p></p><div class="code-select">git init</div>
+</p><p><br/>
+</p><div class="code-select">git init</div>
 <p>Add all files to be added for next commit.
-</p><p></p><div class="code-select">git add -A</div>
+</p><p><br/>
+</p><div class="code-select">git add -A</div>
 <p>Actually commit to git.
-</p><p></p><div class="code-select">git commit -a -m .</div>
+</p><p><br/>
+</p><div class="code-select">git commit -a -m .</div>
 <p>Check git status of that folder.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>No changes registered yet to the folder since just now committed all to git.
 </p>
 <pre>On branch master
 nothing to commit, working tree clean
 </pre>
 <p>Create a test file or do some activity such as starting a browser or e-mail client.
-</p><p></p><div class="code-select">touch test-file</div>
+</p><p><br/>
+</p><div class="code-select">touch test-file</div>
 <p>Check again git status of that folder.
-</p><p></p><div class="code-select">git status</div>
+</p><p><br/>
+</p><div class="code-select">git status</div>
 <p>Now git will show what changed.
 </p>
 <pre>On branch master
@@ -505,9 +538,10 @@ Knowledgeable <code>git</code> users are free to drop any of these optional para
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 Alternatively, this can be achieved with the following commands in several steps. This is useful if network issues arise.
 
+
 <div class="code-select">git clone --depth=1 --branch 16.0.9.0-stable https://github.com/Kicksecure/derivative-maker.git</div>
 <div class="code-select">cd derivative-maker</div>
-<div class="code-select">git submodule update --init --recursive --progress --jobs=4</div></span>
+<div class="code-select">git submodule update --init --recursive --progress --jobs=4</div> </span>
 </li>
 <li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">
 Optional. [...]</span>
@@ -705,10 +739,7 @@ fatal: empty ident name (for &lt;(null)&gt;) not allowed
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3164-0!canonicalwww.kicksecure.com and timestamp 20230130212322 and revision id 64248.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;oldid=64248" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/git&amp;oldid=64248">https://www.kicksecure.com/w/index.php?title=Dev/git&amp;oldid=64248</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Categories</a>: <ul><li><a data-href="/wiki/Category:Development" href="../Category:Development.html" title="Category:Development">Development</a></li><li><a data-href="/wiki/Category:Design" href="../Category:Design.html" title="Category:Design">Design</a></li></ul></div></div>
 </div>

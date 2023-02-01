@@ -236,8 +236,9 @@
 <li>This also hides most hardware identifiers.</li></ul></li>
 <li><u>Status</u>: This setting is disabled by default because it might break many applications. Testers-only! Call for testers and forum discussion: <a class="external text" data-href="https://forums.whonix.org/t/restrict-hardware-information-to-root-testers-wanted/8618" href="https://forums.whonix.org/t/restrict-hardware-information-to-root-testers-wanted/8618" rel="noreferrer noopener" target="_blank">Restrict Hardware Information to Root - Testers Wanted!</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://forums.whonix.org/t/restrict-hardware-information-to-root-testers-wanted/8618" href="https://web.archive.org/web/https://forums.whonix.org/t/restrict-hardware-information-to-root-testers-wanted/8618" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
 <li><u>Enable</u>: It can optionally be enabled by running the following command.
-<ul><li><div class="code-select">sudo systemctl enable hide-hardware-info.service</div></li>
-<li>Reboot required.</li>
+<ul><li class="mw-empty-elt"></li></ul></li></ul>
+<p></p><div class="code-select">sudo systemctl enable hide-hardware-info.service</div>
+<ul><li><ul><li>Reboot required.</li>
 <li>A whitelist that allows specific applications to access <code>/sys</code> and <code>/proc/cpuinfo</code> is enabled by default to maintain basic functionality. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> For example, this allows the launching of applications like XFCE.</li></ul></li>
 <li><u>Limitations of Solution</u>:
 <ul><li><u>root compromise:</u> Attackers which gained root compromise and/or malicious/compromised whitelisted applications have access to this information.</li>
@@ -251,25 +252,32 @@
 </p>
 <h4><span class="mw-headline" id="addgroup_method">addgroup method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Security-misc&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Security-misc&amp;action=edit&amp;section=6.html" title="Edit section: addgroup method">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
 <p><b>1.</b> For example, to add user <code>user</code> to group <code>cpuinfo</code>, run the following command. (Note, this is weakening protections.)
-</p><p></p><div class="code-select">sudo addgroup user cpuinfo</div>
+</p><p><br/>
+</p><div class="code-select">sudo addgroup user cpuinfo</div>
 <p><b>2.</b> For example, to add user <code>user</code> to group <code>sysfs</code>, run the following command. (Note, this is weakening protections.)
-</p><p></p><div class="code-select">sudo addgroup user sysfs</div>
+</p><p><br/>
+</p><div class="code-select">sudo addgroup user sysfs</div>
 <p><b>3.</b> Re-login required after changing groups.
 </p><p>Easiest: reboot. <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup> <sup class="reference" id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup>
-</p><p></p><div class="code-select">sudo reboot</div>
+</p><p><br/>
+</p><div class="code-select">sudo reboot</div>
 <p><b>4.</b> Done.
 </p><p>For example, after reboot it would be possible to run the <code>cpu-info</code> utility (from Debian package <code>cpuinfo</code>).
-</p><p></p><div class="code-select">cpu-info</div>
+</p><p><br/>
+</p><div class="code-select">cpu-info</div>
 <h4><span class="mw-headline" id="systemd">systemd</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Security-misc&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Security-misc&amp;action=edit&amp;section=7.html" title="Edit section: systemd">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
 <p>For example, to run a systemd service as the <code>sysfs</code> group, create a <a data-href="/wiki/Configuration_Files#Configuration_Drop-In_Folders" href="./Configuration_Files.html" title="Configuration Files">drop-in directory</a> and add the following.
-</p><p></p><div class="code-select">[Service]
+</p><p><br/>
+</p><div class="code-select">[Service]
 SupplementaryGroups=sysfs</div>
 <h4><span class="mw-headline" id="setgid_method">setgid method</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Security-misc&amp;action=edit&amp;section=8" href="https://www.kicksecure.com/w/index.php?title=Security-misc&amp;action=edit&amp;section=8.html" title="Edit section: setgid method">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
 <p>To run a specific binary as the <code>sysfs</code> group, the binary must be owned by the <code>sysfs</code> group and be made setgid. To achieve this,
 </p><p><b>1.</b> change the ownership of the binary by running the following.
-</p><p></p><div class="code-select">sudo chgrp sysfs /path/to/binary</div>
+</p><p><br/>
+</p><div class="code-select">sudo chgrp sysfs /path/to/binary</div>
 <p><b>2.</b> Then make the binary setgid.
-</p><p></p><div class="code-select">sudo chmod g+s /path/to/binary</div>
+</p><p><br/>
+</p><div class="code-select">sudo chmod g+s /path/to/binary</div>
 <p><b>3.</b> Done.
 </p><p>The binary will now run with the permissions of the <code>sysfs</code> group and have access to <code>/sys</code>.
 </p><p>All of these steps can also be applied to the <code>cpuinfo</code> group.
@@ -287,10 +295,12 @@ SupplementaryGroups=sysfs</div>
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/hide-hardware-info.d/50_user.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/hide-hardware-info.d/50_user.conf</div>
 </div>
 <p><b>2.</b> Add.
-</p><p></p><div class="code-select">sysfs_whitelist=0
+</p><p><br/>
+</p><div class="code-select">sysfs_whitelist=0
 cpuinfo_whitelist=0</div>
 <p><b>3.</b> Save.
 </p><p><b>4.</b> Done.
@@ -304,24 +314,29 @@ cpuinfo_whitelist=0</div>
 <div class="info-box">
 <p>Install <code>pciutils</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>pciutils</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends pciutils</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends pciutils</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>pciutils</code> is complete.
 </p>
 </div>
 <p><b>2.</b> Run <code>lspci</code>.
-</p><p></p><div class="code-select">lspci</div>
+</p><p><br/>
+</p><div class="code-select">lspci</div>
 <p>Expected printout:
 </p>
 <pre>pcilib: Cannot open /proc/bus/pci
 lspci: Cannot find any working access method.</pre>
 <p><b>3.</b> Attempt to view contents of virtual file <code>/proc/cpuinfo</code>:
-</p><p></p><div class="code-select">cat /proc/cpuinfo</div>
+</p><p><br/>
+</p><div class="code-select">cat /proc/cpuinfo</div>
 <p>Expected printout:
 </p>
 <pre>cat: /proc/cpuinfo: Permission denied
@@ -347,7 +362,8 @@ lspci: Cannot find any working access method.</pre>
 <li><a class="external free" data-href="https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/remount-secure.service" href="https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/remount-secure.service" rel="noreferrer noopener" target="_blank">https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/remount-secure.service</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/remount-secure.service" href="https://web.archive.org/web/https://github.com/Kicksecure/security-misc/blob/master/lib/systemd/system/remount-secure.service" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
 <li><a class="external free" data-href="https://github.com/Kicksecure/security-misc/blob/master/usr/libexec/security-misc/remount-secure" href="https://github.com/Kicksecure/security-misc/blob/master/usr/libexec/security-misc/remount-secure" rel="noreferrer noopener" target="_blank">https://github.com/Kicksecure/security-misc/blob/master/usr/libexec/security-misc/remount-secure</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/Kicksecure/security-misc/blob/master/usr/libexec/security-misc/remount-secure" href="https://web.archive.org/web/https://github.com/Kicksecure/security-misc/blob/master/usr/libexec/security-misc/remount-secure" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
 <li><a data-href="/wiki/Dev/remount-secure" href="./Dev/remount-secure.html" title="Dev/remount-secure">Dev/remount-secure</a></li></ul>
-<p></p><div class="code-select">sudo touch /etc/noexec</div>
+<p><br/>
+</p><div class="code-select">sudo touch /etc/noexec</div>
 <p><span class="manually-placed-anchor" id="install"></span>
 </p>
 <h1><span class="mw-headline" id="Installation_of_security-misc">Installation of security-misc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Security-misc&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=Security-misc&amp;action=edit&amp;section=15.html" title="Edit section: Installation of security-misc">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -373,22 +389,28 @@ lspci: Cannot find any working access method.</pre>
 <li><b>B)</b> <u>Most Qubes users:</u> same as above.</li>
 <li><b>C)</b> <u>Advanced Qubes users:</u> If using a Debian minimal template or not having the <code>passwordless-root</code> package installed, see footnote. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup></li></ul>
 <p>Run the following command in a terminal.
-</p><p></p><div class="code-select">su</div>
+</p><p><br/>
+</p><div class="code-select">su</div>
 </div>
 <p><b>3.</b> Install <code>sudo</code> and adduser package.
 </p>
 <div class="info-box">
 <p><b>1.</b> Update the package lists.
-</p><p></p><div class="code-select">apt update</div>
+</p><p><br/>
+</p><div class="code-select">apt update</div>
 <p><b>2.</b> Upgrade the system.
-</p><p></p><div class="code-select">apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">apt full-upgrade</div>
 <p><b>3.</b> Install <code>sudo</code> and adduser package.
-</p><p></p><div class="code-select">apt install --no-install-recommends sudo adduser</div>
+</p><p><br/>
+</p><div class="code-select">apt install --no-install-recommends sudo adduser</div>
 </div>
 <p><b>5.</b> Create group <code>console</code>.
-</p><p></p><div class="code-select">/usr/sbin/addgroup --system console</div>
+</p><p><br/>
+</p><div class="code-select">/usr/sbin/addgroup --system console</div>
 <p><b>6.</b> Add user <code>user</code> to group <code>console</code>.
-</p><p></p><div class="code-select">/usr/sbin/adduser user console</div>
+</p><p><br/>
+</p><div class="code-select">/usr/sbin/adduser user console</div>
 <p><b>7.</b> Add user <code>user</code> to group <code>sudo</code>.
 </p>
 <div class="info-box">
@@ -396,20 +418,25 @@ lspci: Cannot find any working access method.</pre>
 </p>
 <ul><li><b>A)</b> <u>Most users:</u> No special notice.</li>
 <li><b>B)</b> <u>Advanced users:</u> If the user is intending to lockdown user <code>user</code> by not granting root rights, see footnote. <sup class="reference" id="cite_ref-7"><a href="#cite_note-7">[7]</a></sup></li></ul>
-<p></p><div class="code-select">/usr/sbin/adduser user sudo</div>
+<p><br/>
+</p><div class="code-select">/usr/sbin/adduser user sudo</div>
 </div>
 <p><b>8.</b> Reboot.
-</p><p></p><div class="code-select">/sbin/reboot</div>
+</p><p><br/>
+</p><div class="code-select">/sbin/reboot</div>
 <div class="info-box">
 <p><b>1.</b> Download the <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Signing Key</a>.
-</p><p></p><div class="code-select">wget https://www.kicksecure.com/keys/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">wget https://www.kicksecure.com/keys/derivative.asc</div>
 <p><b>2.</b> <i>Optional:</i> <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Check the Signing Key</a> for better security.
 </p><p><b>3.</b> Add Kicksecure ™ signing key.
-</p><p></p><div class="code-select">sudo cp derivative.asc /usr/share/keyrings/derivative.asc</div>
+</p><p><br/>
+</p><div class="code-select">sudo cp derivative.asc /usr/share/keyrings/derivative.asc</div>
 <p><b>4.</b> Kicksecure ™ APT repository choices.
 </p><p><i>Optional:</i> See <a data-href="/wiki/Packages_for_Debian_Hosts" href="./Packages_for_Debian_Hosts.html" title="Packages for Debian Hosts">Kicksecure ™ Packages for Debian Hosts and Kicksecure ™ Host Enhancements</a> instead of the next step for more secure and complex options.
 </p><p><b>5.</b> Add Kicksecure ™ APT repository.
-</p><p></p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
+</p><p><br/>
+</p><div class="code-select">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</div>
 </div>
 <div class="info-box">
 <p>Install <code>security-misc</code>.
@@ -417,12 +444,15 @@ lspci: Cannot find any working access method.</pre>
 <div class="info-box">
 <p>Install <code>security-misc</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>security-misc</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends security-misc</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends security-misc</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>security-misc</code> is complete.
 </p>
@@ -454,17 +484,20 @@ lspci: Cannot find any working access method.</pre>
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
 No reboot required: Use the execute command as different group ID command line utility <code>sg</code> to execute the <code>cpu-info</code> (from Debian package <code>cpuinfo</code>) application under group <code>cpuinfo</code>.
 
-<div class="code-select">sg cpuinfo cpu-info</div></span>
+
+<div class="code-select">sg cpuinfo cpu-info</div> </span>
 </li>
 <li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">
 Also no reboot required:
 
+
 <div class="code-select">sudo -u user bash</div>
-<div class="code-select">cpu-info</div>
+<div class="code-select">cpu-info</div>  
 
 Or.
 
-<div class="code-select">sudo -u user cpu-info</div></span>
+
+<div class="code-select">sudo -u user cpu-info</div> </span>
 </li>
 <li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">
 One way or another.</span>
@@ -472,7 +505,8 @@ One way or another.</span>
 <li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text">
 When a user is using <code>su</code> to gain administrative rights, the user is required to use full path to the programs <code>addgroup</code>, <code>adduser</code>, <code>reboot</code> because when using <code>su</code> the <code>PATH</code> environment variable is not adjusted for use with root rights. See <code>echo "$PATH"</code>.
 
-<div class="code-select">echo "$PATH"</div>
+
+<div class="code-select">echo "$PATH"</div>  
 
 user rights <code>PATH</code> printout:
 
@@ -664,10 +698,7 @@ The following command <code>/usr/sbin/adduser user sudo</code> grants root right
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3110-0!canonicalwww.kicksecure.com and timestamp 20230130204944 and revision id 66565.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Security-misc&amp;oldid=66565" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Security-misc&amp;oldid=66565">https://www.kicksecure.com/w/index.php?title=Security-misc&amp;oldid=66565</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>

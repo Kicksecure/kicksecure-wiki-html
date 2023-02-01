@@ -188,21 +188,26 @@
 </p>
 <ul><li>Debian: No special steps required.</li>
 <li>Qubes: Required in Qubes only.</li></ul>
-<p></p><div class="code-select">sudo touch /var/run/qubes-service/clocksync</div>
+<p><br/>
+</p><div class="code-select">sudo touch /var/run/qubes-service/clocksync</div>
 <p><b>2.</b> Remove all other time synchronization daemons.
 </p><p>This is to avoid other time synchronization daemons competing for any clock changes.
-</p><p></p><div class="code-select">sudo apt purge ntp* sdwdate systemd-timesyncd</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt purge ntp* sdwdate systemd-timesyncd</div>
 <p><b>3.</b> Install chrony.
 </p>
 <div class="info-box">
 <p>Install <code>chrony</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="../Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>chrony</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="../Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends chrony</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends chrony</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>chrony</code> is complete.
 </p>
@@ -212,10 +217,12 @@
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="../Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/chrony/conf.d/30_sdwdate.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/chrony/conf.d/30_sdwdate.conf</div>
 </div>
 <p><b>5.</b> Paste.
-</p><p></p><div class="code-select">## Enable offline mode.
+</p><p><br/>
+</p><div class="code-select">## Enable offline mode.
 ## Disable Debian default pool.
 ## Which is configured in /etc/chrony/chrony.conf
 ## Does not work.
@@ -232,7 +239,8 @@ refclock SOCK /var/run/chrony.ttyS0.sock</div>
 </p>
 <div class="info-box">
 <p>This box uses <code>sudoedit</code> for better security. This is an example and other tools could also achieve the same goal. If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="../Software.html" title="Software">this link</a>.
-</p><p></p><div class="code-select">sudoedit /etc/chrony/chrony.conf</div>
+</p><p><br/>
+</p><div class="code-select">sudoedit /etc/chrony/chrony.conf</div>
 </div>
 <p>Out-comment or delete the following line.
 </p>
@@ -241,14 +249,18 @@ refclock SOCK /var/run/chrony.ttyS0.sock</div>
 <p>Non-ideal. Would be nicer if configuration of offline mode could be done with a drop-in snippet in folder <code>/etc/chrony/conf.d</code> but this might not be possible.
 </p><p><b>8.</b> Save and exit.
 </p><p><b>9.</b> Restart chrony.
-</p><p></p><div class="code-select">sudo systemctl restart chrony</div>
+</p><p><br/>
+</p><div class="code-select">sudo systemctl restart chrony</div>
 <p><b>10.</b> No need to restart chronyd. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
 </p><p><b>11.</b> Check if unix domain socket file <code>/var/run/chrony.ttyS0.sock</code> exists.
-</p><p></p><div class="code-select">ls /var/run/chrony.ttyS0.sock</div>
+</p><p><br/>
+</p><div class="code-select">ls /var/run/chrony.ttyS0.sock</div>
 <p><b>12.</b> Watch chrony journal log.
-</p><p></p><div class="code-select">sudo journalctl -f -u chrony</div>
+</p><p><br/>
+</p><div class="code-select">sudo journalctl -f -u chrony</div>
 <p><b>13.</b> Verify that the unix domain socket driver is the only time source.
-</p><p></p><div class="code-select">chronyc sources</div>
+</p><p><br/>
+</p><div class="code-select">chronyc sources</div>
 <p>Expected printout:
 </p>
 <pre>MS Name/IP address         Stratum Poll Reach LastRx Last sample
@@ -257,9 +269,12 @@ refclock SOCK /var/run/chrony.ttyS0.sock</div>
 </pre>
 <p><b>14.</b> chronyc
 </p><p>Might be helpful during development.
-</p><p></p><div class="code-select">chronyc</div>
-<p></p><div class="code-select">chronyc help</div>
-<p></p><div class="code-select">chronyc tracking</div>
+</p><p><br/>
+</p><div class="code-select">chronyc</div>
+<p><br/>
+</p><div class="code-select">chronyc help</div>
+<p><br/>
+</p><div class="code-select">chronyc tracking</div>
 <p><b>15.</b> See man pages.
 </p>
 <ul><li><a class="external free" data-href="https://manpages.debian.org/chronyd" href="https://manpages.debian.org/chronyd" rel="noreferrer noopener" target="_blank">https://manpages.debian.org/chronyd</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://manpages.debian.org/chronyd" href="https://web.archive.org/web/https://manpages.debian.org/chronyd" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
@@ -268,13 +283,15 @@ refclock SOCK /var/run/chrony.ttyS0.sock</div>
 <p><b>16.</b> GNU date usage examples:
 </p><p>Might be useful during development.
 </p><p>To show the current time in unixtime format:
-</p><p></p><div class="code-select">date --utc "+%s"</div>
+</p><p><br/>
+</p><div class="code-select">date --utc "+%s"</div>
 <p>Expected printout:
 </p>
 <pre>1654420510
 </pre>
 <p>To convert a specific time/date to unixtime, use:
-</p><p></p><div class="code-select">date --utc "+%s" --date "Sun 05 Jun 2022 09:22:28 AM UTC"</div>
+</p><p><br/>
+</p><div class="code-select">date --utc "+%s" --date "Sun 05 Jun 2022 09:22:28 AM UTC"</div>
 <p>Expected printout:
 </p>
 <pre>1654420948
@@ -282,9 +299,11 @@ refclock SOCK /var/run/chrony.ttyS0.sock</div>
 <p><b>17.</b> TODO: task
 </p><p>Write a python3.9 or bash script that expects unixtime and writes into unix domain socket file <code>/var/run/chrony.ttyS0.sock</code>.
 </p><p>interface draft, TODO:
-</p><p></p><div class="code-select">./unixtime-to-chrony-socket 1654420510</div>
+</p><p><br/>
+</p><div class="code-select">./unixtime-to-chrony-socket 1654420510</div>
 <p>Or if the protocol also supports nanoseconds:
-</p><p></p><div class="code-select">./unixtime-to-chrony-socket 1654420510.864804506</div>
+</p><p><br/>
+</p><div class="code-select">./unixtime-to-chrony-socket 1654420510.864804506</div>
 <p>How can we write messages to the unix domain socket file?
 </p><p>maybe <a class="external free" data-href="https://unix.stackexchange.com/questions/117037/how-to-send-data-to-a-serial-port-and-see-any-answer" href="https://unix.stackexchange.com/questions/117037/how-to-send-data-to-a-serial-port-and-see-any-answer" rel="noreferrer noopener" target="_blank">https://unix.stackexchange.com/questions/117037/how-to-send-data-to-a-serial-port-and-see-any-answer</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://unix.stackexchange.com/questions/117037/how-to-send-data-to-a-serial-port-and-see-any-answer" href="https://web.archive.org/web/https://unix.stackexchange.com/questions/117037/how-to-send-data-to-a-serial-port-and-see-any-answer" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>
 </p><p>does not work
@@ -511,10 +530,7 @@ Since it is just an alias in <code>/lib/systemd/systemchrony.service</code>.
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3370-0!canonicalwww.kicksecure.com and timestamp 20230130225059 and revision id 60485.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/sdwdate&amp;oldid=60485" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/sdwdate&amp;oldid=60485">https://www.kicksecure.com/w/index.php?title=Dev/sdwdate&amp;oldid=60485</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Design" href="../Category:Design.html" title="Category:Design">Design</a></li></ul></div></div>
 </div>

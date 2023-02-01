@@ -216,11 +216,14 @@
 </p><p>Do not run the following command.
 </p>
 <ul><li><code>&gt;</code> - the greater-than sign - means the <u>output</u> file to write to.</li>
-<li><div class="code-select">echo "input content" &gt; path-to-file-name</div></li></ul>
+<li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">echo "input content" &gt; path-to-file-name</div>
 <p><b>2.</b> Exercise the redirect to file redirection.
-</p><p></p><div class="code-select">echo "test output" &gt; test-output-file</div>
+</p><p><br/>
+</p><div class="code-select">echo "test output" &gt; test-output-file</div>
 <p><b>2.</b> View the created file.
-</p><p></p><div class="code-select">cat test-output-file</div>
+</p><p><br/>
+</p><div class="code-select">cat test-output-file</div>
 <p><b>3.</b> Sample printout.
 </p>
 <pre>test output
@@ -235,20 +238,23 @@
 </p>
 <div class="info-box">
 <p><u>If you are using a graphical environment</u>, run.
-</p><div class="code-select">mousepad file-input</div>
+</p><p></p><div class="code-select">mousepad file-input</div>
 <p><u>If you are using a terminal</u>, run.
-</p><div class="code-select">nano file-input</div>
+</p><p></p><div class="code-select">nano file-input</div>
 </div>
 <p><b>2.</b> Add some contents such as for example
-</p><p></p><div class="code-select">test input</div>
+</p><p><br/>
+</p><div class="code-select">test input</div>
 <p><b>3.</b> Save and close the file
 </p><p><b>4.</b>  Learn the syntax.
 </p><p>Do not fun the following command.
 </p>
 <ul><li><code>&lt;</code> - the less-than sign - means the <u>input</u> file to read from.</li>
-<li><div class="code-select">pv &lt; path-to-file-name-to-read-from</div></li></ul>
+<li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">pv &lt; path-to-file-name-to-read-from</div>
 <p><b>5.</b> Test reading from the file.
-</p><p></p><div class="code-select">pv &lt; file-input</div>
+</p><p><br/>
+</p><div class="code-select">pv &lt; file-input</div>
 <p><b>6.</b> Read the output.
 </p><p>Sample output.
 </p>
@@ -265,21 +271,24 @@
 </p>
 <div class="info-box">
 <p><u>If you are using a graphical environment</u>, run.
-</p><div class="code-select">mousepad file-input</div>
+</p><p></p><div class="code-select">mousepad file-input</div>
 <p><u>If you are using a terminal</u>, run.
-</p><div class="code-select">nano file-input</div>
+</p><p></p><div class="code-select">nano file-input</div>
 </div>
 <p><b>2.</b> Add some contents such as for example
-</p><p></p><div class="code-select">test input</div>
+</p><p><br/>
+</p><div class="code-select">test input</div>
 <p><b>3.</b> Save and close the file
 </p><p><b>4.</b> Learn the syntax.
 </p><p>Do not fun the following command.
 </p>
 <ul><li><code>&lt;</code> - the less-than sign - means the <u>input</u> file to read from.</li>
 <li><code>&gt;</code> - the greater-than sign - means the <u>output</u> file to write to.</li>
-<li><div class="code-select">pv &lt; path-to-file-name-to-read-from &gt; path-to-file-name-to-write-to</div></li></ul>
+<li class="mw-empty-elt"></li></ul>
+<p></p><div class="code-select">pv &lt; path-to-file-name-to-read-from &gt; path-to-file-name-to-write-to</div>
 <p><b>5.</b> Test reading from an input file and redirecting the output to another output file.
-</p><p></p><div class="code-select">pv &lt; file-input &gt; file-output</div>
+</p><p><br/>
+</p><div class="code-select">pv &lt; file-input &gt; file-output</div>
 <p><b>6.</b> Read the output.
 </p><p>Sample output.
 </p>
@@ -287,8 +296,10 @@
 </pre>
 <p><b>7.</b> Compare the files.
 </p><p>View the two different files. These should look the same.
-</p><p></p><div class="code-select">cat file-input</div>
-<p></p><div class="code-select">cat file-output</div>
+</p><p><br/>
+</p><div class="code-select">cat file-input</div>
+<p><br/>
+</p><div class="code-select">cat file-output</div>
 <p><b>8.</b> Exercise more.
 </p><p>Based on above example, keep changing the input files and output files until this becomes clear.
 </p>
@@ -303,12 +314,15 @@
 </p><p>gparted is a disk partitioning tool which will be used as an easy way to find out how many hard drives the system has and what size they have. gnome-disks is a similar utility.
 </p><p>Disconnect any unneeded storage devices.
 </p><p>In dom0, install gparted and gnome-disks.
-</p><p></p><div class="code-select">sudo qubes-dom0-update gparted gnome-disk-utility</div>
+</p><p><br/>
+</p><div class="code-select">sudo qubes-dom0-update gparted gnome-disk-utility</div>
 <p>In dom0, run gparted.
-</p><p></p><div class="code-select">sudo --set-home gparted</div>
+</p><p><br/>
+</p><div class="code-select">sudo --set-home gparted</div>
 <p>Check the arrow down button below the <code>X</code> (which would close the window) if there are multiple disks.
 </p><p>In dom0, run gnome-disks.
-</p><p></p><div class="code-select">gnome-disks</div>
+</p><p><br/>
+</p><div class="code-select">gnome-disks</div>
 <p>Make notes. For example.
 </p><p>Note: Modify these notes according to what can be seen in gparted and gnome-disks.
 </p>
@@ -330,12 +344,15 @@
 <div class="info-box">
 <p>Install <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
-</p><p></p><div class="code-select">sudo apt update</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt update</div>
 <p><b>B.</b> Upgrade the system.
-</p><p></p><div class="code-select">sudo apt full-upgrade</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt full-upgrade</div>
 <p><b>C.</b> Install the <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p></p><div class="code-select">sudo apt install --no-install-recommends meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</div>
+</p><p><br/>
+</p><div class="code-select">sudo apt install --no-install-recommends meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</div>
 <p><b>D.</b> Done.
 </p><p>The procedure of installing <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</code> is complete.
 </p>
@@ -356,28 +373,37 @@
 </p><p><b>2.</b> Do not attach any other disks at this time.
 </p><p>If any other disks are already attached, remove them for now for simplicity.
 </p><p><b>3.</b> Write output of fdisk to file "old".
-</p><p></p><div class="code-select">sudo fdisk -l &gt; old</div>
+</p><p><br/>
+</p><div class="code-select">sudo fdisk -l &gt; old</div>
 <p><b>4.</b> Information gathering with a few hard drive utilities.
 </p><p>See what disks are currently attached with an alternative tool such as <code>gnome-disks</code> as well.
 </p><p>Try:
-</p><p></p><div class="code-select">gnome-disks</div>
+</p><p><br/>
+</p><div class="code-select">gnome-disks</div>
 <p>Try <code>gsmartcontrol</code>.
-</p><p></p><div class="code-select">gsmartcontrol-root</div>
+</p><p><br/>
+</p><div class="code-select">gsmartcontrol-root</div>
 <p>See what disks are currently attached with an alternative tool such as <code>gparted</code> as well.
 </p><p>Try:
 </p>
 <ul><li>Start <code>gparted</code> from start menu if it can be found there.</li>
-<li>Try with pkexec if that works: <div class="code-select">/usr/sbin/gparted</div></li>
-<li>Or try with lxsudo if that works: <div class="code-select">lxsudo /usr/sbin/gparted</div></li></ul>
+<li>Try with pkexec if that works:</li></ul>
+<p></p><div class="code-select">/usr/sbin/gparted</div>
+<ul><li>Or try with lxsudo if that works:</li></ul>
+<p></p><div class="code-select">lxsudo /usr/sbin/gparted</div>
 <p><b>4.</b> Attach another disk, the external USB disk which should be used for the backup.
 </p><p><b>5.</b> Write output of disk to file "new".
-</p><p></p><div class="code-select">sudo fdisk -l &gt; new</div>
+</p><p><br/>
+</p><div class="code-select">sudo fdisk -l &gt; new</div>
 <p><b>6.</b> Compare file "old" with file "new" using "diff".
-</p><p></p><div class="code-select">diff old new</div>
+</p><p><br/>
+</p><div class="code-select">diff old new</div>
 <p><b>7.</b> Compare file "old" with file "new" using "diff".
-</p><p></p><div class="code-select">meld old new</div>
+</p><p><br/>
+</p><div class="code-select">meld old new</div>
 <p><b>8.</b> View contents of file <code>/etc/fstab</code>.
-</p><p></p><div class="code-select">cat /etc/fstab</div>
+</p><p><br/>
+</p><div class="code-select">cat /etc/fstab</div>
 <p>Example printout.
 </p>
 <pre># /etc/fstab: static file system information.
@@ -397,11 +423,13 @@ UUID=86983f37-38db-401f-889a-bc93d83a3be4 /boot           ext2    defaults      
 <p>Watch out for the <code>UUID=</code> field. In above example it is <code>86983f37-38db-401f-889a-bc93d83a3be4</code>.
 </p><p><b>8.</b> View output of the <code>blkid</code>.
 </p><p>For informational purposes only.
-</p><p></p><div class="code-select">sudo blkid</div>
+</p><p><br/>
+</p><div class="code-select">sudo blkid</div>
 <p><b>9.</b> Confirm the device path of the boot device.
 </p><p>Compare output of file <code>/etc/fstab</code> with <code>blkid</code> command.
 </p><p>For example. Note: replace <code>UUID</code> with the actual <code>UUID</code> from <code>/etc/fstab</code>.
-</p><p></p><div class="code-select">sudo blkid | grep 86983f37-38db-401f-889a-bc93d83a3be4</div>
+</p><p><br/>
+</p><div class="code-select">sudo blkid | grep 86983f37-38db-401f-889a-bc93d83a3be4</div>
 <p>Sample printout.
 </p>
 <pre>/dev/sdb1: UUID="86983f37-38db-401f-889a-bc93d83a3be4" TYPE="ext4" PARTUUID="decf0fe9-01"
@@ -419,7 +447,8 @@ Backup external disk 931.41 GiB
 </p><p><b>12.</b> Note that device paths can change after reboot.
 </p><p>Note that device paths are unfortunately unstable. It happened to the author of this wiki page that <code>/dev/sd<b>a</b></code> and <code>/dev/sd<b>b</b></code> paths were swapped. It is therefore required to re-identify device paths every time the computer is rebooted.
 </p><p><b>13.</b> Become root. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup>
-</p><p></p><div class="code-select">sudo su</div>
+</p><p><br/>
+</p><div class="code-select">sudo su</div>
 <p><b>14.</b> Backup.
 </p><p><u>Explanation</u>:
 </p>
@@ -439,14 +468,16 @@ Backup external disk 931.41 GiB
 <p><sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p>The backup might take a long time.
 </p><p><b>15.</b> Check exit code.
-</p><p></p><div class="code-select">echo $?</div>
+</p><p><br/>
+</p><div class="code-select">echo $?</div>
 <p>Expected output if success.
 </p>
 <pre>0
 </pre>
 <p><b>16.</b> Switch back to normal user.
 </p><p>If the user was previously running <code>sudo su</code>, it should now be undone. Switch back to normal user by running the following command.
-</p><p></p><div class="code-select">exit</div>
+</p><p><br/>
+</p><div class="code-select">exit</div>
 <p><b>17.</b> Done.
 </p><p>Backup is complete.
 </p><p><b>18.</b> Restoration test.
@@ -658,10 +689,7 @@ It is unfortunately not possible to compare. Running <code>diff /dev/sda /dev/sd
 
   <div class="code-select"></div>
 </div>
-</div>
-<!-- Saved in parser cache with key www.kicksecure.com:pcache:idhash:3136-0!canonicalwww.kicksecure.com and timestamp 20230130232829 and revision id 61006.
- -->
-</div>
+</div></div>
 <div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=61006" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=61006">https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=61006</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>
