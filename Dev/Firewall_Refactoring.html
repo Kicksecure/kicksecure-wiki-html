@@ -69,8 +69,8 @@
 <meta content="https://www.kicksecure.com/w/images/f/fc/Kicksecure-twitter-post.jpg?version=30a0ad75271a4836786771c345c960b8" property="og:image"/>
 <meta content="1280" property="og:image:width"/>
 <meta content="720" property="og:image:height"/>
-<meta content="2023-03-17T18:49:30Z" property="article:modified_time"/>
-<meta content="2023-03-17T18:49:30Z" property="article:published_time"/>
+<meta content="2023-05-09T10:29:24Z" property="article:modified_time"/>
+<meta content="2023-05-09T10:29:24Z" property="article:published_time"/>
 <meta content="website" property="og:type"/>
 
 </head>
@@ -132,7 +132,7 @@
 <div class="col2">
 <span class="headline page">Page</span>
 <a class="view" data-href="/wiki/Dev/Firewall Refactoring" href="../Dev/Firewall Refactoring">Read</a>
-<a class="edit" data-href="/w/index.php?title=Dev/Firewall Refactoring&amp;action=edit&amp;oldid=69999" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall Refactoring&amp;action=edit&amp;oldid=69999">Edit</a>
+<a class="edit" data-href="/w/index.php?title=Dev/Firewall Refactoring&amp;action=edit&amp;oldid=71841" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall Refactoring&amp;action=edit&amp;oldid=71841">Edit</a>
 <a class="history user-logged-in" data-href="/w/index.php?title=Dev/Firewall Refactoring&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall Refactoring&amp;action=history">History</a>
 <a class="move user-logged-in" data-href="/wiki/Special:MovePage/Dev/Firewall Refactoring" href="../Special:MovePage/Dev/Firewall Refactoring">Move</a>
 <a class="protect" data-href="/w/index.php?title=Dev/Firewall Refactoring&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall Refactoring&amp;action=protect">Protection</a>
@@ -166,9 +166,10 @@
 <div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="#Instructions"><span class="tocnumber">1</span> <span class="toctext">Instructions</span></a></li>
-<li class="toclevel-1 tocsection-2"><a href="#systemcheck_iptables_test"><span class="tocnumber">2</span> <span class="toctext">systemcheck iptables test</span></a></li>
-<li class="toclevel-1 tocsection-3"><a href="#Split_Kicksecure_™_Firewall_Script_for_better_readability"><span class="tocnumber">3</span> <span class="toctext">Split Kicksecure ™ Firewall Script for better readability</span></a></li>
-<li class="toclevel-1 tocsection-4"><a href="#See_Also"><span class="tocnumber">4</span> <span class="toctext">See Also</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#nftables"><span class="tocnumber">2</span> <span class="toctext">nftables</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#systemcheck_iptables_test"><span class="tocnumber">3</span> <span class="toctext">systemcheck iptables test</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Split_Kicksecure_™_Firewall_Script_for_better_readability"><span class="tocnumber">4</span> <span class="toctext">Split Kicksecure ™ Firewall Script for better readability</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
 </ul>
 </div>
 <h1><span class="mw-headline" id="Instructions">Instructions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=1" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=1.html" title="Edit section: Instructions">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -203,12 +204,16 @@
 </pre>
 <p>6) There should be no diff.
 </p>
-<h1><span class="mw-headline" id="systemcheck_iptables_test">systemcheck iptables test</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=2.html" title="Edit section: systemcheck iptables test">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span class="mw-headline" id="nftables">nftables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=2" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=2.html" title="Edit section: nftables">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p><span class="code-select">sudo nft --stateless list ruleset &gt; nftables-old</span>
+</p><p><span class="code-select">sudo nft --stateless list ruleset &gt; nftables-new</span>
+</p>
+<h1><span class="mw-headline" id="systemcheck_iptables_test">systemcheck iptables test</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=3.html" title="Edit section: systemcheck iptables test">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Does not exist yet.
 </p>
 <ul><li>"<i>systemcheck (which is somewhat a replacement for the lack of test suite) could indeed be useful to check if the loaded iptables rules match a hardcoded iptables dump. Yes, with additional firewalll add-ons that would be hard. Then these firewall add-ons could ship a dump that also gets verified. (iptables-dumps.d folder checked by systemcheck or so.) But then multiple firewall add-ons gets hard. Mutliple firewall add-ons and dumping, that kind of flexibility might be stretching what the Kicksecure ™ project may be able to implement.</i>" (From <a class="external text" data-href="https://forums.whonix.org/t/bolt-on-for-whonix-firewall-best-place-to-put-files/2222" href="https://forums.whonix.org/t/bolt-on-for-whonix-firewall-best-place-to-put-files/2222" rel="noreferrer noopener" target="_blank">(Forum)  Bolt on for whonix_firewall - best place to put files?</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://forums.whonix.org/t/bolt-on-for-whonix-firewall-best-place-to-put-files/2222" href="https://web.archive.org/web/https://forums.whonix.org/t/bolt-on-for-whonix-firewall-best-place-to-put-files/2222" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup> )
 <ul><li>systemcheck could use this iptables diff facility to warn the user of non-standard / unexpected rules present. And, just like unwanted packages, could ask the user to run <i>e.g. iptables-save-whonix</i> to establish a new baseline. systemcheck would then pass, unless something else had changed things user unexpectedly, at which point systemcheck would again warn.</li></ul></li></ul>
-<h1><span id="Split_Kicksecure_.E2.84.A2_Firewall_Script_for_better_readability"></span><span class="mw-headline" id="Split_Kicksecure_™_Firewall_Script_for_better_readability">Split Kicksecure ™ Firewall Script for better readability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=3" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=3.html" title="Edit section: Split Kicksecure ™ Firewall Script for better readability">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span id="Split_Kicksecure_.E2.84.A2_Firewall_Script_for_better_readability"></span><span class="mw-headline" id="Split_Kicksecure_™_Firewall_Script_for_better_readability">Split Kicksecure ™ Firewall Script for better readability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=4.html" title="Edit section: Split Kicksecure ™ Firewall Script for better readability">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p><i>From Patrick:</i><br/>
 " I have been wondering for some time now if the firewall script should be split. A lot sections are being used by multiple packages, the firewall and vpn-firewall. Eventually further in future (corridor-gateway to be created one day)...
 </p>
@@ -255,7 +260,7 @@ fi
 <br/>
 </p>
 <ul><li>(begins) a corralling of a standard scripting framework.</li></ul>
-<h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=4" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=4.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span class="mw-headline" id="See_Also">See Also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;action=edit&amp;section=5.html" title="Edit section: See Also">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <ul><li><a class="new" data-href="/w/index.php?title=Dev/Firewall_Unload&amp;action=edit&amp;redlink=1" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Unload&amp;action=edit&amp;redlink=1.html" title="Dev/Firewall Unload (page does not exist)">Firewall Unloading</a></li></ul>
 <div class="robots-nocontent" data-nosnippet=""><!--googleoff: index--><!--noindex--><div class="margin-top-30 margin-bottom-30">
 <hr/>
@@ -447,7 +452,7 @@ fi
 </div>
 </div>
 </div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;oldid=69999" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;oldid=69999">https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;oldid=69999</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;oldid=71841" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;oldid=71841">https://www.kicksecure.com/w/index.php?title=Dev/Firewall_Refactoring&amp;oldid=71841</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>
 </div>
