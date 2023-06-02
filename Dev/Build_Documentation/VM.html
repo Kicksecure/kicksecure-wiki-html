@@ -286,7 +286,10 @@ Digital signatures can increase security but this requires knowledge. Learn more
 </p><p>Chose either Option A <u>or</u> Option B.
 </p>
 <div class="tab-content-controller" data-tcc-id="options1"></div>
-<div class="info-box active" data-tcc-id="options1" data-tcc-title="Option A: passwordless sudo"><u>Option A:</u> Set up passwordless sudo.
+<div class="info-box active" data-tcc-id="options1" data-tcc-title="Option A: passwordless sudo">
+<h1 id="option-a-passwordless-sudo">Option A: passwordless sudo</h1>
+<p><u>Option A:</u> Set up passwordless sudo.
+</p>
 <ul><li>Abstract task overview: Setup passwordless sudo for your Linux user account name.</li>
 <li>Detailed task overview: Setup sudo and add your current linux user account to the linux user group <code>sudo</code>. The following instructions use Linux user account name <code>user</code> as an example. If the user is using a different Linux user account name such as <code>myname</code> then the commands below have to be adjusted accordingly.</li>
 <li>Unspecific: Configuration of sudo is <a data-href="/wiki/Unspecific" href="../../Unspecific.html" title="Unspecific">unspecific to Kicksecure ™</a>.</li>
@@ -306,9 +309,13 @@ Digital signatures can increase security but this requires knowledge. Learn more
 <p><b>2. </b> Configure user <code>user</code> to be able to use sudo without a password.
 </p><p><span class="code-select">echo '%sudo ALL=(ALL:ALL) NOPASSWD:ALL' | sudo EDITOR=tee visudo -f /etc/sudoers.d/dist-build-sudo-passwordless &gt;/dev/null</span>
 </p><p><b>3.</b> Done.
+</p><p>The process of setting up passwordless sudo has been completed.
 </p>
-The process of setting up passwordless sudo has been completed.</div>
-<div class="info-box" data-tcc-id="options1" data-tcc-title="Option B: long sudo timeout"><u>Option B:</u> Set a longer sudo password timeout.
+</div>
+<div class="info-box" data-tcc-id="options1" data-tcc-title="Option B: long sudo timeout">
+<h1 id="option-b-long-sudo-timeout">Option B: long sudo timeout</h1>
+<p><u>Option B:</u> Set a longer sudo password timeout.
+</p>
 <ul><li>Abstract task overview: Setup sudo with a longer timeout for your Linux user account name.</li>
 <li>Detailed task overview: Setup sudo and increase the sudo password timeout (four all Linux user accounts or all users). The following instructions use Linux user account name <code>user</code> as an example. If the user is using a different Linux user account name such as <code>myname</code> then the commands below have to be adjusted accordingly.</li>
 <li>Unspecific: Configuration of sudo is <a data-href="/wiki/Unspecific" href="../../Unspecific.html" title="Unspecific">unspecific to Kicksecure ™</a>.</li>
@@ -328,8 +335,9 @@ The process of setting up passwordless sudo has been completed.</div>
 <p><b>2. </b> Configure user <code>user</code> to be able to use sudo without a password.
 </p><p><span class="code-select">echo 'Defaults timestamp_timeout=30' | sudo EDITOR=tee visudo -f /etc/sudoers.d/dist-build-sudo-timeout &gt;/dev/null</span>
 </p><p><b>3.</b> Done.
+</p><p>The process of setting up a longer sudo timeout has been completed.
 </p>
-The process of setting up a longer sudo timeout has been completed.</div>
+</div>
 <h1><span class="mw-headline" id="Choose_Version">Choose Version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Dev/Build_Documentation/VM&amp;action=edit&amp;section=5" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;action=edit&amp;section=5.html" title="Edit section: Choose Version">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="info-box has-icon">
 <p><span class="info-box-icon"><a class="image" data-href="/wiki/File:Ambox_notice.png" href="../../File:Ambox_notice.png"><img alt="Kicksecure ™ default admin password is: changeme" data-file-height="2000" data-file-width="2000" data-src="/w/images/thumb/c/c8/Ambox_notice.png/40px-Ambox_notice.png" data-srcset="/w/images/thumb/c/c8/Ambox_notice.png/60px-Ambox_notice.png 1.5x, /w/images/thumb/c/c8/Ambox_notice.png/80px-Ambox_notice.png 2x" decoding="async" height="40" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAtFBMVEUAAAAzZswrVdUuXdE5Y8Y2a8kzZswxYc4xYs4vaMYxY84yZM0xZ8gxZ84xZ84xZ84zZswyZc0yZ80xZcsyZ80yZc0yZ80yZs0yZssyZs0yZss0ZsszZcwzZ8w0Zss0ZsszZsozZswyZs00ZssyZc0yZs0zZ8wyZs00ZsszZ8wyZcwyZswzZ8wzZswzZswzZssyZswzZswyZcwyZcwzZcwzZswzZswzZcszZsszZsszZcwzZsx0fp/GAAAAO3RSTlMABQYLEhMUFRobHykqKjQ+S0xSU1xgYWtscHFxfHyFj5aWmJmdnaSsrcLDw8zX4ebn6+/w8PT19/f6+7st35YAAAEKSURBVDjLjdXbUsIwFEDRrUXQVkUBL4hSpYpGQ7Uo9XL+/798UJiGps3Zj5k1zaSdnIJTPMqMfX23NhsnNBZdWKmUX/f8bFLIVmXarbvjhXgqBtvuShq623VcJo2ZSOccOZHWHjbncNcB3JXz//eyCMHywLtxHcocICrCUBLgUhRlgNXAVUSscSKnjHQw9XwU32HkBaODS89ZvFB408IPLVRvrYSf2tdjGevgjEQHh5Br4Pce3GjgI9ArFbAPkIahAaBbBOHR3zUchOB0fbFvpTWzmRQ7ps3lncpsbJF57EzR+8Z9O7idlV43pdb+3PO4Q+8UT7JVVf089Zv/Cyfp81JE5MvOhu6g/wUnGQ6lMn7gQQAAAABJRU5ErkJggg==" width="40"/></a></span>

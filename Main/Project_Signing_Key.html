@@ -214,8 +214,10 @@ Digital signatures can increase security but this requires knowledge. Learn more
 <p>Select your operating system.
 </p>
 <div class="tab-content-controller" data-tcc-id="key-download-different-os"></div>
-<div class="active" data-tcc-id="key-download-different-os" data-tcc-title="Windows, macOS, Linux"><b>1.</b> <a data-href="/wiki/Secure_Downloads" href="../Secure_Downloads.html" title="Secure Downloads">Securely</a> download <a data-href="/wiki/Patrick_Schleizer" href="../Patrick_Schleizer.html" title="Patrick Schleizer">Patrick Schleizer</a>'s (adrelanos') <a data-href="/wiki/OpenPGP" href="../OpenPGP.html" title="OpenPGP">OpenPGP</a> key. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
-<p>
+<div class="active" data-tcc-id="key-download-different-os" data-tcc-title="Windows, macOS, Linux">
+<h1 id="windows-macos-linux">Windows, macOS, Linux</h1>
+<p><b>1.</b> <a data-href="/wiki/Secure_Downloads" href="../Secure_Downloads.html" title="Secure Downloads">Securely</a> download <a data-href="/wiki/Patrick_Schleizer" href="../Patrick_Schleizer.html" title="Patrick Schleizer">Patrick Schleizer</a>'s (adrelanos') <a data-href="/wiki/OpenPGP" href="../OpenPGP.html" title="OpenPGP">OpenPGP</a> key. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
+</p><p>
 <a class="download-button-v2" data-href="https://www.kicksecure.com/keys/derivative.asc" href="https://www.kicksecure.com/keys/derivative.asc" rel="noreferrer">
 <span class="dbutton">
 <i class="fa fa-download"></i>
@@ -256,15 +258,19 @@ gpg:              unchanged: 1
 </pre>
 <p>This extra message does not relate to the Kicksecure ™ signing key itself, but instead usually means the user has not created an OpenPGP key yet, which is of no importance when verifying virtual machine images.
 </p><p>Analyze the other messages as usual.
+</p><p><b>6.</b> Advanced users can check <a href="#Web_of_Trust">Web of Trust</a> further below for better security.
 </p>
-<b>6.</b> Advanced users can check <a href="#Web_of_Trust">Web of Trust</a> further below for better security.</div>
-<div data-tcc-id="key-download-different-os" data-tcc-title="Kicksecure or Whonix"><b>1.</b> Import the key.
-<p>Since the key is already available in Kicksecure or Whonix, importing the key is simpler than for other operating systems. 
+</div>
+<div data-tcc-id="key-download-different-os" data-tcc-title="Kicksecure or Whonix">
+<h1 id="kicksecure-or-whonix">Kicksecure or Whonix</h1>
+<p><b>1.</b> Import the key.
+</p><p>Since the key is already available in Kicksecure or Whonix, importing the key is simpler than for other operating systems. 
 </p><p><span class="code-select">gpg --import /usr/share/keyrings/derivative.asc</span>
 </p><p>The message <code>gpg: key 8D66066A2EEACCDA: 104 signatures not checked due to missing keys</code> is related to the <a data-href="/wiki/OpenPGP#The_OpenPGP_Web_of_Trust" href="../OpenPGP.html" title="OpenPGP">The OpenPGP Web of Trust</a>. Advanced users can learn more about this <a href="#OpenPGP_Web_of_Trust">below</a>.
 </p><p><b>2.</b> Skip a few steps.
+</p><p>Steps <b>2.</b> to <b>6.</b> (which would be require for Windows, macOS and other Linux) can be skipped here. Proceed to step <b>7.</b> below.
 </p>
-Steps <b>2.</b> to <b>6.</b> (which would be require for Windows, macOS and other Linux) can be skipped here. Proceed to step <b>7.</b> below.</div>
+</div>
 <p><b>7.</b>  Complete the Kicksecure ™ verification steps.
 </p><p>If verifying Kicksecure ™ images, navigate to the relevant verification page below to finish the process:
 </p>

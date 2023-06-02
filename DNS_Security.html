@@ -308,9 +308,15 @@ At NLnet Labs we are in favour of encrypting DNS traffic to limit the exposure o
 </p><p><b>1.</b> Choose an option.
 </p>
 <div class="tab-content-controller" data-tcc-id="unbound1"></div>
-<div class="info-box active" data-tcc-id="unbound1" data-tcc-title="recursive, unencrypted, validating, caching">No extra steps required for this options.</div>
-<div class="info-box" data-tcc-id="unbound1" data-tcc-title="iterative, encrypted (DoT), validating, caching"><b>1.</b> Create folder <code>/etc/unbound/unbound.conf.d</code>.
-<p><span class="code-select">sudo mkdir --parents /etc/unbound/unbound.conf.d</span>
+<div class="info-box active" data-tcc-id="unbound1" data-tcc-title="recursive, unencrypted, validating, caching">
+<h1 id="recursive-unencrypted-validating-caching">recursive, unencrypted, validating, caching</h1>
+<p>No extra steps required for this options.
+</p>
+</div>
+<div class="info-box" data-tcc-id="unbound1" data-tcc-title="iterative, encrypted (DoT), validating, caching">
+<h1 id="iterative-encrypted-dot-validating-caching">iterative, encrypted (DoT), validating, caching</h1>
+<p><b>1.</b> Create folder <code>/etc/unbound/unbound.conf.d</code>.
+</p><p><span class="code-select">sudo mkdir --parents /etc/unbound/unbound.conf.d</span>
 </p><p><b>2.</b> Open file <code>/etc/unbound/unbound.conf.d/50_user.conf</code> in an editor with root rights.
 </p>
 <div class="info-box">
@@ -361,8 +367,9 @@ forward-zone:
    # Digitale Gesellschaft (CH) DNS Server
    forward-addr: 185.95.218.42@853#dns.digitale-gesellschaft.ch
    forward-addr: 185.95.218.43@853#dns.digitale-gesellschaft.chforward-zone:</span>
+</p><p><b>4.</b> Save.
 </p>
-<b>4.</b> Save.</div>
+</div>
 <p><b>3.</b> Install <code>dnssec-trigger</code>. <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup>
 </p>
 <div class="info-box">
