@@ -176,8 +176,23 @@
 <li class="toclevel-1 tocsection-2"><a href="#Prerequisites"><span class="tocnumber">2</span> <span class="toctext">Prerequisites</span></a></li>
 <li class="toclevel-1 tocsection-3"><a href="#Installation"><span class="tocnumber">3</span> <span class="toctext">Installation</span></a>
 <ul>
-<li class="toclevel-2 tocsection-4"><a href="#Add_the_Kicksecure_™_Signing_Key"><span class="tocnumber">3.1</span> <span class="toctext">Add the Kicksecure ™ Signing Key</span></a></li>
-<li class="toclevel-2 tocsection-5"><a href="#Add_the_Kicksecure_™_Repository"><span class="tocnumber">3.2</span> <span class="toctext">Add the Kicksecure ™ Repository</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Add_the_Kicksecure_™_Signing_Key"><span class="tocnumber">3.1</span> <span class="toctext">Add the Kicksecure ™ Signing Key</span></a>
+<ul>
+<li class="toclevel-3"><a href="#A_:_Debian"><span class="tocnumber">3.1.1</span> <span class="toctext">A : Debian</span></a></li>
+<li class="toclevel-3"><a href="#TLS"><span class="tocnumber">3.1.2</span> <span class="toctext">TLS</span></a></li>
+<li class="toclevel-3"><a href="#onion"><span class="tocnumber">3.1.3</span> <span class="toctext">onion</span></a></li>
+<li class="toclevel-3"><a href="#B_:_Qubes"><span class="tocnumber">3.1.4</span> <span class="toctext">B : Qubes</span></a></li>
+<li class="toclevel-3"><a href="#TLS_2"><span class="tocnumber">3.1.5</span> <span class="toctext">TLS</span></a></li>
+<li class="toclevel-3"><a href="#onion_2"><span class="tocnumber">3.1.6</span> <span class="toctext">onion</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Add_the_Kicksecure_™_Repository"><span class="tocnumber">3.2</span> <span class="toctext">Add the Kicksecure ™ Repository</span></a>
+<ul>
+<li class="toclevel-3"><a href="#A_:_Onion_Rep."><span class="tocnumber">3.2.1</span> <span class="toctext">A : Onion Rep.</span></a></li>
+<li class="toclevel-3"><a href="#B_:_Clearnet_Rep._via_Tor"><span class="tocnumber">3.2.2</span> <span class="toctext">B : Clearnet Rep. via Tor</span></a></li>
+<li class="toclevel-3"><a href="#C_:_Clearnet_Rep."><span class="tocnumber">3.2.3</span> <span class="toctext">C : Clearnet Rep.</span></a></li>
+</ul>
+</li>
 <li class="toclevel-2 tocsection-6"><a href="#Install_the_Kicksecure_™_Package"><span class="tocnumber">3.3</span> <span class="toctext">Install the Kicksecure ™ Package</span></a></li>
 </ul>
 </li>
@@ -268,33 +283,81 @@ This is a pre-release. (<a data-href="/wiki/Pre-release" href="./Pre-release.htm
 </div>
 <p><b>2.</b> Download <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key">Kicksecure ™ Signing Key</a>. <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
 </p>
-<div class="tab-content-controller" data-tcc-id="os-repository-choice"></div>
-<div class="info-box" data-tcc-id="os-repository-choice" data-tcc-title="A : Debian">
+<div class="tab-content-controller">
+<div class="mininav"></div>
+<div class="tcc-content">
+<div class="tcc-section active info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="A_:_Debian">A : Debian</span></h3>
+</div>
+<div class="tcc-content">
 <p><u><b>If</b> you are using <b>Debian</b></u>, run.
 </p>
-<div class="tab-content-controller" data-tcc-id="signing-key-download-tls-vs-onion-debian"></div>
-<div class="info-box" data-tcc-id="signing-key-download-tls-vs-onion-debian" data-tcc-image="/w/images/thumb/0/00/Icon-lock.png/60px-Icon-lock.png" data-tcc-title="TLS">
+<div class="tab-content-controller">
+<div class="mininav"></div>
+<div class="tcc-content">
+<div class="tcc-section active info-box">
+<div class="tcc-image"><img class="pos-1px-up" data-src="/w/images/thumb/0/00/Icon-lock.png/60px-Icon-lock.png" loading="eager" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABFCAMAAAAhD3VJAAAAzFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw77eQAAAAQ3RSTlMAAgQICgwOEBIUHCAmKC4wMjQ4PkJKUFJUXmBmaGpscHJ2eHqNkZWdoaWpra+xu73Bw8/V19vd4ePl5+vt7/H19/v9a0OKUwAAAetJREFUWMPtV2tT4kAQ7AaFYM63HiKngvj2FJXzcWJA3f//n/ywmewkLHjZ+5quCqmiu3enM7MpAPzgRv96lHx+JqPr440ayiA6fjQKj4PWnC1mUR9MTAGTwZJHCJIgQAK0y22OjAd/NmlF7iLUEvbqvBsv3jsFoZgVemYueizIkVabloyuWYCuEjJ9YHAxtj8WmT+2rSm9sgD2M3rW2vHw8nI41t88Rwsyn6ldLrZqJFnbulDVnOUaBR141cke1tworD24JX8UpwRpj3meiW6WoLq/fJMR5yozXPFgNBXJXV2S2Vv9TphpNCdzRxTJSrH7K4lwnTmZr0TQz8UCAPSFu8pzdn+AL1Ja06ai66iL9JLOtUtrI8vivx3tAmbPLPJmXndV508dSTKrez0324IdofeQ677FnrA7erYz2a7Qu8gyu+gFVmUGSU1Tjjyy+AU2n4l0tOeN42VVKl3YLLxsdjZnaOZuHvabzKrPs5ndC7AZx/tC78ceaLapM8cnT6YUnk5iCXU0NaUxPbKjcGqCcEqCXROILtGahJqTljvl5dHHfbj5Hkm4OYH5D1TmylyZK3Nlrsz/aB6He8e4DTff4iDc/AuN11Dv32WwHWr+SQC9MG/P/g5rB1T+2pY/KI3D4VsZ59vwsEGAX8XdHpEA55hhAAAAAElFTkSuQmCC"/></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="TLS">TLS</span></h3>
+</div>
+<div class="tcc-content">
 <p><span class="code-select">curl  --tlsv1.3 --output /usr/share/keyrings/derivative.asc --url https://www.kicksecure.com/keys/derivative.asc</span>
 </p>
 </div>
-<div class="info-box" data-tcc-id="signing-key-download-tls-vs-onion-debian" data-tcc-image="/w/images/thumb/a/a8/Iconfinder_tor_386502.png/45px-Iconfinder_tor_386502.png" data-tcc-title="onion">
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"><img class="pos-1px-up" data-src="/w/images/thumb/a/a8/Iconfinder_tor_386502.png/45px-Iconfinder_tor_386502.png" loading="eager" src="data:image/png;base64,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"/></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="onion">onion</span></h3>
+</div>
+<div class="tcc-content">
 <p>Downloading over onion requires an already functional system Tor.
 <span class="code-select">torsocks curl  --output /usr/share/keyrings/derivative.asc --url http://www.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion/keys/derivative.asc</span>
 </p>
 </div>
 </div>
-<div class="info-box" data-tcc-id="os-repository-choice" data-tcc-title="B : Qubes">
+</div>
+</div>
+</div>
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="B_:_Qubes">B : Qubes</span></h3>
+</div>
+<div class="tcc-content">
 <p><u><b>If</b> you are using a <i>Qubes</i> <b>Debian</b> Template</u>, run.
 </p>
-<div class="tab-content-controller" data-tcc-id="signing-key-download-tls-vs-onion-qubes"></div>
-<div class="info-box" data-tcc-id="signing-key-download-tls-vs-onion-qubes" data-tcc-image="/w/images/thumb/0/00/Icon-lock.png/60px-Icon-lock.png" data-tcc-title="TLS">
+<div class="tab-content-controller">
+<div class="mininav"></div>
+<div class="tcc-content">
+<div class="tcc-section active info-box">
+<div class="tcc-image"><img class="pos-1px-up" data-src="/w/images/thumb/0/00/Icon-lock.png/60px-Icon-lock.png" loading="eager" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABFCAMAAAAhD3VJAAAAzFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw77eQAAAAQ3RSTlMAAgQICgwOEBIUHCAmKC4wMjQ4PkJKUFJUXmBmaGpscHJ2eHqNkZWdoaWpra+xu73Bw8/V19vd4ePl5+vt7/H19/v9a0OKUwAAAetJREFUWMPtV2tT4kAQ7AaFYM63HiKngvj2FJXzcWJA3f//n/ywmewkLHjZ+5quCqmiu3enM7MpAPzgRv96lHx+JqPr440ayiA6fjQKj4PWnC1mUR9MTAGTwZJHCJIgQAK0y22OjAd/NmlF7iLUEvbqvBsv3jsFoZgVemYueizIkVabloyuWYCuEjJ9YHAxtj8WmT+2rSm9sgD2M3rW2vHw8nI41t88Rwsyn6ldLrZqJFnbulDVnOUaBR141cke1tworD24JX8UpwRpj3meiW6WoLq/fJMR5yozXPFgNBXJXV2S2Vv9TphpNCdzRxTJSrH7K4lwnTmZr0TQz8UCAPSFu8pzdn+AL1Ja06ai66iL9JLOtUtrI8vivx3tAmbPLPJmXndV508dSTKrez0324IdofeQ677FnrA7erYz2a7Qu8gyu+gFVmUGSU1Tjjyy+AU2n4l0tOeN42VVKl3YLLxsdjZnaOZuHvabzKrPs5ndC7AZx/tC78ceaLapM8cnT6YUnk5iCXU0NaUxPbKjcGqCcEqCXROILtGahJqTljvl5dHHfbj5Hkm4OYH5D1TmylyZK3Nlrsz/aB6He8e4DTff4iDc/AuN11Dv32WwHWr+SQC9MG/P/g5rB1T+2pY/KI3D4VsZ59vwsEGAX8XdHpEA55hhAAAAAElFTkSuQmCC"/></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="TLS_2">TLS</span></h3>
+</div>
+<div class="tcc-content">
 <p><span class="code-select">curl --proxy http://127.0.0.1:8082/ --tlsv1.3 --output /usr/share/keyrings/derivative.asc --url https://www.kicksecure.com/keys/derivative.asc</span>
 </p>
 </div>
-<div class="info-box" data-tcc-id="signing-key-download-tls-vs-onion-qubes" data-tcc-image="/w/images/thumb/a/a8/Iconfinder_tor_386502.png/45px-Iconfinder_tor_386502.png" data-tcc-title="onion">
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"><img class="pos-1px-up" data-src="/w/images/thumb/a/a8/Iconfinder_tor_386502.png/45px-Iconfinder_tor_386502.png" loading="eager" src="data:image/png;base64,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"/></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="onion_2">onion</span></h3>
+</div>
+<div class="tcc-content">
 <p>Downloading over onion requires an already functional system Tor.
 <span class="code-select">torsocks curl --proxy http://127.0.0.1:8082/ --output /usr/share/keyrings/derivative.asc --url http://www.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion/keys/derivative.asc</span>
 </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <p><b>3.</b> Users can <a data-href="/wiki/Signing_Key" href="./Signing_Key.html" title="Signing Key"><u>check</u> Kicksecure ™ Signing Key</a> for better security.
@@ -307,8 +370,15 @@ This is a pre-release. (<a data-href="/wiki/Pre-release" href="./Pre-release.htm
 <p>Add Kicksecure ™ Repository.
 </p><p>Choose either: Option <u>A</u>, Option <u>B</u> <u><b>OR</b></u> Option <u>C</u>
 </p>
-<div class="tab-content-controller" data-tcc-id="add-apt-repository-options"></div>
-<div class="info-box active" data-tcc-id="add-apt-repository-options" data-tcc-title="A : Onion Rep.">
+<div class="tab-content-controller">
+<div class="mininav"></div>
+<div class="tcc-content">
+<div class="tcc-section active info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="A_:_Onion_Rep.">A : Onion Rep.</span></h3>
+</div>
+<div class="tcc-content">
 <p><b>Option <u>A</u></b>: Add Kicksecure ™ Onion Repository.
 </p><p>To add Kicksecure ™ Repository over Onion please install apt-transport-tor from the Debian repository.
 </p><p><span class="code-select" data-language="bash">sudo apt install apt-transport-tor</span>
@@ -316,7 +386,13 @@ This is a pre-release. (<a data-href="/wiki/Pre-release" href="./Pre-release.htm
 </p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+http://deb.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
 </p>
 </div>
-<div class="info-box" data-tcc-id="add-apt-repository-options" data-tcc-title="B : Clearnet Rep. via Tor">
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="B_:_Clearnet_Rep._via_Tor">B : Clearnet Rep. via Tor</span></h3>
+</div>
+<div class="tcc-content">
 <p><b>Option <u>B</u></b>: Add Kicksecure ™ Clearnet Repository over Tor.
 </p><p>To add Kicksecure ™ Repository over torified clearnet install <code>apt-transport-tor</code> from the Debian repository.
 </p><p><span class="code-select" data-language="bash">sudo apt install apt-transport-tor</span>
@@ -324,12 +400,21 @@ This is a pre-release. (<a data-href="/wiki/Pre-release" href="./Pre-release.htm
 </p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
 </p>
 </div>
-<div class="info-box" data-tcc-id="add-apt-repository-options" data-tcc-title="C : Clearnet Rep.">
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="C_:_Clearnet_Rep.">C : Clearnet Rep.</span></h3>
+</div>
+<div class="tcc-content">
 <p><b>Option <u>C</u></b>: Add Kicksecure Clearnet Repository over clearnet.
 </p><p>NOTE: When later using <a data-href="/wiki/APT_Repository" href="./APT_Repository.html" title="APT Repository">Kicksecure ™ repository tool</a>, then this will be upgraded to "Clearnet Rep. via Tor", unless see footnote. <sup class="reference" id="cite_ref-6"><a href="#cite_note-6">[6]</a></sup>
 </p><p>To add Kicksecure ™ Repository over clearnet please add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bullseye</code>.
 </p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
 </p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <h2><span id="Install_the_Kicksecure_.E2.84.A2_Package"></span><span class="mw-headline" id="Install_the_Kicksecure_™_Package">Install the Kicksecure ™ Package</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Debian&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Debian&amp;action=edit&amp;section=6.html" title="Edit section: Install the Kicksecure ™ Package">edit</a><span class="mw-editsection-bracket">]</span></span></h2>

@@ -72,8 +72,8 @@
 <meta content="https://www.kicksecure.com/w/images/b/ba/Connect-20333640.jpg?version=85aefe18de7b36da40c382e41b316fcb" property="og:image"/>
 <meta content="640" property="og:image:width"/>
 <meta content="426" property="og:image:height"/>
-<meta content="2023-05-30T12:30:55Z" property="article:modified_time"/>
-<meta content="2023-05-30T12:30:55Z" property="article:published_time"/>
+<meta content="2023-06-06T16:26:27Z" property="article:modified_time"/>
+<meta content="2023-06-06T16:26:27Z" property="article:published_time"/>
 <meta content="website" property="og:type"/>
 
 </head>
@@ -135,7 +135,7 @@
 <div class="col2">
 <span class="headline page">Page</span>
 <a class="view" data-href="/wiki/DNS Security" href="./DNS Security"><i class="fa-solid fa-house"></i>Read</a>
-<a class="edit" data-href="/w/index.php?title=DNS Security&amp;action=edit&amp;oldid=72949" href="https://www.kicksecure.com/w/index.php?title=DNS Security&amp;action=edit&amp;oldid=72949"><i class="fa-solid fa-pen"></i>Edit</a>
+<a class="edit" data-href="/w/index.php?title=DNS Security&amp;action=edit&amp;oldid=73323" href="https://www.kicksecure.com/w/index.php?title=DNS Security&amp;action=edit&amp;oldid=73323"><i class="fa-solid fa-pen"></i>Edit</a>
 <a class="history user-logged-in" data-href="/w/index.php?title=DNS Security&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=DNS Security&amp;action=history"><i class="fa-sharp fa-solid fa-clock-rotate-left"></i>History</a>
 <a class="move user-logged-in" data-href="/wiki/Special:MovePage/DNS Security" href="./Special:MovePage/DNS Security"><i class="fa-solid fa-share"></i>Move</a>
 <a class="protect" data-href="/w/index.php?title=DNS Security&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=DNS Security&amp;action=protect"><i class="fa-solid fa-shield-halved"></i>Protection</a>
@@ -192,7 +192,18 @@ Warning: This is for <u><b>testers-only</b></u>!
 <li class="toclevel-1 tocsection-7"><a href="#DNS_Resolving_Security_Feature_Wishlist"><span class="tocnumber">5</span> <span class="toctext">DNS Resolving Security Feature Wishlist</span></a></li>
 <li class="toclevel-1 tocsection-8"><a href="#DNS_Security_Optimization_Problem"><span class="tocnumber">6</span> <span class="toctext">DNS Security Optimization Problem</span></a></li>
 <li class="toclevel-1 tocsection-9"><a href="#Potential_Obstacles"><span class="tocnumber">7</span> <span class="toctext">Potential Obstacles</span></a></li>
-<li class="toclevel-1 tocsection-10"><a href="#Unbound"><span class="tocnumber">8</span> <span class="toctext">Unbound</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Unbound"><span class="tocnumber">8</span> <span class="toctext">Unbound</span></a>
+<ul>
+<li class="toclevel-2"><a href="#recursive,_unencrypted,_validating,_caching"><span class="tocnumber">8.1</span> <span class="toctext">recursive, unencrypted, validating, caching</span></a></li>
+<li class="toclevel-2"><a href="#iterative,_encrypted_(DoT),_validating,_caching"><span class="tocnumber">8.2</span> <span class="toctext">iterative, encrypted (DoT), validating, caching</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Kicksecure_™"><span class="tocnumber">8.2.1</span> <span class="toctext">Kicksecure ™</span></a></li>
+<li class="toclevel-3"><a href="#Kicksecure_™_for_Qubes"><span class="tocnumber">8.2.2</span> <span class="toctext">Kicksecure ™ for Qubes</span></a></li>
+<li class="toclevel-3"><a href="#Others_and_Alternatives"><span class="tocnumber">8.2.3</span> <span class="toctext">Others and Alternatives</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toclevel-1 tocsection-11"><a href="#Testing_DNSSEC"><span class="tocnumber">9</span> <span class="toctext">Testing DNSSEC</span></a>
 <ul>
 <li class="toclevel-2 tocsection-12"><a href="#Browser_Tests"><span class="tocnumber">9.1</span> <span class="toctext">Browser Tests</span></a></li>
@@ -307,31 +318,64 @@ At NLnet Labs we are in favour of encrypting DNS traffic to limit the exposure o
 <p><code>Unbound</code> (<a class="external text" data-href="https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" href="https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" rel="noreferrer noopener" target="_blank">unbound security audit</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" href="https://web.archive.org/web/https://ostif.org/our-audit-of-unbound-dns-by-x41-d-sec-full-results/" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>) (<a class="external text" data-href="https://packages.debian.org/unbound" href="https://packages.debian.org/unbound" rel="noreferrer noopener" target="_blank">in Debian</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://packages.debian.org/unbound" href="https://web.archive.org/web/https://packages.debian.org/unbound" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>) is a is a validating, recursive, and caching DNS resolver with DoT and DoH support. In context of censorship circumvention, routing DoT over Tor is possible and fast enough according to the <a class="external text" data-href="https://github.com/alecmuffett/dohot" href="https://github.com/alecmuffett/dohot" rel="noreferrer noopener" target="_blank">DoHoT: making practical use of DNS over HTTPS over Tor</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://github.com/alecmuffett/dohot" href="https://web.archive.org/web/https://github.com/alecmuffett/dohot" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>.
 </p><p><b>1.</b> Choose an option.
 </p>
-<div class="tab-content-controller" data-tcc-id="unbound1"></div>
-<div class="info-box active" data-tcc-id="unbound1" data-tcc-title="recursive, unencrypted, validating, caching">
-<h1 id="recursive-unencrypted-validating-caching">recursive, unencrypted, validating, caching</h1>
+<div class="tab-content-controller">
+<div class="mininav"></div>
+<div class="tcc-content">
+<div class="tcc-section active info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h2><span id="recursive.2C_unencrypted.2C_validating.2C_caching"></span><span class="mw-headline" id="recursive,_unencrypted,_validating,_caching">recursive, unencrypted, validating, caching</span></h2>
+</div>
+<div class="tcc-content">
 <p>No extra steps required for this options.
 </p>
 </div>
-<div class="info-box" data-tcc-id="unbound1" data-tcc-title="iterative, encrypted (DoT), validating, caching">
-<h1 id="iterative-encrypted-dot-validating-caching">iterative, encrypted (DoT), validating, caching</h1>
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h2><span id="iterative.2C_encrypted_.28DoT.29.2C_validating.2C_caching"></span><span class="mw-headline" id="iterative,_encrypted_(DoT),_validating,_caching">iterative, encrypted (DoT), validating, caching</span></h2>
+</div>
+<div class="tcc-content">
 <p><b>1.</b> Create folder <code>/etc/unbound/unbound.conf.d</code>.
 </p><p><span class="code-select">sudo mkdir --parents /etc/unbound/unbound.conf.d</span>
 </p><p><b>2.</b> Open file <code>/etc/unbound/unbound.conf.d/50_user.conf</code> in an editor with root rights.
 </p>
 <div class="info-box">
-<div class="tab-content-controller" data-tcc-id="open-in-editor-with-root-rights"></div>
-<div class="info-box" data-tcc-id="open-in-editor-with-root-rights" data-tcc-title="Kicksecure ™">
+<div class="tab-content-controller">
+<div class="mininav"></div>
+<div class="tcc-content">
+<div class="tcc-section active info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span id="Kicksecure_.E2.84.A2"></span><span class="mw-headline" id="Kicksecure_™">Kicksecure ™</span></h3>
+</div>
+<div class="tcc-content">
 <p>This box uses <code>sudoedit</code> for better security.
 </p>
 </div>
-<div class="info-box" data-tcc-id="open-in-editor-with-root-rights" data-tcc-title="Kicksecure ™ for Qubes">
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span id="Kicksecure_.E2.84.A2_for_Qubes"></span><span class="mw-headline" id="Kicksecure_™_for_Qubes">Kicksecure ™ for Qubes</span></h3>
+</div>
+<div class="tcc-content">
 <p>NOTE: When using <a data-href="/wiki/Qubes" href="./Qubes.html" title="Qubes">Kicksecure ™ for Qubes</a>, this needs to be done inside the Template.
 </p>
 </div>
-<div class="info-box" data-tcc-id="open-in-editor-with-root-rights" data-tcc-title="Others and Alternatives">
+</div>
+<div class="tcc-section info-box">
+<div class="tcc-image"></div>
+<div class="tcc-title">
+<h3><span class="mw-headline" id="Others_and_Alternatives">Others and Alternatives</span></h3>
+</div>
+<div class="tcc-content">
 <ul><li>This is just an example. Other tools could achieve the same goal.</li>
 <li>If this example does not work for you or if you are not using Kicksecure ™, please refer to <a data-href="/wiki/Software#Text_Editor" href="./Software.html" title="Software">this link</a>.</li></ul>
+</div>
+</div>
+</div>
 </div>
 <p><span class="code-select">sudoedit /etc/unbound/unbound.conf.d/50_user.conf</span>
 </p>
@@ -370,7 +414,10 @@ forward-zone:
 </p><p><b>4.</b> Save.
 </p>
 </div>
-<p><b>3.</b> Install <code>dnssec-trigger</code>. <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup>
+</div>
+</div>
+</div>
+<p><b>2.</b> Install <code>dnssec-trigger</code>. <sup class="reference" id="cite_ref-12"><a href="#cite_note-12">[12]</a></sup>
 </p>
 <div class="info-box">
 <p>Install <code>dnssec-trigger</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
@@ -385,7 +432,7 @@ forward-zone:
 </p><p>The procedure of installing <code>dnssec-trigger</code> is complete.
 </p>
 </div>
-<p><b>4.</b> Done.
+<p><b>3.</b> Done.
 </p><p>The process is complete.
 </p>
 <h1><span class="mw-headline" id="Testing_DNSSEC">Testing DNSSEC</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=DNS_Security&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;action=edit&amp;section=11.html" title="Edit section: Testing DNSSEC">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -695,7 +742,7 @@ Ignoring potential exploitation of the DNS resolver software.)</span>
 </div>
 </div>
 <!--/noindex--><!--googleon: index--></div></div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=72949" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=72949">https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=72949</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=73323" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=73323">https://www.kicksecure.com/w/index.php?title=DNS_Security&amp;oldid=73323</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>
 </div>
