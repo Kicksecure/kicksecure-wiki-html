@@ -267,7 +267,7 @@ Skip this step in Kicksecure ™ for Qubes.
 </div>
 <div class="tcc-content">
 <div>Kicksecure ™ for Qubes Template (<code>kicksecure-16</code>)</div>
-<p><span class="code-select">sudo http_proxy=http://127.0.0.1:8082 https_proxy=$http_proxy extrepo enable kicksecure</span>
+<p><span class="code-select">sudo http_proxy=http://127.0.0.1:8082 https_proxy=http://127.0.0.1:8082 extrepo enable kicksecure</span>
 </p>
 </div>
 </div>
@@ -419,7 +419,7 @@ Skip this step in Kicksecure ™ for Qubes.
 </p>
 </div>
 <div class="tcc-content">
-<p><span class="code-select">sudo curl --tlsv1.3 --output /usr/share/keyrings/derivative.asc --url https://www.kicksecure.com/keys/derivative.asc</span>
+<p><span class="code-select">sudo  curl --tlsv1.3 --output /usr/share/keyrings/derivative.asc --url https://www.kicksecure.com/keys/derivative.asc</span>
 </p>
 </div>
 </div>
@@ -466,7 +466,7 @@ Skip this step in Kicksecure ™ for Qubes.
 </p>
 </div>
 <div class="tcc-content">
-<p><span class="code-select">sudo curl --tlsv1.3 --output /usr/share/keyrings/derivative.asc --url https://www.kicksecure.com/keys/derivative.asc</span>
+<p><span class="code-select">sudo http_proxy=http://127.0.0.1:8082 https_proxy=http://127.0.0.1:8082 curl --tlsv1.3 --output /usr/share/keyrings/derivative.asc --url https://www.kicksecure.com/keys/derivative.asc</span>
 </p>
 </div>
 </div>
