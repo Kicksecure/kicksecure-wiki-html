@@ -72,8 +72,8 @@
 <meta content="https://www.kicksecure.com/w/images/e/e8/Backupraw123123.jpg?version=68d89292191c3ae45e148a88cbceca60" property="og:image"/>
 <meta content="640" property="og:image:width"/>
 <meta content="470" property="og:image:height"/>
-<meta content="2023-06-07T15:25:15Z" property="article:modified_time"/>
-<meta content="2023-06-07T15:25:15Z" property="article:published_time"/>
+<meta content="2023-07-15T23:32:13Z" property="article:modified_time"/>
+<meta content="2023-07-15T23:32:13Z" property="article:published_time"/>
 <meta content="website" property="og:type"/>
 
 </head>
@@ -130,7 +130,7 @@
 <div class="col2">
 <span class="headline page">Page</span>
 <a class="view" data-href="/wiki/Raw Disk Backup" href="./Raw Disk Backup"><i class="fa-solid fa-house"></i>Read</a>
-<a class="edit" data-href="/w/index.php?title=Raw Disk Backup&amp;action=edit&amp;oldid=73550" href="https://www.kicksecure.com/w/index.php?title=Raw Disk Backup&amp;action=edit&amp;oldid=73550"><i class="fa-solid fa-pen"></i>Edit</a>
+<a class="edit" data-href="/w/index.php?title=Raw Disk Backup&amp;action=edit&amp;oldid=74501" href="https://www.kicksecure.com/w/index.php?title=Raw Disk Backup&amp;action=edit&amp;oldid=74501"><i class="fa-solid fa-pen"></i>Edit</a>
 <a class="history user-logged-in" data-href="/w/index.php?title=Raw Disk Backup&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=Raw Disk Backup&amp;action=history"><i class="fa-sharp fa-solid fa-clock-rotate-left"></i>History</a>
 <a class="move user-logged-in" data-href="/wiki/Special:MovePage/Raw Disk Backup" href="./Special:MovePage/Raw Disk Backup"><i class="fa-solid fa-share"></i>Move</a>
 <a class="protect" data-href="/w/index.php?title=Raw Disk Backup&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=Raw Disk Backup&amp;action=protect"><i class="fa-solid fa-shield-halved"></i>Protection</a>
@@ -183,9 +183,15 @@
 <li class="toclevel-1 tocsection-10"><a href="#Recommendations"><span class="tocnumber">6</span> <span class="toctext">Recommendations</span></a></li>
 <li class="toclevel-1 tocsection-11"><a href="#Backup_High_Level_Overview"><span class="tocnumber">7</span> <span class="toctext">Backup High Level Overview</span></a></li>
 <li class="toclevel-1 tocsection-12"><a href="#Backup_Instructions"><span class="tocnumber">8</span> <span class="toctext">Backup Instructions</span></a></li>
-<li class="toclevel-1 tocsection-13"><a href="#Restoration_Test_High_Level_Overview"><span class="tocnumber">9</span> <span class="toctext">Restoration Test High Level Overview</span></a></li>
-<li class="toclevel-1 tocsection-14"><a href="#Alternatives"><span class="tocnumber">10</span> <span class="toctext">Alternatives</span></a></li>
-<li class="toclevel-1 tocsection-15"><a href="#Footnotes"><span class="tocnumber">11</span> <span class="toctext">Footnotes</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Backup_Verification"><span class="tocnumber">9</span> <span class="toctext">Backup Verification</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#verification_without_progress_meter"><span class="tocnumber">9.1</span> <span class="toctext">verification without progress meter</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#verification_with_progress_meter"><span class="tocnumber">9.2</span> <span class="toctext">verification with progress meter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Restoration_Test_High_Level_Overview"><span class="tocnumber">10</span> <span class="toctext">Restoration Test High Level Overview</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Alternatives"><span class="tocnumber">11</span> <span class="toctext">Alternatives</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Footnotes"><span class="tocnumber">12</span> <span class="toctext">Footnotes</span></a></li>
 </ul>
 </div>
 <h1><span class="mw-headline" id="Introduction">Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=1" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=1.html" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -324,16 +330,16 @@
 </p><p>After booting the operating system from USB.
 </p>
 <div class="info-box">
-<p>Install <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
+<p>Install <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv lshw hwinfo</code>. To accomplish that, the following steps <b>A.</b> to <b>D.</b> need to be done.
 </p><p><b>A.</b> <a class="mw-redirect" data-href="/wiki/Update" href="./Update.html" title="Update">Update</a> the package lists.
 </p><p><span class="code-select">sudo apt update</span>
 </p><p><b>B.</b> Upgrade the system.
 </p><p><span class="code-select">sudo apt full-upgrade</span>
-</p><p><b>C.</b> Install the <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</code> package.
+</p><p><b>C.</b> Install the <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv lshw hwinfo</code> package.
 </p><p><a data-href="/wiki/Install_Software#--no-install-recommends" href="./Install_Software.html" title="Install Software">Using <code>apt</code> command line parameter <code>--no-install-recommends</code> is in most cases optional.</a>
-</p><p><span class="code-select">sudo apt install --no-install-recommends meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</span>
+</p><p><span class="code-select">sudo apt install --no-install-recommends meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv lshw hwinfo</span>
 </p><p><b>D.</b> Done.
-</p><p>The procedure of installing <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv</code> is complete.
+</p><p>The procedure of installing <code>meld lxqt-sudo gnome-disk-utility gsmartcontrol gparted pv lshw hwinfo</code> is complete.
 </p>
 </div>
 <h1><span class="mw-headline" id="Backup_High_Level_Overview">Backup High Level Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=11" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=11.html" title="Edit section: Backup High Level Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
@@ -354,6 +360,10 @@
 </p><p><b>3.</b> Write output of fdisk to file "old".
 </p><p><span class="code-select">sudo fdisk -l &gt; old</span>
 </p><p><b>4.</b> Information gathering with a few hard drive utilities.
+</p><p>Using <code>lshw</code>.
+</p><p><span class="code-select">sudo lshw -class disk</span>
+</p><p>Using <code>hwinfo</code>.
+</p><p><span class="code-select">sudo hwinfo --disk</span>
 </p><p>See what disks are currently attached with an alternative tool such as <code>gnome-disks</code> as well.
 </p><p>Try:
 </p><p><span class="code-select">gnome-disks</span>
@@ -430,10 +440,11 @@ Backup external disk 931.41 GiB
 </p>
 <ul><li>Replace <code>/dev/xxx</code> with the actual device path of the drive which should be backed up.</li>
 <li>Replace <code>/dev/yyy</code> with the actual device path of the drive where the backup should be stored.</li></ul>
-<p><u>Example</u>:
+<p><u>Examples</u>:
 </p><p><u>Notice</u>: DATA LOSS POSSIBLE if used incorrectly! Do not use this without prior verification of the device paths!
 </p>
-<blockquote><p>pv &lt; /dev/sd<u>a</u> &gt; /dev/sd<u>c</u></p></blockquote>
+<ul><li><blockquote><p>pv &lt; /dev/sd<u>a</u> &gt; /dev/sd<u>c</u></p></blockquote></li>
+<li><blockquote><p>pv &lt; /dev/nvme0n1 &gt; /dev/sd<u>c</u></p></blockquote></li></ul>
 <p><sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p>The backup might take a long time.
 </p><p><b>15.</b> Check exit code.
@@ -451,7 +462,38 @@ Backup external disk 931.41 GiB
 </p><p>Without restoration test, it's unclear if the backup could be restored in case needed.
 </p>
 <hr/>
-<h1><span class="mw-headline" id="Restoration_Test_High_Level_Overview">Restoration Test High Level Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=13.html" title="Edit section: Restoration Test High Level Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span class="mw-headline" id="Backup_Verification">Backup Verification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=13" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=13.html" title="Edit section: Backup Verification">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h2><span class="mw-headline" id="verification_without_progress_meter">verification without progress meter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=14.html" title="Edit section: verification without progress meter">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><span class="code-select">size=$(sudo blockdev --getsize64 /dev/nvme0n1)</span>
+</p><p><span class="code-select">sudo cmp --bytes=$size /dev/nvme0n1 /dev/sdb</span>
+</p>
+<h2><span class="mw-headline" id="verification_with_progress_meter">verification with progress meter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=15.html" title="Edit section: verification with progress meter">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Small script with progress meter. Untested.
+</p><p><code>original_disk</code> and <code>backup_disk</code> need to be adjusted.
+</p><p><span class="code-select">#!/bin/bash
+
+set -x
+set -e
+set -o pipefail
+
+original_disk=/dev/nvme0n1
+backup_disk=/dev/sdb
+
+test -e "$original_disk"
+test -e "$backup_disk"
+
+## Get the size of the original disk in bytes.
+original_size=$(blockdev --getsize64 "$original_disk")
+
+## Using cp with --bytes="$original_size" to ensure that the comparison stops
+## at the size of the original disk, even if the backup disk is larger.
+## This way, the comparison is not confused if the backup_disk is larger.
+pv "$original_disk" | cmp --bytes="$original_size" /dev/stdin "$backup_disk"
+
+## Alternative. Untested.
+#ddrescue -v -n -s"$original_size" "$original_disk" "$backup_disk" /path/to/logfile</span>
+</p>
+<h1><span class="mw-headline" id="Restoration_Test_High_Level_Overview">Restoration Test High Level Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=16" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=16.html" title="Edit section: Restoration Test High Level Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Before a restoration test can be performed, a backup is required. Once a backup has been created, attempt the following restoration test instructions.
 </p><p><b>1.</b> Boot from internal USB drive.
 </p><p><b>2.</b> Create a (or update) a backup date note file.
@@ -472,20 +514,21 @@ Backup external disk 931.41 GiB
 </p><p><b>11.</b> Done.
 </p><p>Restoration test has been completed.
 </p>
-<h1><span class="mw-headline" id="Alternatives">Alternatives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=14" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=14.html" title="Edit section: Alternatives">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span class="mw-headline" id="Alternatives">Alternatives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=17" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=17.html" title="Edit section: Alternatives">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <p>Potential alternatives, <a class="mw-redirect" data-href="/wiki/Untested" href="./Untested.html" title="Untested">untested</a> by the author of this wiki page.
 </p><p><a class="external free" data-href="https://www.tecmint.com/linux-disk-cloning-tools/" href="https://www.tecmint.com/linux-disk-cloning-tools/" rel="noreferrer noopener" target="_blank">https://www.tecmint.com/linux-disk-cloning-tools/</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://www.tecmint.com/linux-disk-cloning-tools/" href="https://web.archive.org/web/https://www.tecmint.com/linux-disk-cloning-tools/" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup>
 </p>
-<h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=15" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=15.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<h1><span class="mw-headline" id="Footnotes">Footnotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=18" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;action=edit&amp;section=18.html" title="Edit section: Footnotes">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
 <div class="mw-references-wrap"><ol class="references">
 <li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">
-Using sudo is unfortunately not possible. At least not without complicating the following pv command. Becoming root is required because shell redirection are a bash feature, not a sudo feature. These are set up before becoming sudo.
+Using sudo is unfortunately not possible. At least not without complicating the following <code>pv</code> command. Becoming root is required because shell redirection are a bash feature, not a sudo feature. These are set up before becoming sudo.
 
 Alternatively, it would be possible to write a small script, pasting the command there and executing that script using sudo.</span>
 </li>
 <li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">
-It is unfortunately not possible to compare. Running <code>diff /dev/sda /dev/sdc</code> for backup verification is not possible because of different partition table and disk id.</span>
-</li>
+<ul><li><a class="external free" data-href="https://unix.stackexchange.com/questions/433443/ssd-backup-image" href="https://unix.stackexchange.com/questions/433443/ssd-backup-image" rel="noreferrer noopener" target="_blank">https://unix.stackexchange.com/questions/433443/ssd-backup-image</a><sup class="ext-link-to-archive.html" title="Link to archived version"><a data-href="https://web.archive.org/web/https://unix.stackexchange.com/questions/433443/ssd-backup-image" href="https://web.archive.org/web/https://unix.stackexchange.com/questions/433443/ssd-backup-image" rel="noreferrer noopener" target="_blank"><img alt="archive.org" data-src="/w/images/7/73/Internet_Archive_logo.png" decoding="async" height="15" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAoCAYAAAB0HkOaAAACjUlEQVRYhc2YPW8TQRCGH39BfIZgGwICBEh8lkiUQElLgQQdoqJJRZm/EDqgowWJgoKGgoLfQAkIhUgoDcTYkIg4FsZgir3Ds3tzez7b5DLSyrvz7M28O3de77nE5FYCrgCLwF1gHvgMdKeImclqwHXgcZh4qLS3wDJwFSjMWsBp4B7wGviZICCptYAnwC1M5TJbGbOqZeB9xuS+1gsXtARc8AlYAO4Az4HNGQrwtVXgIXANqERC5oA3OyRAa3+AmzB6wOrAGV/p/qP1gHdSTAXYm5OYIc52sER+t+mfkHL4uQmszXK5GWw7p7x+kztkGTgLNIABsI5drULIm+G4A3x04h0GjgMBsAF8wn4eGsAJYD/wI4y/oQm7Qfx+1gW/pPCLTgx3k7zv8JcOfyFhUfQXFIGHMnAwlfFxN4bFi0lA8aXxEnYlAQ5mGRc9E7OKaTrxtGu8Y3lxQ0kmfe6qx+FN0S8CBzzcElNTgtVSeCD6+1J4QPx8Uwb2jCsmSOHSF0zALf+0lZmWW34pZpKVSV5V+JzIofFEMSVl4rS8wOg50bgVQwYbKhOHU3LpT+O7V0xfmdjPwH8pfCCSadzySzHay1dP9LVzRzeFb6dwy1/UnBMm0xaTxi2/FLOVEkzj3YT+uDx6n4qJ6SiT26L/TeGdhL52fR9zoJL2HfitiWkTt68Jfc3XJv6NcWN6x2li2hn4gPgR0l2AdyzFtJRkcvJ6CtdiZOLyJ70KnAOOYR6qFuZMG1kFOA8cxdyOL8AHTEUiO4k5cM9jqraCXa0jmH816qF/VRG4OyyqzGXgWY46FoFX0RtlFTiVo5gajF5v14BH+WlhJcfcuhWAB8DtvIUAT8uYLVrbXXfatv4CWncb4zb4QjwAAAAASUVORK5CYII=" width="13"/></a></sup></li>
+<li>It is unfortunately not possible to compare. Running <code>diff /dev/sda /dev/sdc</code> for backup verification is not possible because of different disk sizes.</li></ul>
+</span></li>
 </ol></div>
 <div class="robots-nocontent" data-nosnippet=""><!--googleoff: index--><!--noindex--><div class="margin-top-30 margin-bottom-30">
 <hr/>
@@ -671,7 +714,7 @@ It is unfortunately not possible to compare. Running <code>diff /dev/sda /dev/sd
 </div>
 </div>
 <!--/noindex--><!--googleon: index--></div></div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=73550" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=73550">https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=73550</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=74501" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=74501">https://www.kicksecure.com/w/index.php?title=Raw_Disk_Backup&amp;oldid=74501</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="./Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Documentation" href="./Category:Documentation.html" title="Category:Documentation">Documentation</a></li></ul></div></div>
 </div>
 </div>
