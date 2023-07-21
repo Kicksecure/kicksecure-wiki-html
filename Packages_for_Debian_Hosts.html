@@ -253,7 +253,7 @@
 
 </div>
 <div class="tcc-content">
-<div>Kicksecure ™ for Qubes Template (<code>kicksecure-16</code>)</div>
+<div>Kicksecure ™ for Qubes Template (<code>kicksecure-17</code>)</div>
 <p><span class="code-select">sudo http_proxy=http://127.0.0.1:8082 https_proxy=http://127.0.0.1:8082 extrepo enable kicksecure</span>
 </p>
 </div>
@@ -502,8 +502,8 @@
 <p><b>Option <u>A</u></b>: Add Kicksecure ™ Onion Repository.
 </p><p>To add Kicksecure ™ Repository over Onion please install <code>apt-transport-tor</code> from the Debian repository.
 </p><p><span class="code-select" data-language="bash">sudo apt install apt-transport-tor</span>
-</p><p>Add <a data-href="/wiki/Project-APT-Repository" href="./Project-APT-Repository.html" title="Project-APT-Repository">Kicksecure ™ APT repository</a> for default Kicksecure ™ using Debian <i><span style="background-color:#FBFBFB">stable</span></i>. At the time of writing this was <code>bullseye</code>.
-</p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+http://deb.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
+</p><p>Add <a data-href="/wiki/Project-APT-Repository" href="./Project-APT-Repository.html" title="Project-APT-Repository">Kicksecure ™ APT repository</a> for default Kicksecure ™ using Debian <i><span style="background-color:#FBFBFB">stable</span></i>. At the time of writing this was <code>bookworm</code>.
+</p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+http://deb.w5j6stm77zs6652pgsij4awcjeel3eco7kvipheu6mtr623eyyehj4yd.onion bookworm main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
 </p>
 </div>
 </div>
@@ -519,8 +519,8 @@
 <p><b>Option <u>B</u></b>: Add Kicksecure ™ Clearnet Repository over Tor.
 </p><p>To add Kicksecure ™ Repository over torified clearnet install <code>apt-transport-tor</code> from the Debian repository.
 </p><p><span class="code-select" data-language="bash">sudo apt install apt-transport-tor</span>
-</p><p>Add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bullseye</code>.
-</p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
+</p><p>Add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bookworm</code>.
+</p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] tor+https://deb.kicksecure.com bookworm main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
 </p>
 </div>
 </div>
@@ -535,8 +535,8 @@
 <div class="tcc-content">
 <p><b>Option <u>C</u></b>: Add Kicksecure Clearnet Repository over clearnet.
 </p><p>NOTE: When later using <a data-href="/wiki/APT_Repository" href="./APT_Repository.html" title="APT Repository">Kicksecure ™ repository tool</a>, then this will be upgraded to "Clearnet Rep. via Tor", unless see footnote. <sup class="reference" id="cite_ref-5"><a href="#cite_note-5">[5]</a></sup>
-</p><p>To add Kicksecure ™ Repository over clearnet please add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bullseye</code>.
-</p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bullseye main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
+</p><p>To add Kicksecure ™ Repository over clearnet please add Kicksecure ™ APT repository for default Kicksecure ™ using Debian stable. At the time of writing this was <code>bookworm</code>.
+</p><p><span class="code-select" data-language="bash">echo "deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com bookworm main contrib non-free" | sudo tee /etc/apt/sources.list.d/derivative.list</span>
 </p>
 </div>
 </div>

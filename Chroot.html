@@ -362,15 +362,15 @@ This is a pre-release. (<a data-href="/wiki/Pre-release" href="./Pre-release.htm
 <h2><span class="mw-headline" id="Set_Variables_2">Set Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=6" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=6.html" title="Edit section: Set Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Note: You could also replace <code>kicksecure-xfce</code> with <code>kicksecure-cli</code>.
 </p><p><span class="code-select">package=kicksecure-xfce
-repo=bullseye
+repo=bookworm
 path_to_chroot=~/kicksecure-xfce-chroot
 path_to_temp_sources_list=~/temp-sources.list</span>
 </p>
 <h2><span class="mw-headline" id="APT_Sources_List">APT Sources List</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a data-href="/w/index.php?title=Chroot&amp;action=edit&amp;section=7" href="https://www.kicksecure.com/w/index.php?title=Chroot&amp;action=edit&amp;section=7.html" title="Edit section: APT Sources List">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
 <p>Create temporary APT sources list for <code>mmdebstrap</code>.
 </p><p><span class="code-select">echo "
-deb https://deb.debian.org/debian-security bullseye-security main contrib non-free
-deb https://deb.debian.org/debian bullseye main contrib non-free
+deb https://deb.debian.org/debian-security bookworm-security main contrib non-free
+deb https://deb.debian.org/debian bookworm main contrib non-free
 deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com $repo main contrib non-free
 " &gt; "$path_to_temp_sources_list"</span>
 </p>
@@ -398,8 +398,8 @@ deb [signed-by=/usr/share/keyrings/derivative.asc] https://deb.kicksecure.com $r
 </p><p><span class="code-select">apt_cacher_ng_maybe="--aptopt='Acquire::http { Proxy \"http://127.0.0.1:3142\"; }' --aptopt='Acquire::https { Proxy \"http://127.0.0.1:3142\"; }' --aptopt='Acquire::tor { Proxy \"http://127.0.0.1:3142\"; }'"</span>
 </p><p>Create apt-cacher-ng https compatible sources.list file.
 </p><p><span class="code-select">echo "
-deb http://HTTPS///deb.debian.org/debian-security/ bullseye-security main contrib non-free
-deb http://HTTPS///deb.debian.org/debian bullseye main contrib non-free
+deb http://HTTPS///deb.debian.org/debian-security/ bookworm-security main contrib non-free
+deb http://HTTPS///deb.debian.org/debian bookworm main contrib non-free
 deb [signed-by=/usr/share/keyrings/derivative.asc] http://HTTPS///deb.kicksecure.com $repo main contrib non-free
 " &gt; "$path_to_temp_sources_list"</span>
 </p>

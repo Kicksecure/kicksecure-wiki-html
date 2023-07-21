@@ -174,7 +174,7 @@ Security warning: Adding a third party repository and/or installing third-party 
 </p>
 </div>
 <ul><li><a class="mw-redirect" data-href="/wiki/Kicksecure" href="./Kicksecure.html" title="Kicksecure">Kicksecure ™</a>: Perform these steps inside Kicksecure ™.</li>
-<li><a class="mw-redirect" data-href="/wiki/Kicksecure-Qubes" href="./Kicksecure-Qubes.html" title="Kicksecure-Qubes">Kicksecure ™ for Qubes</a>: Perform these steps inside Qubes <code>kicksecure-16</code> Template.</li></ul>
+<li><a class="mw-redirect" data-href="/wiki/Kicksecure-Qubes" href="./Kicksecure-Qubes.html" title="Kicksecure-Qubes">Kicksecure ™ for Qubes</a>: Perform these steps inside Qubes <code>kicksecure-17</code> Template.</li></ul>
 <p><b>1.</b> Add the Waydroid OpenPGP key the system APT keyring.
 </p>
 <div class="info-box">
@@ -183,7 +183,7 @@ Security warning: Adding a third party repository and/or installing third-party 
 <div class="info-box">
 <p><u><b>If</b> you are using Kicksecure ™</u> (<code>kicksecure</code>), run.
 </p><p><span class="code-select">scurl https://repo.waydro.id/waydroid.gpg --output waydroid.gpg</span>
-</p><p><u><b>If</b> you are using a Qubes Template</u> (<code>kicksecure-16</code>), run. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
+</p><p><u><b>If</b> you are using a Qubes Template</u> (<code>kicksecure-17</code>), run. <sup class="reference" id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup> <sup class="reference" id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup>
 </p><p><span class="code-select">http_proxy=http://127.0.0.1:8082/ https_proxy=http://127.0.0.1:8082/ curl https://repo.waydro.id/waydroid.gpg --output waydroid.gpg</span>
 </p>
 </div>
@@ -210,7 +210,7 @@ Digital signatures can increase security but this requires knowledge. Learn more
 </p>
 </div>
 <p><b>2.</b> Add the Waydroid third-party APT repository.
-</p><p><span class="code-select">echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ bullseye main" | sudo tee /etc/apt/sources.list.d/waydroid.list</span>
+</p><p><span class="code-select">echo "deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ bookworm main" | sudo tee /etc/apt/sources.list.d/waydroid.list</span>
 </p><p><b>3.</b> Install Waydroid.
 </p>
 <div class="info-box">
