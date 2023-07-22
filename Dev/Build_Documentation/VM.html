@@ -72,8 +72,8 @@
 <meta content="https://www.kicksecure.com/w/images/f/fc/Kicksecure-twitter-post.jpg?version=30a0ad75271a4836786771c345c960b8" property="og:image"/>
 <meta content="1280" property="og:image:width"/>
 <meta content="720" property="og:image:height"/>
-<meta content="2023-06-06T16:53:16Z" property="article:modified_time"/>
-<meta content="2023-06-06T16:53:16Z" property="article:published_time"/>
+<meta content="2023-07-21T11:42:43Z" property="article:modified_time"/>
+<meta content="2023-07-21T11:42:43Z" property="article:published_time"/>
 <meta content="website" property="og:type"/>
 
 </head>
@@ -130,7 +130,7 @@
 <div class="col2">
 <span class="headline page">Page</span>
 <a class="view" data-href="/wiki/Dev/Build Documentation/VM" href="../../Dev/Build Documentation/VM"><i class="fa-solid fa-house"></i>Read</a>
-<a class="edit" data-href="/w/index.php?title=Dev/Build Documentation/VM&amp;action=edit&amp;oldid=73336" href="https://www.kicksecure.com/w/index.php?title=Dev/Build Documentation/VM&amp;action=edit&amp;oldid=73336"><i class="fa-solid fa-pen"></i>Edit</a>
+<a class="edit" data-href="/w/index.php?title=Dev/Build Documentation/VM&amp;action=edit&amp;oldid=74512" href="https://www.kicksecure.com/w/index.php?title=Dev/Build Documentation/VM&amp;action=edit&amp;oldid=74512"><i class="fa-solid fa-pen"></i>Edit</a>
 <a class="history user-logged-in" data-href="/w/index.php?title=Dev/Build Documentation/VM&amp;action=history" href="https://www.kicksecure.com/w/index.php?title=Dev/Build Documentation/VM&amp;action=history"><i class="fa-sharp fa-solid fa-clock-rotate-left"></i>History</a>
 <a class="move user-logged-in" data-href="/wiki/Special:MovePage/Dev/Build Documentation/VM" href="../../Special:MovePage/Dev/Build Documentation/VM"><i class="fa-solid fa-share"></i>Move</a>
 <a class="protect" data-href="/w/index.php?title=Dev/Build Documentation/VM&amp;action=protect" href="https://www.kicksecure.com/w/index.php?title=Dev/Build Documentation/VM&amp;action=protect"><i class="fa-solid fa-shield-halved"></i>Protection</a>
@@ -245,7 +245,7 @@ Digital signatures can increase security but this requires knowledge. Learn more
 <ul><li><u>Parallel builds unsupported warning:</u> Do not try to build Kicksecure ™ and Kicksecure ™ at the same time!</li></ul>
 <div class="toccolours mw-collapsible mw-collapsed">
 <div class="mw-collapsible-content">
-<p>Building Kicksecure ™ and Kicksecure ™ at the same time is not supported due to limitations in the build script. In other words, do not try to run for example <span style="border:1px dotted #005cb9">~/Kicksecure/derivative-maker --flavor whonix-gateway -- --build --target virtualbox</span> and <span style="border:1px dotted #005cb9">~/Kicksecure/derivative-maker --flavor whonix-workstation -- --build --target virtualbox</span> at the same time. The build would probably fail.
+<p>Building Kicksecure ™ and Kicksecure ™ at the same time is not supported due to limitations in the build script. In other words, do not try to run for example <span style="border:1px dotted #005cb9">~/Kicksecure/derivative-maker --flavor whonix-gateway -- --target virtualbox</span> and <span style="border:1px dotted #005cb9">~/Kicksecure/derivative-maker --flavor whonix-workstation -- --target virtualbox</span> at the same time. The build would probably fail.
 </p>
 </div>
 </div>
@@ -522,15 +522,15 @@ nothing to commit, working tree clean</div>
 </p>
 <hr/>
 <p>Delete any existing Kicksecure ™ virtual machine with the following command. <b>Warning</b>: This will delete any virtual machine named Kicksecure ™ from VirtualBox installed on your build machine!
-</p><p><span class="code-select">~/Kicksecure/derivative-maker --flavor kicksecure-gateway-xfce --target virtualbox --clean</span>
+</p><p><span class="code-select">~/Kicksecure/derivative-delete --flavor kicksecure-gateway-xfce --target virtualbox</span>
 </p><p>Delete any existing Kicksecure ™ virtual machine with the following command. <b>Warning</b>: This will delete any virtual machine named Kicksecure ™ from VirtualBox installed on your build machine!
-</p><p><span class="code-select">~/Kicksecure/derivative-maker --flavor kicksecure-workstation-xfce --target virtualbox --clean</span>
+</p><p><span class="code-select">~/Kicksecure/derivative-delete --flavor kicksecure-workstation-xfce --target virtualbox</span>
 </p>
 <hr/>
 <p>Build a Kicksecure ™ virtual machine image.
-</p><p><span class="code-select">~/Kicksecure/derivative-maker --flavor kicksecure-gateway-xfce --target virtualbox --build</span>
+</p><p><span class="code-select">~/Kicksecure/derivative-maker --flavor kicksecure-gateway-xfce --target virtualbox</span>
 </p><p>Build a Kicksecure ™ virtual machine image.
-</p><p><span class="code-select">~/Kicksecure/derivative-maker --flavor kicksecure-workstation-xfce --target virtualbox --build</span>
+</p><p><span class="code-select">~/Kicksecure/derivative-maker --flavor kicksecure-workstation-xfce --target virtualbox</span>
 </p>
 <hr/>
 <p>While building, you might see a few <a data-href="/wiki/Dev/Expected_Build_Warnings" href="../../Dev/Expected_Build_Warnings.html" title="Dev/Expected Build Warnings">Expected Build Warnings</a>.
@@ -560,7 +560,7 @@ nothing to commit, working tree clean</div>
 <li>Adding the license agreement.</li>
 <li>Adding the disclaimer.</li>
 <li><a data-href="/wiki/Dev/Redistribution" href="../../Dev/Redistribution.html" title="Dev/Redistribution">Redistribution</a>.</li>
-<li>Example: <span class="code-select">sudo -E /home/user/derivative-maker/packages/kicksecure/developer-meta-files/release/dm-prepare-release --build --target virtualbox --flavor whonix-workstation-xfce</span>
+<li>Example: <span class="code-select">sudo -E /home/user/derivative-maker/packages/kicksecure/developer-meta-files/release/dm-prepare-release --target virtualbox --flavor whonix-workstation-xfce</span>
 </li></ul>
 <p>For private builds, i.e. for builds which are not supposed to be redistributed to others, none of this is important. If any of this was important, it could also be done manually.
 </p>
@@ -814,7 +814,7 @@ This is sane since important VM settings were already configured in <a class="ex
 </div>
 </div>
 <!--/noindex--><!--googleon: index--></div></div>
-<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;oldid=73336" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;oldid=73336">https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;oldid=73336</a>"</div></div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a data-href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;oldid=74512" dir="ltr" href="https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;oldid=74512">https://www.kicksecure.com/w/index.php?title=Dev/Build_Documentation/VM&amp;oldid=74512</a>"</div></div>
 <div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a data-href="/wiki/Special:Categories" href="../../Special:Categories.html" title="Special:Categories">Category</a>: <ul><li><a data-href="/wiki/Category:Development" href="../../Category:Development.html" title="Category:Development">Development</a></li></ul></div></div>
 </div>
 </div>
