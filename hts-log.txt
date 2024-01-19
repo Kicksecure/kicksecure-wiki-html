@@ -1,0 +1,13 @@
+HTTrack3.49-4+libhtsjava.so.2 launched on Fri, 19 Jan 2024 17:24:02 at https://www.kicksecure.com -forums.kicksecure.com/* -forums.kicksecure.com/privacy -forums.kicksecure.com/tos -forums.kicksecure.com/u/* -forum.kicksecure.com/* -i2pdeb.kicksecure.com/* -phabricator.kicksecure.com/* -packages.kicksecure.com/* -download.kicksecure.com/* -deb.kicksecure.com/* -mail.kicksecure.com/* -rsync.kicksecure.com/* -us.kicksecure.com/* -de.kicksecure.com/* -en.kicksecure.com/* -blog.kicksecure.com/* -mirror.kicksecure.com/*
+(httrack -iC1 -iC2 https://www.kicksecure.com -forums.kicksecure.com/* -forums.kicksecure.com/privacy -forums.kicksecure.com/tos -forums.kicksecure.com/u/* -forum.kicksecure.com/* -i2pdeb.kicksecure.com/* -phabricator.kicksecure.com/* -packages.kicksecure.com/* -download.kicksecure.com/* -deb.kicksecure.com/* -mail.kicksecure.com/* -rsync.kicksecure.com/* -us.kicksecure.com/* -de.kicksecure.com/* -en.kicksecure.com/* -blog.kicksecure.com/* -mirror.kicksecure.com/* -O  -%F  -F "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -x -o -d )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:24:05	Error: 	Exit requested by shell or user
+17:24:06	Error: 	"Not Found" (404) at link https://www.kicksecure.com/skins.vector.legacy.js (from https://www.kicksecure.com/)
+
+HTTrack Website Copier/3.49-4 mirror complete in 4 seconds : 4 links scanned, 2 files written (218584 bytes overall) [44778 bytes received at 11194 bytes/sec], 219212 bytes transferred using HTTP compression in 4 files, ratio 17%, 2.0 requests per connection
+(2 errors, 0 warnings, 0 messages)
